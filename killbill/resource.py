@@ -16,7 +16,7 @@
 
 import json
 
-class Resource:
+class Resource(object):
 
     def __init__(self, d):
         self.d = d
