@@ -14,5 +14,9 @@
 # under the License.
 #
 
-from killbill.resource import Resource
-from killbill.account import Account
+import killbill
+
+class Account(killbill.Resource):
+
+    def __init__(self, d):
+        super(Account, self).__init__(d)

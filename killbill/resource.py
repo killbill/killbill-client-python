@@ -14,5 +14,22 @@
 # under the License.
 #
 
-from killbill.resource import Resource
-from killbill.account import Account
+import json
+
+class Resource:
+
+    def __init__(self, d):
+        self.d = d
+        for key, value in d.items():
+            setattr(self, key, value)
+
+    def __repr__(self):
+        return '%s %s' % (self.__class__, self.d)
+
+    @classmethod
+    def fromJson(cls, jsonString):
+        return json.loads(jsonString, object_hook=cls.dict_to_object)
+
+    @classmethod
+    def dict_to_object(cls, d):
+        return cls(d)
