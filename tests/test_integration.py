@@ -18,7 +18,6 @@ import unittest
 from killbill import Account
 from killbill import Subscription
 
-
 class TestIntegration(unittest.TestCase):
     def test_integration(self):
         account = Account(currency='USD', state='CA', country='USA')

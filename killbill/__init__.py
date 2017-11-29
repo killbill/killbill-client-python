@@ -22,6 +22,12 @@ password = 'password'
 api_key = 'bob'
 api_secret = 'lazar'
 
+try:
+    import json
+except ImportError:
+    # Python 2.5 compatibility (import your own json module, e.g. killbill.json=simplejson)
+    pass
+
 import logging
 
 logging.basicConfig(level=logging.DEBUG)

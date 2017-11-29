@@ -21,12 +21,6 @@ import urllib
 import sys
 
 try:
-    import json
-except ImportError:
-    # Python 2.5 compatibility (import your own json module, e.g. simplejson)
-    pass
-
-try:
     # For Python 3.0 and later
     from urllib.request import urlopen, Request
     from urllib.parse import urlparse
@@ -62,7 +56,7 @@ class Resource(object):
         return default
 
     def to_json(self):
-        return json.dumps(self, default=lambda o: o.__dict__)
+        return killbill.json.dumps(self, default=lambda o: o.__dict__)
 
     def refresh(self, raw_response, **options):
         url = raw_response['response'].headers['Location']
@@ -70,7 +64,7 @@ class Resource(object):
 
     @classmethod
     def fromJson(cls, jsonString):
-        return json.loads(jsonString, object_hook=cls.dict_to_object)
+        return killbill.json.loads(jsonString, object_hook=cls.dict_to_object)
 
     @classmethod
     def dict_to_object(cls, d):
