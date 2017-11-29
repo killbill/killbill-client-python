@@ -23,10 +23,10 @@ import sys
 try:
     # For Python 3.0 and later
     from urllib.request import urlopen, Request
-    from urllib.parse import urlparse
+    from urllib.parse import urlparse, urlunparse
 except ImportError:
     from urllib2 import urlopen, Request
-    from urlparse import urlparse
+    from urlparse import urlparse, urlunparse
 
 import killbill
 
@@ -123,15 +123,21 @@ class Resource(object):
 
         uri = urlparse(relative_uri)
         # Need to encode in case of spaces (e.g. /1.0/kb/security/users/Mad Max/roles)
-        uri = uri._replace(path=urllib.quote(uri.path))
+        new_path = urllib.quote(uri.path)
         if uri.scheme == '' and 'baseUri' in options:
             base_uri = urlparse(options['baseUri'])
-            uri = uri._replace(scheme=base_uri.scheme, netloc="{}:{}".format(base_uri.hostname, base_uri.port))
+            new_scheme = base_uri.scheme
+            new_netloc = "{}:{}".format(base_uri.hostname, base_uri.port)
+        else:
+            new_scheme = uri.scheme
+            new_netloc = uri.netloc
 
         if 'queryParams' in options:
-            uri = uri._replace(params=urllib.urlencode(options['queryParams']))
+            new_query_params = urllib.urlencode(options['queryParams'])
+        else:
+            new_query_params = uri.params
 
-        url = uri.geturl()
+        url = urlunparse((new_scheme, new_netloc, new_path, '', new_query_params, ''))
         logger.info("Request method='%s', url='%s'", options['method'], url)
         if 'body' in options:
             logger.debug("Request body='%s'", options['body'])
