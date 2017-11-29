@@ -19,9 +19,15 @@ import base64
 import json
 import logging
 import urllib
-import urllib2
 import urlparse
 import sys
+
+try:
+    # For Python 3.0 and later
+    from urllib.request import urlopen, Request
+except ImportError:
+    # Fall back to Python 2's urllib2
+    from urllib2 import urlopen, Request
 
 import killbill
 
@@ -126,12 +132,12 @@ class Resource(object):
         logger.info("Request method='%s', url='%s'", options['method'], url)
         if 'body' in options:
             logger.debug("Request body='%s'", options['body'])
-            request = urllib2.Request(url, data=options['body'], headers=headers)
+            request = Request(url, data=options['body'], headers=headers)
         else:
-            request = urllib2.Request(url, headers=headers)
+            request = Request(url, headers=headers)
 
         request.get_method = lambda: options['method']
-        response = urllib2.urlopen(request)
+        response = urlopen(request)
         response_body = response.read()
         logger.debug("Response body='%s'", response_body)
         return {'response': response, 'body': response_body}
