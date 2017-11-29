@@ -22,10 +22,10 @@ import sys
 
 try:
     # For Python 3.0 and later
-    from urllib.request import urlopen, Request
+    from urllib.request import urlopen, Request, HTTPError
     from urllib.parse import urlparse, urlunparse
 except ImportError:
-    from urllib2 import urlopen, Request
+    from urllib2 import urlopen, Request, BaseHandler, HTTPError
     from urlparse import urlparse, urlunparse
 
 import killbill
@@ -146,7 +146,15 @@ class Resource(object):
             request = Request(url, headers=headers)
 
         request.get_method = lambda: options['method']
-        response = urlopen(request)
+        try:
+            response = urlopen(request)
+        except HTTPError, err:
+            # Python 2.5 support
+            if not (200 <= err.code < 300):
+                raise err
+            else:
+                response = err.fp
+
         response_body = response.read()
         logger.debug("Response body='%s'", response_body)
         return {'response': response, 'body': response_body}
