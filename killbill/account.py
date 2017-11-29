@@ -1,7 +1,9 @@
 #
-# Copyright 2011-2012 Ning, Inc.
+# Copyright 2011-2014 Ning, Inc.
+# Copyright 2014-2017 Groupon, Inc.
+# Copyright 2014-2017 The Billing Project, LLC
 #
-# Ning licenses this file to you under the Apache License, version 2.0
+# The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
 # (the "License"); you may not use this file except in compliance with the
 # License.  You may obtain a copy of the License at:
 #
@@ -13,10 +15,22 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 #
-
 import killbill
 
-class Account(killbill.Resource):
 
-    def __init__(self, d):
+class Account(killbill.Resource):
+    KILLBILL_API_ACCOUNTS_PREFIX = killbill.Resource.KILLBILL_API_PREFIX + '/accounts'
+
+    def __init__(self, **d):
         super(Account, self).__init__(d)
+
+    def create(self, user, reason=None, comment=None, **options):
+        created_account = self.post(self.KILLBILL_API_ACCOUNTS_PREFIX,
+                                    self.to_json(),
+                                    self.build_options(
+                                        user=user,
+                                        reason=reason,
+                                        comment=comment,
+                                        **options
+                                    ))
+        return self.refresh(created_account, **options)

@@ -1,5 +1,4 @@
 #
-# Copyright 2011-2014 Ning, Inc.
 # Copyright 2014-2017 Groupon, Inc.
 # Copyright 2014-2017 The Billing Project, LLC
 #
@@ -15,15 +14,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 #
+import unittest
+from killbill import Account
 
-base_uri = 'http://localhost:8080'
-username = 'admin'
-password = 'password'
-api_key = 'bob'
-api_secret = 'lazar'
 
-import logging
-logging.basicConfig(level=logging.DEBUG)
+class TestAccount(unittest.TestCase):
+    def test_create_account(self):
+        account = Account(state='CA', country='USA')
+        account = account.create('test')
+        self.assertIsNotNone(account.accountId)
+        self.assertEqual('CA', account.state)
+        self.assertEqual('USA', account.country)
 
-from killbill.resource import Resource
-from killbill.account import Account
+
+if __name__ == '__main__':
+    unittest.main()
