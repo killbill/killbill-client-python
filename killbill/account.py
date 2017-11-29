@@ -27,6 +27,7 @@ class Account(killbill.Resource):
     def create(self, user, reason=None, comment=None, **options):
         created_account = self.post(self.KILLBILL_API_ACCOUNTS_PREFIX,
                                     self.to_json(),
+                                    {},
                                     self.build_options(
                                         user=user,
                                         reason=reason,
@@ -34,3 +35,8 @@ class Account(killbill.Resource):
                                         **options
                                     ))
         return self.refresh(created_account, **options)
+
+    def bundles(self, **options):
+        return self.get("{}/{}/bundles".format(self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                        {},
+                        self.build_options(**options))

@@ -16,15 +16,29 @@
 #
 import unittest
 from killbill import Account
+from killbill import Subscription
 
 
-class TestAccount(unittest.TestCase):
-    def test_create_account(self):
-        account = Account(state='CA', country='USA')
+class TestIntegration(unittest.TestCase):
+    def test_integration(self):
+        account = Account(currency='USD', state='CA', country='USA')
         account = account.create('test')
         self.assertIsNotNone(account.accountId)
+        self.assertEqual('USD', account.currency)
         self.assertEqual('CA', account.state)
         self.assertEqual('USA', account.country)
+
+        self.assertEqual(0, len(account.bundles()))
+
+        subscription = Subscription(accountId=account.accountId,
+                                    productName='Sports',
+                                    productCategory='BASE',
+                                    billingPeriod='MONTHLY',
+                                    priceList='DEFAULT')
+        subscription.create('test')
+
+        bundles = account.bundles()
+        self.assertEqual(1, len(bundles))
 
 
 if __name__ == '__main__':

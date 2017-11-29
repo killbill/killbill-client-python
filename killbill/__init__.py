@@ -23,7 +23,9 @@ api_key = 'bob'
 api_secret = 'lazar'
 
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
 
 from killbill.resource import Resource
 from killbill.account import Account
+from killbill.subscription import Subscription

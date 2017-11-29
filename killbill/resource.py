@@ -19,15 +19,15 @@ import base64
 import json
 import logging
 import urllib
-import urlparse
 import sys
 
 try:
     # For Python 3.0 and later
     from urllib.request import urlopen, Request
+    from urllib.parse import urlparse
 except ImportError:
-    # Fall back to Python 2's urllib2
     from urllib2 import urlopen, Request
+    from urlparse import urlparse
 
 import killbill
 
@@ -61,8 +61,7 @@ class Resource(object):
 
     def refresh(self, raw_response, **options):
         url = raw_response['response'].headers['Location']
-        raw_get_response = self.get(url, self.build_options(**options))
-        return self.__class__.fromJson(raw_get_response['body'])
+        return self.get(url, {}, self.build_options(**options))
 
     @classmethod
     def fromJson(cls, jsonString):
@@ -73,14 +72,16 @@ class Resource(object):
         return cls(**d)
 
     @classmethod
-    def get(cls, relative_uri, options):
+    def get(cls, relative_uri, query_params, options):
         options['method'] = 'GET'
-        return cls.send_request(relative_uri, options)
+        raw_get_response = cls.send_request(relative_uri, options)
+        return cls.fromJson(raw_get_response['body'])
 
     @classmethod
-    def post(cls, relative_uri, body, options):
+    def post(cls, relative_uri, body, query_params, options):
         options['method'] = 'POST'
         options['body'] = body
+        options['queryParams'] = query_params
         return cls.send_request(relative_uri, options)
 
     @classmethod
@@ -121,12 +122,15 @@ class Resource(object):
 
         headers['User-Agent'] = 'killbill/v1; Python %s' % (".".join(map(str, sys.version_info)))
 
-        uri = urlparse.urlparse(relative_uri)
+        uri = urlparse(relative_uri)
         # Need to encode in case of spaces (e.g. /1.0/kb/security/users/Mad Max/roles)
         uri = uri._replace(path=urllib.quote(uri.path))
         if uri.scheme == '' and 'baseUri' in options:
-            base_uri = urlparse.urlparse(options['baseUri'])
+            base_uri = urlparse(options['baseUri'])
             uri = uri._replace(scheme=base_uri.scheme, netloc="{}:{}".format(base_uri.hostname, base_uri.port))
+
+        if 'queryParams' in options:
+            uri = uri._replace(params=urllib.urlencode(options['queryParams']))
 
         url = uri.geturl()
         logger.info("Request method='%s', url='%s'", options['method'], url)
