@@ -87,7 +87,7 @@ class Resource(object):
     @classmethod
     def send_request(cls, relative_uri, options):
         headers = {}
-        options = {k: v for k, v in options.items() if v}
+        options = dict((k, v) for k, v in options.iteritems() if v)
 
         if 'user' in options:
             headers['X-Killbill-CreatedBy'] = options['user']
