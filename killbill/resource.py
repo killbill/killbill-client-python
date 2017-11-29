@@ -99,7 +99,7 @@ class Resource(object):
             headers['X-Killbill-Comment'] = options['comment']
 
         if 'username' in options:
-            base64string = base64.b64encode('%s:%s' % (options['username'], options['password']))
+            base64string = base64.b64encode(('%s:%s' % (options['username'], options['password'])).encode("utf-8"))
             headers['Authorization'] = "Basic %s" % base64string
 
         if 'apiKey' in options:
