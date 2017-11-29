@@ -23,8 +23,9 @@ import sys
 try:
     # For Python 3.0 and later
     from urllib.request import urlopen, Request, HTTPError
-    from urllib.parse import urlparse, urlunparse
+    from urllib.parse import urlencode, urlparse, urlunparse, quote
 except ImportError:
+    from urllib import quote, urlencode
     from urllib2 import urlopen, Request, BaseHandler, HTTPError
     from urlparse import urlparse, urlunparse
 
@@ -98,7 +99,7 @@ class Resource(object):
             headers['X-Killbill-Comment'] = options['comment']
 
         if 'username' in options:
-            base64string = base64.b64encode(('%s:%s' % (options['username'], options['password'])).encode("utf-8"))
+            base64string = base64.b64encode(('%s:%s' % (options['username'], options['password'])).encode("utf-8")).decode("utf-8")
             headers['Authorization'] = "Basic %s" % base64string
 
         if 'apiKey' in options:
@@ -123,7 +124,7 @@ class Resource(object):
 
         uri = urlparse(relative_uri)
         # Need to encode in case of spaces (e.g. /1.0/kb/security/users/Mad Max/roles)
-        new_path = urllib.quote(uri.path)
+        new_path = quote(uri.path)
         if uri.scheme == '' and 'baseUri' in options:
             base_uri = urlparse(options['baseUri'])
             new_scheme = base_uri.scheme
@@ -133,15 +134,16 @@ class Resource(object):
             new_netloc = uri.netloc
 
         if 'queryParams' in options:
-            new_query_params = urllib.urlencode(options['queryParams'])
+            new_query_params = urlencode(options['queryParams'])
         else:
             new_query_params = uri.params
 
         url = urlunparse((new_scheme, new_netloc, new_path, '', new_query_params, ''))
-        logger.info("Request method='%s', url='%s'", options['method'], url)
+        logger.info("Request method='%s', url='%s', headers='%s'", options['method'], url, headers)
         if 'body' in options:
-            logger.debug("Request body='%s'", options['body'])
-            request = Request(url, data=options['body'], headers=headers)
+            body = options['body'].encode("utf-8")
+            logger.debug("Request body='%s'", body)
+            request = Request(url, data=body, headers=headers)
         else:
             request = Request(url, headers=headers)
 
