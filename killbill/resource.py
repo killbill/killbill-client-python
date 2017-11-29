@@ -148,7 +148,7 @@ class Resource(object):
         request.get_method = lambda: options['method']
         try:
             response = urlopen(request)
-        except HTTPError, err:
+        except HTTPError as err:
             # Python 2.5 support
             if not (200 <= err.code < 300):
                 raise err
