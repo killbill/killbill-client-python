@@ -24,13 +24,18 @@ class Subscription(killbill.Resource):
         super(Subscription, self).__init__(d)
 
     def create(self, user, reason=None, comment=None, requested_date=None, call_completion=False, **options):
+        query_params = {}
+
+        if call_completion:
+            query_params['callCompletion'] = call_completion
+
+        if requested_date:
+            query_params['entitlementDate'] = requested_date
+            query_params['billingDate'] = requested_date
+
         created_subscription = self.post(self.KILLBILL_API_ENTITLEMENT_PREFIX,
                                          self.to_json(),
-                                         {
-                                             'callCompletion': call_completion,
-                                             'entitlementDate': requested_date,
-                                             'billingDate': requested_date
-                                         },
+                                         query_params,
                                          self.build_options(
                                              user=user,
                                              reason=reason,

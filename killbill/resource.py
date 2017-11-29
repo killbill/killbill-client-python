@@ -16,10 +16,15 @@
 # under the License.
 #
 import base64
-import json
 import logging
 import urllib
 import sys
+
+try:
+    import json
+except ImportError:
+    # Python 2.5 compatibility (import your own json module, e.g. simplejson)
+    pass
 
 try:
     # For Python 3.0 and later
