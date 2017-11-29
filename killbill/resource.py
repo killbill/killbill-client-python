@@ -127,7 +127,7 @@ class Resource(object):
         if uri.scheme == '' and 'baseUri' in options:
             base_uri = urlparse(options['baseUri'])
             new_scheme = base_uri.scheme
-            new_netloc = "{}:{}".format(base_uri.hostname, base_uri.port)
+            new_netloc = "%s:%s" % (base_uri.hostname, base_uri.port)
         else:
             new_scheme = uri.scheme
             new_netloc = uri.netloc

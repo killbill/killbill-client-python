@@ -37,6 +37,6 @@ class Account(killbill.Resource):
         return self.refresh(created_account, **options)
 
     def bundles(self, **options):
-        return self.get("{}/{}/bundles".format(self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+        return self.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                         {},
                         self.build_options(**options))
