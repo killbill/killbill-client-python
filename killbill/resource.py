@@ -22,11 +22,11 @@ import sys
 
 try:
     # For Python 3.0 and later
-    from urllib.request import urlopen, Request, HTTPError
+    from urllib.request import build_opener, urlopen, Request, HTTPError
     from urllib.parse import urlencode, urlparse, urlunparse, quote
 except ImportError:
     from urllib import quote, urlencode
-    from urllib2 import urlopen, Request, BaseHandler, HTTPError
+    from urllib2 import build_opener, urlopen, Request, BaseHandler, HTTPError
     from urlparse import urlparse, urlunparse
 
 import killbill
@@ -74,6 +74,7 @@ class Resource(object):
     @classmethod
     def get(cls, relative_uri, query_params, options):
         options['method'] = 'GET'
+        options['queryParams'] = query_params
         raw_get_response = cls.send_request(relative_uri, options)
         return cls.fromJson(raw_get_response['body'])
 
@@ -99,7 +100,8 @@ class Resource(object):
             headers['X-Killbill-Comment'] = options['comment']
 
         if 'username' in options:
-            base64string = base64.b64encode(('%s:%s' % (options['username'], options['password'])).encode("utf-8")).decode("utf-8")
+            base64string = base64.b64encode(
+                ('%s:%s' % (options['username'], options['password'])).encode("utf-8")).decode("utf-8")
             headers['Authorization'] = "Basic %s" % base64string
 
         if 'apiKey' in options:
@@ -148,9 +150,16 @@ class Resource(object):
             request = Request(url, headers=headers)
 
         request.get_method = lambda: options['method']
+
+        if killbill.opener:
+            opener = build_opener(killbill.opener)
+        else:
+            opener = build_opener()
+
         try:
-            response = urlopen(request)
-        except HTTPError as err:
+            response = opener.open(request)
+        except HTTPError:
+            _, err, _ = sys.exc_info()
             # Python 2.5 support
             if not (200 <= err.code < 300):
                 raise err

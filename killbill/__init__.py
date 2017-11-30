@@ -28,6 +28,11 @@ except ImportError:
     # Python 2.5 compatibility (import your own json module, e.g. killbill.json=simplejson)
     pass
 
+# Custom urllib opener, e.g.:
+#   from killbill.grinder_http_handler import GrinderHTTPHandler
+#   killbill.opener = GrinderHTTPHandler
+opener = None
+
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
