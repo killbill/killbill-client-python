@@ -20,6 +20,8 @@ import logging
 import urllib
 import sys
 
+import re
+
 try:
     # For Python 3.0 and later
     from urllib.request import build_opener, urlopen, Request, HTTPError
@@ -88,7 +90,7 @@ class Resource(object):
     @classmethod
     def send_request(cls, relative_uri, options):
         headers = {}
-        options = dict((k, v) for k, v in options.items() if v)
+        options = dict((k, v) for k, v in options.items() if v is not None)
 
         if 'user' in options:
             headers['X-Killbill-CreatedBy'] = options['user']
@@ -123,6 +125,16 @@ class Resource(object):
             headers['Content-Type'] = options['contentType']
 
         headers['User-Agent'] = 'killbill/v1; Python %s' % (".".join(map(str, sys.version_info)))
+
+        #
+        # Extract profiling data map if it exists and set X-Killbill-Profiling-Req HTTP header
+        # (there will be no synchronization done, so if multiple threads are running they should probably
+        # pass a per-tread profiling Map)
+        #
+        cur_thread_profiling_data = None
+        if 'profilingData' in options:
+            headers['X-Killbill-Profiling-Req'] = 'JAXRS'
+            cur_thread_profiling_data = options['profilingData']
 
         uri = urlparse(relative_uri)
         # Need to encode in case of spaces (e.g. /1.0/kb/security/users/Mad Max/roles)
@@ -165,6 +177,26 @@ class Resource(object):
                 raise err
             else:
                 response = err.fp
+
+        # Add profiling data if required
+        if cur_thread_profiling_data is not None and 'X-Killbill-Profiling-Resp' in response.headers:
+            profiling_header = killbill.json.loads(response.headers['X-Killbill-Profiling-Resp'])
+            jaxrs_profiling_header = profiling_header['rawData'][0]
+
+            print(jaxrs_profiling_header)
+            m = re.search('(/1.0/kb(?:/\w+){1,2}/)\w+-\w+-\w+-\w+-\w+(/\w+)*', new_path)
+            if m:
+                second_arg = m.group(2)
+                if second_arg is None:
+                    second_arg = ''
+                key = "%s:%suuid%s" % (options['method'], m.group(1), second_arg)
+            else:
+                key = "%s:%s" % (options['method'], new_path)
+
+            if not key in cur_thread_profiling_data:
+                cur_thread_profiling_data[key] = []
+
+            cur_thread_profiling_data[key].append(jaxrs_profiling_header['durationUsec'])
 
         response_body = response.read()
         logger.debug("Response body='%s'", response_body)

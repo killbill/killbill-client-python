@@ -20,8 +20,10 @@ from killbill import Subscription
 
 class TestIntegration(unittest.TestCase):
     def test_integration(self):
+        profiling_data = dict()
+
         account = Account(currency='USD', state='CA', country='USA')
-        account = account.create('test')
+        account = account.create('test', 'for testing', 'no comment', profilingData=profiling_data)
         self.assertIsNotNone(account.accountId)
         self.assertEqual('USD', account.currency)
         self.assertEqual('CA', account.state)
@@ -38,6 +40,10 @@ class TestIntegration(unittest.TestCase):
 
         bundles = account.bundles()
         self.assertEqual(1, len(bundles))
+
+        self.assertEqual(2, len(profiling_data))
+        self.assertEqual(1, len(profiling_data['POST:/1.0/kb/accounts']))
+        self.assertEqual(1, len(profiling_data['GET:/1.0/kb/accounts/uuid']))
 
 
 if __name__ == '__main__':
