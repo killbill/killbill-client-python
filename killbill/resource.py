@@ -17,7 +17,6 @@
 #
 import base64
 import logging
-import urllib
 import sys
 
 import re
@@ -38,6 +37,8 @@ logger = logging.getLogger('killbill')
 
 class Resource(object):
     KILLBILL_API_PREFIX = '/1.0/kb'
+
+    PERF_REGEXP = re.compile('(/1.0/kb(?:/\w+){1,2}/)\w+-\w+-\w+-\w+-\w+(/\w+)*')
 
     def __init__(self, d):
         for key, value in d.items():
@@ -183,8 +184,7 @@ class Resource(object):
             profiling_header = killbill.json.loads(response.headers['X-Killbill-Profiling-Resp'])
             jaxrs_profiling_header = profiling_header['rawData'][0]
 
-            print(jaxrs_profiling_header)
-            m = re.search('(/1.0/kb(?:/\w+){1,2}/)\w+-\w+-\w+-\w+-\w+(/\w+)*', new_path)
+            m = Resource.PERF_REGEXP.search(new_path)
             if m:
                 second_arg = m.group(2)
                 if second_arg is None:
