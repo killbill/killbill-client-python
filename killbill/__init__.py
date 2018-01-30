@@ -39,4 +39,5 @@ logging.basicConfig(level=logging.DEBUG)
 
 from killbill.resource import Resource
 from killbill.account import Account
+from killbill.payment_method import PaymentMethod
 from killbill.subscription import Subscription

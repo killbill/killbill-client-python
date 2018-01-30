@@ -47,7 +47,8 @@ class Resource(object):
     def __repr__(self):
         return '%s %s' % (self.__class__, self.to_json())
 
-    def build_options(self, **options):
+    @staticmethod
+    def build_options(**options):
         default = {
             'contentType': 'application/json',
             'baseUri': killbill.base_uri,
@@ -84,6 +85,13 @@ class Resource(object):
     @classmethod
     def post(cls, relative_uri, body, query_params, options):
         options['method'] = 'POST'
+        options['body'] = body
+        options['queryParams'] = query_params
+        return cls.send_request(relative_uri, options)
+
+    @classmethod
+    def put(cls, relative_uri, body, query_params, options):
+        options['method'] = 'PUT'
         options['body'] = body
         options['queryParams'] = query_params
         return cls.send_request(relative_uri, options)
