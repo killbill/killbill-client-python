@@ -36,10 +36,17 @@ class Account(killbill.Resource):
                                     ))
         return self.refresh(created_account, **options)
 
+    def update(self, **options):
+        return self.put("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                        self.to_json(),
+                        {},
+                        self.build_options(**options))
+
     def bundles(self, **options):
         return self.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                         {},
                         self.build_options(**options))
+
 
     @classmethod
     def find_by_id(cls, account_id, **options):
