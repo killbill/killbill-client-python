@@ -24,7 +24,7 @@ class Account(killbill.Resource):
     def __init__(self, **d):
         super(Account, self).__init__(d)
 
-    def create(self, user, reason=None, comment=None, **options):
+    def create(self, user=killbill.user, reason=None, comment=None, **options):
         created_account = self.post(self.KILLBILL_API_ACCOUNTS_PREFIX,
                                     self.to_json(),
                                     {},

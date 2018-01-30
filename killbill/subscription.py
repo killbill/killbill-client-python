@@ -23,7 +23,7 @@ class Subscription(killbill.Resource):
     def __init__(self, **d):
         super(Subscription, self).__init__(d)
 
-    def create(self, user, reason=None, comment=None, requested_date=None, call_completion=False, **options):
+    def create(self, user=killbill.user, reason=None, comment=None, requested_date=None, call_completion=False, **options):
         query_params = {}
 
         if call_completion:

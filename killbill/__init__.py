@@ -16,6 +16,7 @@
 # under the License.
 #
 
+user = 'KillBill Python Client'
 base_uri = 'http://localhost:8080'
 username = 'admin'
 password = 'password'

@@ -22,7 +22,7 @@ class PaymentMethod(killbill.Resource):
     def __init__(self, **d):
         super(PaymentMethod, self).__init__(d)
 
-    def create(self, is_default, user, reason=None, comment=None, **options):
+    def create(self, is_default=True, user=killbill.user, reason=None, comment=None, **options):
         created_payment_method = self.post("%s/%s/paymentMethods" %
                                            (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                                            self.to_json(),
@@ -35,7 +35,7 @@ class PaymentMethod(killbill.Resource):
                                            ))
         return self.refresh(created_payment_method, **options)
 
-    def set_default(self, user, reason=None, comment=None, **options):
+    def set_default(self, user=killbill.user, reason=None, comment=None, **options):
         set_default = self.put("%s/%s/paymentMethods/%s/setDefault" %
                                (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX,
                                 self.accountId, self.paymentMethodId),
