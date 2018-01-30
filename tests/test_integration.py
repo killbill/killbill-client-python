@@ -29,6 +29,7 @@ class TestIntegration(unittest.TestCase):
         self.assertEqual('CA', account.state)
         self.assertEqual('USA', account.country)
 
+        self.assertEqual(account.accountId, Account.find_by_external_key(account.externalKey).accountId)
         self.assertEqual(0, len(account.bundles()))
 
         subscription = Subscription(accountId=account.accountId,
@@ -44,6 +45,8 @@ class TestIntegration(unittest.TestCase):
         self.assertEqual(2, len(profiling_data))
         self.assertEqual(1, len(profiling_data['POST:/1.0/kb/accounts']))
         self.assertEqual(1, len(profiling_data['GET:/1.0/kb/accounts/uuid']))
+
+        account.close(True, True, False, 'test')
 
 
 if __name__ == '__main__':
