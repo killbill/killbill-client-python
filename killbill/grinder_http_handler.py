@@ -60,7 +60,7 @@ class GrinderHTTPHandler(HTTPHandler):
         elif req.get_method() == 'PUT':
             gresp = greq.PUT(url, payload, headers)
         elif req.get_method() == 'DELETE':
-            gresp = greq.DELETE(url, payload, headers)
+            gresp = greq.DELETE(url, headers)
         else:
             raise ValueError("HTTP method " + req.get_method() + " isn't supported")
 
