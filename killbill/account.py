@@ -40,3 +40,13 @@ class Account(killbill.Resource):
         return self.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                         {},
                         self.build_options(**options))
+
+    @classmethod
+    def find_by_id(cls, account_id, **options):
+        relative_url = "%s/%s" % (cls.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
+        query_params = {
+            'accountWithBalance': False,
+            'accountWithBalanceAndCBA': False,
+            'audit': 'NONE'
+        }
+        return cls.get(relative_url, query_params, cls.build_options(**options))
