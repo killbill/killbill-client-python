@@ -45,7 +45,7 @@ class Resource(object):
             setattr(self, key, value)
 
     def __repr__(self):
-        return '%s %s' % (self.__class__, self.to_json)
+        return '%s %s' % (self.__class__, self.to_json())
 
     def build_options(self, **options):
         default = {
