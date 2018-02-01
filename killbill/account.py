@@ -49,11 +49,11 @@ class Account(killbill.Resource):
 
 
     @classmethod
-    def find_by_id(cls, account_id, **options):
+    def find_by_id(cls, account_id, account_with_balance=False, account_with_balance_and_cba=False, audit='NONE', **options):
         relative_url = "%s/%s" % (cls.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
         query_params = {
-            'accountWithBalance': False,
-            'accountWithBalanceAndCBA': False,
-            'audit': 'NONE'
+            'accountWithBalance': account_with_balance,
+            'accountWithBalanceAndCBA': account_with_balance_and_cba,
+            'audit': audit
         }
         return cls.get(relative_url, query_params, cls.build_options(**options))

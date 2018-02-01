@@ -1,5 +1,6 @@
 #
-# Copyright 2018 Federico Torresan
+# Copyright 2018 Quentral S.r.l.
+# Copyright 2014-2018 The Billing Project, LLC
 #
 # The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
 # (the "License"); you may not use this file except in compliance with the
