@@ -90,6 +90,13 @@ class Resource(object):
         return cls.send_request(relative_uri, options)
 
     @classmethod
+    def delete(cls, relative_uri, body, query_params, options):
+        options['method'] = 'DELETE'
+        options['body'] = body
+        options['queryParams'] = query_params
+        return cls.send_request(relative_uri, options)
+
+    @classmethod
     def put(cls, relative_uri, body, query_params, options):
         options['method'] = 'PUT'
         options['body'] = body

@@ -47,6 +47,28 @@ class Account(killbill.Resource):
                         {},
                         self.build_options(**options))
 
+    def close(self, cancel_all_subscriptions, write_off_unpaid_invoices, item_adjust_unpaid_invoices, user, reason=None, comment=None, **options):
+        return self.delete("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                           "{}",
+                           {
+                               'cancelAllSubscriptions': cancel_all_subscriptions,
+                               'writeOffUnpaidInvoices': write_off_unpaid_invoices,
+                               'itemAdjustUnpaidInvoices': item_adjust_unpaid_invoices
+                           },
+                           self.build_options(
+                               user=user,
+                               reason=reason,
+                               comment=comment,
+                               **options
+                           ))
+
+    @classmethod
+    def find_by_external_key(cls, external_key, **options):
+        query_params = {
+            'externalKey': external_key
+        }
+        return cls.get(cls.KILLBILL_API_ACCOUNTS_PREFIX, query_params, cls.build_options(**options))
+
 
     @classmethod
     def find_by_id(cls, account_id, account_with_balance=False, account_with_balance_and_cba=False, audit='NONE', **options):
