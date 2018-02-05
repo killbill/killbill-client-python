@@ -52,7 +52,7 @@ class PaymentMethod(killbill.Resource):
 
     def destroy(self, user=killbill.user, reason=None, comment=None, **options):
         return self.delete("%s/%s" % (self.KILLBILL_API_PAYMENT_METHODS_PREFIX, self.paymentMethodId),
-                           {},
+                           "{}",
                            {},
                            self.build_options(
                                user=user,
