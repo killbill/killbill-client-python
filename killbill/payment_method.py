@@ -48,7 +48,7 @@ class PaymentMethod(killbill.Resource):
                                    comment=comment,
                                    **options
                                ))
-        return self.refresh(set_default, **options)
+        return self.find_by_id(self.paymentMethodId)
 
     def destroy(self, delete_default_pm_with_auto_pay_off=False, force_default_pm_deletion=False, user=killbill.user,
                 reason=None, comment=None, **options):
@@ -67,6 +67,17 @@ class PaymentMethod(killbill.Resource):
     def find_all_by_account_id(cls, account_id, with_plugin_info=False, **options):
         relative_url = "%s/%s/paymentMethods" % (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
         query_params = {
+            'withPluginInfo': with_plugin_info
+        }
+        return cls.get(relative_url, query_params, cls.build_options(**options))
+
+    @classmethod
+    def find_by_id(cls, payment_method_id, plugin_property=None, included_deleted=False, audit='NONE', with_plugin_info=False, **options):
+        relative_url = "%s/%s" % (cls.KILLBILL_API_PAYMENT_METHODS_PREFIX, payment_method_id)
+        query_params = {
+            'pluginProperty': plugin_property,
+            'includedDeleted': included_deleted,
+            'audit': audit,
             'withPluginInfo': with_plugin_info
         }
         return cls.get(relative_url, query_params, cls.build_options(**options))
