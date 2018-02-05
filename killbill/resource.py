@@ -101,8 +101,7 @@ class Resource(object):
         options['method'] = 'PUT'
         options['body'] = body
         options['queryParams'] = query_params
-        raw_get_response = cls.send_request(relative_uri, options)
-        return cls.fromJson(raw_get_response['body'])
+        return cls.send_request(relative_uri, options)
 
     @classmethod
     def send_request(cls, relative_uri, options):
