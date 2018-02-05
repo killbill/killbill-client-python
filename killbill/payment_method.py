@@ -50,10 +50,12 @@ class PaymentMethod(killbill.Resource):
                                ))
         return self.refresh(set_default, **options)
 
-    def destroy(self, user=killbill.user, reason=None, comment=None, **options):
+    def destroy(self, delete_default_pm_with_auto_pay_off=False, force_default_pm_deletion=False, user=killbill.user,
+                reason=None, comment=None, **options):
         return self.delete("%s/%s" % (self.KILLBILL_API_PAYMENT_METHODS_PREFIX, self.paymentMethodId),
                            "{}",
-                           {},
+                           {'deleteDefaultPmWithAutoPayOff': delete_default_pm_with_auto_pay_off,
+                            'forceDefaultPmDeletion': force_default_pm_deletion},
                            self.build_options(
                                user=user,
                                reason=reason,
