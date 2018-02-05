@@ -69,7 +69,6 @@ class Account(killbill.Resource):
         }
         return cls.get(cls.KILLBILL_API_ACCOUNTS_PREFIX, query_params, cls.build_options(**options))
 
-
     @classmethod
     def find_by_id(cls, account_id, account_with_balance=False, account_with_balance_and_cba=False, audit='NONE', **options):
         relative_url = "%s/%s" % (cls.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
