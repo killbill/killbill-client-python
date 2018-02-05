@@ -50,6 +50,17 @@ class PaymentMethod(killbill.Resource):
                                ))
         return self.refresh(set_default, **options)
 
+    def destroy(self, user=killbill.user, reason=None, comment=None, **options):
+        return self.delete("%s/%s" % (self.KILLBILL_API_PAYMENT_METHODS_PREFIX, self.paymentMethodId),
+                           {},
+                           {},
+                           self.build_options(
+                               user=user,
+                               reason=reason,
+                               comment=comment,
+                               **options
+                           ))
+
     @classmethod
     def find_all_by_account_id(cls, account_id, with_plugin_info=False, **options):
         relative_url = "%s/%s/paymentMethods" % (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
