@@ -37,7 +37,7 @@ class PaymentMethod(killbill.Resource):
         return self.refresh(created_payment_method, **options)
 
     def set_default(self, user=killbill.user, reason=None, comment=None, **options):
-        set_default = self.put("%s/%s/paymentMethods/%s/setDefault" %
+        self.put("%s/%s/paymentMethods/%s/setDefault" %
                                (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX,
                                 self.accountId, self.paymentMethodId),
                                "{}",
@@ -48,7 +48,7 @@ class PaymentMethod(killbill.Resource):
                                    comment=comment,
                                    **options
                                ))
-        return self.find_by_id(self.paymentMethodId)
+        return self.find_by_id(self.paymentMethodId, **options)
 
     def destroy(self, delete_default_pm_with_auto_pay_off=False, force_default_pm_deletion=False, user=killbill.user,
                 reason=None, comment=None, **options):
