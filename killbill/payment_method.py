@@ -40,7 +40,7 @@ class PaymentMethod(killbill.Resource):
         set_default = self.put("%s/%s/paymentMethods/%s/setDefault" %
                                (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX,
                                 self.accountId, self.paymentMethodId),
-                               {},
+                               "{}",
                                {},
                                self.build_options(
                                    user=user,
