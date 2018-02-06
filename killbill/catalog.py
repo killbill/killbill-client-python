@@ -14,7 +14,6 @@
 # under the License.
 #
 import killbill
-from killbill.plan_detail import PlanDetail
 
 
 class Catalog(killbill.Resource):
@@ -29,10 +28,10 @@ class Catalog(killbill.Resource):
         query_params = {
             'baseProductName': base_product_name
         }
-        return PlanDetail.get(relative_url, query_params, PlanDetail.build_options(**options))
+        return killbill.PlanDetail.get(relative_url, query_params, killbill.PlanDetail.build_options(**options))
 
     @classmethod
     def available_base_plans(cls, **options):
         relative_url = "%s/availableBasePlans" % cls.KILLBILL_API_CATALOG_PREFIX
         query_params = {}
-        return PlanDetail.get(relative_url, query_params, PlanDetail.build_options(**options))
+        return killbill.PlanDetail.get(relative_url, query_params, killbill.PlanDetail.build_options(**options))
