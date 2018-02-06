@@ -20,3 +20,9 @@ class PlanDetail(killbill.Resource):
 
     def __init__(self, **d):
         super(PlanDetail, self).__init__(d)
+
+    @classmethod
+    def dict_to_object(cls, d):
+        if 'plan' in d:
+            return cls(**d)
+        return d
