@@ -1,5 +1,4 @@
 #
-# Copyright 2018 Quentral S.r.l.
 # Copyright 2014-2018 The Billing Project, LLC
 #
 # The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
