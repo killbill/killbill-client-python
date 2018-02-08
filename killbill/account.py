@@ -37,17 +37,19 @@ class Account(killbill.Resource):
         return self.refresh(created_account, **options)
 
     def update(self, **options):
-        return self.put("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
-                        self.to_json(),
-                        {},
-                        self.build_options(**options))
+        updated_account = self.put("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                                   self.to_json(),
+                                   {},
+                                   self.build_options(**options))
+        return self.fromJson(updated_account['body'])
 
     def bundles(self, **options):
         return self.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                         {},
                         self.build_options(**options))
 
-    def close(self, cancel_all_subscriptions, write_off_unpaid_invoices, item_adjust_unpaid_invoices, user, reason=None, comment=None, **options):
+    def close(self, cancel_all_subscriptions, write_off_unpaid_invoices, item_adjust_unpaid_invoices, user, reason=None,
+              comment=None, **options):
         return self.delete("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                            "{}",
                            {
@@ -70,7 +72,8 @@ class Account(killbill.Resource):
         return cls.get(cls.KILLBILL_API_ACCOUNTS_PREFIX, query_params, cls.build_options(**options))
 
     @classmethod
-    def find_by_id(cls, account_id, account_with_balance=False, account_with_balance_and_cba=False, audit='NONE', **options):
+    def find_by_id(cls, account_id, account_with_balance=False, account_with_balance_and_cba=False, audit='NONE',
+                   **options):
         relative_url = "%s/%s" % (cls.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
         query_params = {
             'accountWithBalance': account_with_balance,
