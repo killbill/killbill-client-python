@@ -68,3 +68,11 @@ class Subscription(killbill.Resource):
                                         ))
 
         return self.fromJson(updated_subscription['body'])
+
+    @classmethod
+    def find_by_id(cls, subscription_id, audit='NONE', **options):
+        relative_url = "%s/%s" % (cls.KILLBILL_API_ENTITLEMENT_PREFIX, subscription_id)
+        query_params = {
+            'audit': audit
+        }
+        return cls.get(relative_url, query_params, cls.build_options(**options))
