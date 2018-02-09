@@ -43,3 +43,28 @@ class Subscription(killbill.Resource):
                                              **options
                                          ))
         return self.refresh(created_subscription, **options)
+
+    def change_plan(self, update, user=killbill.user, reason=None, comment=None, requested_date=None, billing_policy=None, call_completion=False, **options):
+        query_params = {}
+
+        if call_completion:
+            query_params['callCompletion'] = call_completion
+
+        if requested_date:
+            query_params['entitlementDate'] = requested_date
+            query_params['billingDate'] = requested_date
+
+        for key, value in update.items():
+            setattr(self, key, value)
+
+        updated_subscription = self.put("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                                        self.to_json(),
+                                        query_params,
+                                        self.build_options(
+                                            user=user,
+                                            reason=reason,
+                                            comment=comment,
+                                            **options
+                                        ))
+
+        return self.fromJson(updated_subscription['body'])
