@@ -16,6 +16,7 @@
 # under the License.
 #
 import killbill
+from killbill import Bundle, Invoice
 
 
 class Account(killbill.Resource):
@@ -44,9 +45,9 @@ class Account(killbill.Resource):
         return self.fromJson(updated_account['body'])
 
     def bundles(self, **options):
-        return self.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+        return Bundle.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                         {},
-                        self.build_options(**options))
+                        Bundle.build_options(**options))
 
     def close(self, cancel_all_subscriptions, write_off_unpaid_invoices, item_adjust_unpaid_invoices, user, reason=None,
               comment=None, **options):
@@ -66,14 +67,14 @@ class Account(killbill.Resource):
 
     def invoices(self, with_items=False, with_migration_invoices=False, unpaid_invoices_only=False, audit='NONE',
                  **options):
-        return self.get("%s/%s/invoices" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+        return Invoice.get("%s/%s/invoices" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                         {
                             'withItems': with_items,
                             'withMigrationInvoices': with_migration_invoices,
                             'unpaidInvoicesOnly': unpaid_invoices_only,
                             'audit': audit
                         },
-                        self.build_options(**options))
+                        Invoice.build_options(**options))
 
     @classmethod
     def find_by_external_key(cls, external_key, **options):
