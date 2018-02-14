@@ -35,4 +35,8 @@ class Invoice(killbill.Resource):
     def as_html(cls, invoice_id, **options):
         relative_url = "%s/%s/html" % (cls.KILLBILL_API_INVOICE_PREFIX, invoice_id)
         options['accept'] = 'text/html'
-        return cls.get(relative_url, {}, cls.build_options(**options))
+        options = cls.build_options(**options)
+        options['method'] = 'GET'
+        options['queryParams'] = {}
+        raw_get_response = cls.send_request(relative_url, options)
+        return raw_get_response['body']
