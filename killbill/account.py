@@ -64,6 +64,17 @@ class Account(killbill.Resource):
                                **options
                            ))
 
+    def invoices(self, with_items=False, with_migration_invoices=False, unpaid_invoices_only=False, audit='NONE',
+                 **options):
+        return self.get("%s/%s/invoices" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                        {
+                            'withItems': with_items,
+                            'withMigrationInvoices': with_migration_invoices,
+                            'unpaidInvoicesOnly': unpaid_invoices_only,
+                            'audit': audit
+                        },
+                        self.build_options(**options))
+
     @classmethod
     def find_by_external_key(cls, external_key, **options):
         query_params = {
