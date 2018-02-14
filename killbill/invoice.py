@@ -34,4 +34,5 @@ class Invoice(killbill.Resource):
     @classmethod
     def as_html(cls, invoice_id, **options):
         relative_url = "%s/%s/html" % (cls.KILLBILL_API_INVOICE_PREFIX, invoice_id)
-        return cls.get(relative_url, {}, cls.build_options(accept='text/html', **options))
+        options['accept'] = 'text/html'
+        return cls.get(relative_url, {}, cls.build_options(**options))
