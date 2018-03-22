@@ -35,3 +35,11 @@ class Catalog(killbill.Resource):
         relative_url = "%s/availableBasePlans" % cls.KILLBILL_API_CATALOG_PREFIX
         query_params = {}
         return killbill.PlanDetail.get(relative_url, query_params, killbill.PlanDetail.build_options(**options))
+
+    @classmethod
+    def catalog(cls, requested_date=None, **options):
+        relative_url = cls.KILLBILL_API_CATALOG_PREFIX
+        query_params = {
+            'requestedDate': requested_date
+        }
+        return cls.get(relative_url, query_params, cls.build_options(**options))
