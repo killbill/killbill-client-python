@@ -63,9 +63,13 @@ class Resource(object):
     def to_json(self):
         return killbill.json.dumps(self, default=lambda o: o.__dict__)
 
+    @classmethod
+    def get_refresh_query(cls):
+        return {}
+
     def refresh(self, raw_response, **options):
         url = raw_response['response'].headers['Location']
-        return self.get(url, {}, self.build_options(**options))
+        return self.get(url, self.get_refresh_query(), self.build_options(**options))
 
     @classmethod
     def fromJson(cls, jsonString):

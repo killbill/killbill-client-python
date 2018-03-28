@@ -22,6 +22,10 @@ class PaymentMethod(killbill.Resource):
     def __init__(self, **d):
         super(PaymentMethod, self).__init__(d)
 
+    @classmethod
+    def get_refresh_query(cls):
+        return {'withPluginInfo': True}
+
     def create(self, is_default=True, user=killbill.user, reason=None, comment=None, **options):
         created_payment_method = self.post("%s/%s/paymentMethods" %
                                            (killbill.Account.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
