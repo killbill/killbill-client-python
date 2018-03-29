@@ -23,7 +23,8 @@ class Subscription(killbill.Resource):
     def __init__(self, **d):
         super(Subscription, self).__init__(d)
 
-    def create(self, user=killbill.user, reason=None, comment=None, requested_date=None, call_completion=False, **options):
+    def create(self, user=killbill.user, reason=None, comment=None, requested_date=None, call_completion=False,
+               **options):
         query_params = {}
 
         if call_completion:
@@ -44,7 +45,8 @@ class Subscription(killbill.Resource):
                                          ))
         return self.refresh(created_subscription, **options)
 
-    def change_plan(self, update, user=killbill.user, reason=None, comment=None, requested_date=None, billing_policy=None, call_completion=False, **options):
+    def change_plan(self, update, user=killbill.user, reason=None, comment=None, requested_date=None,
+                    billing_policy=None, call_completion=False, **options):
         query_params = {}
 
         if call_completion:
@@ -68,6 +70,43 @@ class Subscription(killbill.Resource):
                                         ))
 
         return self.fromJson(updated_subscription['body'])
+
+    def add_custom_fields(self, custom_fields, user=killbill.user, reason=None, comment=None, **options):
+        query_params = {}
+        custom_fields_response = killbill.CustomField.post(
+            "%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+            killbill.json.dumps(custom_fields),
+            query_params,
+            self.build_options(
+                user=user,
+                reason=reason,
+                comment=comment,
+                **options
+            ))
+        return killbill.CustomField.fromJson(custom_fields_response['body'])
+
+    def remove_custom_fields(self, custom_fields=[], user=killbill.user, reason=None, comment=None, **options):
+        query_params = {}
+        killbill.CustomField.delete("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                                    killbill.json.dumps(custom_fields),
+                                    query_params,
+                                    self.build_options(
+                                        user=user,
+                                        reason=reason,
+                                        comment=comment,
+                                        **options
+                                    ))
+
+    def custom_fields(self, user=killbill.user, reason=None, comment=None, **options):
+        query_params = {}
+        return killbill.CustomField.get("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                                        query_params,
+                                        self.build_options(
+                                            user=user,
+                                            reason=reason,
+                                            comment=comment,
+                                            **options
+                                        ))
 
     @classmethod
     def find_by_id(cls, subscription_id, audit='NONE', **options):
