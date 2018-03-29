@@ -85,10 +85,13 @@ class Subscription(killbill.Resource):
             ))
         return killbill.CustomField.fromJson(custom_fields_response['body'])
 
-    def remove_custom_fields(self, custom_fields=[], user=killbill.user, reason=None, comment=None, **options):
+    def remove_custom_fields(self, custom_field_list=None, user=killbill.user, reason=None, comment=None, **options):
         query_params = {}
+        if custom_field_list or len(custom_field_list) > 0:
+            query_params['customFieldList'] = ','.join(custom_field_list)
+
         killbill.CustomField.delete("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
-                                    killbill.json.dumps(custom_fields),
+                                    "{}",
                                     query_params,
                                     self.build_options(
                                         user=user,
