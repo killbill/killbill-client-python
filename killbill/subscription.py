@@ -83,7 +83,7 @@ class Subscription(killbill.Resource):
                 comment=comment,
                 **options
             ))
-        return killbill.CustomField().refresh(custom_fields_response)
+        return killbill.CustomField().refresh(custom_fields_response, **options)
 
     def remove_custom_fields(self, custom_field_list=None, user=killbill.user, reason=None, comment=None, **options):
         query_params = {}
