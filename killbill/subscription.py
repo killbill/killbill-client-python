@@ -87,7 +87,7 @@ class Subscription(killbill.Resource):
 
     def remove_custom_fields(self, custom_field_list=None, user=killbill.user, reason=None, comment=None, **options):
         query_params = {}
-        if custom_field_list or len(custom_field_list) > 0:
+        if custom_field_list and len(custom_field_list) > 0:
             query_params['customFieldList'] = ','.join(custom_field_list)
 
         killbill.CustomField.delete("%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
