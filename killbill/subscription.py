@@ -71,6 +71,37 @@ class Subscription(killbill.Resource):
 
         return self.fromJson(updated_subscription['body'])
 
+    def cancel(self, requested_date=None, call_completion=False, call_timeout_sec=5, entitlement_policy=None,
+               billing_policy=None, use_requested_date_for_billing=False, plugin_property=None,
+               user=killbill.user, reason=None, comment=None, **options):
+
+        query_params = {}
+
+        if requested_date:
+            query_params['requestedDate'] = requested_date
+        if call_completion:
+            query_params['callCompletion'] = call_completion
+        if call_timeout_sec:
+            query_params['callTimeoutSec'] = call_timeout_sec
+        if entitlement_policy:
+            query_params['entitlementPolicy'] = entitlement_policy
+        if billing_policy:
+            query_params['billingPolicy'] = billing_policy
+        if use_requested_date_for_billing:
+            query_params['useRequestedDateForBilling'] = use_requested_date_for_billing
+        if plugin_property:
+            query_params['pluginProperty'] = plugin_property
+
+        return self.delete("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                           "{}",
+                           query_params,
+                           self.build_options(
+                               user=user,
+                               reason=reason,
+                               comment=comment,
+                               **options
+                           ))
+
     def add_custom_fields(self, custom_fields, user=killbill.user, reason=None, comment=None, **options):
         query_params = {}
         custom_fields_response = killbill.CustomField.post(
