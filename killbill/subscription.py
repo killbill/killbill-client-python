@@ -74,7 +74,7 @@ class Subscription(killbill.Resource):
     def add_custom_fields(self, custom_fields, user=killbill.user, reason=None, comment=None, **options):
         query_params = {}
         custom_fields_response = killbill.CustomField.post(
-            "%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+            "%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
             killbill.json.dumps(custom_fields),
             query_params,
             self.build_options(
@@ -90,7 +90,7 @@ class Subscription(killbill.Resource):
         if custom_field_list or len(custom_field_list) > 0:
             query_params['customFieldList'] = ','.join(custom_field_list)
 
-        killbill.CustomField.delete("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+        killbill.CustomField.delete("%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
                                     "{}",
                                     query_params,
                                     self.build_options(
@@ -102,7 +102,7 @@ class Subscription(killbill.Resource):
 
     def custom_fields(self, user=killbill.user, reason=None, comment=None, **options):
         query_params = {}
-        return killbill.CustomField.get("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+        return killbill.CustomField.get("%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
                                         query_params,
                                         self.build_options(
                                             user=user,
