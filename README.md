@@ -58,17 +58,17 @@ killbill.configuration.password = 'YOUR_PASSWORD'
 api_instance = killbill.AccountApi()
 account_id = 'account_id_example' # str | 
 body = killbill.BlockingState() # BlockingState | 
-x_killbill_created_by = 'x_killbill_created_by_example' # str | 
-x_killbill_api_key = 'x_killbill_api_key_example' # str | 
-x_killbill_api_secret = 'x_killbill_api_secret_example' # str | 
+created_by = 'created_by_example' # str | 
+api_key = 'api_key_example' # str | 
+api_secret = 'api_secret_example' # str | 
 requested_date = '2013-10-20' # date |  (optional)
 plugin_property = ['plugin_property_example'] # list[str] |  (optional)
-x_killbill_reason = 'x_killbill_reason_example' # str |  (optional)
-x_killbill_comment = 'x_killbill_comment_example' # str |  (optional)
+reason = 'reason_example' # str |  (optional)
+comment = 'comment_example' # str |  (optional)
 
 try:
     # Block an account
-    api_instance.add_account_blocking_state(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, requested_date=requested_date, plugin_property=plugin_property, x_killbill_reason=x_killbill_reason, x_killbill_comment=x_killbill_comment)
+    api_instance.add_account_blocking_state(account_id, body, created_by, api_key, api_secret, requested_date=requested_date, plugin_property=plugin_property, reason=reason, comment=comment)
 except ApiException as e:
     print("Exception when calling AccountApi->add_account_blocking_state: %s\n" % e)
 

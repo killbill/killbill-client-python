@@ -1,22 +1,21 @@
 # coding: utf-8
 
-"""
-    Copyright 2014-2018 Groupon, Inc
-    Copyright 2014-2018 The Billing Project, LLC
-
-    The Billing Project licenses this file to you under the Apache License, version 2.0
-    (the "License"); you may not use this file except in compliance with the
-    License.  You may obtain a copy of the License at:
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-    License for the specific language governing permissions and limitations
-    under the License.
-"""
-
+#
+# Copyright 2014-2017 Groupon, Inc.
+# Copyright 2014-2017 The Billing Project, LLC
+#
+# The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
+# (the "License"); you may not use this file except in compliance with the
+# License.  You may obtain a copy of the License at:
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
 
 """
     Kill Bill
@@ -51,55 +50,55 @@ class PaymentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancel_scheduled_payment_transaction_by_external_key(self, transaction_external_key, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def cancel_scheduled_payment_transaction_by_external_key(self, transaction_external_key, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Cancels a scheduled payment attempt retry  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.cancel_scheduled_payment_transaction_by_external_key(transaction_external_key, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.cancel_scheduled_payment_transaction_by_external_key(transaction_external_key, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str transaction_external_key: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.cancel_scheduled_payment_transaction_by_external_key_with_http_info(transaction_external_key, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.cancel_scheduled_payment_transaction_by_external_key_with_http_info(transaction_external_key, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.cancel_scheduled_payment_transaction_by_external_key_with_http_info(transaction_external_key, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.cancel_scheduled_payment_transaction_by_external_key_with_http_info(transaction_external_key, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def cancel_scheduled_payment_transaction_by_external_key_with_http_info(self, transaction_external_key, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def cancel_scheduled_payment_transaction_by_external_key_with_http_info(self, transaction_external_key, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Cancels a scheduled payment attempt retry  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.cancel_scheduled_payment_transaction_by_external_key_with_http_info(transaction_external_key, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.cancel_scheduled_payment_transaction_by_external_key_with_http_info(transaction_external_key, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str transaction_external_key: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['transaction_external_key', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['transaction_external_key', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -118,18 +117,18 @@ class PaymentApi(object):
         if ('transaction_external_key' not in params or
                 params['transaction_external_key'] is None):
             raise ValueError("Missing the required parameter `transaction_external_key` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `cancel_scheduled_payment_transaction_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -140,16 +139,16 @@ class PaymentApi(object):
             query_params.append(('transactionExternalKey', params['transaction_external_key']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -182,55 +181,55 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cancel_scheduled_payment_transaction_by_id(self, payment_transaction_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def cancel_scheduled_payment_transaction_by_id(self, payment_transaction_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Cancels a scheduled payment attempt retry  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.cancel_scheduled_payment_transaction_by_id(payment_transaction_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.cancel_scheduled_payment_transaction_by_id(payment_transaction_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_transaction_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.cancel_scheduled_payment_transaction_by_id_with_http_info(payment_transaction_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.cancel_scheduled_payment_transaction_by_id_with_http_info(payment_transaction_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.cancel_scheduled_payment_transaction_by_id_with_http_info(payment_transaction_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.cancel_scheduled_payment_transaction_by_id_with_http_info(payment_transaction_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def cancel_scheduled_payment_transaction_by_id_with_http_info(self, payment_transaction_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def cancel_scheduled_payment_transaction_by_id_with_http_info(self, payment_transaction_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Cancels a scheduled payment attempt retry  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.cancel_scheduled_payment_transaction_by_id_with_http_info(payment_transaction_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.cancel_scheduled_payment_transaction_by_id_with_http_info(payment_transaction_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_transaction_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_transaction_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_transaction_id', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -249,18 +248,18 @@ class PaymentApi(object):
         if ('payment_transaction_id' not in params or
                 params['payment_transaction_id'] is None):
             raise ValueError("Missing the required parameter `payment_transaction_id` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `cancel_scheduled_payment_transaction_by_id`")  # noqa: E501
 
         if 'payment_transaction_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_transaction_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_transaction_id` when calling `cancel_scheduled_payment_transaction_by_id`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -273,16 +272,16 @@ class PaymentApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -315,61 +314,61 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def capture_authorization(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def capture_authorization(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Capture an existing authorization  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.capture_authorization(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.capture_authorization(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.capture_authorization_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.capture_authorization_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.capture_authorization_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.capture_authorization_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def capture_authorization_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def capture_authorization_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Capture an existing authorization  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.capture_authorization_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.capture_authorization_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -392,18 +391,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `capture_authorization`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `capture_authorization`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `capture_authorization`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `capture_authorization`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `capture_authorization`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `capture_authorization`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `capture_authorization`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `capture_authorization`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -422,16 +421,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -466,59 +465,59 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def capture_authorization_by_external_key(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def capture_authorization_by_external_key(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Capture an existing authorization  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.capture_authorization_by_external_key(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.capture_authorization_by_external_key(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.capture_authorization_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.capture_authorization_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.capture_authorization_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.capture_authorization_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def capture_authorization_by_external_key_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def capture_authorization_by_external_key_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Capture an existing authorization  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.capture_authorization_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.capture_authorization_by_external_key_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -537,18 +536,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `capture_authorization_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `capture_authorization_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `capture_authorization_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `capture_authorization_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `capture_authorization_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `capture_authorization_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `capture_authorization_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -563,16 +562,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -607,61 +606,61 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def chargeback_payment(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_payment(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_payment(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_payment(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.chargeback_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.chargeback_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.chargeback_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.chargeback_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def chargeback_payment_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_payment_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -684,18 +683,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `chargeback_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `chargeback_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `chargeback_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `chargeback_payment`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `chargeback_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `chargeback_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `chargeback_payment`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `chargeback_payment`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -714,16 +713,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -758,59 +757,59 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def chargeback_payment_by_external_key(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_payment_by_external_key(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_payment_by_external_key(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_payment_by_external_key(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.chargeback_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.chargeback_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.chargeback_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.chargeback_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def chargeback_payment_by_external_key_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_payment_by_external_key_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -829,18 +828,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `chargeback_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `chargeback_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `chargeback_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `chargeback_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `chargeback_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `chargeback_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `chargeback_payment_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -855,16 +854,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -899,61 +898,61 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def chargeback_reversal_payment(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_reversal_payment(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback reversal  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_reversal_payment(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_reversal_payment(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.chargeback_reversal_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.chargeback_reversal_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.chargeback_reversal_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.chargeback_reversal_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def chargeback_reversal_payment_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_reversal_payment_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback reversal  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_reversal_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_reversal_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -976,18 +975,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `chargeback_reversal_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `chargeback_reversal_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `chargeback_reversal_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `chargeback_reversal_payment`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `chargeback_reversal_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `chargeback_reversal_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `chargeback_reversal_payment`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `chargeback_reversal_payment`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1006,16 +1005,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1050,59 +1049,59 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def chargeback_reversal_payment_by_external_key(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_reversal_payment_by_external_key(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback reversal  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_reversal_payment_by_external_key(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_reversal_payment_by_external_key(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.chargeback_reversal_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.chargeback_reversal_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.chargeback_reversal_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.chargeback_reversal_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def chargeback_reversal_payment_by_external_key_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def chargeback_reversal_payment_by_external_key_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Record a chargeback reversal  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.chargeback_reversal_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.chargeback_reversal_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1121,18 +1120,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `chargeback_reversal_payment_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1147,16 +1146,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1191,61 +1190,61 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def complete_transaction(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def complete_transaction(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Complete an existing transaction  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.complete_transaction(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.complete_transaction(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.complete_transaction_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.complete_transaction_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.complete_transaction_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.complete_transaction_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def complete_transaction_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def complete_transaction_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Complete an existing transaction  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.complete_transaction_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.complete_transaction_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1268,18 +1267,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `complete_transaction`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `complete_transaction`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `complete_transaction`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `complete_transaction`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `complete_transaction`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `complete_transaction`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `complete_transaction`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `complete_transaction`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1298,16 +1297,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1342,59 +1341,59 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def complete_transaction_by_external_key(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def complete_transaction_by_external_key(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Complete an existing transaction  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.complete_transaction_by_external_key(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.complete_transaction_by_external_key(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.complete_transaction_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.complete_transaction_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.complete_transaction_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.complete_transaction_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def complete_transaction_by_external_key_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def complete_transaction_by_external_key_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Complete an existing transaction  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.complete_transaction_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.complete_transaction_by_external_key_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1413,18 +1412,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `complete_transaction_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `complete_transaction_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `complete_transaction_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `complete_transaction_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `complete_transaction_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `complete_transaction_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `complete_transaction_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1439,16 +1438,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1483,57 +1482,57 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_combo_payment(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_combo_payment(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Combo api to create a new payment transaction on a existing (or not) account   # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_combo_payment(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_combo_payment(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param ComboPaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_combo_payment_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_combo_payment_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_combo_payment_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_combo_payment_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_combo_payment_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_combo_payment_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Combo api to create a new payment transaction on a existing (or not) account   # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_combo_payment_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_combo_payment_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param ComboPaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1552,18 +1551,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_combo_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_combo_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_combo_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_combo_payment`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_combo_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_combo_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_combo_payment`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1575,16 +1574,16 @@ class PaymentApi(object):
             collection_formats['controlPluginName'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1619,57 +1618,57 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_payment_custom_fields(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_payment_custom_fields(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add custom fields to payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_payment_custom_fields(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_payment_custom_fields(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: list[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_payment_custom_fields_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_payment_custom_fields_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_payment_custom_fields_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_payment_custom_fields_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add custom fields to payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_payment_custom_fields_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: list[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1692,18 +1691,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_payment_custom_fields`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `create_payment_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1716,16 +1715,16 @@ class PaymentApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1760,57 +1759,57 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_payment_tags(self, payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_payment_tags(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add tags to payment payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_payment_tags(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_payment_tags(payment_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_payment_tags_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_payment_tags_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_payment_tags_with_http_info(self, payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_payment_tags_with_http_info(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add tags to payment payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_payment_tags_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'tag_def', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'created_by', 'api_key', 'api_secret', 'tag_def', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1829,18 +1828,18 @@ class PaymentApi(object):
         if ('payment_id' not in params or
                 params['payment_id'] is None):
             raise ValueError("Missing the required parameter `payment_id` when calling `create_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_payment_tags`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_payment_tags`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_payment_tags`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_payment_tags`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `create_payment_tags`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1856,16 +1855,16 @@ class PaymentApi(object):
             collection_formats['tagDef'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1898,57 +1897,57 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_payment_custom_fields(self, payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_payment_custom_fields(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove custom fields from payment payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_payment_custom_fields(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_payment_custom_fields(payment_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] custom_field:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_payment_custom_fields_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_payment_custom_fields_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_payment_custom_fields_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_payment_custom_fields_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_payment_custom_fields_with_http_info(self, payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_payment_custom_fields_with_http_info(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove custom fields from payment payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_payment_custom_fields_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_payment_custom_fields_with_http_info(payment_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] custom_field:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'custom_field', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'created_by', 'api_key', 'api_secret', 'custom_field', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1967,18 +1966,18 @@ class PaymentApi(object):
         if ('payment_id' not in params or
                 params['payment_id'] is None):
             raise ValueError("Missing the required parameter `payment_id` when calling `delete_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_payment_custom_fields`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `delete_payment_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1994,16 +1993,16 @@ class PaymentApi(object):
             collection_formats['customField'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2036,57 +2035,57 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_payment_tags(self, payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_payment_tags(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove tags from payment payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_payment_tags(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_payment_tags(payment_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_payment_tags_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_payment_tags_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_payment_tags_with_http_info(self, payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_payment_tags_with_http_info(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove tags from payment payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_payment_tags_with_http_info(payment_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'tag_def', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'created_by', 'api_key', 'api_secret', 'tag_def', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2105,18 +2104,18 @@ class PaymentApi(object):
         if ('payment_id' not in params or
                 params['payment_id'] is None):
             raise ValueError("Missing the required parameter `payment_id` when calling `delete_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_payment_tags`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_payment_tags`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_payment_tags`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_payment_tags`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `delete_payment_tags`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2132,16 +2131,16 @@ class PaymentApi(object):
             collection_formats['tagDef'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2174,19 +2173,19 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payment(self, payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a payment by id  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment(payment_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment(payment_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_plugin_info:
         :param bool with_attempts:
         :param list[str] plugin_property:
@@ -2197,24 +2196,24 @@ class PaymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_payment_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_payment_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_payment_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_payment_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payment_with_http_info(self, payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_with_http_info(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a payment by id  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_with_http_info(payment_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_plugin_info:
         :param bool with_attempts:
         :param list[str] plugin_property:
@@ -2224,7 +2223,7 @@ class PaymentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
+        all_params = ['payment_id', 'api_key', 'api_secret', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2243,14 +2242,14 @@ class PaymentApi(object):
         if ('payment_id' not in params or
                 params['payment_id'] is None):
             raise ValueError("Missing the required parameter `payment_id` when calling `get_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payment`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `get_payment`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2272,10 +2271,10 @@ class PaymentApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2304,19 +2303,19 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payment_by_external_key(self, external_key, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_by_external_key(self, external_key, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a payment by external key  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_by_external_key(external_key, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_by_external_key(external_key, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str external_key: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_plugin_info:
         :param bool with_attempts:
         :param list[str] plugin_property:
@@ -2327,24 +2326,24 @@ class PaymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_payment_by_external_key_with_http_info(external_key, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_payment_by_external_key_with_http_info(external_key, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_payment_by_external_key_with_http_info(external_key, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_payment_by_external_key_with_http_info(external_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payment_by_external_key_with_http_info(self, external_key, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_by_external_key_with_http_info(self, external_key, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a payment by external key  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_by_external_key_with_http_info(external_key, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_by_external_key_with_http_info(external_key, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str external_key: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_plugin_info:
         :param bool with_attempts:
         :param list[str] plugin_property:
@@ -2354,7 +2353,7 @@ class PaymentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['external_key', 'x_killbill_api_key', 'x_killbill_api_secret', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
+        all_params = ['external_key', 'api_key', 'api_secret', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2373,14 +2372,14 @@ class PaymentApi(object):
         if ('external_key' not in params or
                 params['external_key'] is None):
             raise ValueError("Missing the required parameter `external_key` when calling `get_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payment_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2400,10 +2399,10 @@ class PaymentApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2432,19 +2431,19 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payment_custom_fields(self, payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_custom_fields(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve payment custom fields  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_custom_fields(payment_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_custom_fields(payment_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param str audit:
         :return: list[CustomField]
                  If the method is called asynchronously,
@@ -2452,31 +2451,31 @@ class PaymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_payment_custom_fields_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_payment_custom_fields_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_payment_custom_fields_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_payment_custom_fields_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payment_custom_fields_with_http_info(self, payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_custom_fields_with_http_info(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve payment custom fields  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_custom_fields_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_custom_fields_with_http_info(payment_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param str audit:
         :return: list[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'audit']  # noqa: E501
+        all_params = ['payment_id', 'api_key', 'api_secret', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2495,14 +2494,14 @@ class PaymentApi(object):
         if ('payment_id' not in params or
                 params['payment_id'] is None):
             raise ValueError("Missing the required parameter `payment_id` when calling `get_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payment_custom_fields`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `get_payment_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2517,10 +2516,10 @@ class PaymentApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2549,19 +2548,19 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payment_tags(self, payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_tags(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve payment payment tags  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_tags(payment_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_tags(payment_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool included_deleted:
         :param str audit:
         :return: list[Tag]
@@ -2570,24 +2569,24 @@ class PaymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_payment_tags_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_payment_tags_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_payment_tags_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_payment_tags_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payment_tags_with_http_info(self, payment_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payment_tags_with_http_info(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve payment payment tags  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payment_tags_with_http_info(payment_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payment_tags_with_http_info(payment_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool included_deleted:
         :param str audit:
         :return: list[Tag]
@@ -2595,7 +2594,7 @@ class PaymentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'included_deleted', 'audit']  # noqa: E501
+        all_params = ['payment_id', 'api_key', 'api_secret', 'included_deleted', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2614,14 +2613,14 @@ class PaymentApi(object):
         if ('payment_id' not in params or
                 params['payment_id'] is None):
             raise ValueError("Missing the required parameter `payment_id` when calling `get_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_payment_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_payment_tags`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payment_tags`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payment_tags`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `get_payment_tags`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2638,10 +2637,10 @@ class PaymentApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2670,18 +2669,18 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payments(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payments(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Get payments  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payments(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payments(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param str plugin_name:
@@ -2695,23 +2694,23 @@ class PaymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_payments_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_payments_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_payments_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_payments_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payments_with_http_info(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payments_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Get payments  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payments_with_http_info(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payments_with_http_info(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param str plugin_name:
@@ -2724,7 +2723,7 @@ class PaymentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_api_key', 'x_killbill_api_secret', 'offset', 'limit', 'plugin_name', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
+        all_params = ['api_key', 'api_secret', 'offset', 'limit', 'plugin_name', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2739,14 +2738,14 @@ class PaymentApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_payments`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_payments`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payments`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payments`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2770,10 +2769,10 @@ class PaymentApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2802,57 +2801,57 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_payment_custom_fields(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def modify_payment_custom_fields(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Modify custom fields to payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_payment_custom_fields(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.modify_payment_custom_fields(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.modify_payment_custom_fields_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.modify_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.modify_payment_custom_fields_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.modify_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_payment_custom_fields_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def modify_payment_custom_fields_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Modify custom fields to payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_payment_custom_fields_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.modify_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2875,18 +2874,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `modify_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `modify_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `modify_payment_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `modify_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `modify_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `modify_payment_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `modify_payment_custom_fields`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `modify_payment_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2899,16 +2898,16 @@ class PaymentApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2943,61 +2942,61 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def refund_payment(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def refund_payment(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Refund an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.refund_payment(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.refund_payment(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.refund_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.refund_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.refund_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.refund_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def refund_payment_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def refund_payment_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Refund an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.refund_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.refund_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3020,18 +3019,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `refund_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `refund_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `refund_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `refund_payment`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `refund_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `refund_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `refund_payment`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `refund_payment`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -3050,16 +3049,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3094,59 +3093,59 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def refund_payment_by_external_key(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def refund_payment_by_external_key(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Refund an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.refund_payment_by_external_key(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.refund_payment_by_external_key(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.refund_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.refund_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.refund_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.refund_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def refund_payment_by_external_key_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def refund_payment_by_external_key_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Refund an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.refund_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.refund_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3165,18 +3164,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `refund_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `refund_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `refund_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `refund_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `refund_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `refund_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `refund_payment_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3191,16 +3190,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3235,19 +3234,19 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_payments(self, search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def search_payments(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
         """Search payments  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_payments(search_key, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.search_payments(search_key, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str search_key: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param bool with_plugin_info:
@@ -3261,24 +3260,24 @@ class PaymentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.search_payments_with_http_info(search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.search_payments_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_payments_with_http_info(search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.search_payments_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def search_payments_with_http_info(self, search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def search_payments_with_http_info(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
         """Search payments  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_payments_with_http_info(search_key, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.search_payments_with_http_info(search_key, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str search_key: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param bool with_plugin_info:
@@ -3291,7 +3290,7 @@ class PaymentApi(object):
                  returns the request thread.
         """
 
-        all_params = ['search_key', 'x_killbill_api_key', 'x_killbill_api_secret', 'offset', 'limit', 'with_plugin_info', 'with_attempts', 'plugin_name', 'plugin_property', 'audit']  # noqa: E501
+        all_params = ['search_key', 'api_key', 'api_secret', 'offset', 'limit', 'with_plugin_info', 'with_attempts', 'plugin_name', 'plugin_property', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3310,14 +3309,14 @@ class PaymentApi(object):
         if ('search_key' not in params or
                 params['search_key'] is None):
             raise ValueError("Missing the required parameter `search_key` when calling `search_payments`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `search_payments`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `search_payments`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `search_payments`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `search_payments`")  # noqa: E501
 
         if 'search_key' in params and not re.search('.*', params['search_key']):  # noqa: E501
             raise ValueError("Invalid value for parameter `search_key` when calling `search_payments`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -3345,10 +3344,10 @@ class PaymentApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3377,61 +3376,61 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def void_payment(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def void_payment(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Void an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.void_payment(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.void_payment(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.void_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.void_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.void_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.void_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def void_payment_with_http_info(self, payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def void_payment_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Void an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.void_payment_with_http_info(payment_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.void_payment_with_http_info(payment_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['payment_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['payment_id', 'body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3454,18 +3453,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `void_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `void_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `void_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `void_payment`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `void_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `void_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `void_payment`")  # noqa: E501
 
         if 'payment_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['payment_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `payment_id` when calling `void_payment`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -3484,16 +3483,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3528,59 +3527,59 @@ class PaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def void_payment_by_external_key(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def void_payment_by_external_key(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Void an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.void_payment_by_external_key(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.void_payment_by_external_key(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.void_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.void_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.void_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.void_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def void_payment_by_external_key_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def void_payment_by_external_key_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Void an existing payment  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.void_payment_by_external_key_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.void_payment_by_external_key_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] control_plugin_name:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'control_plugin_name', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'control_plugin_name', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3599,18 +3598,18 @@ class PaymentApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `void_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `void_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `void_payment_by_external_key`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `void_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `void_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `void_payment_by_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `void_payment_by_external_key`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3625,16 +3624,16 @@ class PaymentApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}

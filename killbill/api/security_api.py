@@ -1,22 +1,21 @@
 # coding: utf-8
 
-"""
-    Copyright 2014-2018 Groupon, Inc
-    Copyright 2014-2018 The Billing Project, LLC
-
-    The Billing Project licenses this file to you under the Apache License, version 2.0
-    (the "License"); you may not use this file except in compliance with the
-    License.  You may obtain a copy of the License at:
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-    License for the specific language governing permissions and limitations
-    under the License.
-"""
-
+#
+# Copyright 2014-2017 Groupon, Inc.
+# Copyright 2014-2017 The Billing Project, LLC
+#
+# The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
+# (the "License"); you may not use this file except in compliance with the
+# License.  You may obtain a copy of the License at:
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
 
 """
     Kill Bill
@@ -51,51 +50,51 @@ class SecurityApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_role_definition(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def add_role_definition(self, body, created_by, **kwargs):  # noqa: E501
         """Add a new role definition)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_role_definition(body, x_killbill_created_by, async=True)
+        >>> thread = api.add_role_definition(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.add_role_definition_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.add_role_definition_with_http_info(body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_role_definition_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.add_role_definition_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def add_role_definition_with_http_info(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def add_role_definition_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
         """Add a new role definition)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_role_definition_with_http_info(body, x_killbill_created_by, async=True)
+        >>> thread = api.add_role_definition_with_http_info(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -114,10 +113,10 @@ class SecurityApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_role_definition`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `add_role_definition`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `add_role_definition`")  # noqa: E501
 
         collection_formats = {}
 
@@ -126,12 +125,12 @@ class SecurityApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -166,51 +165,51 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def add_user_roles(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def add_user_roles(self, body, created_by, **kwargs):  # noqa: E501
         """Add a new user with roles (to make api requests)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_user_roles(body, x_killbill_created_by, async=True)
+        >>> thread = api.add_user_roles(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param UserRoles body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.add_user_roles_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.add_user_roles_with_http_info(body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.add_user_roles_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.add_user_roles_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def add_user_roles_with_http_info(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def add_user_roles_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
         """Add a new user with roles (to make api requests)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.add_user_roles_with_http_info(body, x_killbill_created_by, async=True)
+        >>> thread = api.add_user_roles_with_http_info(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param UserRoles body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -229,10 +228,10 @@ class SecurityApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `add_user_roles`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `add_user_roles`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `add_user_roles`")  # noqa: E501
 
         collection_formats = {}
 
@@ -241,12 +240,12 @@ class SecurityApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -552,51 +551,51 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def invalidate_user(self, username, x_killbill_created_by, **kwargs):  # noqa: E501
+    def invalidate_user(self, username, created_by, **kwargs):  # noqa: E501
         """Invalidate an existing user  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.invalidate_user(username, x_killbill_created_by, async=True)
+        >>> thread = api.invalidate_user(username, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str username: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.invalidate_user_with_http_info(username, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.invalidate_user_with_http_info(username, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.invalidate_user_with_http_info(username, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.invalidate_user_with_http_info(username, created_by, **kwargs)  # noqa: E501
             return data
 
-    def invalidate_user_with_http_info(self, username, x_killbill_created_by, **kwargs):  # noqa: E501
+    def invalidate_user_with_http_info(self, username, created_by, **kwargs):  # noqa: E501
         """Invalidate an existing user  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.invalidate_user_with_http_info(username, x_killbill_created_by, async=True)
+        >>> thread = api.invalidate_user_with_http_info(username, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str username: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['username', 'x_killbill_created_by', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['username', 'created_by', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -615,10 +614,10 @@ class SecurityApi(object):
         if ('username' not in params or
                 params['username'] is None):
             raise ValueError("Missing the required parameter `username` when calling `invalidate_user`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `invalidate_user`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `invalidate_user`")  # noqa: E501
 
         if 'username' in params and not re.search('.*', params['username']):  # noqa: E501
             raise ValueError("Invalid value for parameter `username` when calling `invalidate_user`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -631,12 +630,12 @@ class SecurityApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -669,51 +668,51 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_role_definition(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def update_role_definition(self, body, created_by, **kwargs):  # noqa: E501
         """Update a new role definition)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_role_definition(body, x_killbill_created_by, async=True)
+        >>> thread = api.update_role_definition(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_role_definition_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.update_role_definition_with_http_info(body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_role_definition_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.update_role_definition_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def update_role_definition_with_http_info(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def update_role_definition_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
         """Update a new role definition)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_role_definition_with_http_info(body, x_killbill_created_by, async=True)
+        >>> thread = api.update_role_definition_with_http_info(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -732,10 +731,10 @@ class SecurityApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_role_definition`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `update_role_definition`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `update_role_definition`")  # noqa: E501
 
         collection_formats = {}
 
@@ -744,12 +743,12 @@ class SecurityApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -784,53 +783,53 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_user_password(self, username, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def update_user_password(self, username, body, created_by, **kwargs):  # noqa: E501
         """Update a user password  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_user_password(username, body, x_killbill_created_by, async=True)
+        >>> thread = api.update_user_password(username, body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str username: (required)
         :param UserRoles body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_user_password_with_http_info(username, body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.update_user_password_with_http_info(username, body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_user_password_with_http_info(username, body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.update_user_password_with_http_info(username, body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def update_user_password_with_http_info(self, username, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def update_user_password_with_http_info(self, username, body, created_by, **kwargs):  # noqa: E501
         """Update a user password  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_user_password_with_http_info(username, body, x_killbill_created_by, async=True)
+        >>> thread = api.update_user_password_with_http_info(username, body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str username: (required)
         :param UserRoles body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['username', 'body', 'x_killbill_created_by', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['username', 'body', 'created_by', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -853,10 +852,10 @@ class SecurityApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_user_password`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `update_user_password`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `update_user_password`")  # noqa: E501
 
         if 'username' in params and not re.search('.*', params['username']):  # noqa: E501
             raise ValueError("Invalid value for parameter `username` when calling `update_user_password`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -869,12 +868,12 @@ class SecurityApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -909,53 +908,53 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_user_roles(self, username, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def update_user_roles(self, username, body, created_by, **kwargs):  # noqa: E501
         """Update roles associated to a user  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_user_roles(username, body, x_killbill_created_by, async=True)
+        >>> thread = api.update_user_roles(username, body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str username: (required)
         :param UserRoles body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.update_user_roles_with_http_info(username, body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.update_user_roles_with_http_info(username, body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.update_user_roles_with_http_info(username, body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.update_user_roles_with_http_info(username, body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def update_user_roles_with_http_info(self, username, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def update_user_roles_with_http_info(self, username, body, created_by, **kwargs):  # noqa: E501
         """Update roles associated to a user  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_user_roles_with_http_info(username, body, x_killbill_created_by, async=True)
+        >>> thread = api.update_user_roles_with_http_info(username, body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str username: (required)
         :param UserRoles body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['username', 'body', 'x_killbill_created_by', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['username', 'body', 'created_by', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -978,10 +977,10 @@ class SecurityApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `update_user_roles`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `update_user_roles`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `update_user_roles`")  # noqa: E501
 
         if 'username' in params and not re.search('.*', params['username']):  # noqa: E501
             raise ValueError("Invalid value for parameter `username` when calling `update_user_roles`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -994,12 +993,12 @@ class SecurityApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}

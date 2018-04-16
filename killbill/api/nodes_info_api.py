@@ -1,22 +1,21 @@
 # coding: utf-8
 
-"""
-    Copyright 2014-2018 Groupon, Inc
-    Copyright 2014-2018 The Billing Project, LLC
-
-    The Billing Project licenses this file to you under the Apache License, version 2.0
-    (the "License"); you may not use this file except in compliance with the
-    License.  You may obtain a copy of the License at:
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-    License for the specific language governing permissions and limitations
-    under the License.
-"""
-
+#
+# Copyright 2014-2017 Groupon, Inc.
+# Copyright 2014-2017 The Billing Project, LLC
+#
+# The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
+# (the "License"); you may not use this file except in compliance with the
+# License.  You may obtain a copy of the License at:
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
 
 """
     Kill Bill
@@ -138,53 +137,53 @@ class NodesInfoApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def trigger_node_command(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def trigger_node_command(self, body, created_by, **kwargs):  # noqa: E501
         """Trigger a node command  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.trigger_node_command(body, x_killbill_created_by, async=True)
+        >>> thread = api.trigger_node_command(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param NodeCommand body: (required)
-        :param str x_killbill_created_by: (required)
+        :param str created_by: (required)
         :param bool local_node_only:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.trigger_node_command_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.trigger_node_command_with_http_info(body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.trigger_node_command_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.trigger_node_command_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def trigger_node_command_with_http_info(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def trigger_node_command_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
         """Trigger a node command  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.trigger_node_command_with_http_info(body, x_killbill_created_by, async=True)
+        >>> thread = api.trigger_node_command_with_http_info(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param NodeCommand body: (required)
-        :param str x_killbill_created_by: (required)
+        :param str created_by: (required)
         :param bool local_node_only:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'local_node_only', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'local_node_only', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -203,10 +202,10 @@ class NodesInfoApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `trigger_node_command`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `trigger_node_command`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `trigger_node_command`")  # noqa: E501
 
         collection_formats = {}
 
@@ -217,12 +216,12 @@ class NodesInfoApi(object):
             query_params.append(('localNodeOnly', params['local_node_only']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}

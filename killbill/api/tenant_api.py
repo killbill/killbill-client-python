@@ -1,22 +1,21 @@
 # coding: utf-8
 
-"""
-    Copyright 2014-2018 Groupon, Inc
-    Copyright 2014-2018 The Billing Project, LLC
-
-    The Billing Project licenses this file to you under the Apache License, version 2.0
-    (the "License"); you may not use this file except in compliance with the
-    License.  You may obtain a copy of the License at:
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-    License for the specific language governing permissions and limitations
-    under the License.
-"""
-
+#
+# Copyright 2014-2017 Groupon, Inc.
+# Copyright 2014-2017 The Billing Project, LLC
+#
+# The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
+# (the "License"); you may not use this file except in compliance with the
+# License.  You may obtain a copy of the License at:
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
 
 """
     Kill Bill
@@ -51,53 +50,53 @@ class TenantApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_tenant(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def create_tenant(self, body, created_by, **kwargs):  # noqa: E501
         """Create a tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_tenant(body, x_killbill_created_by, async=True)
+        >>> thread = api.create_tenant(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param Tenant body: (required)
-        :param str x_killbill_created_by: (required)
+        :param str created_by: (required)
         :param bool use_global_default:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_tenant_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            return self.create_tenant_with_http_info(body, created_by, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_tenant_with_http_info(body, x_killbill_created_by, **kwargs)  # noqa: E501
+            (data) = self.create_tenant_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def create_tenant_with_http_info(self, body, x_killbill_created_by, **kwargs):  # noqa: E501
+    def create_tenant_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
         """Create a tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_tenant_with_http_info(body, x_killbill_created_by, async=True)
+        >>> thread = api.create_tenant_with_http_info(body, created_by, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param Tenant body: (required)
-        :param str x_killbill_created_by: (required)
+        :param str created_by: (required)
         :param bool use_global_default:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'use_global_default', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'use_global_default', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -116,10 +115,10 @@ class TenantApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_tenant`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_tenant`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_tenant`")  # noqa: E501
 
         collection_formats = {}
 
@@ -130,12 +129,12 @@ class TenantApi(object):
             query_params.append(('useGlobalDefault', params['use_global_default']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -170,53 +169,53 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_per_tenant_configuration(self, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_per_tenant_configuration(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_per_tenant_configuration(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_per_tenant_configuration(created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_per_tenant_configuration_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_per_tenant_configuration_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_per_tenant_configuration_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_per_tenant_configuration_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_per_tenant_configuration_with_http_info(self, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_per_tenant_configuration_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_per_tenant_configuration_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_per_tenant_configuration_with_http_info(created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -231,18 +230,18 @@ class TenantApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_per_tenant_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_per_tenant_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_per_tenant_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -251,16 +250,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -285,55 +284,55 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_plugin_configuration(self, plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_configuration(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_plugin_configuration(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_plugin_configuration(plugin_name, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_plugin_configuration_with_http_info(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_plugin_configuration_with_http_info(plugin_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_plugin_configuration_with_http_info(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_plugin_configuration_with_http_info(plugin_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_plugin_configuration_with_http_info(self, plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_configuration_with_http_info(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_plugin_configuration_with_http_info(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_plugin_configuration_with_http_info(plugin_name, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['plugin_name', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['plugin_name', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -352,18 +351,18 @@ class TenantApi(object):
         if ('plugin_name' not in params or
                 params['plugin_name'] is None):
             raise ValueError("Missing the required parameter `plugin_name` when calling `delete_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_plugin_configuration`")  # noqa: E501
 
         if 'plugin_name' in params and not re.search('.*', params['plugin_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `plugin_name` when calling `delete_plugin_configuration`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -376,16 +375,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -410,55 +409,55 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_plugin_payment_state_machine_config(self, plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_payment_state_machine_config(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_plugin_payment_state_machine_config(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_plugin_payment_state_machine_config(plugin_name, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_plugin_payment_state_machine_config_with_http_info(self, plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_payment_state_machine_config_with_http_info(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['plugin_name', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['plugin_name', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -477,18 +476,18 @@ class TenantApi(object):
         if ('plugin_name' not in params or
                 params['plugin_name'] is None):
             raise ValueError("Missing the required parameter `plugin_name` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_plugin_payment_state_machine_config`")  # noqa: E501
 
         if 'plugin_name' in params and not re.search('.*', params['plugin_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `plugin_name` when calling `delete_plugin_payment_state_machine_config`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -501,16 +500,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -535,53 +534,53 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_push_notification_callbacks(self, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_push_notification_callbacks(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a push notification  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_push_notification_callbacks(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_push_notification_callbacks(created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_push_notification_callbacks_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_push_notification_callbacks_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_push_notification_callbacks_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_push_notification_callbacks_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_push_notification_callbacks_with_http_info(self, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_push_notification_callbacks_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a push notification  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_push_notification_callbacks_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_push_notification_callbacks_with_http_info(created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -596,18 +595,18 @@ class TenantApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_push_notification_callbacks`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_push_notification_callbacks`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_push_notification_callbacks`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_push_notification_callbacks`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_push_notification_callbacks`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_push_notification_callbacks`")  # noqa: E501
 
         collection_formats = {}
 
@@ -616,16 +615,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -650,55 +649,55 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_user_key_value(self, key_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_user_key_value(self, key_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete  a per tenant user key/value  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_user_key_value(key_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_user_key_value(key_name, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_name: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_user_key_value_with_http_info(key_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_user_key_value_with_http_info(key_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_user_key_value_with_http_info(key_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_user_key_value_with_http_info(key_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_user_key_value_with_http_info(self, key_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_user_key_value_with_http_info(self, key_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete  a per tenant user key/value  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_user_key_value_with_http_info(key_name, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_user_key_value_with_http_info(key_name, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_name: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['key_name', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['key_name', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -717,18 +716,18 @@ class TenantApi(object):
         if ('key_name' not in params or
                 params['key_name'] is None):
             raise ValueError("Missing the required parameter `key_name` when calling `delete_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_user_key_value`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_user_key_value`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_user_key_value`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_user_key_value`")  # noqa: E501
 
         if 'key_name' in params and not re.search('.*', params['key_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `key_name` when calling `delete_user_key_value`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -741,16 +740,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -775,49 +774,49 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_plugin_configuration(self, key_prefix, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_all_plugin_configuration(self, key_prefix, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant key value based on key prefix  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_plugin_configuration(key_prefix, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_all_plugin_configuration(key_prefix, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_prefix: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_all_plugin_configuration_with_http_info(key_prefix, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_all_plugin_configuration_with_http_info(key_prefix, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_all_plugin_configuration_with_http_info(key_prefix, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_all_plugin_configuration_with_http_info(key_prefix, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_all_plugin_configuration_with_http_info(self, key_prefix, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_all_plugin_configuration_with_http_info(self, key_prefix, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant key value based on key prefix  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_all_plugin_configuration_with_http_info(key_prefix, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_all_plugin_configuration_with_http_info(key_prefix, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_prefix: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['key_prefix', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['key_prefix', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -836,14 +835,14 @@ class TenantApi(object):
         if ('key_prefix' not in params or
                 params['key_prefix'] is None):
             raise ValueError("Missing the required parameter `key_prefix` when calling `get_all_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_all_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_all_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_all_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_all_plugin_configuration`")  # noqa: E501
 
         if 'key_prefix' in params and not re.search('.*', params['key_prefix']):  # noqa: E501
             raise ValueError("Invalid value for parameter `key_prefix` when calling `get_all_plugin_configuration`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -856,10 +855,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -888,47 +887,47 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_per_tenant_configuration(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_per_tenant_configuration(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_per_tenant_configuration(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_per_tenant_configuration(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_per_tenant_configuration_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_per_tenant_configuration_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_per_tenant_configuration_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_per_tenant_configuration_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_per_tenant_configuration_with_http_info(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_per_tenant_configuration_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_per_tenant_configuration_with_http_info(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_per_tenant_configuration_with_http_info(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -943,14 +942,14 @@ class TenantApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_per_tenant_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_per_tenant_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -959,10 +958,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -991,49 +990,49 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_plugin_configuration(self, plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_plugin_configuration(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_configuration(plugin_name, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_plugin_configuration(plugin_name, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_plugin_configuration_with_http_info(plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_plugin_configuration_with_http_info(plugin_name, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_plugin_configuration_with_http_info(plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_plugin_configuration_with_http_info(plugin_name, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_plugin_configuration_with_http_info(self, plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_plugin_configuration_with_http_info(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_configuration_with_http_info(plugin_name, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_plugin_configuration_with_http_info(plugin_name, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['plugin_name', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['plugin_name', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1052,14 +1051,14 @@ class TenantApi(object):
         if ('plugin_name' not in params or
                 params['plugin_name'] is None):
             raise ValueError("Missing the required parameter `plugin_name` when calling `get_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_plugin_configuration`")  # noqa: E501
 
         if 'plugin_name' in params and not re.search('.*', params['plugin_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `plugin_name` when calling `get_plugin_configuration`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -1072,10 +1071,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1104,49 +1103,49 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_plugin_payment_state_machine_config(self, plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_plugin_payment_state_machine_config(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_payment_state_machine_config(plugin_name, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_plugin_payment_state_machine_config(plugin_name, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_plugin_payment_state_machine_config_with_http_info(plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_plugin_payment_state_machine_config_with_http_info(plugin_name, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_plugin_payment_state_machine_config_with_http_info(plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_plugin_payment_state_machine_config_with_http_info(plugin_name, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_plugin_payment_state_machine_config_with_http_info(self, plugin_name, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_plugin_payment_state_machine_config_with_http_info(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_plugin_payment_state_machine_config_with_http_info(plugin_name, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_plugin_payment_state_machine_config_with_http_info(plugin_name, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['plugin_name', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['plugin_name', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1165,14 +1164,14 @@ class TenantApi(object):
         if ('plugin_name' not in params or
                 params['plugin_name'] is None):
             raise ValueError("Missing the required parameter `plugin_name` when calling `get_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_plugin_payment_state_machine_config`")  # noqa: E501
 
         if 'plugin_name' in params and not re.search('.*', params['plugin_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `plugin_name` when calling `get_plugin_payment_state_machine_config`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -1185,10 +1184,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1217,47 +1216,47 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_push_notification_callbacks(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_push_notification_callbacks(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a push notification  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_push_notification_callbacks(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_push_notification_callbacks(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_push_notification_callbacks_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_push_notification_callbacks_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_push_notification_callbacks_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_push_notification_callbacks_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_push_notification_callbacks_with_http_info(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_push_notification_callbacks_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a push notification  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_push_notification_callbacks_with_http_info(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_push_notification_callbacks_with_http_info(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1272,14 +1271,14 @@ class TenantApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_push_notification_callbacks`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_push_notification_callbacks`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_push_notification_callbacks`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_push_notification_callbacks`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1288,10 +1287,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1320,49 +1319,49 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tenant(self, tenant_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_tenant(self, tenant_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a tenant by id  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tenant(tenant_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_tenant(tenant_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str tenant_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_tenant_with_http_info(tenant_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_tenant_with_http_info(tenant_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_tenant_with_http_info(tenant_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_tenant_with_http_info(tenant_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_tenant_with_http_info(self, tenant_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_tenant_with_http_info(self, tenant_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a tenant by id  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_tenant_with_http_info(tenant_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_tenant_with_http_info(tenant_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str tenant_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['tenant_id', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['tenant_id', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1381,14 +1380,14 @@ class TenantApi(object):
         if ('tenant_id' not in params or
                 params['tenant_id'] is None):
             raise ValueError("Missing the required parameter `tenant_id` when calling `get_tenant`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_tenant`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_tenant`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_tenant`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_tenant`")  # noqa: E501
 
         if 'tenant_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['tenant_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `tenant_id` when calling `get_tenant`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1401,10 +1400,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1524,49 +1523,49 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_user_key_value(self, key_name, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_user_key_value(self, key_name, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant user key/value  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_user_key_value(key_name, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_user_key_value(key_name, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_name: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_user_key_value_with_http_info(key_name, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_user_key_value_with_http_info(key_name, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_user_key_value_with_http_info(key_name, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_user_key_value_with_http_info(key_name, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_user_key_value_with_http_info(self, key_name, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_user_key_value_with_http_info(self, key_name, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve a per tenant user key/value  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_user_key_value_with_http_info(key_name, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_user_key_value_with_http_info(key_name, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_name: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['key_name', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['key_name', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1585,14 +1584,14 @@ class TenantApi(object):
         if ('key_name' not in params or
                 params['key_name'] is None):
             raise ValueError("Missing the required parameter `key_name` when calling `get_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_user_key_value`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_user_key_value`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_user_key_value`")  # noqa: E501
 
         if 'key_name' in params and not re.search('.*', params['key_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `key_name` when calling `get_user_key_value`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -1605,10 +1604,10 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1637,57 +1636,57 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def insert_user_key_value(self, key_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def insert_user_key_value(self, key_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant user key/value  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.insert_user_key_value(key_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.insert_user_key_value(key_name, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_name: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.insert_user_key_value_with_http_info(key_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.insert_user_key_value_with_http_info(key_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.insert_user_key_value_with_http_info(key_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.insert_user_key_value_with_http_info(key_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def insert_user_key_value_with_http_info(self, key_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def insert_user_key_value_with_http_info(self, key_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant user key/value  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.insert_user_key_value_with_http_info(key_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.insert_user_key_value_with_http_info(key_name, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str key_name: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['key_name', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['key_name', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1710,18 +1709,18 @@ class TenantApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `insert_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `insert_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `insert_user_key_value`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `insert_user_key_value`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `insert_user_key_value`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `insert_user_key_value`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `insert_user_key_value`")  # noqa: E501
 
         if 'key_name' in params and not re.search('.*', params['key_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `key_name` when calling `insert_user_key_value`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -1734,16 +1733,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1778,55 +1777,55 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def register_push_notification_callback(self, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def register_push_notification_callback(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Create a push notification  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.register_push_notification_callback(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.register_push_notification_callback(created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param str cb:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.register_push_notification_callback_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.register_push_notification_callback_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.register_push_notification_callback_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.register_push_notification_callback_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def register_push_notification_callback_with_http_info(self, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def register_push_notification_callback_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Create a push notification  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.register_push_notification_callback_with_http_info(x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.register_push_notification_callback_with_http_info(created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param str cb:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'cb', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['created_by', 'api_key', 'api_secret', 'cb', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1841,18 +1840,18 @@ class TenantApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `register_push_notification_callback`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `register_push_notification_callback`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `register_push_notification_callback`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `register_push_notification_callback`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `register_push_notification_callback`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `register_push_notification_callback`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1863,16 +1862,16 @@ class TenantApi(object):
             query_params.append(('cb', params['cb']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1905,55 +1904,55 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_per_tenant_configuration(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_per_tenant_configuration(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_per_tenant_configuration(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_per_tenant_configuration(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_per_tenant_configuration_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_per_tenant_configuration_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_per_tenant_configuration_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_per_tenant_configuration_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_per_tenant_configuration_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_per_tenant_configuration_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_per_tenant_configuration_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_per_tenant_configuration_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1972,18 +1971,18 @@ class TenantApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_per_tenant_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_per_tenant_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_per_tenant_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_per_tenant_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_per_tenant_configuration`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1992,16 +1991,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2036,57 +2035,57 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_plugin_configuration(self, plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_configuration(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_plugin_configuration(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_plugin_configuration(plugin_name, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_plugin_configuration_with_http_info(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_plugin_configuration_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_plugin_configuration_with_http_info(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_plugin_configuration_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_plugin_configuration_with_http_info(self, plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_configuration_with_http_info(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_plugin_configuration_with_http_info(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_plugin_configuration_with_http_info(plugin_name, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['plugin_name', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['plugin_name', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2109,18 +2108,18 @@ class TenantApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_plugin_configuration`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_plugin_configuration`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_plugin_configuration`")  # noqa: E501
 
         if 'plugin_name' in params and not re.search('.*', params['plugin_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `plugin_name` when calling `upload_plugin_configuration`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -2133,16 +2132,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2177,57 +2176,57 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_plugin_payment_state_machine_config(self, plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_payment_state_machine_config(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_plugin_payment_state_machine_config(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_plugin_payment_state_machine_config(plugin_name, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_plugin_payment_state_machine_config_with_http_info(self, plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_payment_state_machine_config_with_http_info(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str plugin_name: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['plugin_name', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['plugin_name', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2250,18 +2249,18 @@ class TenantApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_plugin_payment_state_machine_config`")  # noqa: E501
 
         if 'plugin_name' in params and not re.search('.*', params['plugin_name']):  # noqa: E501
             raise ValueError("Invalid value for parameter `plugin_name` when calling `upload_plugin_payment_state_machine_config`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -2274,16 +2273,16 @@ class TenantApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}

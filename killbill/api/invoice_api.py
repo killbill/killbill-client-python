@@ -1,22 +1,21 @@
 # coding: utf-8
 
-"""
-    Copyright 2014-2018 Groupon, Inc
-    Copyright 2014-2018 The Billing Project, LLC
-
-    The Billing Project licenses this file to you under the Apache License, version 2.0
-    (the "License"); you may not use this file except in compliance with the
-    License.  You may obtain a copy of the License at:
-
-     http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
-    License for the specific language governing permissions and limitations
-    under the License.
-"""
-
+#
+# Copyright 2014-2017 Groupon, Inc.
+# Copyright 2014-2017 The Billing Project, LLC
+#
+# The Billing Project, LLC licenses this file to you under the Apache License, version 2.0
+# (the "License"); you may not use this file except in compliance with the
+# License.  You may obtain a copy of the License at:
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
 
 """
     Kill Bill
@@ -51,59 +50,59 @@ class InvoiceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def adjust_invoice_item(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def adjust_invoice_item(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Adjust an invoice item  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.adjust_invoice_item(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.adjust_invoice_item(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param InvoiceItem body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date requested_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.adjust_invoice_item_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.adjust_invoice_item_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.adjust_invoice_item_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.adjust_invoice_item_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def adjust_invoice_item_with_http_info(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def adjust_invoice_item_with_http_info(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Adjust an invoice item  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.adjust_invoice_item_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.adjust_invoice_item_with_http_info(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param InvoiceItem body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date requested_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'requested_date', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'body', 'created_by', 'api_key', 'api_secret', 'requested_date', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -126,18 +125,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `adjust_invoice_item`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `adjust_invoice_item`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `adjust_invoice_item`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `adjust_invoice_item`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `adjust_invoice_item`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `adjust_invoice_item`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `adjust_invoice_item`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `adjust_invoice_item`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -152,16 +151,16 @@ class InvoiceApi(object):
             query_params.append(('requestedDate', params['requested_date']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -196,55 +195,55 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def commit_invoice(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def commit_invoice(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Perform the invoice status transition from DRAFT to COMMITTED  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.commit_invoice(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.commit_invoice(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.commit_invoice_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.commit_invoice_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.commit_invoice_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.commit_invoice_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def commit_invoice_with_http_info(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def commit_invoice_with_http_info(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Perform the invoice status transition from DRAFT to COMMITTED  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.commit_invoice_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.commit_invoice_with_http_info(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -263,18 +262,18 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `commit_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `commit_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `commit_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `commit_invoice`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `commit_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `commit_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `commit_invoice`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `commit_invoice`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -287,16 +286,16 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -329,69 +328,69 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_external_charges(self, account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_external_charges(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Create external charge(s)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_external_charges(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_external_charges(account_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str account_id: (required)
         :param list[InvoiceItem] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date requested_date:
         :param bool pay_invoice:
         :param list[str] plugin_property:
         :param bool auto_commit:
         :param str payment_external_key:
         :param str transaction_external_key:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: list[InvoiceItem]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_external_charges_with_http_info(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_external_charges_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_external_charges_with_http_info(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_external_charges_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_external_charges_with_http_info(self, account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_external_charges_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Create external charge(s)  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_external_charges_with_http_info(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_external_charges_with_http_info(account_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str account_id: (required)
         :param list[InvoiceItem] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date requested_date:
         :param bool pay_invoice:
         :param list[str] plugin_property:
         :param bool auto_commit:
         :param str payment_external_key:
         :param str transaction_external_key:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: list[InvoiceItem]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'requested_date', 'pay_invoice', 'plugin_property', 'auto_commit', 'payment_external_key', 'transaction_external_key', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['account_id', 'body', 'created_by', 'api_key', 'api_secret', 'requested_date', 'pay_invoice', 'plugin_property', 'auto_commit', 'payment_external_key', 'transaction_external_key', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -414,18 +413,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_external_charges`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_external_charges`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_external_charges`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_external_charges`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_external_charges`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_external_charges`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_external_charges`")  # noqa: E501
 
         if 'account_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['account_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `account_id` when calling `create_external_charges`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -451,16 +450,16 @@ class InvoiceApi(object):
             query_params.append(('transactionExternalKey', params['transaction_external_key']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -495,57 +494,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_future_invoice(self, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_future_invoice(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Trigger an invoice generation  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_future_invoice(account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_future_invoice(account_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str account_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date target_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_future_invoice_with_http_info(account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_future_invoice_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_future_invoice_with_http_info(account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_future_invoice_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_future_invoice_with_http_info(self, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_future_invoice_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Trigger an invoice generation  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_future_invoice_with_http_info(account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_future_invoice_with_http_info(account_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str account_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date target_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'target_date', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['account_id', 'created_by', 'api_key', 'api_secret', 'target_date', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -564,18 +563,18 @@ class InvoiceApi(object):
         if ('account_id' not in params or
                 params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `create_future_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_future_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_future_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_future_invoice`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_future_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_future_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_future_invoice`")  # noqa: E501
 
         collection_formats = {}
 
@@ -588,16 +587,16 @@ class InvoiceApi(object):
             query_params.append(('targetDate', params['target_date']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -630,61 +629,61 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_instant_payment(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_instant_payment(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Trigger a payment for invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_instant_payment(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_instant_payment(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param InvoicePayment body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool external_payment:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_instant_payment_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_instant_payment_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_instant_payment_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_instant_payment_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_instant_payment_with_http_info(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_instant_payment_with_http_info(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Trigger a payment for invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_instant_payment_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_instant_payment_with_http_info(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param InvoicePayment body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool external_payment:
         :param list[str] plugin_property:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'external_payment', 'plugin_property', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'body', 'created_by', 'api_key', 'api_secret', 'external_payment', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -707,18 +706,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_instant_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_instant_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_instant_payment`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_instant_payment`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_instant_payment`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_instant_payment`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_instant_payment`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `create_instant_payment`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -736,16 +735,16 @@ class InvoiceApi(object):
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -780,57 +779,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_invoice_custom_fields(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_invoice_custom_fields(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add custom fields to invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_invoice_custom_fields(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_invoice_custom_fields(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: list[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_invoice_custom_fields_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_invoice_custom_fields_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_invoice_custom_fields_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_invoice_custom_fields_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_invoice_custom_fields_with_http_info(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_invoice_custom_fields_with_http_info(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add custom fields to invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_invoice_custom_fields_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_invoice_custom_fields_with_http_info(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: list[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -853,18 +852,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_invoice_custom_fields`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `create_invoice_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -877,16 +876,16 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -921,57 +920,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_invoice_tags(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_invoice_tags(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add tags to invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_invoice_tags(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_invoice_tags(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_invoice_tags_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_invoice_tags_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_invoice_tags_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_invoice_tags_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_invoice_tags_with_http_info(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_invoice_tags_with_http_info(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Add tags to invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_invoice_tags_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_invoice_tags_with_http_info(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: list[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'tag_def', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'created_by', 'api_key', 'api_secret', 'tag_def', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -990,18 +989,18 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `create_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_invoice_tags`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `create_invoice_tags`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1017,16 +1016,16 @@ class InvoiceApi(object):
             collection_formats['tagDef'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1059,59 +1058,59 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_migration_invoice(self, account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_migration_invoice(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Create a migration invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_migration_invoice(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_migration_invoice(account_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str account_id: (required)
         :param list[InvoiceItem] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date target_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.create_migration_invoice_with_http_info(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.create_migration_invoice_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.create_migration_invoice_with_http_info(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.create_migration_invoice_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_migration_invoice_with_http_info(self, account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def create_migration_invoice_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Create a migration invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_migration_invoice_with_http_info(account_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.create_migration_invoice_with_http_info(account_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str account_id: (required)
         :param list[InvoiceItem] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date target_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'target_date', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['account_id', 'body', 'created_by', 'api_key', 'api_secret', 'target_date', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1134,18 +1133,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `create_migration_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `create_migration_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `create_migration_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `create_migration_invoice`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_migration_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_migration_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_migration_invoice`")  # noqa: E501
 
         if 'account_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['account_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `account_id` when calling `create_migration_invoice`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1160,16 +1159,16 @@ class InvoiceApi(object):
             query_params.append(('targetDate', params['target_date']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1204,59 +1203,59 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_cba(self, invoice_id, invoice_item_id, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_cba(self, invoice_id, invoice_item_id, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a CBA item  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_cba(invoice_id, invoice_item_id, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_cba(invoice_id, invoice_item_id, account_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param str invoice_item_id: (required)
         :param str account_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_cba_with_http_info(invoice_id, invoice_item_id, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_cba_with_http_info(invoice_id, invoice_item_id, account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_cba_with_http_info(invoice_id, invoice_item_id, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_cba_with_http_info(invoice_id, invoice_item_id, account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_cba_with_http_info(self, invoice_id, invoice_item_id, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_cba_with_http_info(self, invoice_id, invoice_item_id, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Delete a CBA item  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_cba_with_http_info(invoice_id, invoice_item_id, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_cba_with_http_info(invoice_id, invoice_item_id, account_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param str invoice_item_id: (required)
         :param str account_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'invoice_item_id', 'account_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'invoice_item_id', 'account_id', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1283,18 +1282,18 @@ class InvoiceApi(object):
         if ('account_id' not in params or
                 params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `delete_cba`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_cba`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_cba`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_cba`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_cba`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_cba`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_cba`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `delete_cba`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1313,16 +1312,16 @@ class InvoiceApi(object):
             query_params.append(('accountId', params['account_id']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1355,57 +1354,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_invoice_custom_fields(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_custom_fields(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove custom fields from invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_invoice_custom_fields(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_invoice_custom_fields(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] custom_field:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_invoice_custom_fields_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_invoice_custom_fields_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_invoice_custom_fields_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_invoice_custom_fields_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_invoice_custom_fields_with_http_info(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_custom_fields_with_http_info(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove custom fields from invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_invoice_custom_fields_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_invoice_custom_fields_with_http_info(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] custom_field:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'custom_field', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'created_by', 'api_key', 'api_secret', 'custom_field', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1424,18 +1423,18 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `delete_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_invoice_custom_fields`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `delete_invoice_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1451,16 +1450,16 @@ class InvoiceApi(object):
             collection_formats['customField'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1493,57 +1492,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_invoice_tags(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_tags(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove tags from invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_invoice_tags(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_invoice_tags(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.delete_invoice_tags_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.delete_invoice_tags_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.delete_invoice_tags_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.delete_invoice_tags_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_invoice_tags_with_http_info(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_tags_with_http_info(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Remove tags from invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_invoice_tags_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.delete_invoice_tags_with_http_info(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param list[str] tag_def:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'tag_def', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'created_by', 'api_key', 'api_secret', 'tag_def', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1562,18 +1561,18 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `delete_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `delete_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `delete_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `delete_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `delete_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `delete_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `delete_invoice_tags`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `delete_invoice_tags`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1589,16 +1588,16 @@ class InvoiceApi(object):
             collection_formats['tagDef'] = 'multi'  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1631,59 +1630,59 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def generate_dry_run_invoice(self, body, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def generate_dry_run_invoice(self, body, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Generate a dryRun invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.generate_dry_run_invoice(body, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.generate_dry_run_invoice(body, account_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param InvoiceDryRun body: (required)
         :param str account_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date target_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.generate_dry_run_invoice_with_http_info(body, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.generate_dry_run_invoice_with_http_info(body, account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.generate_dry_run_invoice_with_http_info(body, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.generate_dry_run_invoice_with_http_info(body, account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def generate_dry_run_invoice_with_http_info(self, body, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def generate_dry_run_invoice_with_http_info(self, body, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Generate a dryRun invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.generate_dry_run_invoice_with_http_info(body, account_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.generate_dry_run_invoice_with_http_info(body, account_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param InvoiceDryRun body: (required)
         :param str account_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param date target_date:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: Invoice
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'account_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'target_date', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'account_id', 'created_by', 'api_key', 'api_secret', 'target_date', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1706,18 +1705,18 @@ class InvoiceApi(object):
         if ('account_id' not in params or
                 params['account_id'] is None):
             raise ValueError("Missing the required parameter `account_id` when calling `generate_dry_run_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `generate_dry_run_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `generate_dry_run_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `generate_dry_run_invoice`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `generate_dry_run_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `generate_dry_run_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `generate_dry_run_invoice`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1730,16 +1729,16 @@ class InvoiceApi(object):
             query_params.append(('targetDate', params['target_date']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1774,49 +1773,49 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_catalog_translation(self, locale, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_catalog_translation(self, locale, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the catalog translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_catalog_translation(locale, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_catalog_translation(locale, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_catalog_translation_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_catalog_translation_with_http_info(locale, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_catalog_translation_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_catalog_translation_with_http_info(locale, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_catalog_translation_with_http_info(self, locale, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_catalog_translation_with_http_info(self, locale, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the catalog translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_catalog_translation_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_catalog_translation_with_http_info(locale, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['locale', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['locale', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1835,14 +1834,14 @@ class InvoiceApi(object):
         if ('locale' not in params or
                 params['locale'] is None):
             raise ValueError("Missing the required parameter `locale` when calling `get_catalog_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_catalog_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_catalog_translation`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_catalog_translation`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_catalog_translation`")  # noqa: E501
 
         if 'locale' in params and not re.search('.*', params['locale']):  # noqa: E501
             raise ValueError("Invalid value for parameter `locale` when calling `get_catalog_translation`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -1855,10 +1854,10 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -1887,19 +1886,19 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve an invoice by id  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_items:
         :param bool with_children_items:
         :param str audit:
@@ -1909,24 +1908,24 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_with_http_info(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_with_http_info(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve an invoice by id  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_with_http_info(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_items:
         :param bool with_children_items:
         :param str audit:
@@ -1935,7 +1934,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'with_items', 'with_children_items', 'audit']  # noqa: E501
+        all_params = ['invoice_id', 'api_key', 'api_secret', 'with_items', 'with_children_items', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1954,14 +1953,14 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `get_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `get_invoice`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -1980,10 +1979,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2012,49 +2011,49 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_as_html(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_as_html(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Render an invoice as HTML  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_as_html(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_as_html(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_as_html_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_as_html_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_as_html_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_as_html_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_as_html_with_http_info(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_as_html_with_http_info(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Render an invoice as HTML  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_as_html_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_as_html_with_http_info(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['invoice_id', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2073,14 +2072,14 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `get_invoice_as_html`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_as_html`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_as_html`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_as_html`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_as_html`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `get_invoice_as_html`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2093,10 +2092,10 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2125,19 +2124,19 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_by_number(self, invoice_number, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_by_number(self, invoice_number, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve an invoice by number  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_by_number(invoice_number, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_by_number(invoice_number, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param int invoice_number: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_items:
         :param bool with_children_items:
         :param str audit:
@@ -2147,24 +2146,24 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_by_number_with_http_info(invoice_number, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_by_number_with_http_info(invoice_number, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_by_number_with_http_info(invoice_number, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_by_number_with_http_info(invoice_number, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_by_number_with_http_info(self, invoice_number, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_by_number_with_http_info(self, invoice_number, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve an invoice by number  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_by_number_with_http_info(invoice_number, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_by_number_with_http_info(invoice_number, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param int invoice_number: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_items:
         :param bool with_children_items:
         :param str audit:
@@ -2173,7 +2172,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['invoice_number', 'x_killbill_api_key', 'x_killbill_api_secret', 'with_items', 'with_children_items', 'audit']  # noqa: E501
+        all_params = ['invoice_number', 'api_key', 'api_secret', 'with_items', 'with_children_items', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2192,14 +2191,14 @@ class InvoiceApi(object):
         if ('invoice_number' not in params or
                 params['invoice_number'] is None):
             raise ValueError("Missing the required parameter `invoice_number` when calling `get_invoice_by_number`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_by_number`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_by_number`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_by_number`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_by_number`")  # noqa: E501
 
         if 'invoice_number' in params and not re.search('[0-9]+', params['invoice_number']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_number` when calling `get_invoice_by_number`, must conform to the pattern `/[0-9]+/`")  # noqa: E501
@@ -2218,10 +2217,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2250,19 +2249,19 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_custom_fields(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_custom_fields(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve invoice custom fields  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_custom_fields(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_custom_fields(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param str audit:
         :return: list[CustomField]
                  If the method is called asynchronously,
@@ -2270,31 +2269,31 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_custom_fields_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_custom_fields_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_custom_fields_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_custom_fields_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_custom_fields_with_http_info(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_custom_fields_with_http_info(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve invoice custom fields  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_custom_fields_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_custom_fields_with_http_info(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param str audit:
         :return: list[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'audit']  # noqa: E501
+        all_params = ['invoice_id', 'api_key', 'api_secret', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2313,14 +2312,14 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `get_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_custom_fields`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `get_invoice_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2335,10 +2334,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2367,49 +2366,49 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_mp_template(self, locale, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_mp_template(self, locale, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the manualPay invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_mp_template(locale, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_mp_template(locale, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_mp_template_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_mp_template_with_http_info(locale, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_mp_template_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_mp_template_with_http_info(locale, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_mp_template_with_http_info(self, locale, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_mp_template_with_http_info(self, locale, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the manualPay invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_mp_template_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_mp_template_with_http_info(locale, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['locale', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['locale', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2428,14 +2427,14 @@ class InvoiceApi(object):
         if ('locale' not in params or
                 params['locale'] is None):
             raise ValueError("Missing the required parameter `locale` when calling `get_invoice_mp_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_mp_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_mp_template`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_mp_template`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_mp_template`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2446,10 +2445,10 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2478,19 +2477,19 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_tags(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_tags(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve invoice tags  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_tags(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_tags(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool included_deleted:
         :param str audit:
         :return: list[Tag]
@@ -2499,24 +2498,24 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_tags_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_tags_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_tags_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_tags_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_tags_with_http_info(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_tags_with_http_info(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve invoice tags  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_tags_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_tags_with_http_info(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool included_deleted:
         :param str audit:
         :return: list[Tag]
@@ -2524,7 +2523,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'included_deleted', 'audit']  # noqa: E501
+        all_params = ['invoice_id', 'api_key', 'api_secret', 'included_deleted', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2543,14 +2542,14 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `get_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_tags`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_tags`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_tags`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `get_invoice_tags`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -2567,10 +2566,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2599,47 +2598,47 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_template(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_template(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_template(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_template(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_template_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_template_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_template_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_template_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_template_with_http_info(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_template_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_template_with_http_info(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_template_with_http_info(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2654,14 +2653,14 @@ class InvoiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_template`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_template`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_template`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2670,10 +2669,10 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2702,49 +2701,49 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_translation(self, locale, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_translation(self, locale, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the invoice translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_translation(locale, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_translation(locale, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoice_translation_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoice_translation_with_http_info(locale, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoice_translation_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoice_translation_with_http_info(locale, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_translation_with_http_info(self, locale, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoice_translation_with_http_info(self, locale, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieves the invoice translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoice_translation_with_http_info(locale, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoice_translation_with_http_info(locale, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :return: str
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['locale', 'x_killbill_api_key', 'x_killbill_api_secret']  # noqa: E501
+        all_params = ['locale', 'api_key', 'api_secret']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2763,14 +2762,14 @@ class InvoiceApi(object):
         if ('locale' not in params or
                 params['locale'] is None):
             raise ValueError("Missing the required parameter `locale` when calling `get_invoice_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoice_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoice_translation`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_translation`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_translation`")  # noqa: E501
 
         if 'locale' in params and not re.search('.*', params['locale']):  # noqa: E501
             raise ValueError("Invalid value for parameter `locale` when calling `get_invoice_translation`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -2783,10 +2782,10 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2815,18 +2814,18 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoices(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoices(self, api_key, api_secret, **kwargs):  # noqa: E501
         """List invoices  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoices(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoices(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param bool with_items:
@@ -2837,23 +2836,23 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_invoices_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_invoices_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_invoices_with_http_info(x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_invoices_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoices_with_http_info(self, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_invoices_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
         """List invoices  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_invoices_with_http_info(x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_invoices_with_http_info(api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param bool with_items:
@@ -2863,7 +2862,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['x_killbill_api_key', 'x_killbill_api_secret', 'offset', 'limit', 'with_items', 'audit']  # noqa: E501
+        all_params = ['api_key', 'api_secret', 'offset', 'limit', 'with_items', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -2878,14 +2877,14 @@ class InvoiceApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_invoices`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_invoices`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoices`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoices`")  # noqa: E501
 
         collection_formats = {}
 
@@ -2902,10 +2901,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -2934,19 +2933,19 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payments_for_invoice(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payments_for_invoice(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve payments associated with an invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payments_for_invoice(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payments_for_invoice(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_plugin_info:
         :param bool with_attempts:
         :param str audit:
@@ -2956,24 +2955,24 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.get_payments_for_invoice_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.get_payments_for_invoice_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.get_payments_for_invoice_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.get_payments_for_invoice_with_http_info(invoice_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payments_for_invoice_with_http_info(self, invoice_id, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def get_payments_for_invoice_with_http_info(self, invoice_id, api_key, api_secret, **kwargs):  # noqa: E501
         """Retrieve payments associated with an invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_payments_for_invoice_with_http_info(invoice_id, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.get_payments_for_invoice_with_http_info(invoice_id, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool with_plugin_info:
         :param bool with_attempts:
         :param str audit:
@@ -2982,7 +2981,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_api_key', 'x_killbill_api_secret', 'with_plugin_info', 'with_attempts', 'audit']  # noqa: E501
+        all_params = ['invoice_id', 'api_key', 'api_secret', 'with_plugin_info', 'with_attempts', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3001,14 +3000,14 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `get_payments_for_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `get_payments_for_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `get_payments_for_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payments_for_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payments_for_invoice`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `get_payments_for_invoice`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -3027,10 +3026,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3059,57 +3058,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_invoice_custom_fields(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def modify_invoice_custom_fields(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Modify custom fields to invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_invoice_custom_fields(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.modify_invoice_custom_fields(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.modify_invoice_custom_fields_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.modify_invoice_custom_fields_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.modify_invoice_custom_fields_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.modify_invoice_custom_fields_with_http_info(invoice_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_invoice_custom_fields_with_http_info(self, invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def modify_invoice_custom_fields_with_http_info(self, invoice_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Modify custom fields to invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.modify_invoice_custom_fields_with_http_info(invoice_id, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.modify_invoice_custom_fields_with_http_info(invoice_id, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
         :param list[CustomField] body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'body', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3132,18 +3131,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `modify_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `modify_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `modify_invoice_custom_fields`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `modify_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `modify_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `modify_invoice_custom_fields`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `modify_invoice_custom_fields`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `modify_invoice_custom_fields`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -3156,16 +3155,16 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3200,19 +3199,19 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_invoices(self, search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def search_invoices(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
         """Search invoices  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_invoices(search_key, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.search_invoices(search_key, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str search_key: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param bool with_items:
@@ -3223,24 +3222,24 @@ class InvoiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.search_invoices_with_http_info(search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.search_invoices_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.search_invoices_with_http_info(search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.search_invoices_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def search_invoices_with_http_info(self, search_key, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def search_invoices_with_http_info(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
         """Search invoices  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.search_invoices_with_http_info(search_key, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.search_invoices_with_http_info(search_key, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str search_key: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param int offset:
         :param int limit:
         :param bool with_items:
@@ -3250,7 +3249,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['search_key', 'x_killbill_api_key', 'x_killbill_api_secret', 'offset', 'limit', 'with_items', 'audit']  # noqa: E501
+        all_params = ['search_key', 'api_key', 'api_secret', 'offset', 'limit', 'with_items', 'audit']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3269,14 +3268,14 @@ class InvoiceApi(object):
         if ('search_key' not in params or
                 params['search_key'] is None):
             raise ValueError("Missing the required parameter `search_key` when calling `search_invoices`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `search_invoices`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `search_invoices`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `search_invoices`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `search_invoices`")  # noqa: E501
 
         if 'search_key' in params and not re.search('.*', params['search_key']):  # noqa: E501
             raise ValueError("Invalid value for parameter `search_key` when calling `search_invoices`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -3297,10 +3296,10 @@ class InvoiceApi(object):
             query_params.append(('audit', params['audit']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3329,59 +3328,59 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_catalog_translation(self, locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_catalog_translation(self, locale, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the catalog translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_catalog_translation(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_catalog_translation(locale, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_catalog_translation_with_http_info(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_catalog_translation_with_http_info(locale, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_catalog_translation_with_http_info(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_catalog_translation_with_http_info(locale, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_catalog_translation_with_http_info(self, locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_catalog_translation_with_http_info(self, locale, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the catalog translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_catalog_translation_with_http_info(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_catalog_translation_with_http_info(locale, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['locale', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'delete_if_exists', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['locale', 'body', 'created_by', 'api_key', 'api_secret', 'delete_if_exists', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3404,18 +3403,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_catalog_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_catalog_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_catalog_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_catalog_translation`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_catalog_translation`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_catalog_translation`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_catalog_translation`")  # noqa: E501
 
         if 'locale' in params and not re.search('.*', params['locale']):  # noqa: E501
             raise ValueError("Invalid value for parameter `locale` when calling `upload_catalog_translation`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -3430,16 +3429,16 @@ class InvoiceApi(object):
             query_params.append(('deleteIfExists', params['delete_if_exists']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3474,57 +3473,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_invoice_mp_template(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_invoice_mp_template(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the manualPay invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_invoice_mp_template(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_invoice_mp_template(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_invoice_mp_template_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_invoice_mp_template_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_invoice_mp_template_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_invoice_mp_template_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_invoice_mp_template_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_invoice_mp_template_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the manualPay invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_invoice_mp_template_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_invoice_mp_template_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'delete_if_exists', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'delete_if_exists', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3543,18 +3542,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_invoice_mp_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_invoice_mp_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_invoice_mp_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_invoice_mp_template`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_invoice_mp_template`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_invoice_mp_template`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_invoice_mp_template`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3565,16 +3564,16 @@ class InvoiceApi(object):
             query_params.append(('deleteIfExists', params['delete_if_exists']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3609,57 +3608,57 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_invoice_template(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_invoice_template(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_invoice_template(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_invoice_template(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_invoice_template_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_invoice_template_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_invoice_template_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_invoice_template_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_invoice_template_with_http_info(self, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_invoice_template_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the invoice template for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_invoice_template_with_http_info(body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_invoice_template_with_http_info(body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'delete_if_exists', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'delete_if_exists', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3678,18 +3677,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_invoice_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_invoice_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_invoice_template`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_invoice_template`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_invoice_template`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_invoice_template`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_invoice_template`")  # noqa: E501
 
         collection_formats = {}
 
@@ -3700,16 +3699,16 @@ class InvoiceApi(object):
             query_params.append(('deleteIfExists', params['delete_if_exists']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3744,59 +3743,59 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_invoice_translation(self, locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_invoice_translation(self, locale, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the invoice translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_invoice_translation(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_invoice_translation(locale, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.upload_invoice_translation_with_http_info(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.upload_invoice_translation_with_http_info(locale, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.upload_invoice_translation_with_http_info(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.upload_invoice_translation_with_http_info(locale, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_invoice_translation_with_http_info(self, locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def upload_invoice_translation_with_http_info(self, locale, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Upload the invoice translation for the tenant  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.upload_invoice_translation_with_http_info(locale, body, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.upload_invoice_translation_with_http_info(locale, body, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str locale: (required)
         :param str body: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
         :param bool delete_if_exists:
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['locale', 'body', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'delete_if_exists', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['locale', 'body', 'created_by', 'api_key', 'api_secret', 'delete_if_exists', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3819,18 +3818,18 @@ class InvoiceApi(object):
         if ('body' not in params or
                 params['body'] is None):
             raise ValueError("Missing the required parameter `body` when calling `upload_invoice_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `upload_invoice_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `upload_invoice_translation`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `upload_invoice_translation`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `upload_invoice_translation`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `upload_invoice_translation`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `upload_invoice_translation`")  # noqa: E501
 
         if 'locale' in params and not re.search('.*', params['locale']):  # noqa: E501
             raise ValueError("Invalid value for parameter `locale` when calling `upload_invoice_translation`, must conform to the pattern `/.*/`")  # noqa: E501
@@ -3845,16 +3844,16 @@ class InvoiceApi(object):
             query_params.append(('deleteIfExists', params['delete_if_exists']))  # noqa: E501
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
@@ -3889,55 +3888,55 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def void_invoice(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def void_invoice(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Perform the action of voiding an invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.void_invoice(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.void_invoice(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.void_invoice_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            return self.void_invoice_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
         else:
-            (data) = self.void_invoice_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs)  # noqa: E501
+            (data) = self.void_invoice_with_http_info(invoice_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def void_invoice_with_http_info(self, invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, **kwargs):  # noqa: E501
+    def void_invoice_with_http_info(self, invoice_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
         """Perform the action of voiding an invoice  # noqa: E501
 
           # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.void_invoice_with_http_info(invoice_id, x_killbill_created_by, x_killbill_api_key, x_killbill_api_secret, async=True)
+        >>> thread = api.void_invoice_with_http_info(invoice_id, created_by, api_key, api_secret, async=True)
         >>> result = thread.get()
 
         :param async bool
         :param str invoice_id: (required)
-        :param str x_killbill_created_by: (required)
-        :param str x_killbill_api_key: (required)
-        :param str x_killbill_api_secret: (required)
-        :param str x_killbill_reason:
-        :param str x_killbill_comment:
+        :param str created_by: (required)
+        :param str api_key: (required)
+        :param str api_secret: (required)
+        :param str reason:
+        :param str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'x_killbill_created_by', 'x_killbill_api_key', 'x_killbill_api_secret', 'x_killbill_reason', 'x_killbill_comment']  # noqa: E501
+        all_params = ['invoice_id', 'created_by', 'api_key', 'api_secret', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -3956,18 +3955,18 @@ class InvoiceApi(object):
         if ('invoice_id' not in params or
                 params['invoice_id'] is None):
             raise ValueError("Missing the required parameter `invoice_id` when calling `void_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_created_by' is set
-        if ('x_killbill_created_by' not in params or
-                params['x_killbill_created_by'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_created_by` when calling `void_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_key' is set
-        if ('x_killbill_api_key' not in params or
-                params['x_killbill_api_key'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_key` when calling `void_invoice`")  # noqa: E501
-        # verify the required parameter 'x_killbill_api_secret' is set
-        if ('x_killbill_api_secret' not in params or
-                params['x_killbill_api_secret'] is None):
-            raise ValueError("Missing the required parameter `x_killbill_api_secret` when calling `void_invoice`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `void_invoice`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `void_invoice`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `void_invoice`")  # noqa: E501
 
         if 'invoice_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['invoice_id']):  # noqa: E501
             raise ValueError("Invalid value for parameter `invoice_id` when calling `void_invoice`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
@@ -3980,16 +3979,16 @@ class InvoiceApi(object):
         query_params = []
 
         header_params = {}
-        if 'x_killbill_created_by' in params:
-            header_params['X-Killbill-CreatedBy'] = params['x_killbill_created_by']  # noqa: E501
-        if 'x_killbill_reason' in params:
-            header_params['X-Killbill-Reason'] = params['x_killbill_reason']  # noqa: E501
-        if 'x_killbill_comment' in params:
-            header_params['X-Killbill-Comment'] = params['x_killbill_comment']  # noqa: E501
-        if 'x_killbill_api_key' in params:
-            header_params['X-Killbill-ApiKey'] = params['x_killbill_api_key']  # noqa: E501
-        if 'x_killbill_api_secret' in params:
-            header_params['X-Killbill-ApiSecret'] = params['x_killbill_api_secret']  # noqa: E501
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
 
         form_params = []
         local_var_files = {}
