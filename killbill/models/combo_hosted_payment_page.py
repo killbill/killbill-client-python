@@ -33,11 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.account import Account  # noqa: F401,E501
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.hosted_payment_page_fields import HostedPaymentPageFields  # noqa: F401,E501
-from killbill.models.payment_method import PaymentMethod  # noqa: F401,E501
-from killbill.models.plugin_property import PluginProperty  # noqa: F401,E501
 
 
 class ComboHostedPaymentPage(object):
@@ -57,8 +52,8 @@ class ComboHostedPaymentPage(object):
         'account': 'Account',
         'payment_method': 'PaymentMethod',
         'hosted_payment_page_fields': 'HostedPaymentPageFields',
-        'payment_method_plugin_properties': 'list[PluginProperty]',
-        'audit_logs': 'list[AuditLog]'
+        'payment_method_plugin_properties': 'List[PluginProperty]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -159,7 +154,7 @@ class ComboHostedPaymentPage(object):
 
 
         :return: The payment_method_plugin_properties of this ComboHostedPaymentPage.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._payment_method_plugin_properties
 
@@ -169,7 +164,7 @@ class ComboHostedPaymentPage(object):
 
 
         :param payment_method_plugin_properties: The payment_method_plugin_properties of this ComboHostedPaymentPage.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._payment_method_plugin_properties = payment_method_plugin_properties
@@ -180,7 +175,7 @@ class ComboHostedPaymentPage(object):
 
 
         :return: The audit_logs of this ComboHostedPaymentPage.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -190,7 +185,7 @@ class ComboHostedPaymentPage(object):
 
 
         :param audit_logs: The audit_logs of this ComboHostedPaymentPage.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

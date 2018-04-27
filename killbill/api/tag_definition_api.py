@@ -50,7 +50,7 @@ class TagDefinitionApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_tag_definition(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_tag_definition(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create a tag definition  # noqa: E501
 
           # noqa: E501
@@ -61,11 +61,11 @@ class TagDefinitionApi(object):
 
         :param async bool
         :param TagDefinition body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TagDefinition
                  If the method is called asynchronously,
                  returns the request thread.
@@ -77,7 +77,7 @@ class TagDefinitionApi(object):
             (data) = self.create_tag_definition_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_tag_definition_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_tag_definition_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create a tag definition  # noqa: E501
 
           # noqa: E501
@@ -88,11 +88,11 @@ class TagDefinitionApi(object):
 
         :param async bool
         :param TagDefinition body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TagDefinition
                  If the method is called asynchronously,
                  returns the request thread.
@@ -181,7 +181,7 @@ class TagDefinitionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_tag_definition(self, tag_definition_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_tag_definition(self, tag_definition_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a tag definition  # noqa: E501
 
           # noqa: E501
@@ -191,12 +191,12 @@ class TagDefinitionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str tag_definition_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str tag_definition_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -208,7 +208,7 @@ class TagDefinitionApi(object):
             (data) = self.delete_tag_definition_with_http_info(tag_definition_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_tag_definition_with_http_info(self, tag_definition_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_tag_definition_with_http_info(self, tag_definition_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a tag definition  # noqa: E501
 
           # noqa: E501
@@ -218,12 +218,12 @@ class TagDefinitionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str tag_definition_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str tag_definition_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -310,7 +310,7 @@ class TagDefinitionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tag_definition(self, tag_definition_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tag_definition(self, tag_definition_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a tag definition  # noqa: E501
 
           # noqa: E501
@@ -320,10 +320,10 @@ class TagDefinitionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str tag_definition_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
+        :param Str tag_definition_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
         :return: TagDefinition
                  If the method is called asynchronously,
                  returns the request thread.
@@ -335,7 +335,7 @@ class TagDefinitionApi(object):
             (data) = self.get_tag_definition_with_http_info(tag_definition_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_tag_definition_with_http_info(self, tag_definition_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tag_definition_with_http_info(self, tag_definition_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a tag definition  # noqa: E501
 
           # noqa: E501
@@ -345,10 +345,10 @@ class TagDefinitionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str tag_definition_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
+        :param Str tag_definition_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
         :return: TagDefinition
                  If the method is called asynchronously,
                  returns the request thread.
@@ -427,7 +427,7 @@ class TagDefinitionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tag_definitions(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tag_definitions(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List tag definitions  # noqa: E501
 
           # noqa: E501
@@ -437,10 +437,10 @@ class TagDefinitionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[TagDefinition]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[TagDefinition]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -451,7 +451,7 @@ class TagDefinitionApi(object):
             (data) = self.get_tag_definitions_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_tag_definitions_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tag_definitions_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List tag definitions  # noqa: E501
 
           # noqa: E501
@@ -461,10 +461,10 @@ class TagDefinitionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[TagDefinition]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[TagDefinition]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -526,7 +526,7 @@ class TagDefinitionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[TagDefinition]',  # noqa: E501
+            response_type='List[TagDefinition]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

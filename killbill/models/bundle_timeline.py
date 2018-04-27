@@ -33,8 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.event_subscription import EventSubscription  # noqa: F401,E501
 
 
 class BundleTimeline(object):
@@ -51,11 +49,11 @@ class BundleTimeline(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'bundle_id': 'str',
-        'external_key': 'str',
-        'events': 'list[EventSubscription]',
-        'audit_logs': 'list[AuditLog]'
+        'account_id': 'Str',
+        'bundle_id': 'Str',
+        'external_key': 'Str',
+        'events': 'List[EventSubscription]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -93,7 +91,7 @@ class BundleTimeline(object):
 
 
         :return: The account_id of this BundleTimeline.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -103,7 +101,7 @@ class BundleTimeline(object):
 
 
         :param account_id: The account_id of this BundleTimeline.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -114,7 +112,7 @@ class BundleTimeline(object):
 
 
         :return: The bundle_id of this BundleTimeline.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_id
 
@@ -124,7 +122,7 @@ class BundleTimeline(object):
 
 
         :param bundle_id: The bundle_id of this BundleTimeline.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_id = bundle_id
@@ -135,7 +133,7 @@ class BundleTimeline(object):
 
 
         :return: The external_key of this BundleTimeline.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_key
 
@@ -145,7 +143,7 @@ class BundleTimeline(object):
 
 
         :param external_key: The external_key of this BundleTimeline.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_key = external_key
@@ -156,7 +154,7 @@ class BundleTimeline(object):
 
 
         :return: The events of this BundleTimeline.  # noqa: E501
-        :rtype: list[EventSubscription]
+        :rtype: List[EventSubscription]
         """
         return self._events
 
@@ -166,7 +164,7 @@ class BundleTimeline(object):
 
 
         :param events: The events of this BundleTimeline.  # noqa: E501
-        :type: list[EventSubscription]
+        :type: List[EventSubscription]
         """
 
         self._events = events
@@ -177,7 +175,7 @@ class BundleTimeline(object):
 
 
         :return: The audit_logs of this BundleTimeline.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -187,7 +185,7 @@ class BundleTimeline(object):
 
 
         :param audit_logs: The audit_logs of this BundleTimeline.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

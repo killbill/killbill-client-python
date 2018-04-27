@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class BlockingState(object):
@@ -50,15 +49,15 @@ class BlockingState(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'blocked_id': 'str',
-        'state_name': 'str',
-        'service': 'str',
-        'is_block_change': 'bool',
-        'is_block_entitlement': 'bool',
-        'is_block_billing': 'bool',
-        'effective_date': 'datetime',
-        'type': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'blocked_id': 'Str',
+        'state_name': 'Str',
+        'service': 'Str',
+        'is_block_change': 'Bool',
+        'is_block_entitlement': 'Bool',
+        'is_block_billing': 'Bool',
+        'effective_date': 'Datetime',
+        'type': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -112,7 +111,7 @@ class BlockingState(object):
 
 
         :return: The blocked_id of this BlockingState.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._blocked_id
 
@@ -122,7 +121,7 @@ class BlockingState(object):
 
 
         :param blocked_id: The blocked_id of this BlockingState.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._blocked_id = blocked_id
@@ -133,7 +132,7 @@ class BlockingState(object):
 
 
         :return: The state_name of this BlockingState.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._state_name
 
@@ -143,7 +142,7 @@ class BlockingState(object):
 
 
         :param state_name: The state_name of this BlockingState.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._state_name = state_name
@@ -154,7 +153,7 @@ class BlockingState(object):
 
 
         :return: The service of this BlockingState.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._service
 
@@ -164,7 +163,7 @@ class BlockingState(object):
 
 
         :param service: The service of this BlockingState.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._service = service
@@ -175,7 +174,7 @@ class BlockingState(object):
 
 
         :return: The is_block_change of this BlockingState.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_block_change
 
@@ -185,7 +184,7 @@ class BlockingState(object):
 
 
         :param is_block_change: The is_block_change of this BlockingState.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_block_change = is_block_change
@@ -196,7 +195,7 @@ class BlockingState(object):
 
 
         :return: The is_block_entitlement of this BlockingState.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_block_entitlement
 
@@ -206,7 +205,7 @@ class BlockingState(object):
 
 
         :param is_block_entitlement: The is_block_entitlement of this BlockingState.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_block_entitlement = is_block_entitlement
@@ -217,7 +216,7 @@ class BlockingState(object):
 
 
         :return: The is_block_billing of this BlockingState.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_block_billing
 
@@ -227,7 +226,7 @@ class BlockingState(object):
 
 
         :param is_block_billing: The is_block_billing of this BlockingState.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_block_billing = is_block_billing
@@ -238,7 +237,7 @@ class BlockingState(object):
 
 
         :return: The effective_date of this BlockingState.  # noqa: E501
-        :rtype: datetime
+        :rtype: Datetime
         """
         return self._effective_date
 
@@ -248,7 +247,7 @@ class BlockingState(object):
 
 
         :param effective_date: The effective_date of this BlockingState.  # noqa: E501
-        :type: datetime
+        :type: Datetime
         """
 
         self._effective_date = effective_date
@@ -259,7 +258,7 @@ class BlockingState(object):
 
 
         :return: The type of this BlockingState.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._type
 
@@ -269,7 +268,7 @@ class BlockingState(object):
 
 
         :param type: The type of this BlockingState.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["SUBSCRIPTION", "SUBSCRIPTION_BUNDLE", "ACCOUNT"]  # noqa: E501
         if type not in allowed_values:
@@ -286,7 +285,7 @@ class BlockingState(object):
 
 
         :return: The audit_logs of this BlockingState.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -296,7 +295,7 @@ class BlockingState(object):
 
 
         :param audit_logs: The audit_logs of this BlockingState.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

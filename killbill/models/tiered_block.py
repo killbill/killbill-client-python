@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.price import Price  # noqa: F401,E501
 
 
 class TieredBlock(object):
@@ -50,10 +49,10 @@ class TieredBlock(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'unit': 'str',
-        'size': 'str',
-        'max': 'str',
-        'prices': 'list[Price]'
+        'unit': 'Str',
+        'size': 'Str',
+        'max': 'Str',
+        'prices': 'List[Price]'
     }
 
     attribute_map = {
@@ -87,7 +86,7 @@ class TieredBlock(object):
 
 
         :return: The unit of this TieredBlock.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._unit
 
@@ -97,7 +96,7 @@ class TieredBlock(object):
 
 
         :param unit: The unit of this TieredBlock.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._unit = unit
@@ -108,7 +107,7 @@ class TieredBlock(object):
 
 
         :return: The size of this TieredBlock.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._size
 
@@ -118,7 +117,7 @@ class TieredBlock(object):
 
 
         :param size: The size of this TieredBlock.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._size = size
@@ -129,7 +128,7 @@ class TieredBlock(object):
 
 
         :return: The max of this TieredBlock.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._max
 
@@ -139,7 +138,7 @@ class TieredBlock(object):
 
 
         :param max: The max of this TieredBlock.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._max = max
@@ -150,7 +149,7 @@ class TieredBlock(object):
 
 
         :return: The prices of this TieredBlock.  # noqa: E501
-        :rtype: list[Price]
+        :rtype: List[Price]
         """
         return self._prices
 
@@ -160,7 +159,7 @@ class TieredBlock(object):
 
 
         :param prices: The prices of this TieredBlock.  # noqa: E501
-        :type: list[Price]
+        :type: List[Price]
         """
 
         self._prices = prices

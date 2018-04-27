@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.price_list import PriceList  # noqa: F401,E501
-from killbill.models.product import Product  # noqa: F401,E501
-from killbill.models.unit import Unit  # noqa: F401,E501
 
 
 class Catalog(object):
@@ -52,12 +49,12 @@ class Catalog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'effective_date': 'datetime',
-        'currencies': 'list[str]',
-        'units': 'list[Unit]',
-        'products': 'list[Product]',
-        'price_lists': 'list[PriceList]'
+        'name': 'Str',
+        'effective_date': 'Datetime',
+        'currencies': 'List[Str]',
+        'units': 'List[Unit]',
+        'products': 'List[Product]',
+        'price_lists': 'List[PriceList]'
     }
 
     attribute_map = {
@@ -99,7 +96,7 @@ class Catalog(object):
 
 
         :return: The name of this Catalog.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -109,7 +106,7 @@ class Catalog(object):
 
 
         :param name: The name of this Catalog.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._name = name
@@ -120,7 +117,7 @@ class Catalog(object):
 
 
         :return: The effective_date of this Catalog.  # noqa: E501
-        :rtype: datetime
+        :rtype: Datetime
         """
         return self._effective_date
 
@@ -130,7 +127,7 @@ class Catalog(object):
 
 
         :param effective_date: The effective_date of this Catalog.  # noqa: E501
-        :type: datetime
+        :type: Datetime
         """
 
         self._effective_date = effective_date
@@ -141,7 +138,7 @@ class Catalog(object):
 
 
         :return: The currencies of this Catalog.  # noqa: E501
-        :rtype: list[str]
+        :rtype: List[Str]
         """
         return self._currencies
 
@@ -151,7 +148,7 @@ class Catalog(object):
 
 
         :param currencies: The currencies of this Catalog.  # noqa: E501
-        :type: list[str]
+        :type: List[Str]
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if not set(currencies).issubset(set(allowed_values)):
@@ -169,7 +166,7 @@ class Catalog(object):
 
 
         :return: The units of this Catalog.  # noqa: E501
-        :rtype: list[Unit]
+        :rtype: List[Unit]
         """
         return self._units
 
@@ -179,7 +176,7 @@ class Catalog(object):
 
 
         :param units: The units of this Catalog.  # noqa: E501
-        :type: list[Unit]
+        :type: List[Unit]
         """
 
         self._units = units
@@ -190,7 +187,7 @@ class Catalog(object):
 
 
         :return: The products of this Catalog.  # noqa: E501
-        :rtype: list[Product]
+        :rtype: List[Product]
         """
         return self._products
 
@@ -200,7 +197,7 @@ class Catalog(object):
 
 
         :param products: The products of this Catalog.  # noqa: E501
-        :type: list[Product]
+        :type: List[Product]
         """
 
         self._products = products
@@ -211,7 +208,7 @@ class Catalog(object):
 
 
         :return: The price_lists of this Catalog.  # noqa: E501
-        :rtype: list[PriceList]
+        :rtype: List[PriceList]
         """
         return self._price_lists
 
@@ -221,7 +218,7 @@ class Catalog(object):
 
 
         :param price_lists: The price_lists of this Catalog.  # noqa: E501
-        :type: list[PriceList]
+        :type: List[PriceList]
         """
 
         self._price_lists = price_lists

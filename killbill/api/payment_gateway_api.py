@@ -50,7 +50,7 @@ class PaymentGatewayApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def build_combo_form_descriptor(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def build_combo_form_descriptor(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Combo API to generate form data to redirect the customer to the gateway  # noqa: E501
 
           # noqa: E501
@@ -61,13 +61,13 @@ class PaymentGatewayApi(object):
 
         :param async bool
         :param ComboHostedPaymentPage body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: HostedPaymentPageFormDescriptor
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,7 +79,7 @@ class PaymentGatewayApi(object):
             (data) = self.build_combo_form_descriptor_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def build_combo_form_descriptor_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def build_combo_form_descriptor_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Combo API to generate form data to redirect the customer to the gateway  # noqa: E501
 
           # noqa: E501
@@ -90,13 +90,13 @@ class PaymentGatewayApi(object):
 
         :param async bool
         :param ComboHostedPaymentPage body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: HostedPaymentPageFormDescriptor
                  If the method is called asynchronously,
                  returns the request thread.
@@ -191,7 +191,7 @@ class PaymentGatewayApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def build_form_descriptor(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def build_form_descriptor(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Generate form data to redirect the customer to the gateway  # noqa: E501
 
           # noqa: E501
@@ -201,16 +201,16 @@ class PaymentGatewayApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param HostedPaymentPageFields body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str payment_method_id:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str payment_method_id:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: HostedPaymentPageFormDescriptor
                  If the method is called asynchronously,
                  returns the request thread.
@@ -222,7 +222,7 @@ class PaymentGatewayApi(object):
             (data) = self.build_form_descriptor_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def build_form_descriptor_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def build_form_descriptor_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Generate form data to redirect the customer to the gateway  # noqa: E501
 
           # noqa: E501
@@ -232,16 +232,16 @@ class PaymentGatewayApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param HostedPaymentPageFields body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str payment_method_id:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str payment_method_id:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: HostedPaymentPageFormDescriptor
                  If the method is called asynchronously,
                  returns the request thread.
@@ -346,7 +346,7 @@ class PaymentGatewayApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def process_notification(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def process_notification(self, plugin_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Process a gateway notification  # noqa: E501
 
         The response is built by the appropriate plugin  # noqa: E501
@@ -356,15 +356,15 @@ class PaymentGatewayApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -376,7 +376,7 @@ class PaymentGatewayApi(object):
             (data) = self.process_notification_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def process_notification_with_http_info(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def process_notification_with_http_info(self, plugin_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Process a gateway notification  # noqa: E501
 
         The response is built by the appropriate plugin  # noqa: E501
@@ -386,15 +386,15 @@ class PaymentGatewayApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

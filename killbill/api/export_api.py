@@ -50,7 +50,7 @@ class ExportApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def export_data_for_account(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def export_data_for_account(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Export account data  # noqa: E501
 
           # noqa: E501
@@ -60,13 +60,13 @@ class ExportApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: str
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: Str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -77,7 +77,7 @@ class ExportApi(object):
             (data) = self.export_data_for_account_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def export_data_for_account_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def export_data_for_account_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Export account data  # noqa: E501
 
           # noqa: E501
@@ -87,13 +87,13 @@ class ExportApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: str
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: Str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -171,7 +171,7 @@ class ExportApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='Str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.duration import Duration  # noqa: F401,E501
-from killbill.models.price import Price  # noqa: F401,E501
-from killbill.models.usage import Usage  # noqa: F401,E501
 
 
 class Phase(object):
@@ -52,11 +49,11 @@ class Phase(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
-        'prices': 'list[Price]',
-        'fixed_prices': 'list[Price]',
+        'type': 'Str',
+        'prices': 'List[Price]',
+        'fixed_prices': 'List[Price]',
         'duration': 'Duration',
-        'usages': 'list[Usage]'
+        'usages': 'List[Usage]'
     }
 
     attribute_map = {
@@ -94,7 +91,7 @@ class Phase(object):
 
 
         :return: The type of this Phase.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._type
 
@@ -104,7 +101,7 @@ class Phase(object):
 
 
         :param type: The type of this Phase.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._type = type
@@ -115,7 +112,7 @@ class Phase(object):
 
 
         :return: The prices of this Phase.  # noqa: E501
-        :rtype: list[Price]
+        :rtype: List[Price]
         """
         return self._prices
 
@@ -125,7 +122,7 @@ class Phase(object):
 
 
         :param prices: The prices of this Phase.  # noqa: E501
-        :type: list[Price]
+        :type: List[Price]
         """
 
         self._prices = prices
@@ -136,7 +133,7 @@ class Phase(object):
 
 
         :return: The fixed_prices of this Phase.  # noqa: E501
-        :rtype: list[Price]
+        :rtype: List[Price]
         """
         return self._fixed_prices
 
@@ -146,7 +143,7 @@ class Phase(object):
 
 
         :param fixed_prices: The fixed_prices of this Phase.  # noqa: E501
-        :type: list[Price]
+        :type: List[Price]
         """
 
         self._fixed_prices = fixed_prices
@@ -178,7 +175,7 @@ class Phase(object):
 
 
         :return: The usages of this Phase.  # noqa: E501
-        :rtype: list[Usage]
+        :rtype: List[Usage]
         """
         return self._usages
 
@@ -188,7 +185,7 @@ class Phase(object):
 
 
         :param usages: The usages of this Phase.  # noqa: E501
-        :type: list[Usage]
+        :type: List[Usage]
         """
 
         self._usages = usages

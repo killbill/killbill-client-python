@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class Account(object):
@@ -50,33 +49,33 @@ class Account(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'name': 'str',
-        'first_name_length': 'int',
-        'external_key': 'str',
-        'email': 'str',
-        'bill_cycle_day_local': 'int',
-        'currency': 'str',
-        'parent_account_id': 'str',
-        'is_payment_delegated_to_parent': 'bool',
-        'payment_method_id': 'str',
-        'reference_time': 'datetime',
-        'time_zone': 'str',
-        'address1': 'str',
-        'address2': 'str',
-        'postal_code': 'str',
-        'company': 'str',
-        'city': 'str',
-        'state': 'str',
-        'country': 'str',
-        'locale': 'str',
-        'phone': 'str',
-        'notes': 'str',
-        'is_migrated': 'bool',
-        'is_notified_for_invoices': 'bool',
-        'account_balance': 'float',
-        'account_cba': 'float',
-        'audit_logs': 'list[AuditLog]'
+        'account_id': 'Str',
+        'name': 'Str',
+        'first_name_length': 'Int',
+        'external_key': 'Str',
+        'email': 'Str',
+        'bill_cycle_day_local': 'Int',
+        'currency': 'Str',
+        'parent_account_id': 'Str',
+        'is_payment_delegated_to_parent': 'Bool',
+        'payment_method_id': 'Str',
+        'reference_time': 'Datetime',
+        'time_zone': 'Str',
+        'address1': 'Str',
+        'address2': 'Str',
+        'postal_code': 'Str',
+        'company': 'Str',
+        'city': 'Str',
+        'state': 'Str',
+        'country': 'Str',
+        'locale': 'Str',
+        'phone': 'Str',
+        'notes': 'Str',
+        'is_migrated': 'Bool',
+        'is_notified_for_invoices': 'Bool',
+        'account_balance': 'Float',
+        'account_cba': 'Float',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -202,7 +201,7 @@ class Account(object):
 
 
         :return: The account_id of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -212,7 +211,7 @@ class Account(object):
 
 
         :param account_id: The account_id of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -223,7 +222,7 @@ class Account(object):
 
 
         :return: The name of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -233,7 +232,7 @@ class Account(object):
 
 
         :param name: The name of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._name = name
@@ -244,7 +243,7 @@ class Account(object):
 
 
         :return: The first_name_length of this Account.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._first_name_length
 
@@ -254,7 +253,7 @@ class Account(object):
 
 
         :param first_name_length: The first_name_length of this Account.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._first_name_length = first_name_length
@@ -265,7 +264,7 @@ class Account(object):
 
 
         :return: The external_key of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_key
 
@@ -275,7 +274,7 @@ class Account(object):
 
 
         :param external_key: The external_key of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_key = external_key
@@ -286,7 +285,7 @@ class Account(object):
 
 
         :return: The email of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._email
 
@@ -296,7 +295,7 @@ class Account(object):
 
 
         :param email: The email of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._email = email
@@ -307,7 +306,7 @@ class Account(object):
 
 
         :return: The bill_cycle_day_local of this Account.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._bill_cycle_day_local
 
@@ -317,7 +316,7 @@ class Account(object):
 
 
         :param bill_cycle_day_local: The bill_cycle_day_local of this Account.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._bill_cycle_day_local = bill_cycle_day_local
@@ -328,7 +327,7 @@ class Account(object):
 
 
         :return: The currency of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -338,7 +337,7 @@ class Account(object):
 
 
         :param currency: The currency of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -355,7 +354,7 @@ class Account(object):
 
 
         :return: The parent_account_id of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._parent_account_id
 
@@ -365,7 +364,7 @@ class Account(object):
 
 
         :param parent_account_id: The parent_account_id of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._parent_account_id = parent_account_id
@@ -376,7 +375,7 @@ class Account(object):
 
 
         :return: The is_payment_delegated_to_parent of this Account.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_payment_delegated_to_parent
 
@@ -386,7 +385,7 @@ class Account(object):
 
 
         :param is_payment_delegated_to_parent: The is_payment_delegated_to_parent of this Account.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_payment_delegated_to_parent = is_payment_delegated_to_parent
@@ -397,7 +396,7 @@ class Account(object):
 
 
         :return: The payment_method_id of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_method_id
 
@@ -407,7 +406,7 @@ class Account(object):
 
 
         :param payment_method_id: The payment_method_id of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_method_id = payment_method_id
@@ -418,7 +417,7 @@ class Account(object):
 
 
         :return: The reference_time of this Account.  # noqa: E501
-        :rtype: datetime
+        :rtype: Datetime
         """
         return self._reference_time
 
@@ -428,7 +427,7 @@ class Account(object):
 
 
         :param reference_time: The reference_time of this Account.  # noqa: E501
-        :type: datetime
+        :type: Datetime
         """
 
         self._reference_time = reference_time
@@ -439,7 +438,7 @@ class Account(object):
 
 
         :return: The time_zone of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._time_zone
 
@@ -449,7 +448,7 @@ class Account(object):
 
 
         :param time_zone: The time_zone of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._time_zone = time_zone
@@ -460,7 +459,7 @@ class Account(object):
 
 
         :return: The address1 of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._address1
 
@@ -470,7 +469,7 @@ class Account(object):
 
 
         :param address1: The address1 of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._address1 = address1
@@ -481,7 +480,7 @@ class Account(object):
 
 
         :return: The address2 of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._address2
 
@@ -491,7 +490,7 @@ class Account(object):
 
 
         :param address2: The address2 of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._address2 = address2
@@ -502,7 +501,7 @@ class Account(object):
 
 
         :return: The postal_code of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._postal_code
 
@@ -512,7 +511,7 @@ class Account(object):
 
 
         :param postal_code: The postal_code of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._postal_code = postal_code
@@ -523,7 +522,7 @@ class Account(object):
 
 
         :return: The company of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._company
 
@@ -533,7 +532,7 @@ class Account(object):
 
 
         :param company: The company of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._company = company
@@ -544,7 +543,7 @@ class Account(object):
 
 
         :return: The city of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._city
 
@@ -554,7 +553,7 @@ class Account(object):
 
 
         :param city: The city of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._city = city
@@ -565,7 +564,7 @@ class Account(object):
 
 
         :return: The state of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._state
 
@@ -575,7 +574,7 @@ class Account(object):
 
 
         :param state: The state of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._state = state
@@ -586,7 +585,7 @@ class Account(object):
 
 
         :return: The country of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._country
 
@@ -596,7 +595,7 @@ class Account(object):
 
 
         :param country: The country of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._country = country
@@ -607,7 +606,7 @@ class Account(object):
 
 
         :return: The locale of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._locale
 
@@ -617,7 +616,7 @@ class Account(object):
 
 
         :param locale: The locale of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._locale = locale
@@ -628,7 +627,7 @@ class Account(object):
 
 
         :return: The phone of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phone
 
@@ -638,7 +637,7 @@ class Account(object):
 
 
         :param phone: The phone of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._phone = phone
@@ -649,7 +648,7 @@ class Account(object):
 
 
         :return: The notes of this Account.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._notes
 
@@ -659,7 +658,7 @@ class Account(object):
 
 
         :param notes: The notes of this Account.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._notes = notes
@@ -670,7 +669,7 @@ class Account(object):
 
 
         :return: The is_migrated of this Account.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_migrated
 
@@ -680,7 +679,7 @@ class Account(object):
 
 
         :param is_migrated: The is_migrated of this Account.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_migrated = is_migrated
@@ -691,7 +690,7 @@ class Account(object):
 
 
         :return: The is_notified_for_invoices of this Account.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_notified_for_invoices
 
@@ -701,7 +700,7 @@ class Account(object):
 
 
         :param is_notified_for_invoices: The is_notified_for_invoices of this Account.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_notified_for_invoices = is_notified_for_invoices
@@ -712,7 +711,7 @@ class Account(object):
 
 
         :return: The account_balance of this Account.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._account_balance
 
@@ -722,7 +721,7 @@ class Account(object):
 
 
         :param account_balance: The account_balance of this Account.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._account_balance = account_balance
@@ -733,7 +732,7 @@ class Account(object):
 
 
         :return: The account_cba of this Account.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._account_cba
 
@@ -743,7 +742,7 @@ class Account(object):
 
 
         :param account_cba: The account_cba of this Account.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._account_cba = account_cba
@@ -754,7 +753,7 @@ class Account(object):
 
 
         :return: The audit_logs of this Account.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -764,7 +763,7 @@ class Account(object):
 
 
         :param audit_logs: The audit_logs of this Account.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

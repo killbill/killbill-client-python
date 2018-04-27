@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.price import Price  # noqa: F401,E501
 
 
 class PlanDetail(object):
@@ -50,11 +49,11 @@ class PlanDetail(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'product': 'str',
-        'plan': 'str',
-        'price_list': 'str',
-        'final_phase_billing_period': 'str',
-        'final_phase_recurring_price': 'list[Price]'
+        'product': 'Str',
+        'plan': 'Str',
+        'price_list': 'Str',
+        'final_phase_billing_period': 'Str',
+        'final_phase_recurring_price': 'List[Price]'
     }
 
     attribute_map = {
@@ -92,7 +91,7 @@ class PlanDetail(object):
 
 
         :return: The product of this PlanDetail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._product
 
@@ -102,7 +101,7 @@ class PlanDetail(object):
 
 
         :param product: The product of this PlanDetail.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._product = product
@@ -113,7 +112,7 @@ class PlanDetail(object):
 
 
         :return: The plan of this PlanDetail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plan
 
@@ -123,7 +122,7 @@ class PlanDetail(object):
 
 
         :param plan: The plan of this PlanDetail.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plan = plan
@@ -134,7 +133,7 @@ class PlanDetail(object):
 
 
         :return: The price_list of this PlanDetail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._price_list
 
@@ -144,7 +143,7 @@ class PlanDetail(object):
 
 
         :param price_list: The price_list of this PlanDetail.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._price_list = price_list
@@ -155,7 +154,7 @@ class PlanDetail(object):
 
 
         :return: The final_phase_billing_period of this PlanDetail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._final_phase_billing_period
 
@@ -165,7 +164,7 @@ class PlanDetail(object):
 
 
         :param final_phase_billing_period: The final_phase_billing_period of this PlanDetail.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
         if final_phase_billing_period not in allowed_values:
@@ -182,7 +181,7 @@ class PlanDetail(object):
 
 
         :return: The final_phase_recurring_price of this PlanDetail.  # noqa: E501
-        :rtype: list[Price]
+        :rtype: List[Price]
         """
         return self._final_phase_recurring_price
 
@@ -192,7 +191,7 @@ class PlanDetail(object):
 
 
         :param final_phase_recurring_price: The final_phase_recurring_price of this PlanDetail.  # noqa: E501
-        :type: list[Price]
+        :type: List[Price]
         """
 
         self._final_phase_recurring_price = final_phase_recurring_price

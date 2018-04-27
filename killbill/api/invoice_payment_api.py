@@ -50,7 +50,7 @@ class InvoicePaymentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def complete_invoice_payment_transaction(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def complete_invoice_payment_transaction(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Complete an existing transaction  # noqa: E501
 
           # noqa: E501
@@ -60,15 +60,15 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class InvoicePaymentApi(object):
             (data) = self.complete_invoice_payment_transaction_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def complete_invoice_payment_transaction_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def complete_invoice_payment_transaction_with_http_info(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Complete an existing transaction  # noqa: E501
 
           # noqa: E501
@@ -90,15 +90,15 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param PaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -201,7 +201,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_chargeback(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_chargeback(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Record a chargeback  # noqa: E501
 
           # noqa: E501
@@ -211,13 +211,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param InvoicePaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -229,7 +229,7 @@ class InvoicePaymentApi(object):
             (data) = self.create_chargeback_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_chargeback_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_chargeback_with_http_info(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Record a chargeback  # noqa: E501
 
           # noqa: E501
@@ -239,13 +239,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param InvoicePaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -342,7 +342,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_chargeback_reversal(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_chargeback_reversal(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Record a chargebackReversal  # noqa: E501
 
           # noqa: E501
@@ -352,13 +352,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param InvoicePaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -370,7 +370,7 @@ class InvoicePaymentApi(object):
             (data) = self.create_chargeback_reversal_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_chargeback_reversal_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_chargeback_reversal_with_http_info(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Record a chargebackReversal  # noqa: E501
 
           # noqa: E501
@@ -380,13 +380,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param InvoicePaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -483,7 +483,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_invoice_payment_custom_fields(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_payment_custom_fields(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to payment  # noqa: E501
 
           # noqa: E501
@@ -493,14 +493,14 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str payment_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -511,7 +511,7 @@ class InvoicePaymentApi(object):
             (data) = self.create_invoice_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_invoice_payment_custom_fields_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_payment_custom_fields_with_http_info(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to payment  # noqa: E501
 
           # noqa: E501
@@ -521,14 +521,14 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str payment_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -616,7 +616,7 @@ class InvoicePaymentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -624,7 +624,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_invoice_payment_tags(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_payment_tags(self, payment_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to payment  # noqa: E501
 
           # noqa: E501
@@ -634,14 +634,14 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str payment_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -652,7 +652,7 @@ class InvoicePaymentApi(object):
             (data) = self.create_invoice_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_invoice_payment_tags_with_http_info(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_payment_tags_with_http_info(self, payment_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to payment  # noqa: E501
 
           # noqa: E501
@@ -662,14 +662,14 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str payment_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -754,7 +754,7 @@ class InvoicePaymentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -762,7 +762,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_refund_with_adjustments(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_refund_with_adjustments(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Refund a payment, and adjust the invoice if needed  # noqa: E501
 
           # noqa: E501
@@ -772,16 +772,16 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param InvoicePaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool external_payment:
-        :param str payment_method_id:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool external_payment:
+        :param Str payment_method_id:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -793,7 +793,7 @@ class InvoicePaymentApi(object):
             (data) = self.create_refund_with_adjustments_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_refund_with_adjustments_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_refund_with_adjustments_with_http_info(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Refund a payment, and adjust the invoice if needed  # noqa: E501
 
           # noqa: E501
@@ -803,16 +803,16 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
+        :param Str payment_id: (required)
         :param InvoicePaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool external_payment:
-        :param str payment_method_id:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool external_payment:
+        :param Str payment_method_id:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -916,7 +916,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_invoice_payment_custom_fields(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_payment_custom_fields(self, payment_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from payment  # noqa: E501
 
           # noqa: E501
@@ -926,13 +926,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str payment_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -944,7 +944,7 @@ class InvoicePaymentApi(object):
             (data) = self.delete_invoice_payment_custom_fields_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_invoice_payment_custom_fields_with_http_info(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_payment_custom_fields_with_http_info(self, payment_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from payment  # noqa: E501
 
           # noqa: E501
@@ -954,13 +954,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str payment_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1054,7 +1054,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_invoice_payment_tags(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_payment_tags(self, payment_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from payment  # noqa: E501
 
           # noqa: E501
@@ -1064,13 +1064,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str payment_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1082,7 +1082,7 @@ class InvoicePaymentApi(object):
             (data) = self.delete_invoice_payment_tags_with_http_info(payment_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_invoice_payment_tags_with_http_info(self, payment_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_payment_tags_with_http_info(self, payment_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from payment  # noqa: E501
 
           # noqa: E501
@@ -1092,13 +1092,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str payment_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1192,7 +1192,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_payment(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payment(self, payment_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a payment by id  # noqa: E501
 
           # noqa: E501
@@ -1202,13 +1202,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_plugin_info:
-        :param bool with_attempts:
-        :param list[str] plugin_property:
-        :param str audit:
+        :param Str payment_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool with_attempts:
+        :param List[Str] plugin_property:
+        :param Str audit:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1220,7 +1220,7 @@ class InvoicePaymentApi(object):
             (data) = self.get_invoice_payment_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_payment_with_http_info(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payment_with_http_info(self, payment_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a payment by id  # noqa: E501
 
           # noqa: E501
@@ -1230,13 +1230,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_plugin_info:
-        :param bool with_attempts:
-        :param list[str] plugin_property:
-        :param str audit:
+        :param Str payment_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool with_attempts:
+        :param List[Str] plugin_property:
+        :param Str audit:
         :return: InvoicePayment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1322,7 +1322,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_payment_custom_fields(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payment_custom_fields(self, payment_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve payment custom fields  # noqa: E501
 
           # noqa: E501
@@ -1332,11 +1332,11 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str payment_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1347,7 +1347,7 @@ class InvoicePaymentApi(object):
             (data) = self.get_invoice_payment_custom_fields_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_payment_custom_fields_with_http_info(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payment_custom_fields_with_http_info(self, payment_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve payment custom fields  # noqa: E501
 
           # noqa: E501
@@ -1357,11 +1357,11 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str payment_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1431,7 +1431,7 @@ class InvoicePaymentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1439,7 +1439,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_payment_tags(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payment_tags(self, payment_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve payment tags  # noqa: E501
 
           # noqa: E501
@@ -1449,13 +1449,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[Tag]
+        :param Str payment_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1466,7 +1466,7 @@ class InvoicePaymentApi(object):
             (data) = self.get_invoice_payment_tags_with_http_info(payment_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_payment_tags_with_http_info(self, payment_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payment_tags_with_http_info(self, payment_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve payment tags  # noqa: E501
 
           # noqa: E501
@@ -1476,13 +1476,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[Tag]
+        :param Str payment_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1557,7 +1557,7 @@ class InvoicePaymentApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1565,7 +1565,7 @@ class InvoicePaymentApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_invoice_payment_custom_fields(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_invoice_payment_custom_fields(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to payment  # noqa: E501
 
           # noqa: E501
@@ -1575,13 +1575,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str payment_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1593,7 +1593,7 @@ class InvoicePaymentApi(object):
             (data) = self.modify_invoice_payment_custom_fields_with_http_info(payment_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_invoice_payment_custom_fields_with_http_info(self, payment_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_invoice_payment_custom_fields_with_http_info(self, payment_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to payment  # noqa: E501
 
           # noqa: E501
@@ -1603,13 +1603,13 @@ class InvoicePaymentApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str payment_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

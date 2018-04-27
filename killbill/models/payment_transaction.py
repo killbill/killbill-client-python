@@ -33,8 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.plugin_property import PluginProperty  # noqa: F401,E501
 
 
 class PaymentTransaction(object):
@@ -51,23 +49,23 @@ class PaymentTransaction(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'transaction_id': 'str',
-        'transaction_external_key': 'str',
-        'payment_id': 'str',
-        'payment_external_key': 'str',
-        'transaction_type': 'str',
-        'amount': 'float',
-        'currency': 'str',
-        'effective_date': 'datetime',
-        'processed_amount': 'float',
-        'processed_currency': 'str',
-        'status': 'str',
-        'gateway_error_code': 'str',
-        'gateway_error_msg': 'str',
-        'first_payment_reference_id': 'str',
-        'second_payment_reference_id': 'str',
-        'properties': 'list[PluginProperty]',
-        'audit_logs': 'list[AuditLog]'
+        'transaction_id': 'Str',
+        'transaction_external_key': 'Str',
+        'payment_id': 'Str',
+        'payment_external_key': 'Str',
+        'transaction_type': 'Str',
+        'amount': 'Float',
+        'currency': 'Str',
+        'effective_date': 'Datetime',
+        'processed_amount': 'Float',
+        'processed_currency': 'Str',
+        'status': 'Str',
+        'gateway_error_code': 'Str',
+        'gateway_error_msg': 'Str',
+        'first_payment_reference_id': 'Str',
+        'second_payment_reference_id': 'Str',
+        'properties': 'List[PluginProperty]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -153,7 +151,7 @@ class PaymentTransaction(object):
 
 
         :return: The transaction_id of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._transaction_id
 
@@ -163,7 +161,7 @@ class PaymentTransaction(object):
 
 
         :param transaction_id: The transaction_id of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._transaction_id = transaction_id
@@ -174,7 +172,7 @@ class PaymentTransaction(object):
 
 
         :return: The transaction_external_key of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._transaction_external_key
 
@@ -184,7 +182,7 @@ class PaymentTransaction(object):
 
 
         :param transaction_external_key: The transaction_external_key of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._transaction_external_key = transaction_external_key
@@ -196,7 +194,7 @@ class PaymentTransaction(object):
         Associated payment id, required when notifying state transitions  # noqa: E501
 
         :return: The payment_id of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_id
 
@@ -207,7 +205,7 @@ class PaymentTransaction(object):
         Associated payment id, required when notifying state transitions  # noqa: E501
 
         :param payment_id: The payment_id of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_id = payment_id
@@ -218,7 +216,7 @@ class PaymentTransaction(object):
 
 
         :return: The payment_external_key of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_external_key
 
@@ -228,7 +226,7 @@ class PaymentTransaction(object):
 
 
         :param payment_external_key: The payment_external_key of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_external_key = payment_external_key
@@ -239,7 +237,7 @@ class PaymentTransaction(object):
 
 
         :return: The transaction_type of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._transaction_type
 
@@ -249,7 +247,7 @@ class PaymentTransaction(object):
 
 
         :param transaction_type: The transaction_type of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AUTHORIZE", "CAPTURE", "CHARGEBACK", "CREDIT", "PURCHASE", "REFUND", "VOID"]  # noqa: E501
         if transaction_type not in allowed_values:
@@ -267,7 +265,7 @@ class PaymentTransaction(object):
         Transaction amount, required except for void operations  # noqa: E501
 
         :return: The amount of this PaymentTransaction.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._amount
 
@@ -278,7 +276,7 @@ class PaymentTransaction(object):
         Transaction amount, required except for void operations  # noqa: E501
 
         :param amount: The amount of this PaymentTransaction.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._amount = amount
@@ -290,7 +288,7 @@ class PaymentTransaction(object):
         Amount currency (account currency unless specified)  # noqa: E501
 
         :return: The currency of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -301,7 +299,7 @@ class PaymentTransaction(object):
         Amount currency (account currency unless specified)  # noqa: E501
 
         :param currency: The currency of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -318,7 +316,7 @@ class PaymentTransaction(object):
 
 
         :return: The effective_date of this PaymentTransaction.  # noqa: E501
-        :rtype: datetime
+        :rtype: Datetime
         """
         return self._effective_date
 
@@ -328,7 +326,7 @@ class PaymentTransaction(object):
 
 
         :param effective_date: The effective_date of this PaymentTransaction.  # noqa: E501
-        :type: datetime
+        :type: Datetime
         """
 
         self._effective_date = effective_date
@@ -339,7 +337,7 @@ class PaymentTransaction(object):
 
 
         :return: The processed_amount of this PaymentTransaction.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._processed_amount
 
@@ -349,7 +347,7 @@ class PaymentTransaction(object):
 
 
         :param processed_amount: The processed_amount of this PaymentTransaction.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._processed_amount = processed_amount
@@ -360,7 +358,7 @@ class PaymentTransaction(object):
 
 
         :return: The processed_currency of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._processed_currency
 
@@ -370,7 +368,7 @@ class PaymentTransaction(object):
 
 
         :param processed_currency: The processed_currency of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if processed_currency not in allowed_values:
@@ -388,7 +386,7 @@ class PaymentTransaction(object):
         Transaction status, required for state change notifications  # noqa: E501
 
         :return: The status of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._status
 
@@ -399,7 +397,7 @@ class PaymentTransaction(object):
         Transaction status, required for state change notifications  # noqa: E501
 
         :param status: The status of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["SUCCESS", "UNKNOWN", "PENDING", "PAYMENT_FAILURE", "PLUGIN_FAILURE", "PAYMENT_SYSTEM_OFF"]  # noqa: E501
         if status not in allowed_values:
@@ -416,7 +414,7 @@ class PaymentTransaction(object):
 
 
         :return: The gateway_error_code of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._gateway_error_code
 
@@ -426,7 +424,7 @@ class PaymentTransaction(object):
 
 
         :param gateway_error_code: The gateway_error_code of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._gateway_error_code = gateway_error_code
@@ -437,7 +435,7 @@ class PaymentTransaction(object):
 
 
         :return: The gateway_error_msg of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._gateway_error_msg
 
@@ -447,7 +445,7 @@ class PaymentTransaction(object):
 
 
         :param gateway_error_msg: The gateway_error_msg of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._gateway_error_msg = gateway_error_msg
@@ -458,7 +456,7 @@ class PaymentTransaction(object):
 
 
         :return: The first_payment_reference_id of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._first_payment_reference_id
 
@@ -468,7 +466,7 @@ class PaymentTransaction(object):
 
 
         :param first_payment_reference_id: The first_payment_reference_id of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._first_payment_reference_id = first_payment_reference_id
@@ -479,7 +477,7 @@ class PaymentTransaction(object):
 
 
         :return: The second_payment_reference_id of this PaymentTransaction.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._second_payment_reference_id
 
@@ -489,7 +487,7 @@ class PaymentTransaction(object):
 
 
         :param second_payment_reference_id: The second_payment_reference_id of this PaymentTransaction.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._second_payment_reference_id = second_payment_reference_id
@@ -500,7 +498,7 @@ class PaymentTransaction(object):
 
 
         :return: The properties of this PaymentTransaction.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._properties
 
@@ -510,7 +508,7 @@ class PaymentTransaction(object):
 
 
         :param properties: The properties of this PaymentTransaction.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._properties = properties
@@ -521,7 +519,7 @@ class PaymentTransaction(object):
 
 
         :return: The audit_logs of this PaymentTransaction.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -531,7 +529,7 @@ class PaymentTransaction(object):
 
 
         :param audit_logs: The audit_logs of this PaymentTransaction.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.session import Session  # noqa: F401,E501
 
 
 class Subject(object):
@@ -50,9 +49,9 @@ class Subject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'principal': 'str',
-        'is_authenticated': 'bool',
-        'is_remembered': 'bool',
+        'principal': 'Str',
+        'is_authenticated': 'Bool',
+        'is_remembered': 'Bool',
         'session': 'Session'
     }
 
@@ -87,7 +86,7 @@ class Subject(object):
 
 
         :return: The principal of this Subject.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._principal
 
@@ -97,7 +96,7 @@ class Subject(object):
 
 
         :param principal: The principal of this Subject.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._principal = principal
@@ -108,7 +107,7 @@ class Subject(object):
 
 
         :return: The is_authenticated of this Subject.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_authenticated
 
@@ -118,7 +117,7 @@ class Subject(object):
 
 
         :param is_authenticated: The is_authenticated of this Subject.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_authenticated = is_authenticated
@@ -129,7 +128,7 @@ class Subject(object):
 
 
         :return: The is_remembered of this Subject.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_remembered
 
@@ -139,7 +138,7 @@ class Subject(object):
 
 
         :param is_remembered: The is_remembered of this Subject.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_remembered = is_remembered

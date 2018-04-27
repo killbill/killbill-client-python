@@ -33,10 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.account import Account  # noqa: F401,E501
-from killbill.models.bundle import Bundle  # noqa: F401,E501
-from killbill.models.invoice import Invoice  # noqa: F401,E501
-from killbill.models.invoice_payment import InvoicePayment  # noqa: F401,E501
 
 
 class AccountTimeline(object):
@@ -54,9 +50,9 @@ class AccountTimeline(object):
     """
     swagger_types = {
         'account': 'Account',
-        'bundles': 'list[Bundle]',
-        'invoices': 'list[Invoice]',
-        'payments': 'list[InvoicePayment]'
+        'bundles': 'List[Bundle]',
+        'invoices': 'List[Invoice]',
+        'payments': 'List[InvoicePayment]'
     }
 
     attribute_map = {
@@ -111,7 +107,7 @@ class AccountTimeline(object):
 
 
         :return: The bundles of this AccountTimeline.  # noqa: E501
-        :rtype: list[Bundle]
+        :rtype: List[Bundle]
         """
         return self._bundles
 
@@ -121,7 +117,7 @@ class AccountTimeline(object):
 
 
         :param bundles: The bundles of this AccountTimeline.  # noqa: E501
-        :type: list[Bundle]
+        :type: List[Bundle]
         """
 
         self._bundles = bundles
@@ -132,7 +128,7 @@ class AccountTimeline(object):
 
 
         :return: The invoices of this AccountTimeline.  # noqa: E501
-        :rtype: list[Invoice]
+        :rtype: List[Invoice]
         """
         return self._invoices
 
@@ -142,7 +138,7 @@ class AccountTimeline(object):
 
 
         :param invoices: The invoices of this AccountTimeline.  # noqa: E501
-        :type: list[Invoice]
+        :type: List[Invoice]
         """
 
         self._invoices = invoices
@@ -153,7 +149,7 @@ class AccountTimeline(object):
 
 
         :return: The payments of this AccountTimeline.  # noqa: E501
-        :rtype: list[InvoicePayment]
+        :rtype: List[InvoicePayment]
         """
         return self._payments
 
@@ -163,7 +159,7 @@ class AccountTimeline(object):
 
 
         :param payments: The payments of this AccountTimeline.  # noqa: E501
-        :type: list[InvoicePayment]
+        :type: List[InvoicePayment]
         """
 
         self._payments = payments

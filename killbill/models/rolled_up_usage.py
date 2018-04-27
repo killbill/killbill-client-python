@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.rolled_up_unit import RolledUpUnit  # noqa: F401,E501
 
 
 class RolledUpUsage(object):
@@ -50,10 +49,10 @@ class RolledUpUsage(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'subscription_id': 'str',
-        'start_date': 'date',
-        'end_date': 'date',
-        'rolled_up_units': 'list[RolledUpUnit]'
+        'subscription_id': 'Str',
+        'start_date': 'Date',
+        'end_date': 'Date',
+        'rolled_up_units': 'List[RolledUpUnit]'
     }
 
     attribute_map = {
@@ -87,7 +86,7 @@ class RolledUpUsage(object):
 
 
         :return: The subscription_id of this RolledUpUsage.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._subscription_id
 
@@ -97,7 +96,7 @@ class RolledUpUsage(object):
 
 
         :param subscription_id: The subscription_id of this RolledUpUsage.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._subscription_id = subscription_id
@@ -108,7 +107,7 @@ class RolledUpUsage(object):
 
 
         :return: The start_date of this RolledUpUsage.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._start_date
 
@@ -118,7 +117,7 @@ class RolledUpUsage(object):
 
 
         :param start_date: The start_date of this RolledUpUsage.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._start_date = start_date
@@ -129,7 +128,7 @@ class RolledUpUsage(object):
 
 
         :return: The end_date of this RolledUpUsage.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._end_date
 
@@ -139,7 +138,7 @@ class RolledUpUsage(object):
 
 
         :param end_date: The end_date of this RolledUpUsage.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._end_date = end_date
@@ -150,7 +149,7 @@ class RolledUpUsage(object):
 
 
         :return: The rolled_up_units of this RolledUpUsage.  # noqa: E501
-        :rtype: list[RolledUpUnit]
+        :rtype: List[RolledUpUnit]
         """
         return self._rolled_up_units
 
@@ -160,7 +159,7 @@ class RolledUpUsage(object):
 
 
         :param rolled_up_units: The rolled_up_units of this RolledUpUsage.  # noqa: E501
-        :type: list[RolledUpUnit]
+        :type: List[RolledUpUnit]
         """
 
         self._rolled_up_units = rolled_up_units

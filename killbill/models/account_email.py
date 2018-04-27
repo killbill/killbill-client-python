@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class AccountEmail(object):
@@ -50,9 +49,9 @@ class AccountEmail(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'email': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'account_id': 'Str',
+        'email': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -81,7 +80,7 @@ class AccountEmail(object):
 
 
         :return: The account_id of this AccountEmail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -91,7 +90,7 @@ class AccountEmail(object):
 
 
         :param account_id: The account_id of this AccountEmail.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -102,7 +101,7 @@ class AccountEmail(object):
 
 
         :return: The email of this AccountEmail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._email
 
@@ -112,7 +111,7 @@ class AccountEmail(object):
 
 
         :param email: The email of this AccountEmail.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if email is None:
             raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
@@ -125,7 +124,7 @@ class AccountEmail(object):
 
 
         :return: The audit_logs of this AccountEmail.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -135,7 +134,7 @@ class AccountEmail(object):
 
 
         :param audit_logs: The audit_logs of this AccountEmail.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

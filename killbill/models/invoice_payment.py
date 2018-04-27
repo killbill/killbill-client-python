@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.payment_attempt import PaymentAttempt  # noqa: F401,E501
-from killbill.models.payment_transaction import PaymentTransaction  # noqa: F401,E501
 
 
 class InvoicePayment(object):
@@ -52,21 +49,21 @@ class InvoicePayment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'target_invoice_id': 'str',
-        'account_id': 'str',
-        'payment_id': 'str',
-        'payment_number': 'str',
-        'payment_external_key': 'str',
-        'auth_amount': 'float',
-        'captured_amount': 'float',
-        'purchased_amount': 'float',
-        'refunded_amount': 'float',
-        'credited_amount': 'float',
-        'currency': 'str',
-        'payment_method_id': 'str',
-        'transactions': 'list[PaymentTransaction]',
-        'payment_attempts': 'list[PaymentAttempt]',
-        'audit_logs': 'list[AuditLog]'
+        'target_invoice_id': 'Str',
+        'account_id': 'Str',
+        'payment_id': 'Str',
+        'payment_number': 'Str',
+        'payment_external_key': 'Str',
+        'auth_amount': 'Float',
+        'captured_amount': 'Float',
+        'purchased_amount': 'Float',
+        'refunded_amount': 'Float',
+        'credited_amount': 'Float',
+        'currency': 'Str',
+        'payment_method_id': 'Str',
+        'transactions': 'List[PaymentTransaction]',
+        'payment_attempts': 'List[PaymentAttempt]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -144,7 +141,7 @@ class InvoicePayment(object):
 
 
         :return: The target_invoice_id of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._target_invoice_id
 
@@ -154,7 +151,7 @@ class InvoicePayment(object):
 
 
         :param target_invoice_id: The target_invoice_id of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._target_invoice_id = target_invoice_id
@@ -165,7 +162,7 @@ class InvoicePayment(object):
 
 
         :return: The account_id of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -175,7 +172,7 @@ class InvoicePayment(object):
 
 
         :param account_id: The account_id of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -186,7 +183,7 @@ class InvoicePayment(object):
 
 
         :return: The payment_id of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_id
 
@@ -196,7 +193,7 @@ class InvoicePayment(object):
 
 
         :param payment_id: The payment_id of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_id = payment_id
@@ -207,7 +204,7 @@ class InvoicePayment(object):
 
 
         :return: The payment_number of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_number
 
@@ -217,7 +214,7 @@ class InvoicePayment(object):
 
 
         :param payment_number: The payment_number of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_number = payment_number
@@ -228,7 +225,7 @@ class InvoicePayment(object):
 
 
         :return: The payment_external_key of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_external_key
 
@@ -238,7 +235,7 @@ class InvoicePayment(object):
 
 
         :param payment_external_key: The payment_external_key of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_external_key = payment_external_key
@@ -249,7 +246,7 @@ class InvoicePayment(object):
 
 
         :return: The auth_amount of this InvoicePayment.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._auth_amount
 
@@ -259,7 +256,7 @@ class InvoicePayment(object):
 
 
         :param auth_amount: The auth_amount of this InvoicePayment.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._auth_amount = auth_amount
@@ -270,7 +267,7 @@ class InvoicePayment(object):
 
 
         :return: The captured_amount of this InvoicePayment.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._captured_amount
 
@@ -280,7 +277,7 @@ class InvoicePayment(object):
 
 
         :param captured_amount: The captured_amount of this InvoicePayment.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._captured_amount = captured_amount
@@ -291,7 +288,7 @@ class InvoicePayment(object):
 
 
         :return: The purchased_amount of this InvoicePayment.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._purchased_amount
 
@@ -301,7 +298,7 @@ class InvoicePayment(object):
 
 
         :param purchased_amount: The purchased_amount of this InvoicePayment.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._purchased_amount = purchased_amount
@@ -312,7 +309,7 @@ class InvoicePayment(object):
 
 
         :return: The refunded_amount of this InvoicePayment.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._refunded_amount
 
@@ -322,7 +319,7 @@ class InvoicePayment(object):
 
 
         :param refunded_amount: The refunded_amount of this InvoicePayment.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._refunded_amount = refunded_amount
@@ -333,7 +330,7 @@ class InvoicePayment(object):
 
 
         :return: The credited_amount of this InvoicePayment.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._credited_amount
 
@@ -343,7 +340,7 @@ class InvoicePayment(object):
 
 
         :param credited_amount: The credited_amount of this InvoicePayment.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._credited_amount = credited_amount
@@ -354,7 +351,7 @@ class InvoicePayment(object):
 
 
         :return: The currency of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -364,7 +361,7 @@ class InvoicePayment(object):
 
 
         :param currency: The currency of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -381,7 +378,7 @@ class InvoicePayment(object):
 
 
         :return: The payment_method_id of this InvoicePayment.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_method_id
 
@@ -391,7 +388,7 @@ class InvoicePayment(object):
 
 
         :param payment_method_id: The payment_method_id of this InvoicePayment.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_method_id = payment_method_id
@@ -402,7 +399,7 @@ class InvoicePayment(object):
 
 
         :return: The transactions of this InvoicePayment.  # noqa: E501
-        :rtype: list[PaymentTransaction]
+        :rtype: List[PaymentTransaction]
         """
         return self._transactions
 
@@ -412,7 +409,7 @@ class InvoicePayment(object):
 
 
         :param transactions: The transactions of this InvoicePayment.  # noqa: E501
-        :type: list[PaymentTransaction]
+        :type: List[PaymentTransaction]
         """
 
         self._transactions = transactions
@@ -423,7 +420,7 @@ class InvoicePayment(object):
 
 
         :return: The payment_attempts of this InvoicePayment.  # noqa: E501
-        :rtype: list[PaymentAttempt]
+        :rtype: List[PaymentAttempt]
         """
         return self._payment_attempts
 
@@ -433,7 +430,7 @@ class InvoicePayment(object):
 
 
         :param payment_attempts: The payment_attempts of this InvoicePayment.  # noqa: E501
-        :type: list[PaymentAttempt]
+        :type: List[PaymentAttempt]
         """
 
         self._payment_attempts = payment_attempts
@@ -444,7 +441,7 @@ class InvoicePayment(object):
 
 
         :return: The audit_logs of this InvoicePayment.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -454,7 +451,7 @@ class InvoicePayment(object):
 
 
         :param audit_logs: The audit_logs of this InvoicePayment.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

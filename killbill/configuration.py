@@ -47,7 +47,7 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
     def __init__(self):
         """Constructor"""
         # Default Base url
-        self.host = "https://localhost"
+        self.host = "http://localhost:8080"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
@@ -57,9 +57,9 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
         # dict to store API prefix (e.g. Bearer)
         self.api_key_prefix = {}
         # Username for HTTP basic authentication
-        self.username = ""
+        self.username = "admin"
         # Password for HTTP basic authentication
-        self.password = ""
+        self.password = "password"
 
         # Logging Settings
         self.logger = {}
@@ -243,5 +243,5 @@ class Configuration(six.with_metaclass(TypeWithDefault, object)):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.0.0\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 0.0.1-SNAPSHOT".\
                format(env=sys.platform, pyversion=sys.version)

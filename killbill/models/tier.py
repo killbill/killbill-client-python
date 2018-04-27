@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.limit import Limit  # noqa: F401,E501
-from killbill.models.price import Price  # noqa: F401,E501
-from killbill.models.tiered_block import TieredBlock  # noqa: F401,E501
 
 
 class Tier(object):
@@ -52,10 +49,10 @@ class Tier(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'limits': 'list[Limit]',
-        'fixed_price': 'list[Price]',
-        'recurring_price': 'list[Price]',
-        'blocks': 'list[TieredBlock]'
+        'limits': 'List[Limit]',
+        'fixed_price': 'List[Price]',
+        'recurring_price': 'List[Price]',
+        'blocks': 'List[TieredBlock]'
     }
 
     attribute_map = {
@@ -89,7 +86,7 @@ class Tier(object):
 
 
         :return: The limits of this Tier.  # noqa: E501
-        :rtype: list[Limit]
+        :rtype: List[Limit]
         """
         return self._limits
 
@@ -99,7 +96,7 @@ class Tier(object):
 
 
         :param limits: The limits of this Tier.  # noqa: E501
-        :type: list[Limit]
+        :type: List[Limit]
         """
 
         self._limits = limits
@@ -110,7 +107,7 @@ class Tier(object):
 
 
         :return: The fixed_price of this Tier.  # noqa: E501
-        :rtype: list[Price]
+        :rtype: List[Price]
         """
         return self._fixed_price
 
@@ -120,7 +117,7 @@ class Tier(object):
 
 
         :param fixed_price: The fixed_price of this Tier.  # noqa: E501
-        :type: list[Price]
+        :type: List[Price]
         """
 
         self._fixed_price = fixed_price
@@ -131,7 +128,7 @@ class Tier(object):
 
 
         :return: The recurring_price of this Tier.  # noqa: E501
-        :rtype: list[Price]
+        :rtype: List[Price]
         """
         return self._recurring_price
 
@@ -141,7 +138,7 @@ class Tier(object):
 
 
         :param recurring_price: The recurring_price of this Tier.  # noqa: E501
-        :type: list[Price]
+        :type: List[Price]
         """
 
         self._recurring_price = recurring_price
@@ -152,7 +149,7 @@ class Tier(object):
 
 
         :return: The blocks of this Tier.  # noqa: E501
-        :rtype: list[TieredBlock]
+        :rtype: List[TieredBlock]
         """
         return self._blocks
 
@@ -162,7 +159,7 @@ class Tier(object):
 
 
         :param blocks: The blocks of this Tier.  # noqa: E501
-        :type: list[TieredBlock]
+        :type: List[TieredBlock]
         """
 
         self._blocks = blocks

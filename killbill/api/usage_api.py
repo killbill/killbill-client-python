@@ -50,7 +50,7 @@ class UsageApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_all_usage(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_usage(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve usage for a subscription  # noqa: E501
 
           # noqa: E501
@@ -60,11 +60,11 @@ class UsageApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date start_date:
-        :param date end_date:
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date start_date:
+        :param Date end_date:
         :return: RolledUpUsage
                  If the method is called asynchronously,
                  returns the request thread.
@@ -76,7 +76,7 @@ class UsageApi(object):
             (data) = self.get_all_usage_with_http_info(subscription_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_all_usage_with_http_info(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_usage_with_http_info(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve usage for a subscription  # noqa: E501
 
           # noqa: E501
@@ -86,11 +86,11 @@ class UsageApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date start_date:
-        :param date end_date:
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date start_date:
+        :param Date end_date:
         :return: RolledUpUsage
                  If the method is called asynchronously,
                  returns the request thread.
@@ -171,7 +171,7 @@ class UsageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_usage(self, subscription_id, unit_type, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_usage(self, subscription_id=None, unit_type=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve usage for a subscription and unit type  # noqa: E501
 
           # noqa: E501
@@ -181,12 +181,12 @@ class UsageApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str unit_type: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date start_date:
-        :param date end_date:
+        :param Str subscription_id: (required)
+        :param Str unit_type: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date start_date:
+        :param Date end_date:
         :return: RolledUpUsage
                  If the method is called asynchronously,
                  returns the request thread.
@@ -198,7 +198,7 @@ class UsageApi(object):
             (data) = self.get_usage_with_http_info(subscription_id, unit_type, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_usage_with_http_info(self, subscription_id, unit_type, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_usage_with_http_info(self, subscription_id=None, unit_type=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve usage for a subscription and unit type  # noqa: E501
 
           # noqa: E501
@@ -208,12 +208,12 @@ class UsageApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str unit_type: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date start_date:
-        :param date end_date:
+        :param Str subscription_id: (required)
+        :param Str unit_type: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date start_date:
+        :param Date end_date:
         :return: RolledUpUsage
                  If the method is called asynchronously,
                  returns the request thread.
@@ -300,7 +300,7 @@ class UsageApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def record_usage(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def record_usage(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Record usage for a subscription  # noqa: E501
 
           # noqa: E501
@@ -311,11 +311,11 @@ class UsageApi(object):
 
         :param async bool
         :param SubscriptionUsageRecord body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -327,7 +327,7 @@ class UsageApi(object):
             (data) = self.record_usage_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def record_usage_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def record_usage_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Record usage for a subscription  # noqa: E501
 
           # noqa: E501
@@ -338,11 +338,11 @@ class UsageApi(object):
 
         :param async bool
         :param SubscriptionUsageRecord body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

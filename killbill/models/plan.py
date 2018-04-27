@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.phase import Phase  # noqa: F401,E501
 
 
 class Plan(object):
@@ -50,10 +49,10 @@ class Plan(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'pretty_name': 'str',
-        'billing_period': 'str',
-        'phases': 'list[Phase]'
+        'name': 'Str',
+        'pretty_name': 'Str',
+        'billing_period': 'Str',
+        'phases': 'List[Phase]'
     }
 
     attribute_map = {
@@ -87,7 +86,7 @@ class Plan(object):
 
 
         :return: The name of this Plan.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -97,7 +96,7 @@ class Plan(object):
 
 
         :param name: The name of this Plan.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._name = name
@@ -108,7 +107,7 @@ class Plan(object):
 
 
         :return: The pretty_name of this Plan.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._pretty_name
 
@@ -118,7 +117,7 @@ class Plan(object):
 
 
         :param pretty_name: The pretty_name of this Plan.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._pretty_name = pretty_name
@@ -129,7 +128,7 @@ class Plan(object):
 
 
         :return: The billing_period of this Plan.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_period
 
@@ -139,7 +138,7 @@ class Plan(object):
 
 
         :param billing_period: The billing_period of this Plan.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
         if billing_period not in allowed_values:
@@ -156,7 +155,7 @@ class Plan(object):
 
 
         :return: The phases of this Plan.  # noqa: E501
-        :rtype: list[Phase]
+        :rtype: List[Phase]
         """
         return self._phases
 
@@ -166,7 +165,7 @@ class Plan(object):
 
 
         :param phases: The phases of this Plan.  # noqa: E501
-        :type: list[Phase]
+        :type: List[Phase]
         """
 
         self._phases = phases

@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class HostedPaymentPageFormDescriptor(object):
@@ -50,12 +49,12 @@ class HostedPaymentPageFormDescriptor(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'kb_account_id': 'str',
-        'form_method': 'str',
-        'form_url': 'str',
-        'form_fields': 'dict(str, object)',
-        'properties': 'dict(str, object)',
-        'audit_logs': 'list[AuditLog]'
+        'kb_account_id': 'Str',
+        'form_method': 'Str',
+        'form_url': 'Str',
+        'form_fields': 'Dict[String, Object]',
+        'properties': 'Dict[String, Object]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -97,7 +96,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :return: The kb_account_id of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._kb_account_id
 
@@ -107,7 +106,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :param kb_account_id: The kb_account_id of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._kb_account_id = kb_account_id
@@ -118,7 +117,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :return: The form_method of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._form_method
 
@@ -128,7 +127,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :param form_method: The form_method of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._form_method = form_method
@@ -139,7 +138,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :return: The form_url of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._form_url
 
@@ -149,7 +148,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :param form_url: The form_url of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._form_url = form_url
@@ -160,7 +159,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :return: The form_fields of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :rtype: dict(str, object)
+        :rtype: Dict[String, Object]
         """
         return self._form_fields
 
@@ -170,7 +169,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :param form_fields: The form_fields of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :type: dict(str, object)
+        :type: Dict[String, Object]
         """
 
         self._form_fields = form_fields
@@ -181,7 +180,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :return: The properties of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :rtype: dict(str, object)
+        :rtype: Dict[String, Object]
         """
         return self._properties
 
@@ -191,7 +190,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :param properties: The properties of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :type: dict(str, object)
+        :type: Dict[String, Object]
         """
 
         self._properties = properties
@@ -202,7 +201,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :return: The audit_logs of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -212,7 +211,7 @@ class HostedPaymentPageFormDescriptor(object):
 
 
         :param audit_logs: The audit_logs of this HostedPaymentPageFormDescriptor.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

@@ -50,7 +50,7 @@ class InvoiceItemApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_invoice_item_custom_fields(self, invoice_item_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_item_custom_fields(self, invoice_item_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to invoice item  # noqa: E501
 
           # noqa: E501
@@ -60,14 +60,14 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str invoice_item_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -78,7 +78,7 @@ class InvoiceItemApi(object):
             (data) = self.create_invoice_item_custom_fields_with_http_info(invoice_item_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_invoice_item_custom_fields_with_http_info(self, invoice_item_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_item_custom_fields_with_http_info(self, invoice_item_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to invoice item  # noqa: E501
 
           # noqa: E501
@@ -88,14 +88,14 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str invoice_item_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -183,7 +183,7 @@ class InvoiceItemApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -191,7 +191,7 @@ class InvoiceItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_invoice_item_tags(self, invoice_item_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_item_tags(self, invoice_item_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to invoice item  # noqa: E501
 
           # noqa: E501
@@ -201,14 +201,14 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str invoice_item_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -219,7 +219,7 @@ class InvoiceItemApi(object):
             (data) = self.create_invoice_item_tags_with_http_info(invoice_item_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_invoice_item_tags_with_http_info(self, invoice_item_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_invoice_item_tags_with_http_info(self, invoice_item_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to invoice item  # noqa: E501
 
           # noqa: E501
@@ -229,14 +229,14 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str invoice_item_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -321,7 +321,7 @@ class InvoiceItemApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -329,7 +329,7 @@ class InvoiceItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_invoice_item_custom_fields(self, invoice_item_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_item_custom_fields(self, invoice_item_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from invoice item  # noqa: E501
 
           # noqa: E501
@@ -339,13 +339,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str invoice_item_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -357,7 +357,7 @@ class InvoiceItemApi(object):
             (data) = self.delete_invoice_item_custom_fields_with_http_info(invoice_item_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_invoice_item_custom_fields_with_http_info(self, invoice_item_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_item_custom_fields_with_http_info(self, invoice_item_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from invoice item  # noqa: E501
 
           # noqa: E501
@@ -367,13 +367,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str invoice_item_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -467,7 +467,7 @@ class InvoiceItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_invoice_item_tags(self, invoice_item_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_item_tags(self, invoice_item_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from invoice item  # noqa: E501
 
           # noqa: E501
@@ -477,13 +477,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str invoice_item_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -495,7 +495,7 @@ class InvoiceItemApi(object):
             (data) = self.delete_invoice_item_tags_with_http_info(invoice_item_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_invoice_item_tags_with_http_info(self, invoice_item_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_invoice_item_tags_with_http_info(self, invoice_item_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from invoice item  # noqa: E501
 
           # noqa: E501
@@ -505,13 +505,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str invoice_item_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -605,7 +605,7 @@ class InvoiceItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_item_custom_fields(self, invoice_item_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_item_custom_fields(self, invoice_item_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve invoice item custom fields  # noqa: E501
 
           # noqa: E501
@@ -615,11 +615,11 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str invoice_item_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -630,7 +630,7 @@ class InvoiceItemApi(object):
             (data) = self.get_invoice_item_custom_fields_with_http_info(invoice_item_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_item_custom_fields_with_http_info(self, invoice_item_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_item_custom_fields_with_http_info(self, invoice_item_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve invoice item custom fields  # noqa: E501
 
           # noqa: E501
@@ -640,11 +640,11 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str invoice_item_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -714,7 +714,7 @@ class InvoiceItemApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -722,7 +722,7 @@ class InvoiceItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_item_tags(self, invoice_item_id, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_item_tags(self, invoice_item_id=None, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve invoice item tags  # noqa: E501
 
           # noqa: E501
@@ -732,13 +732,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str invoice_item_id: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -749,7 +749,7 @@ class InvoiceItemApi(object):
             (data) = self.get_invoice_item_tags_with_http_info(invoice_item_id, account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_item_tags_with_http_info(self, invoice_item_id, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_item_tags_with_http_info(self, invoice_item_id=None, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve invoice item tags  # noqa: E501
 
           # noqa: E501
@@ -759,13 +759,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str invoice_item_id: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -843,7 +843,7 @@ class InvoiceItemApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -851,7 +851,7 @@ class InvoiceItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_invoice_item_custom_fields(self, invoice_item_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_invoice_item_custom_fields(self, invoice_item_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to invoice item  # noqa: E501
 
           # noqa: E501
@@ -861,13 +861,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str invoice_item_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -879,7 +879,7 @@ class InvoiceItemApi(object):
             (data) = self.modify_invoice_item_custom_fields_with_http_info(invoice_item_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_invoice_item_custom_fields_with_http_info(self, invoice_item_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_invoice_item_custom_fields_with_http_info(self, invoice_item_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to invoice item  # noqa: E501
 
           # noqa: E501
@@ -889,13 +889,13 @@ class InvoiceItemApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str invoice_item_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str invoice_item_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

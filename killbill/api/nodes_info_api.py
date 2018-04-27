@@ -60,7 +60,7 @@ class NodesInfoApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: list[PluginInfo]
+        :return: List[PluginInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -81,7 +81,7 @@ class NodesInfoApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: list[PluginInfo]
+        :return: List[PluginInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -129,7 +129,7 @@ class NodesInfoApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PluginInfo]',  # noqa: E501
+            response_type='List[PluginInfo]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -137,7 +137,7 @@ class NodesInfoApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def trigger_node_command(self, body, created_by, **kwargs):  # noqa: E501
+    def trigger_node_command(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Trigger a node command  # noqa: E501
 
           # noqa: E501
@@ -148,10 +148,10 @@ class NodesInfoApi(object):
 
         :param async bool
         :param NodeCommand body: (required)
-        :param str created_by: (required)
-        :param bool local_node_only:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Bool local_node_only:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -163,7 +163,7 @@ class NodesInfoApi(object):
             (data) = self.trigger_node_command_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def trigger_node_command_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
+    def trigger_node_command_with_http_info(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Trigger a node command  # noqa: E501
 
           # noqa: E501
@@ -174,10 +174,10 @@ class NodesInfoApi(object):
 
         :param async bool
         :param NodeCommand body: (required)
-        :param str created_by: (required)
-        :param bool local_node_only:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Bool local_node_only:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

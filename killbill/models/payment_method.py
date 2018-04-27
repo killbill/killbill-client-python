@@ -33,8 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.payment_method_plugin_detail import PaymentMethodPluginDetail  # noqa: F401,E501
 
 
 class PaymentMethod(object):
@@ -51,13 +49,13 @@ class PaymentMethod(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'payment_method_id': 'str',
-        'external_key': 'str',
-        'account_id': 'str',
-        'is_default': 'bool',
-        'plugin_name': 'str',
+        'payment_method_id': 'Str',
+        'external_key': 'Str',
+        'account_id': 'Str',
+        'is_default': 'Bool',
+        'plugin_name': 'Str',
         'plugin_info': 'PaymentMethodPluginDetail',
-        'audit_logs': 'list[AuditLog]'
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -103,7 +101,7 @@ class PaymentMethod(object):
 
 
         :return: The payment_method_id of this PaymentMethod.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_method_id
 
@@ -113,7 +111,7 @@ class PaymentMethod(object):
 
 
         :param payment_method_id: The payment_method_id of this PaymentMethod.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_method_id = payment_method_id
@@ -124,7 +122,7 @@ class PaymentMethod(object):
 
 
         :return: The external_key of this PaymentMethod.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_key
 
@@ -134,7 +132,7 @@ class PaymentMethod(object):
 
 
         :param external_key: The external_key of this PaymentMethod.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_key = external_key
@@ -145,7 +143,7 @@ class PaymentMethod(object):
 
 
         :return: The account_id of this PaymentMethod.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -155,7 +153,7 @@ class PaymentMethod(object):
 
 
         :param account_id: The account_id of this PaymentMethod.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -166,7 +164,7 @@ class PaymentMethod(object):
 
 
         :return: The is_default of this PaymentMethod.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_default
 
@@ -176,7 +174,7 @@ class PaymentMethod(object):
 
 
         :param is_default: The is_default of this PaymentMethod.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_default = is_default
@@ -187,7 +185,7 @@ class PaymentMethod(object):
 
 
         :return: The plugin_name of this PaymentMethod.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plugin_name
 
@@ -197,7 +195,7 @@ class PaymentMethod(object):
 
 
         :param plugin_name: The plugin_name of this PaymentMethod.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plugin_name = plugin_name
@@ -229,7 +227,7 @@ class PaymentMethod(object):
 
 
         :return: The audit_logs of this PaymentMethod.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -239,7 +237,7 @@ class PaymentMethod(object):
 
 
         :param audit_logs: The audit_logs of this PaymentMethod.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

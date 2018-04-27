@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.plugin_property import PluginProperty  # noqa: F401,E501
 
 
 class PaymentMethodPluginDetail(object):
@@ -50,9 +49,9 @@ class PaymentMethodPluginDetail(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'external_payment_method_id': 'str',
-        'is_default_payment_method': 'bool',
-        'properties': 'list[PluginProperty]'
+        'external_payment_method_id': 'Str',
+        'is_default_payment_method': 'Bool',
+        'properties': 'List[PluginProperty]'
     }
 
     attribute_map = {
@@ -82,7 +81,7 @@ class PaymentMethodPluginDetail(object):
 
 
         :return: The external_payment_method_id of this PaymentMethodPluginDetail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_payment_method_id
 
@@ -92,7 +91,7 @@ class PaymentMethodPluginDetail(object):
 
 
         :param external_payment_method_id: The external_payment_method_id of this PaymentMethodPluginDetail.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_payment_method_id = external_payment_method_id
@@ -103,7 +102,7 @@ class PaymentMethodPluginDetail(object):
 
 
         :return: The is_default_payment_method of this PaymentMethodPluginDetail.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_default_payment_method
 
@@ -113,7 +112,7 @@ class PaymentMethodPluginDetail(object):
 
 
         :param is_default_payment_method: The is_default_payment_method of this PaymentMethodPluginDetail.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_default_payment_method = is_default_payment_method
@@ -124,7 +123,7 @@ class PaymentMethodPluginDetail(object):
 
 
         :return: The properties of this PaymentMethodPluginDetail.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._properties
 
@@ -134,7 +133,7 @@ class PaymentMethodPluginDetail(object):
 
 
         :param properties: The properties of this PaymentMethodPluginDetail.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._properties = properties

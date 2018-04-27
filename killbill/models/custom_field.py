@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class CustomField(object):
@@ -50,12 +49,12 @@ class CustomField(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'custom_field_id': 'str',
-        'object_id': 'str',
-        'object_type': 'str',
-        'name': 'str',
-        'value': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'custom_field_id': 'Str',
+        'object_id': 'Str',
+        'object_type': 'Str',
+        'name': 'Str',
+        'value': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -95,7 +94,7 @@ class CustomField(object):
 
 
         :return: The custom_field_id of this CustomField.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._custom_field_id
 
@@ -105,7 +104,7 @@ class CustomField(object):
 
 
         :param custom_field_id: The custom_field_id of this CustomField.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._custom_field_id = custom_field_id
@@ -116,7 +115,7 @@ class CustomField(object):
 
 
         :return: The object_id of this CustomField.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._object_id
 
@@ -126,7 +125,7 @@ class CustomField(object):
 
 
         :param object_id: The object_id of this CustomField.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._object_id = object_id
@@ -137,7 +136,7 @@ class CustomField(object):
 
 
         :return: The object_type of this CustomField.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._object_type
 
@@ -147,7 +146,7 @@ class CustomField(object):
 
 
         :param object_type: The object_type of this CustomField.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["ACCOUNT", "ACCOUNT_EMAIL", "BLOCKING_STATES", "BUNDLE", "CUSTOM_FIELD", "INVOICE", "PAYMENT", "TRANSACTION", "INVOICE_ITEM", "INVOICE_PAYMENT", "SUBSCRIPTION", "SUBSCRIPTION_EVENT", "SERVICE_BROADCAST", "PAYMENT_ATTEMPT", "PAYMENT_METHOD", "REFUND", "TAG", "TAG_DEFINITION", "TENANT", "TENANT_KVS"]  # noqa: E501
         if object_type not in allowed_values:
@@ -164,7 +163,7 @@ class CustomField(object):
 
 
         :return: The name of this CustomField.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -174,7 +173,7 @@ class CustomField(object):
 
 
         :param name: The name of this CustomField.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -187,7 +186,7 @@ class CustomField(object):
 
 
         :return: The value of this CustomField.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._value
 
@@ -197,7 +196,7 @@ class CustomField(object):
 
 
         :param value: The value of this CustomField.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if value is None:
             raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
@@ -210,7 +209,7 @@ class CustomField(object):
 
 
         :return: The audit_logs of this CustomField.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -220,7 +219,7 @@ class CustomField(object):
 
 
         :param audit_logs: The audit_logs of this CustomField.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

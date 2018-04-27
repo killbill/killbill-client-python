@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class Tenant(object):
@@ -50,11 +49,11 @@ class Tenant(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tenant_id': 'str',
-        'external_key': 'str',
-        'api_key': 'str',
-        'api_secret': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'tenant_id': 'Str',
+        'external_key': 'Str',
+        'api_key': 'Str',
+        'api_secret': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -90,7 +89,7 @@ class Tenant(object):
 
 
         :return: The tenant_id of this Tenant.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._tenant_id
 
@@ -100,7 +99,7 @@ class Tenant(object):
 
 
         :param tenant_id: The tenant_id of this Tenant.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._tenant_id = tenant_id
@@ -111,7 +110,7 @@ class Tenant(object):
 
 
         :return: The external_key of this Tenant.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_key
 
@@ -121,7 +120,7 @@ class Tenant(object):
 
 
         :param external_key: The external_key of this Tenant.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_key = external_key
@@ -132,7 +131,7 @@ class Tenant(object):
 
 
         :return: The api_key of this Tenant.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._api_key
 
@@ -142,7 +141,7 @@ class Tenant(object):
 
 
         :param api_key: The api_key of this Tenant.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if api_key is None:
             raise ValueError("Invalid value for `api_key`, must not be `None`")  # noqa: E501
@@ -155,7 +154,7 @@ class Tenant(object):
 
 
         :return: The api_secret of this Tenant.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._api_secret
 
@@ -165,7 +164,7 @@ class Tenant(object):
 
 
         :param api_secret: The api_secret of this Tenant.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if api_secret is None:
             raise ValueError("Invalid value for `api_secret`, must not be `None`")  # noqa: E501
@@ -178,7 +177,7 @@ class Tenant(object):
 
 
         :return: The audit_logs of this Tenant.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -188,7 +187,7 @@ class Tenant(object):
 
 
         :param audit_logs: The audit_logs of this Tenant.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

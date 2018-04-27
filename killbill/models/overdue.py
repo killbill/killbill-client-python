@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.overdue_state_config import OverdueStateConfig  # noqa: F401,E501
 
 
 class Overdue(object):
@@ -50,8 +49,8 @@ class Overdue(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'initial_reevaluation_interval': 'int',
-        'overdue_states': 'list[OverdueStateConfig]'
+        'initial_reevaluation_interval': 'Int',
+        'overdue_states': 'List[OverdueStateConfig]'
     }
 
     attribute_map = {
@@ -77,7 +76,7 @@ class Overdue(object):
 
 
         :return: The initial_reevaluation_interval of this Overdue.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._initial_reevaluation_interval
 
@@ -87,7 +86,7 @@ class Overdue(object):
 
 
         :param initial_reevaluation_interval: The initial_reevaluation_interval of this Overdue.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._initial_reevaluation_interval = initial_reevaluation_interval
@@ -98,7 +97,7 @@ class Overdue(object):
 
 
         :return: The overdue_states of this Overdue.  # noqa: E501
-        :rtype: list[OverdueStateConfig]
+        :rtype: List[OverdueStateConfig]
         """
         return self._overdue_states
 
@@ -108,7 +107,7 @@ class Overdue(object):
 
 
         :param overdue_states: The overdue_states of this Overdue.  # noqa: E501
-        :type: list[OverdueStateConfig]
+        :type: List[OverdueStateConfig]
         """
 
         self._overdue_states = overdue_states

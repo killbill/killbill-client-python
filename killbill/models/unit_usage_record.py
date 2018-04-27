@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.usage_record import UsageRecord  # noqa: F401,E501
 
 
 class UnitUsageRecord(object):
@@ -50,8 +49,8 @@ class UnitUsageRecord(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'unit_type': 'str',
-        'usage_records': 'list[UsageRecord]'
+        'unit_type': 'Str',
+        'usage_records': 'List[UsageRecord]'
     }
 
     attribute_map = {
@@ -77,7 +76,7 @@ class UnitUsageRecord(object):
 
 
         :return: The unit_type of this UnitUsageRecord.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._unit_type
 
@@ -87,7 +86,7 @@ class UnitUsageRecord(object):
 
 
         :param unit_type: The unit_type of this UnitUsageRecord.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._unit_type = unit_type
@@ -98,7 +97,7 @@ class UnitUsageRecord(object):
 
 
         :return: The usage_records of this UnitUsageRecord.  # noqa: E501
-        :rtype: list[UsageRecord]
+        :rtype: List[UsageRecord]
         """
         return self._usage_records
 
@@ -108,7 +107,7 @@ class UnitUsageRecord(object):
 
 
         :param usage_records: The usage_records of this UnitUsageRecord.  # noqa: E501
-        :type: list[UsageRecord]
+        :type: List[UsageRecord]
         """
 
         self._usage_records = usage_records

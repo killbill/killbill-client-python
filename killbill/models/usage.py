@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.tier import Tier  # noqa: F401,E501
 
 
 class Usage(object):
@@ -50,8 +49,8 @@ class Usage(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'billing_period': 'str',
-        'tiers': 'list[Tier]'
+        'billing_period': 'Str',
+        'tiers': 'List[Tier]'
     }
 
     attribute_map = {
@@ -77,7 +76,7 @@ class Usage(object):
 
 
         :return: The billing_period of this Usage.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_period
 
@@ -87,7 +86,7 @@ class Usage(object):
 
 
         :param billing_period: The billing_period of this Usage.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._billing_period = billing_period
@@ -98,7 +97,7 @@ class Usage(object):
 
 
         :return: The tiers of this Usage.  # noqa: E501
-        :rtype: list[Tier]
+        :rtype: List[Tier]
         """
         return self._tiers
 
@@ -108,7 +107,7 @@ class Usage(object):
 
 
         :param tiers: The tiers of this Usage.  # noqa: E501
-        :type: list[Tier]
+        :type: List[Tier]
         """
 
         self._tiers = tiers

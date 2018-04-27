@@ -50,7 +50,7 @@ class CatalogApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_simple_plan(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_simple_plan(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a simple plan entry in the current version of the catalog  # noqa: E501
 
           # noqa: E501
@@ -61,11 +61,11 @@ class CatalogApi(object):
 
         :param async bool
         :param SimplePlan body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -77,7 +77,7 @@ class CatalogApi(object):
             (data) = self.add_simple_plan_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def add_simple_plan_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_simple_plan_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a simple plan entry in the current version of the catalog  # noqa: E501
 
           # noqa: E501
@@ -88,11 +88,11 @@ class CatalogApi(object):
 
         :param async bool
         :param SimplePlan body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -181,7 +181,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_catalog(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_catalog(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete all versions for a per tenant catalog  # noqa: E501
 
           # noqa: E501
@@ -191,11 +191,11 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -207,7 +207,7 @@ class CatalogApi(object):
             (data) = self.delete_catalog_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_catalog_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_catalog_with_http_info(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete all versions for a per tenant catalog  # noqa: E501
 
           # noqa: E501
@@ -217,11 +217,11 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -296,7 +296,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_available_addons(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_available_addons(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve available add-ons for a given product  # noqa: E501
 
           # noqa: E501
@@ -306,11 +306,11 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str base_product_name:
-        :param str price_list_name:
-        :return: list[PlanDetail]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str base_product_name:
+        :param Str price_list_name:
+        :return: List[PlanDetail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -321,7 +321,7 @@ class CatalogApi(object):
             (data) = self.get_available_addons_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_available_addons_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_available_addons_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve available add-ons for a given product  # noqa: E501
 
           # noqa: E501
@@ -331,11 +331,11 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str base_product_name:
-        :param str price_list_name:
-        :return: list[PlanDetail]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str base_product_name:
+        :param Str price_list_name:
+        :return: List[PlanDetail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -399,7 +399,7 @@ class CatalogApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PlanDetail]',  # noqa: E501
+            response_type='List[PlanDetail]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -407,7 +407,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_available_base_plans(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_available_base_plans(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve available base plans  # noqa: E501
 
           # noqa: E501
@@ -417,9 +417,9 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[PlanDetail]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[PlanDetail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -430,7 +430,7 @@ class CatalogApi(object):
             (data) = self.get_available_base_plans_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_available_base_plans_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_available_base_plans_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve available base plans  # noqa: E501
 
           # noqa: E501
@@ -440,9 +440,9 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[PlanDetail]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[PlanDetail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -502,7 +502,7 @@ class CatalogApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PlanDetail]',  # noqa: E501
+            response_type='List[PlanDetail]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -510,7 +510,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_catalog_json(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_catalog_json(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the catalog as JSON  # noqa: E501
 
           # noqa: E501
@@ -520,10 +520,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param datetime requested_date:
-        :return: list[Catalog]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Datetime requested_date:
+        :return: List[Catalog]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -534,7 +534,7 @@ class CatalogApi(object):
             (data) = self.get_catalog_json_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_catalog_json_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_catalog_json_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the catalog as JSON  # noqa: E501
 
           # noqa: E501
@@ -544,10 +544,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param datetime requested_date:
-        :return: list[Catalog]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Datetime requested_date:
+        :return: List[Catalog]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -609,7 +609,7 @@ class CatalogApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Catalog]',  # noqa: E501
+            response_type='List[Catalog]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -617,7 +617,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_catalog_versions(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_catalog_versions(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a list of catalog versions  # noqa: E501
 
           # noqa: E501
@@ -627,9 +627,9 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[datetime]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[Datetime]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -640,7 +640,7 @@ class CatalogApi(object):
             (data) = self.get_catalog_versions_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_catalog_versions_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_catalog_versions_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a list of catalog versions  # noqa: E501
 
           # noqa: E501
@@ -650,9 +650,9 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[datetime]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[Datetime]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -712,7 +712,7 @@ class CatalogApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[datetime]',  # noqa: E501
+            response_type='List[Datetime]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -720,7 +720,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_catalog_xml(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_catalog_xml(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the full catalog as XML  # noqa: E501
 
           # noqa: E501
@@ -730,10 +730,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :return: str
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :return: Str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -744,7 +744,7 @@ class CatalogApi(object):
             (data) = self.get_catalog_xml_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_catalog_xml_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_catalog_xml_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the full catalog as XML  # noqa: E501
 
           # noqa: E501
@@ -754,10 +754,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :return: str
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :return: Str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -819,7 +819,7 @@ class CatalogApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='Str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -827,7 +827,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_phase_for_subscription_and_date(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_phase_for_subscription_and_date(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve phase for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -837,10 +837,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: Phase
                  If the method is called asynchronously,
                  returns the request thread.
@@ -852,7 +852,7 @@ class CatalogApi(object):
             (data) = self.get_phase_for_subscription_and_date_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_phase_for_subscription_and_date_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_phase_for_subscription_and_date_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve phase for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -862,10 +862,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: Phase
                  If the method is called asynchronously,
                  returns the request thread.
@@ -938,7 +938,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_plan_for_subscription_and_date(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plan_for_subscription_and_date(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve plan for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -948,10 +948,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: Plan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -963,7 +963,7 @@ class CatalogApi(object):
             (data) = self.get_plan_for_subscription_and_date_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_plan_for_subscription_and_date_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plan_for_subscription_and_date_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve plan for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -973,10 +973,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: Plan
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1049,7 +1049,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_price_list_for_subscription_and_date(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_price_list_for_subscription_and_date(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve priceList for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -1059,10 +1059,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: PriceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1074,7 +1074,7 @@ class CatalogApi(object):
             (data) = self.get_price_list_for_subscription_and_date_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_price_list_for_subscription_and_date_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_price_list_for_subscription_and_date_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve priceList for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -1084,10 +1084,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: PriceList
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1160,7 +1160,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_product_for_subscription_and_date(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_product_for_subscription_and_date(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve product for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -1170,10 +1170,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: Product
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1185,7 +1185,7 @@ class CatalogApi(object):
             (data) = self.get_product_for_subscription_and_date_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_product_for_subscription_and_date_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_product_for_subscription_and_date_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve product for a given subscription and date  # noqa: E501
 
           # noqa: E501
@@ -1195,10 +1195,10 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str subscription_id:
-        :param date requested_date:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str subscription_id:
+        :param Date requested_date:
         :return: Product
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1271,7 +1271,7 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_catalog_xml(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_catalog_xml(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Upload the full catalog as XML  # noqa: E501
 
           # noqa: E501
@@ -1281,12 +1281,12 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1298,7 +1298,7 @@ class CatalogApi(object):
             (data) = self.upload_catalog_xml_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_catalog_xml_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_catalog_xml_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Upload the full catalog as XML  # noqa: E501
 
           # noqa: E501
@@ -1308,12 +1308,12 @@ class CatalogApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

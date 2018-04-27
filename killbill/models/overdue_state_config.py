@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.overdue_condition import OverdueCondition  # noqa: F401,E501
 
 
 class OverdueStateConfig(object):
@@ -50,14 +49,14 @@ class OverdueStateConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'is_clear_state': 'bool',
+        'name': 'Str',
+        'is_clear_state': 'Bool',
         'condition': 'OverdueCondition',
-        'external_message': 'str',
-        'is_block_changes': 'bool',
-        'is_disable_entitlement': 'bool',
-        'subscription_cancellation_policy': 'str',
-        'auto_reevaluation_interval_days': 'int'
+        'external_message': 'Str',
+        'is_block_changes': 'Bool',
+        'is_disable_entitlement': 'Bool',
+        'subscription_cancellation_policy': 'Str',
+        'auto_reevaluation_interval_days': 'Int'
     }
 
     attribute_map = {
@@ -107,7 +106,7 @@ class OverdueStateConfig(object):
 
 
         :return: The name of this OverdueStateConfig.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -117,7 +116,7 @@ class OverdueStateConfig(object):
 
 
         :param name: The name of this OverdueStateConfig.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._name = name
@@ -128,7 +127,7 @@ class OverdueStateConfig(object):
 
 
         :return: The is_clear_state of this OverdueStateConfig.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_clear_state
 
@@ -138,7 +137,7 @@ class OverdueStateConfig(object):
 
 
         :param is_clear_state: The is_clear_state of this OverdueStateConfig.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_clear_state = is_clear_state
@@ -170,7 +169,7 @@ class OverdueStateConfig(object):
 
 
         :return: The external_message of this OverdueStateConfig.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_message
 
@@ -180,7 +179,7 @@ class OverdueStateConfig(object):
 
 
         :param external_message: The external_message of this OverdueStateConfig.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_message = external_message
@@ -191,7 +190,7 @@ class OverdueStateConfig(object):
 
 
         :return: The is_block_changes of this OverdueStateConfig.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_block_changes
 
@@ -201,7 +200,7 @@ class OverdueStateConfig(object):
 
 
         :param is_block_changes: The is_block_changes of this OverdueStateConfig.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_block_changes = is_block_changes
@@ -212,7 +211,7 @@ class OverdueStateConfig(object):
 
 
         :return: The is_disable_entitlement of this OverdueStateConfig.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_disable_entitlement
 
@@ -222,7 +221,7 @@ class OverdueStateConfig(object):
 
 
         :param is_disable_entitlement: The is_disable_entitlement of this OverdueStateConfig.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_disable_entitlement = is_disable_entitlement
@@ -233,7 +232,7 @@ class OverdueStateConfig(object):
 
 
         :return: The subscription_cancellation_policy of this OverdueStateConfig.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._subscription_cancellation_policy
 
@@ -243,7 +242,7 @@ class OverdueStateConfig(object):
 
 
         :param subscription_cancellation_policy: The subscription_cancellation_policy of this OverdueStateConfig.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["END_OF_TERM", "IMMEDIATE", "NONE"]  # noqa: E501
         if subscription_cancellation_policy not in allowed_values:
@@ -260,7 +259,7 @@ class OverdueStateConfig(object):
 
 
         :return: The auto_reevaluation_interval_days of this OverdueStateConfig.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._auto_reevaluation_interval_days
 
@@ -270,7 +269,7 @@ class OverdueStateConfig(object):
 
 
         :param auto_reevaluation_interval_days: The auto_reevaluation_interval_days of this OverdueStateConfig.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._auto_reevaluation_interval_days = auto_reevaluation_interval_days

@@ -50,7 +50,7 @@ class TenantApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_tenant(self, body, created_by, **kwargs):  # noqa: E501
+    def create_tenant(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Create a tenant  # noqa: E501
 
           # noqa: E501
@@ -61,10 +61,10 @@ class TenantApi(object):
 
         :param async bool
         :param Tenant body: (required)
-        :param str created_by: (required)
-        :param bool use_global_default:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Bool use_global_default:
+        :param Str reason:
+        :param Str comment:
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
@@ -76,7 +76,7 @@ class TenantApi(object):
             (data) = self.create_tenant_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def create_tenant_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
+    def create_tenant_with_http_info(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Create a tenant  # noqa: E501
 
           # noqa: E501
@@ -87,10 +87,10 @@ class TenantApi(object):
 
         :param async bool
         :param Tenant body: (required)
-        :param str created_by: (required)
-        :param bool use_global_default:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Bool use_global_default:
+        :param Str reason:
+        :param Str comment:
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
@@ -169,7 +169,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_per_tenant_configuration(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_per_tenant_configuration(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
@@ -179,11 +179,11 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -195,7 +195,7 @@ class TenantApi(object):
             (data) = self.delete_per_tenant_configuration_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_per_tenant_configuration_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_per_tenant_configuration_with_http_info(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
@@ -205,11 +205,11 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -284,7 +284,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_plugin_configuration(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_configuration(self, plugin_name=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
@@ -294,12 +294,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -311,7 +311,7 @@ class TenantApi(object):
             (data) = self.delete_plugin_configuration_with_http_info(plugin_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_plugin_configuration_with_http_info(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_configuration_with_http_info(self, plugin_name=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
@@ -321,12 +321,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -409,7 +409,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_plugin_payment_state_machine_config(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_payment_state_machine_config(self, plugin_name=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
@@ -419,12 +419,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -436,7 +436,7 @@ class TenantApi(object):
             (data) = self.delete_plugin_payment_state_machine_config_with_http_info(plugin_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_plugin_payment_state_machine_config_with_http_info(self, plugin_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_plugin_payment_state_machine_config_with_http_info(self, plugin_name=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
@@ -446,12 +446,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -534,7 +534,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_push_notification_callbacks(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_push_notification_callbacks(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a push notification  # noqa: E501
 
           # noqa: E501
@@ -544,11 +544,11 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -560,7 +560,7 @@ class TenantApi(object):
             (data) = self.delete_push_notification_callbacks_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_push_notification_callbacks_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_push_notification_callbacks_with_http_info(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete a push notification  # noqa: E501
 
           # noqa: E501
@@ -570,11 +570,11 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -649,7 +649,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_user_key_value(self, key_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_user_key_value(self, key_name=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete  a per tenant user key/value  # noqa: E501
 
           # noqa: E501
@@ -659,12 +659,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_name: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str key_name: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -676,7 +676,7 @@ class TenantApi(object):
             (data) = self.delete_user_key_value_with_http_info(key_name, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_user_key_value_with_http_info(self, key_name, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_user_key_value_with_http_info(self, key_name=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete  a per tenant user key/value  # noqa: E501
 
           # noqa: E501
@@ -686,12 +686,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_name: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str key_name: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -774,7 +774,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_plugin_configuration(self, key_prefix, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_plugin_configuration(self, key_prefix=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant key value based on key prefix  # noqa: E501
 
           # noqa: E501
@@ -784,9 +784,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_prefix: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str key_prefix: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -798,7 +798,7 @@ class TenantApi(object):
             (data) = self.get_all_plugin_configuration_with_http_info(key_prefix, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_all_plugin_configuration_with_http_info(self, key_prefix, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_plugin_configuration_with_http_info(self, key_prefix=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant key value based on key prefix  # noqa: E501
 
           # noqa: E501
@@ -808,9 +808,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_prefix: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str key_prefix: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -887,7 +887,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_per_tenant_configuration(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_per_tenant_configuration(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
@@ -897,8 +897,8 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -910,7 +910,7 @@ class TenantApi(object):
             (data) = self.get_per_tenant_configuration_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_per_tenant_configuration_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_per_tenant_configuration_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
@@ -920,8 +920,8 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -990,7 +990,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_plugin_configuration(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plugin_configuration(self, plugin_name=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
@@ -1000,9 +1000,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str plugin_name: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1014,7 +1014,7 @@ class TenantApi(object):
             (data) = self.get_plugin_configuration_with_http_info(plugin_name, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_plugin_configuration_with_http_info(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plugin_configuration_with_http_info(self, plugin_name=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
@@ -1024,9 +1024,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str plugin_name: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1103,7 +1103,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_plugin_payment_state_machine_config(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plugin_payment_state_machine_config(self, plugin_name=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
@@ -1113,9 +1113,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str plugin_name: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1127,7 +1127,7 @@ class TenantApi(object):
             (data) = self.get_plugin_payment_state_machine_config_with_http_info(plugin_name, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_plugin_payment_state_machine_config_with_http_info(self, plugin_name, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plugin_payment_state_machine_config_with_http_info(self, plugin_name=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
@@ -1137,9 +1137,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str plugin_name: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1216,7 +1216,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_push_notification_callbacks(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_push_notification_callbacks(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a push notification  # noqa: E501
 
           # noqa: E501
@@ -1226,8 +1226,8 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1239,7 +1239,7 @@ class TenantApi(object):
             (data) = self.get_push_notification_callbacks_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_push_notification_callbacks_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_push_notification_callbacks_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a push notification  # noqa: E501
 
           # noqa: E501
@@ -1249,8 +1249,8 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1319,7 +1319,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_tenant(self, tenant_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tenant(self, tenant_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a tenant by id  # noqa: E501
 
           # noqa: E501
@@ -1329,9 +1329,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str tenant_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str tenant_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1343,7 +1343,7 @@ class TenantApi(object):
             (data) = self.get_tenant_with_http_info(tenant_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_tenant_with_http_info(self, tenant_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tenant_with_http_info(self, tenant_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a tenant by id  # noqa: E501
 
           # noqa: E501
@@ -1353,9 +1353,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str tenant_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str tenant_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1442,7 +1442,7 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key:
+        :param Str api_key:
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1464,7 +1464,7 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key:
+        :param Str api_key:
         :return: Tenant
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1523,7 +1523,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_user_key_value(self, key_name, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_user_key_value(self, key_name=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant user key/value  # noqa: E501
 
           # noqa: E501
@@ -1533,9 +1533,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_name: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str key_name: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1547,7 +1547,7 @@ class TenantApi(object):
             (data) = self.get_user_key_value_with_http_info(key_name, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_user_key_value_with_http_info(self, key_name, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_user_key_value_with_http_info(self, key_name=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a per tenant user key/value  # noqa: E501
 
           # noqa: E501
@@ -1557,9 +1557,9 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_name: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str key_name: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1636,7 +1636,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def insert_user_key_value(self, key_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def insert_user_key_value(self, key_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant user key/value  # noqa: E501
 
           # noqa: E501
@@ -1646,13 +1646,13 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str key_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1664,7 +1664,7 @@ class TenantApi(object):
             (data) = self.insert_user_key_value_with_http_info(key_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def insert_user_key_value_with_http_info(self, key_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def insert_user_key_value_with_http_info(self, key_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant user key/value  # noqa: E501
 
           # noqa: E501
@@ -1674,13 +1674,13 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str key_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str key_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1777,7 +1777,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def register_push_notification_callback(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def register_push_notification_callback(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create a push notification  # noqa: E501
 
           # noqa: E501
@@ -1787,12 +1787,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str cb:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str cb:
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1804,7 +1804,7 @@ class TenantApi(object):
             (data) = self.register_push_notification_callback_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def register_push_notification_callback_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def register_push_notification_callback_with_http_info(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create a push notification  # noqa: E501
 
           # noqa: E501
@@ -1814,12 +1814,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str cb:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str cb:
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1904,7 +1904,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_per_tenant_configuration(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_per_tenant_configuration(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
@@ -1914,12 +1914,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1931,7 +1931,7 @@ class TenantApi(object):
             (data) = self.upload_per_tenant_configuration_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_per_tenant_configuration_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_per_tenant_configuration_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant configuration (system properties)  # noqa: E501
 
           # noqa: E501
@@ -1941,12 +1941,12 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2035,7 +2035,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_plugin_configuration(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_configuration(self, plugin_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
@@ -2045,13 +2045,13 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2063,7 +2063,7 @@ class TenantApi(object):
             (data) = self.upload_plugin_configuration_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_plugin_configuration_with_http_info(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_configuration_with_http_info(self, plugin_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant configuration for a plugin  # noqa: E501
 
           # noqa: E501
@@ -2073,13 +2073,13 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2176,7 +2176,7 @@ class TenantApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_plugin_payment_state_machine_config(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_payment_state_machine_config(self, plugin_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
@@ -2186,13 +2186,13 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2204,7 +2204,7 @@ class TenantApi(object):
             (data) = self.upload_plugin_payment_state_machine_config_with_http_info(plugin_name, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_plugin_payment_state_machine_config_with_http_info(self, plugin_name, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_plugin_payment_state_machine_config_with_http_info(self, plugin_name=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a per tenant payment state machine for a plugin  # noqa: E501
 
           # noqa: E501
@@ -2214,13 +2214,13 @@ class TenantApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str plugin_name: (required)
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str plugin_name: (required)
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: TenantKeyValue
                  If the method is called asynchronously,
                  returns the request thread.

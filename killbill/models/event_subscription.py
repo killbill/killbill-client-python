@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class EventSubscription(object):
@@ -50,19 +49,19 @@ class EventSubscription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'event_id': 'str',
-        'billing_period': 'str',
-        'effective_date': 'date',
-        'plan': 'str',
-        'product': 'str',
-        'price_list': 'str',
-        'event_type': 'str',
-        'is_blocked_billing': 'bool',
-        'is_blocked_entitlement': 'bool',
-        'service_name': 'str',
-        'service_state_name': 'str',
-        'phase': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'event_id': 'Str',
+        'billing_period': 'Str',
+        'effective_date': 'Date',
+        'plan': 'Str',
+        'product': 'Str',
+        'price_list': 'Str',
+        'event_type': 'Str',
+        'is_blocked_billing': 'Bool',
+        'is_blocked_entitlement': 'Bool',
+        'service_name': 'Str',
+        'service_state_name': 'Str',
+        'phase': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -132,7 +131,7 @@ class EventSubscription(object):
 
 
         :return: The event_id of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._event_id
 
@@ -142,7 +141,7 @@ class EventSubscription(object):
 
 
         :param event_id: The event_id of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._event_id = event_id
@@ -153,7 +152,7 @@ class EventSubscription(object):
 
 
         :return: The billing_period of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_period
 
@@ -163,7 +162,7 @@ class EventSubscription(object):
 
 
         :param billing_period: The billing_period of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
         if billing_period not in allowed_values:
@@ -180,7 +179,7 @@ class EventSubscription(object):
 
 
         :return: The effective_date of this EventSubscription.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._effective_date
 
@@ -190,7 +189,7 @@ class EventSubscription(object):
 
 
         :param effective_date: The effective_date of this EventSubscription.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._effective_date = effective_date
@@ -201,7 +200,7 @@ class EventSubscription(object):
 
 
         :return: The plan of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plan
 
@@ -211,7 +210,7 @@ class EventSubscription(object):
 
 
         :param plan: The plan of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plan = plan
@@ -222,7 +221,7 @@ class EventSubscription(object):
 
 
         :return: The product of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._product
 
@@ -232,7 +231,7 @@ class EventSubscription(object):
 
 
         :param product: The product of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._product = product
@@ -243,7 +242,7 @@ class EventSubscription(object):
 
 
         :return: The price_list of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._price_list
 
@@ -253,7 +252,7 @@ class EventSubscription(object):
 
 
         :param price_list: The price_list of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._price_list = price_list
@@ -264,7 +263,7 @@ class EventSubscription(object):
 
 
         :return: The event_type of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._event_type
 
@@ -274,7 +273,7 @@ class EventSubscription(object):
 
 
         :param event_type: The event_type of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["START_ENTITLEMENT", "START_BILLING", "PAUSE_ENTITLEMENT", "PAUSE_BILLING", "RESUME_ENTITLEMENT", "RESUME_BILLING", "PHASE", "CHANGE", "STOP_ENTITLEMENT", "STOP_BILLING", "SERVICE_STATE_CHANGE"]  # noqa: E501
         if event_type not in allowed_values:
@@ -291,7 +290,7 @@ class EventSubscription(object):
 
 
         :return: The is_blocked_billing of this EventSubscription.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_blocked_billing
 
@@ -301,7 +300,7 @@ class EventSubscription(object):
 
 
         :param is_blocked_billing: The is_blocked_billing of this EventSubscription.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_blocked_billing = is_blocked_billing
@@ -312,7 +311,7 @@ class EventSubscription(object):
 
 
         :return: The is_blocked_entitlement of this EventSubscription.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_blocked_entitlement
 
@@ -322,7 +321,7 @@ class EventSubscription(object):
 
 
         :param is_blocked_entitlement: The is_blocked_entitlement of this EventSubscription.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_blocked_entitlement = is_blocked_entitlement
@@ -333,7 +332,7 @@ class EventSubscription(object):
 
 
         :return: The service_name of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._service_name
 
@@ -343,7 +342,7 @@ class EventSubscription(object):
 
 
         :param service_name: The service_name of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._service_name = service_name
@@ -354,7 +353,7 @@ class EventSubscription(object):
 
 
         :return: The service_state_name of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._service_state_name
 
@@ -364,7 +363,7 @@ class EventSubscription(object):
 
 
         :param service_state_name: The service_state_name of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._service_state_name = service_state_name
@@ -375,7 +374,7 @@ class EventSubscription(object):
 
 
         :return: The phase of this EventSubscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phase
 
@@ -385,7 +384,7 @@ class EventSubscription(object):
 
 
         :param phase: The phase of this EventSubscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._phase = phase
@@ -396,7 +395,7 @@ class EventSubscription(object):
 
 
         :return: The audit_logs of this EventSubscription.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -406,7 +405,7 @@ class EventSubscription(object):
 
 
         :param audit_logs: The audit_logs of this EventSubscription.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

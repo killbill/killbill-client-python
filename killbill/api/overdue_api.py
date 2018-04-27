@@ -50,7 +50,7 @@ class OverdueApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_overdue_config_json(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_overdue_config_json(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the overdue config as JSON  # noqa: E501
 
           # noqa: E501
@@ -60,8 +60,8 @@ class OverdueApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: Overdue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -73,7 +73,7 @@ class OverdueApi(object):
             (data) = self.get_overdue_config_json_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_overdue_config_json_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_overdue_config_json_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the overdue config as JSON  # noqa: E501
 
           # noqa: E501
@@ -83,8 +83,8 @@ class OverdueApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: Overdue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -153,7 +153,7 @@ class OverdueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_overdue_config_xml(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_overdue_config_xml(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the overdue config as XML  # noqa: E501
 
           # noqa: E501
@@ -163,9 +163,9 @@ class OverdueApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: str
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: Str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -176,7 +176,7 @@ class OverdueApi(object):
             (data) = self.get_overdue_config_xml_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_overdue_config_xml_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_overdue_config_xml_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the overdue config as XML  # noqa: E501
 
           # noqa: E501
@@ -186,9 +186,9 @@ class OverdueApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: str
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: Str
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -248,7 +248,7 @@ class OverdueApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='str',  # noqa: E501
+            response_type='Str',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -256,7 +256,7 @@ class OverdueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_overdue_config_json(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_overdue_config_json(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Upload the full overdue config as JSON  # noqa: E501
 
           # noqa: E501
@@ -267,11 +267,11 @@ class OverdueApi(object):
 
         :param async bool
         :param Overdue body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: Overdue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -283,7 +283,7 @@ class OverdueApi(object):
             (data) = self.upload_overdue_config_json_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_overdue_config_json_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_overdue_config_json_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Upload the full overdue config as JSON  # noqa: E501
 
           # noqa: E501
@@ -294,11 +294,11 @@ class OverdueApi(object):
 
         :param async bool
         :param Overdue body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: Overdue
                  If the method is called asynchronously,
                  returns the request thread.
@@ -387,7 +387,7 @@ class OverdueApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def upload_overdue_config_xml(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_overdue_config_xml(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Upload the full overdue config as XML  # noqa: E501
 
           # noqa: E501
@@ -397,12 +397,12 @@ class OverdueApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -414,7 +414,7 @@ class OverdueApi(object):
             (data) = self.upload_overdue_config_xml_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def upload_overdue_config_xml_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def upload_overdue_config_xml_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Upload the full overdue config as XML  # noqa: E501
 
           # noqa: E501
@@ -424,12 +424,12 @@ class OverdueApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

@@ -50,7 +50,7 @@ class BundleApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_bundle_blocking_state(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_bundle_blocking_state(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Block a bundle  # noqa: E501
 
           # noqa: E501
@@ -60,15 +60,15 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
+        :param Str bundle_id: (required)
         :param BlockingState body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class BundleApi(object):
             (data) = self.add_bundle_blocking_state_with_http_info(bundle_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def add_bundle_blocking_state_with_http_info(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_bundle_blocking_state_with_http_info(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Block a bundle  # noqa: E501
 
           # noqa: E501
@@ -90,15 +90,15 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
+        :param Str bundle_id: (required)
         :param BlockingState body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -196,7 +196,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_bundle_custom_fields(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_bundle_custom_fields(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to bundle  # noqa: E501
 
           # noqa: E501
@@ -206,14 +206,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str bundle_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -224,7 +224,7 @@ class BundleApi(object):
             (data) = self.create_bundle_custom_fields_with_http_info(bundle_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_bundle_custom_fields_with_http_info(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_bundle_custom_fields_with_http_info(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to bundle  # noqa: E501
 
           # noqa: E501
@@ -234,14 +234,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str bundle_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -329,7 +329,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -337,7 +337,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_bundle_tags(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_bundle_tags(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to bundle  # noqa: E501
 
           # noqa: E501
@@ -347,14 +347,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -365,7 +365,7 @@ class BundleApi(object):
             (data) = self.create_bundle_tags_with_http_info(bundle_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_bundle_tags_with_http_info(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_bundle_tags_with_http_info(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to bundle  # noqa: E501
 
           # noqa: E501
@@ -375,14 +375,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -467,7 +467,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -475,7 +475,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_bundle_custom_fields(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_bundle_custom_fields(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from bundle  # noqa: E501
 
           # noqa: E501
@@ -485,13 +485,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -503,7 +503,7 @@ class BundleApi(object):
             (data) = self.delete_bundle_custom_fields_with_http_info(bundle_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_bundle_custom_fields_with_http_info(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_bundle_custom_fields_with_http_info(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from bundle  # noqa: E501
 
           # noqa: E501
@@ -513,13 +513,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -613,7 +613,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_bundle_tags(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_bundle_tags(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from bundle  # noqa: E501
 
           # noqa: E501
@@ -623,13 +623,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -641,7 +641,7 @@ class BundleApi(object):
             (data) = self.delete_bundle_tags_with_http_info(bundle_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_bundle_tags_with_http_info(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_bundle_tags_with_http_info(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from bundle  # noqa: E501
 
           # noqa: E501
@@ -651,13 +651,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -751,7 +751,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bundle(self, bundle_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle(self, bundle_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a bundle by id  # noqa: E501
 
           # noqa: E501
@@ -761,10 +761,10 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
+        :param Str bundle_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
         :return: Bundle
                  If the method is called asynchronously,
                  returns the request thread.
@@ -776,7 +776,7 @@ class BundleApi(object):
             (data) = self.get_bundle_with_http_info(bundle_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_bundle_with_http_info(self, bundle_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_with_http_info(self, bundle_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a bundle by id  # noqa: E501
 
           # noqa: E501
@@ -786,10 +786,10 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
+        :param Str bundle_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
         :return: Bundle
                  If the method is called asynchronously,
                  returns the request thread.
@@ -868,7 +868,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bundle_by_key(self, external_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_by_key(self, external_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a bundle by external key  # noqa: E501
 
           # noqa: E501
@@ -878,12 +878,12 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str external_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str external_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -894,7 +894,7 @@ class BundleApi(object):
             (data) = self.get_bundle_by_key_with_http_info(external_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_bundle_by_key_with_http_info(self, external_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_by_key_with_http_info(self, external_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a bundle by external key  # noqa: E501
 
           # noqa: E501
@@ -904,12 +904,12 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str external_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str external_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -979,7 +979,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Bundle]',  # noqa: E501
+            response_type='List[Bundle]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -987,7 +987,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bundle_custom_fields(self, bundle_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_custom_fields(self, bundle_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve bundle custom fields  # noqa: E501
 
           # noqa: E501
@@ -997,11 +997,11 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str bundle_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1012,7 +1012,7 @@ class BundleApi(object):
             (data) = self.get_bundle_custom_fields_with_http_info(bundle_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_bundle_custom_fields_with_http_info(self, bundle_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_custom_fields_with_http_info(self, bundle_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve bundle custom fields  # noqa: E501
 
           # noqa: E501
@@ -1022,11 +1022,11 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str bundle_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1096,7 +1096,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1104,7 +1104,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bundle_tags(self, bundle_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_tags(self, bundle_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve bundle tags  # noqa: E501
 
           # noqa: E501
@@ -1114,12 +1114,12 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str bundle_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1130,7 +1130,7 @@ class BundleApi(object):
             (data) = self.get_bundle_tags_with_http_info(bundle_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_bundle_tags_with_http_info(self, bundle_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundle_tags_with_http_info(self, bundle_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve bundle tags  # noqa: E501
 
           # noqa: E501
@@ -1140,12 +1140,12 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str bundle_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1217,7 +1217,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1225,7 +1225,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_bundles(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundles(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List bundles  # noqa: E501
 
           # noqa: E501
@@ -1235,12 +1235,12 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1251,7 +1251,7 @@ class BundleApi(object):
             (data) = self.get_bundles_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_bundles_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_bundles_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List bundles  # noqa: E501
 
           # noqa: E501
@@ -1261,12 +1261,12 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1332,7 +1332,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Bundle]',  # noqa: E501
+            response_type='List[Bundle]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1340,7 +1340,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_bundle_custom_fields(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_bundle_custom_fields(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to bundle  # noqa: E501
 
           # noqa: E501
@@ -1350,13 +1350,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1368,7 +1368,7 @@ class BundleApi(object):
             (data) = self.modify_bundle_custom_fields_with_http_info(bundle_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_bundle_custom_fields_with_http_info(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_bundle_custom_fields_with_http_info(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to bundle  # noqa: E501
 
           # noqa: E501
@@ -1378,13 +1378,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1481,7 +1481,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def pause_bundle(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def pause_bundle(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Pause a bundle  # noqa: E501
 
           # noqa: E501
@@ -1491,14 +1491,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1510,7 +1510,7 @@ class BundleApi(object):
             (data) = self.pause_bundle_with_http_info(bundle_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def pause_bundle_with_http_info(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def pause_bundle_with_http_info(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Pause a bundle  # noqa: E501
 
           # noqa: E501
@@ -1520,14 +1520,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1623,7 +1623,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def rename_external_key(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def rename_external_key(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update a bundle externalKey  # noqa: E501
 
           # noqa: E501
@@ -1633,13 +1633,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
+        :param Str bundle_id: (required)
         :param Bundle body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1651,7 +1651,7 @@ class BundleApi(object):
             (data) = self.rename_external_key_with_http_info(bundle_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def rename_external_key_with_http_info(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def rename_external_key_with_http_info(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update a bundle externalKey  # noqa: E501
 
           # noqa: E501
@@ -1661,13 +1661,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
+        :param Str bundle_id: (required)
         :param Bundle body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1760,7 +1760,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def resume_bundle(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def resume_bundle(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Resume a bundle  # noqa: E501
 
           # noqa: E501
@@ -1770,14 +1770,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1789,7 +1789,7 @@ class BundleApi(object):
             (data) = self.resume_bundle_with_http_info(bundle_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def resume_bundle_with_http_info(self, bundle_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def resume_bundle_with_http_info(self, bundle_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Resume a bundle  # noqa: E501
 
           # noqa: E501
@@ -1799,14 +1799,14 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str bundle_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1902,7 +1902,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_bundles(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def search_bundles(self, search_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Search bundles  # noqa: E501
 
           # noqa: E501
@@ -1912,13 +1912,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str search_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str search_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1929,7 +1929,7 @@ class BundleApi(object):
             (data) = self.search_bundles_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def search_bundles_with_http_info(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def search_bundles_with_http_info(self, search_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Search bundles  # noqa: E501
 
           # noqa: E501
@@ -1939,13 +1939,13 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str search_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str search_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2019,7 +2019,7 @@ class BundleApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Bundle]',  # noqa: E501
+            response_type='List[Bundle]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2027,7 +2027,7 @@ class BundleApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def transfer_bundle(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def transfer_bundle(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Transfer a bundle to another account  # noqa: E501
 
           # noqa: E501
@@ -2037,16 +2037,16 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
+        :param Str bundle_id: (required)
         :param Bundle body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param str billing_policy:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param Str billing_policy:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2058,7 +2058,7 @@ class BundleApi(object):
             (data) = self.transfer_bundle_with_http_info(bundle_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def transfer_bundle_with_http_info(self, bundle_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def transfer_bundle_with_http_info(self, bundle_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Transfer a bundle to another account  # noqa: E501
 
           # noqa: E501
@@ -2068,16 +2068,16 @@ class BundleApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str bundle_id: (required)
+        :param Str bundle_id: (required)
         :param Bundle body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param str billing_policy:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param Str billing_policy:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

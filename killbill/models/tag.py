@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class Tag(object):
@@ -50,12 +49,12 @@ class Tag(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'tag_id': 'str',
-        'object_type': 'str',
-        'object_id': 'str',
-        'tag_definition_id': 'str',
-        'tag_definition_name': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'tag_id': 'Str',
+        'object_type': 'Str',
+        'object_id': 'Str',
+        'tag_definition_id': 'Str',
+        'tag_definition_name': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -97,7 +96,7 @@ class Tag(object):
 
 
         :return: The tag_id of this Tag.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._tag_id
 
@@ -107,7 +106,7 @@ class Tag(object):
 
 
         :param tag_id: The tag_id of this Tag.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._tag_id = tag_id
@@ -118,7 +117,7 @@ class Tag(object):
 
 
         :return: The object_type of this Tag.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._object_type
 
@@ -128,7 +127,7 @@ class Tag(object):
 
 
         :param object_type: The object_type of this Tag.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["ACCOUNT", "ACCOUNT_EMAIL", "BLOCKING_STATES", "BUNDLE", "CUSTOM_FIELD", "INVOICE", "PAYMENT", "TRANSACTION", "INVOICE_ITEM", "INVOICE_PAYMENT", "SUBSCRIPTION", "SUBSCRIPTION_EVENT", "SERVICE_BROADCAST", "PAYMENT_ATTEMPT", "PAYMENT_METHOD", "REFUND", "TAG", "TAG_DEFINITION", "TENANT", "TENANT_KVS"]  # noqa: E501
         if object_type not in allowed_values:
@@ -145,7 +144,7 @@ class Tag(object):
 
 
         :return: The object_id of this Tag.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._object_id
 
@@ -155,7 +154,7 @@ class Tag(object):
 
 
         :param object_id: The object_id of this Tag.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._object_id = object_id
@@ -166,7 +165,7 @@ class Tag(object):
 
 
         :return: The tag_definition_id of this Tag.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._tag_definition_id
 
@@ -176,7 +175,7 @@ class Tag(object):
 
 
         :param tag_definition_id: The tag_definition_id of this Tag.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._tag_definition_id = tag_definition_id
@@ -187,7 +186,7 @@ class Tag(object):
 
 
         :return: The tag_definition_name of this Tag.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._tag_definition_name
 
@@ -197,7 +196,7 @@ class Tag(object):
 
 
         :param tag_definition_name: The tag_definition_name of this Tag.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._tag_definition_name = tag_definition_name
@@ -208,7 +207,7 @@ class Tag(object):
 
 
         :return: The audit_logs of this Tag.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -218,7 +217,7 @@ class Tag(object):
 
 
         :param audit_logs: The audit_logs of this Tag.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

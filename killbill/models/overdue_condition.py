@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.duration import Duration  # noqa: F401,E501
 
 
 class OverdueCondition(object):
@@ -51,11 +50,11 @@ class OverdueCondition(object):
     """
     swagger_types = {
         'time_since_earliest_unpaid_invoice_equals_or_exceeds': 'Duration',
-        'control_tag_inclusion': 'str',
-        'control_tag_exclusion': 'str',
-        'number_of_unpaid_invoices_equals_or_exceeds': 'int',
-        'response_for_last_failed_payment': 'list[str]',
-        'total_unpaid_invoice_balance_equals_or_exceeds': 'float'
+        'control_tag_inclusion': 'Str',
+        'control_tag_exclusion': 'Str',
+        'number_of_unpaid_invoices_equals_or_exceeds': 'Int',
+        'response_for_last_failed_payment': 'List[Str]',
+        'total_unpaid_invoice_balance_equals_or_exceeds': 'Float'
     }
 
     attribute_map = {
@@ -118,7 +117,7 @@ class OverdueCondition(object):
 
 
         :return: The control_tag_inclusion of this OverdueCondition.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._control_tag_inclusion
 
@@ -128,7 +127,7 @@ class OverdueCondition(object):
 
 
         :param control_tag_inclusion: The control_tag_inclusion of this OverdueCondition.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AUTO_PAY_OFF", "AUTO_INVOICING_OFF", "OVERDUE_ENFORCEMENT_OFF", "WRITTEN_OFF", "MANUAL_PAY", "TEST", "PARTNER", "AUTO_INVOICING_DRAFT", "AUTO_INVOICING_REUSE_DRAFT"]  # noqa: E501
         if control_tag_inclusion not in allowed_values:
@@ -145,7 +144,7 @@ class OverdueCondition(object):
 
 
         :return: The control_tag_exclusion of this OverdueCondition.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._control_tag_exclusion
 
@@ -155,7 +154,7 @@ class OverdueCondition(object):
 
 
         :param control_tag_exclusion: The control_tag_exclusion of this OverdueCondition.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AUTO_PAY_OFF", "AUTO_INVOICING_OFF", "OVERDUE_ENFORCEMENT_OFF", "WRITTEN_OFF", "MANUAL_PAY", "TEST", "PARTNER", "AUTO_INVOICING_DRAFT", "AUTO_INVOICING_REUSE_DRAFT"]  # noqa: E501
         if control_tag_exclusion not in allowed_values:
@@ -172,7 +171,7 @@ class OverdueCondition(object):
 
 
         :return: The number_of_unpaid_invoices_equals_or_exceeds of this OverdueCondition.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._number_of_unpaid_invoices_equals_or_exceeds
 
@@ -182,7 +181,7 @@ class OverdueCondition(object):
 
 
         :param number_of_unpaid_invoices_equals_or_exceeds: The number_of_unpaid_invoices_equals_or_exceeds of this OverdueCondition.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._number_of_unpaid_invoices_equals_or_exceeds = number_of_unpaid_invoices_equals_or_exceeds
@@ -193,7 +192,7 @@ class OverdueCondition(object):
 
 
         :return: The response_for_last_failed_payment of this OverdueCondition.  # noqa: E501
-        :rtype: list[str]
+        :rtype: List[Str]
         """
         return self._response_for_last_failed_payment
 
@@ -203,7 +202,7 @@ class OverdueCondition(object):
 
 
         :param response_for_last_failed_payment: The response_for_last_failed_payment of this OverdueCondition.  # noqa: E501
-        :type: list[str]
+        :type: List[Str]
         """
         allowed_values = ["INVALID_CARD", "EXPIRED_CARD", "LOST_OR_STOLEN_CARD", "DO_NOT_HONOR", "INSUFFICIENT_FUNDS", "DECLINE", "PROCESSING_ERROR", "INVALID_AMOUNT", "DUPLICATE_TRANSACTION", "OTHER"]  # noqa: E501
         if not set(response_for_last_failed_payment).issubset(set(allowed_values)):
@@ -221,7 +220,7 @@ class OverdueCondition(object):
 
 
         :return: The total_unpaid_invoice_balance_equals_or_exceeds of this OverdueCondition.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._total_unpaid_invoice_balance_equals_or_exceeds
 
@@ -231,7 +230,7 @@ class OverdueCondition(object):
 
 
         :param total_unpaid_invoice_balance_equals_or_exceeds: The total_unpaid_invoice_balance_equals_or_exceeds of this OverdueCondition.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._total_unpaid_invoice_balance_equals_or_exceeds = total_unpaid_invoice_balance_equals_or_exceeds

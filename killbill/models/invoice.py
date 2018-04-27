@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.credit import Credit  # noqa: F401,E501
-from killbill.models.invoice_item import InvoiceItem  # noqa: F401,E501
 
 
 class Invoice(object):
@@ -52,24 +49,24 @@ class Invoice(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'amount': 'float',
-        'currency': 'str',
-        'status': 'str',
-        'credit_adj': 'float',
-        'refund_adj': 'float',
-        'invoice_id': 'str',
-        'invoice_date': 'date',
-        'target_date': 'date',
-        'invoice_number': 'str',
-        'balance': 'float',
-        'account_id': 'str',
-        'bundle_keys': 'str',
-        'credits': 'list[Credit]',
-        'items': 'list[InvoiceItem]',
-        'is_parent_invoice': 'bool',
-        'parent_invoice_id': 'str',
-        'parent_account_id': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'amount': 'Float',
+        'currency': 'Str',
+        'status': 'Str',
+        'credit_adj': 'Float',
+        'refund_adj': 'Float',
+        'invoice_id': 'Str',
+        'invoice_date': 'Date',
+        'target_date': 'Date',
+        'invoice_number': 'Str',
+        'balance': 'Float',
+        'account_id': 'Str',
+        'bundle_keys': 'Str',
+        'credits': 'List[Credit]',
+        'items': 'List[InvoiceItem]',
+        'is_parent_invoice': 'Bool',
+        'parent_invoice_id': 'Str',
+        'parent_account_id': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -159,7 +156,7 @@ class Invoice(object):
 
 
         :return: The amount of this Invoice.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._amount
 
@@ -169,7 +166,7 @@ class Invoice(object):
 
 
         :param amount: The amount of this Invoice.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._amount = amount
@@ -180,7 +177,7 @@ class Invoice(object):
 
 
         :return: The currency of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -190,7 +187,7 @@ class Invoice(object):
 
 
         :param currency: The currency of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -207,7 +204,7 @@ class Invoice(object):
 
 
         :return: The status of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._status
 
@@ -217,7 +214,7 @@ class Invoice(object):
 
 
         :param status: The status of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["DRAFT", "COMMITTED", "VOID"]  # noqa: E501
         if status not in allowed_values:
@@ -234,7 +231,7 @@ class Invoice(object):
 
 
         :return: The credit_adj of this Invoice.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._credit_adj
 
@@ -244,7 +241,7 @@ class Invoice(object):
 
 
         :param credit_adj: The credit_adj of this Invoice.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._credit_adj = credit_adj
@@ -255,7 +252,7 @@ class Invoice(object):
 
 
         :return: The refund_adj of this Invoice.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._refund_adj
 
@@ -265,7 +262,7 @@ class Invoice(object):
 
 
         :param refund_adj: The refund_adj of this Invoice.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._refund_adj = refund_adj
@@ -276,7 +273,7 @@ class Invoice(object):
 
 
         :return: The invoice_id of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._invoice_id
 
@@ -286,7 +283,7 @@ class Invoice(object):
 
 
         :param invoice_id: The invoice_id of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._invoice_id = invoice_id
@@ -297,7 +294,7 @@ class Invoice(object):
 
 
         :return: The invoice_date of this Invoice.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._invoice_date
 
@@ -307,7 +304,7 @@ class Invoice(object):
 
 
         :param invoice_date: The invoice_date of this Invoice.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._invoice_date = invoice_date
@@ -318,7 +315,7 @@ class Invoice(object):
 
 
         :return: The target_date of this Invoice.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._target_date
 
@@ -328,7 +325,7 @@ class Invoice(object):
 
 
         :param target_date: The target_date of this Invoice.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._target_date = target_date
@@ -339,7 +336,7 @@ class Invoice(object):
 
 
         :return: The invoice_number of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._invoice_number
 
@@ -349,7 +346,7 @@ class Invoice(object):
 
 
         :param invoice_number: The invoice_number of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._invoice_number = invoice_number
@@ -360,7 +357,7 @@ class Invoice(object):
 
 
         :return: The balance of this Invoice.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._balance
 
@@ -370,7 +367,7 @@ class Invoice(object):
 
 
         :param balance: The balance of this Invoice.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._balance = balance
@@ -381,7 +378,7 @@ class Invoice(object):
 
 
         :return: The account_id of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -391,7 +388,7 @@ class Invoice(object):
 
 
         :param account_id: The account_id of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -402,7 +399,7 @@ class Invoice(object):
 
 
         :return: The bundle_keys of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_keys
 
@@ -412,7 +409,7 @@ class Invoice(object):
 
 
         :param bundle_keys: The bundle_keys of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_keys = bundle_keys
@@ -423,7 +420,7 @@ class Invoice(object):
 
 
         :return: The credits of this Invoice.  # noqa: E501
-        :rtype: list[Credit]
+        :rtype: List[Credit]
         """
         return self._credits
 
@@ -433,7 +430,7 @@ class Invoice(object):
 
 
         :param credits: The credits of this Invoice.  # noqa: E501
-        :type: list[Credit]
+        :type: List[Credit]
         """
 
         self._credits = credits
@@ -444,7 +441,7 @@ class Invoice(object):
 
 
         :return: The items of this Invoice.  # noqa: E501
-        :rtype: list[InvoiceItem]
+        :rtype: List[InvoiceItem]
         """
         return self._items
 
@@ -454,7 +451,7 @@ class Invoice(object):
 
 
         :param items: The items of this Invoice.  # noqa: E501
-        :type: list[InvoiceItem]
+        :type: List[InvoiceItem]
         """
 
         self._items = items
@@ -465,7 +462,7 @@ class Invoice(object):
 
 
         :return: The is_parent_invoice of this Invoice.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_parent_invoice
 
@@ -475,7 +472,7 @@ class Invoice(object):
 
 
         :param is_parent_invoice: The is_parent_invoice of this Invoice.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_parent_invoice = is_parent_invoice
@@ -486,7 +483,7 @@ class Invoice(object):
 
 
         :return: The parent_invoice_id of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._parent_invoice_id
 
@@ -496,7 +493,7 @@ class Invoice(object):
 
 
         :param parent_invoice_id: The parent_invoice_id of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._parent_invoice_id = parent_invoice_id
@@ -507,7 +504,7 @@ class Invoice(object):
 
 
         :return: The parent_account_id of this Invoice.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._parent_account_id
 
@@ -517,7 +514,7 @@ class Invoice(object):
 
 
         :param parent_account_id: The parent_account_id of this Invoice.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._parent_account_id = parent_account_id
@@ -528,7 +525,7 @@ class Invoice(object):
 
 
         :return: The audit_logs of this Invoice.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -538,7 +535,7 @@ class Invoice(object):
 
 
         :param audit_logs: The audit_logs of this Invoice.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

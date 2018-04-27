@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.subscription import Subscription  # noqa: F401,E501
 
 
 class BulkSubscriptionsBundle(object):
@@ -50,7 +49,7 @@ class BulkSubscriptionsBundle(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'base_entitlement_and_add_ons': 'list[Subscription]'
+        'base_entitlement_and_add_ons': 'List[Subscription]'
     }
 
     attribute_map = {
@@ -71,7 +70,7 @@ class BulkSubscriptionsBundle(object):
 
 
         :return: The base_entitlement_and_add_ons of this BulkSubscriptionsBundle.  # noqa: E501
-        :rtype: list[Subscription]
+        :rtype: List[Subscription]
         """
         return self._base_entitlement_and_add_ons
 
@@ -81,7 +80,7 @@ class BulkSubscriptionsBundle(object):
 
 
         :param base_entitlement_and_add_ons: The base_entitlement_and_add_ons of this BulkSubscriptionsBundle.  # noqa: E501
-        :type: list[Subscription]
+        :type: List[Subscription]
         """
         if base_entitlement_and_add_ons is None:
             raise ValueError("Invalid value for `base_entitlement_and_add_ons`, must not be `None`")  # noqa: E501

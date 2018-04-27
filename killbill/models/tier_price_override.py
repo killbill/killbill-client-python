@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.block_price_override import BlockPriceOverride  # noqa: F401,E501
 
 
 class TierPriceOverride(object):
@@ -50,7 +49,7 @@ class TierPriceOverride(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'block_price_overrides': 'list[BlockPriceOverride]'
+        'block_price_overrides': 'List[BlockPriceOverride]'
     }
 
     attribute_map = {
@@ -72,7 +71,7 @@ class TierPriceOverride(object):
 
 
         :return: The block_price_overrides of this TierPriceOverride.  # noqa: E501
-        :rtype: list[BlockPriceOverride]
+        :rtype: List[BlockPriceOverride]
         """
         return self._block_price_overrides
 
@@ -82,7 +81,7 @@ class TierPriceOverride(object):
 
 
         :param block_price_overrides: The block_price_overrides of this TierPriceOverride.  # noqa: E501
-        :type: list[BlockPriceOverride]
+        :type: List[BlockPriceOverride]
         """
 
         self._block_price_overrides = block_price_overrides

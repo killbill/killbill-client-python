@@ -50,7 +50,7 @@ class SubscriptionApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_subscription_blocking_state(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_subscription_blocking_state(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Block a subscription  # noqa: E501
 
           # noqa: E501
@@ -60,15 +60,15 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
+        :param Str subscription_id: (required)
         :param BlockingState body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class SubscriptionApi(object):
             (data) = self.add_subscription_blocking_state_with_http_info(subscription_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def add_subscription_blocking_state_with_http_info(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_subscription_blocking_state_with_http_info(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Block a subscription  # noqa: E501
 
           # noqa: E501
@@ -90,15 +90,15 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
+        :param Str subscription_id: (required)
         :param BlockingState body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -196,7 +196,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def cancel_subscription_plan(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def cancel_subscription_plan(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Cancel an entitlement plan  # noqa: E501
 
           # noqa: E501
@@ -206,19 +206,19 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param str entitlement_policy:
-        :param str billing_policy:
-        :param bool use_requested_date_for_billing:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param Str entitlement_policy:
+        :param Str billing_policy:
+        :param Bool use_requested_date_for_billing:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -230,7 +230,7 @@ class SubscriptionApi(object):
             (data) = self.cancel_subscription_plan_with_http_info(subscription_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def cancel_subscription_plan_with_http_info(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def cancel_subscription_plan_with_http_info(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Cancel an entitlement plan  # noqa: E501
 
           # noqa: E501
@@ -240,19 +240,19 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param str entitlement_policy:
-        :param str billing_policy:
-        :param bool use_requested_date_for_billing:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param Str entitlement_policy:
+        :param Str billing_policy:
+        :param Bool use_requested_date_for_billing:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -354,7 +354,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def change_subscription_plan(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def change_subscription_plan(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Change entitlement plan  # noqa: E501
 
           # noqa: E501
@@ -364,18 +364,18 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
+        :param Str subscription_id: (required)
         :param Subscription body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param str billing_policy:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param Str billing_policy:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -387,7 +387,7 @@ class SubscriptionApi(object):
             (data) = self.change_subscription_plan_with_http_info(subscription_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def change_subscription_plan_with_http_info(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def change_subscription_plan_with_http_info(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Change entitlement plan  # noqa: E501
 
           # noqa: E501
@@ -397,18 +397,18 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
+        :param Str subscription_id: (required)
         :param Subscription body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param str billing_policy:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param Str billing_policy:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -516,7 +516,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscription(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create an subscription  # noqa: E501
 
           # noqa: E501
@@ -527,19 +527,19 @@ class SubscriptionApi(object):
 
         :param async bool
         :param Subscription body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date entitlement_date:
-        :param date billing_date:
-        :param bool rename_key_if_exists_and_unused:
-        :param bool migrated:
-        :param int bcd:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date entitlement_date:
+        :param Date billing_date:
+        :param Bool rename_key_if_exists_and_unused:
+        :param Bool migrated:
+        :param Int bcd:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Subscription
                  If the method is called asynchronously,
                  returns the request thread.
@@ -551,7 +551,7 @@ class SubscriptionApi(object):
             (data) = self.create_subscription_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_subscription_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create an subscription  # noqa: E501
 
           # noqa: E501
@@ -562,19 +562,19 @@ class SubscriptionApi(object):
 
         :param async bool
         :param Subscription body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date entitlement_date:
-        :param date billing_date:
-        :param bool rename_key_if_exists_and_unused:
-        :param bool migrated:
-        :param int bcd:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date entitlement_date:
+        :param Date billing_date:
+        :param Bool rename_key_if_exists_and_unused:
+        :param Bool migrated:
+        :param Int bcd:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Subscription
                  If the method is called asynchronously,
                  returns the request thread.
@@ -680,7 +680,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscription_custom_fields(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_custom_fields(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to subscription  # noqa: E501
 
           # noqa: E501
@@ -690,13 +690,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -708,7 +708,7 @@ class SubscriptionApi(object):
             (data) = self.create_subscription_custom_fields_with_http_info(subscription_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_subscription_custom_fields_with_http_info(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_custom_fields_with_http_info(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to subscription  # noqa: E501
 
           # noqa: E501
@@ -718,13 +718,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -821,7 +821,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscription_tags(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_tags(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to subscription  # noqa: E501
 
           # noqa: E501
@@ -831,14 +831,14 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -849,7 +849,7 @@ class SubscriptionApi(object):
             (data) = self.create_subscription_tags_with_http_info(subscription_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_subscription_tags_with_http_info(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_tags_with_http_info(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to subscription  # noqa: E501
 
           # noqa: E501
@@ -859,14 +859,14 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -951,7 +951,7 @@ class SubscriptionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -959,7 +959,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscription_with_add_ons(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_with_add_ons(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create an entitlement with addOn products  # noqa: E501
 
           # noqa: E501
@@ -969,19 +969,19 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param list[Subscription] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date entitlement_date:
-        :param date billing_date:
-        :param bool migrated:
-        :param bool rename_key_if_exists_and_unused:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param List[Subscription] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date entitlement_date:
+        :param Date billing_date:
+        :param Bool migrated:
+        :param Bool rename_key_if_exists_and_unused:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Bundle
                  If the method is called asynchronously,
                  returns the request thread.
@@ -993,7 +993,7 @@ class SubscriptionApi(object):
             (data) = self.create_subscription_with_add_ons_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_subscription_with_add_ons_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscription_with_add_ons_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create an entitlement with addOn products  # noqa: E501
 
           # noqa: E501
@@ -1003,19 +1003,19 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param list[Subscription] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date entitlement_date:
-        :param date billing_date:
-        :param bool migrated:
-        :param bool rename_key_if_exists_and_unused:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param List[Subscription] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date entitlement_date:
+        :param Date billing_date:
+        :param Bool migrated:
+        :param Bool rename_key_if_exists_and_unused:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Bundle
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1119,7 +1119,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_subscriptions_with_add_ons(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscriptions_with_add_ons(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create multiple entitlements with addOn products  # noqa: E501
 
           # noqa: E501
@@ -1129,20 +1129,20 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param list[BulkSubscriptionsBundle] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date entitlement_date:
-        :param date billing_date:
-        :param bool rename_key_if_exists_and_unused:
-        :param bool migrated:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
-        :return: list[Bundle]
+        :param List[BulkSubscriptionsBundle] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date entitlement_date:
+        :param Date billing_date:
+        :param Bool rename_key_if_exists_and_unused:
+        :param Bool migrated:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1153,7 +1153,7 @@ class SubscriptionApi(object):
             (data) = self.create_subscriptions_with_add_ons_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_subscriptions_with_add_ons_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_subscriptions_with_add_ons_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create multiple entitlements with addOn products  # noqa: E501
 
           # noqa: E501
@@ -1163,20 +1163,20 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param list[BulkSubscriptionsBundle] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date entitlement_date:
-        :param date billing_date:
-        :param bool rename_key_if_exists_and_unused:
-        :param bool migrated:
-        :param bool call_completion:
-        :param int call_timeout_sec:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
-        :return: list[Bundle]
+        :param List[BulkSubscriptionsBundle] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date entitlement_date:
+        :param Date billing_date:
+        :param Bool rename_key_if_exists_and_unused:
+        :param Bool migrated:
+        :param Bool call_completion:
+        :param Int call_timeout_sec:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1271,7 +1271,7 @@ class SubscriptionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Bundle]',  # noqa: E501
+            response_type='List[Bundle]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1279,7 +1279,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_subscription_custom_fields(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_subscription_custom_fields(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from subscription  # noqa: E501
 
           # noqa: E501
@@ -1289,13 +1289,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1307,7 +1307,7 @@ class SubscriptionApi(object):
             (data) = self.delete_subscription_custom_fields_with_http_info(subscription_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_subscription_custom_fields_with_http_info(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_subscription_custom_fields_with_http_info(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from subscription  # noqa: E501
 
           # noqa: E501
@@ -1317,13 +1317,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1417,7 +1417,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_subscription_tags(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_subscription_tags(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from subscription  # noqa: E501
 
           # noqa: E501
@@ -1427,13 +1427,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1445,7 +1445,7 @@ class SubscriptionApi(object):
             (data) = self.delete_subscription_tags_with_http_info(subscription_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_subscription_tags_with_http_info(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_subscription_tags_with_http_info(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from subscription  # noqa: E501
 
           # noqa: E501
@@ -1455,13 +1455,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1555,7 +1555,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_subscription(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_subscription(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a subscription by id  # noqa: E501
 
           # noqa: E501
@@ -1565,10 +1565,10 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
         :return: Subscription
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1580,7 +1580,7 @@ class SubscriptionApi(object):
             (data) = self.get_subscription_with_http_info(subscription_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_subscription_with_http_info(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_subscription_with_http_info(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a subscription by id  # noqa: E501
 
           # noqa: E501
@@ -1590,10 +1590,10 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
         :return: Subscription
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1672,7 +1672,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_subscription_custom_fields(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_subscription_custom_fields(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve subscription custom fields  # noqa: E501
 
           # noqa: E501
@@ -1682,11 +1682,11 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1697,7 +1697,7 @@ class SubscriptionApi(object):
             (data) = self.get_subscription_custom_fields_with_http_info(subscription_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_subscription_custom_fields_with_http_info(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_subscription_custom_fields_with_http_info(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve subscription custom fields  # noqa: E501
 
           # noqa: E501
@@ -1707,11 +1707,11 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1781,7 +1781,7 @@ class SubscriptionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1789,7 +1789,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_subscription_tags(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_subscription_tags(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve subscription tags  # noqa: E501
 
           # noqa: E501
@@ -1799,12 +1799,12 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1815,7 +1815,7 @@ class SubscriptionApi(object):
             (data) = self.get_subscription_tags_with_http_info(subscription_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_subscription_tags_with_http_info(self, subscription_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_subscription_tags_with_http_info(self, subscription_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve subscription tags  # noqa: E501
 
           # noqa: E501
@@ -1825,12 +1825,12 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str subscription_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1902,7 +1902,7 @@ class SubscriptionApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1910,7 +1910,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_subscription_custom_fields(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_subscription_custom_fields(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to subscription  # noqa: E501
 
           # noqa: E501
@@ -1920,13 +1920,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1938,7 +1938,7 @@ class SubscriptionApi(object):
             (data) = self.modify_subscription_custom_fields_with_http_info(subscription_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_subscription_custom_fields_with_http_info(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_subscription_custom_fields_with_http_info(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to subscription  # noqa: E501
 
           # noqa: E501
@@ -1948,13 +1948,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2051,7 +2051,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def uncancel_subscription_plan(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def uncancel_subscription_plan(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Un-cancel an entitlement  # noqa: E501
 
           # noqa: E501
@@ -2061,13 +2061,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2079,7 +2079,7 @@ class SubscriptionApi(object):
             (data) = self.uncancel_subscription_plan_with_http_info(subscription_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def uncancel_subscription_plan_with_http_info(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def uncancel_subscription_plan_with_http_info(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Un-cancel an entitlement  # noqa: E501
 
           # noqa: E501
@@ -2089,13 +2089,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2185,7 +2185,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def undo_change_subscription_plan(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def undo_change_subscription_plan(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Undo a pending change plan on an entitlement  # noqa: E501
 
           # noqa: E501
@@ -2195,13 +2195,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2213,7 +2213,7 @@ class SubscriptionApi(object):
             (data) = self.undo_change_subscription_plan_with_http_info(subscription_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def undo_change_subscription_plan_with_http_info(self, subscription_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def undo_change_subscription_plan_with_http_info(self, subscription_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Undo a pending change plan on an entitlement  # noqa: E501
 
           # noqa: E501
@@ -2223,13 +2223,13 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str subscription_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2319,7 +2319,7 @@ class SubscriptionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_subscription_bcd(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def update_subscription_bcd(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update the BCD associated to a subscription  # noqa: E501
 
           # noqa: E501
@@ -2329,15 +2329,15 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
+        :param Str subscription_id: (required)
         :param Subscription body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date effective_from_date:
-        :param bool force_new_bcd_with_past_effective_date:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date effective_from_date:
+        :param Bool force_new_bcd_with_past_effective_date:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2349,7 +2349,7 @@ class SubscriptionApi(object):
             (data) = self.update_subscription_bcd_with_http_info(subscription_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def update_subscription_bcd_with_http_info(self, subscription_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def update_subscription_bcd_with_http_info(self, subscription_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update the BCD associated to a subscription  # noqa: E501
 
           # noqa: E501
@@ -2359,15 +2359,15 @@ class SubscriptionApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str subscription_id: (required)
+        :param Str subscription_id: (required)
         :param Subscription body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date effective_from_date:
-        :param bool force_new_bcd_with_past_effective_date:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date effective_from_date:
+        :param Bool force_new_bcd_with_past_effective_date:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

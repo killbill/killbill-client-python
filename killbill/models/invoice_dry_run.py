@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.phase_price_override import PhasePriceOverride  # noqa: F401,E501
 
 
 class InvoiceDryRun(object):
@@ -50,18 +49,18 @@ class InvoiceDryRun(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'dry_run_type': 'str',
-        'dry_run_action': 'str',
-        'phase_type': 'str',
-        'product_name': 'str',
-        'product_category': 'str',
-        'billing_period': 'str',
-        'price_list_name': 'str',
-        'subscription_id': 'str',
-        'bundle_id': 'str',
-        'effective_date': 'date',
-        'billing_policy': 'str',
-        'price_overrides': 'list[PhasePriceOverride]'
+        'dry_run_type': 'Str',
+        'dry_run_action': 'Str',
+        'phase_type': 'Str',
+        'product_name': 'Str',
+        'product_category': 'Str',
+        'billing_period': 'Str',
+        'price_list_name': 'Str',
+        'subscription_id': 'Str',
+        'bundle_id': 'Str',
+        'effective_date': 'Date',
+        'billing_policy': 'Str',
+        'price_overrides': 'List[PhasePriceOverride]'
     }
 
     attribute_map = {
@@ -127,7 +126,7 @@ class InvoiceDryRun(object):
 
 
         :return: The dry_run_type of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._dry_run_type
 
@@ -137,7 +136,7 @@ class InvoiceDryRun(object):
 
 
         :param dry_run_type: The dry_run_type of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["TARGET_DATE", "UPCOMING_INVOICE", "SUBSCRIPTION_ACTION"]  # noqa: E501
         if dry_run_type not in allowed_values:
@@ -154,7 +153,7 @@ class InvoiceDryRun(object):
 
 
         :return: The dry_run_action of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._dry_run_action
 
@@ -164,7 +163,7 @@ class InvoiceDryRun(object):
 
 
         :param dry_run_action: The dry_run_action of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["START_ENTITLEMENT", "START_BILLING", "PAUSE_ENTITLEMENT", "PAUSE_BILLING", "RESUME_ENTITLEMENT", "RESUME_BILLING", "PHASE", "CHANGE", "STOP_ENTITLEMENT", "STOP_BILLING", "SERVICE_STATE_CHANGE"]  # noqa: E501
         if dry_run_action not in allowed_values:
@@ -181,7 +180,7 @@ class InvoiceDryRun(object):
 
 
         :return: The phase_type of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phase_type
 
@@ -191,7 +190,7 @@ class InvoiceDryRun(object):
 
 
         :param phase_type: The phase_type of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["TRIAL", "DISCOUNT", "FIXEDTERM", "EVERGREEN"]  # noqa: E501
         if phase_type not in allowed_values:
@@ -208,7 +207,7 @@ class InvoiceDryRun(object):
 
 
         :return: The product_name of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._product_name
 
@@ -218,7 +217,7 @@ class InvoiceDryRun(object):
 
 
         :param product_name: The product_name of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._product_name = product_name
@@ -229,7 +228,7 @@ class InvoiceDryRun(object):
 
 
         :return: The product_category of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._product_category
 
@@ -239,7 +238,7 @@ class InvoiceDryRun(object):
 
 
         :param product_category: The product_category of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["BASE", "ADD_ON", "STANDALONE"]  # noqa: E501
         if product_category not in allowed_values:
@@ -256,7 +255,7 @@ class InvoiceDryRun(object):
 
 
         :return: The billing_period of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_period
 
@@ -266,7 +265,7 @@ class InvoiceDryRun(object):
 
 
         :param billing_period: The billing_period of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
         if billing_period not in allowed_values:
@@ -283,7 +282,7 @@ class InvoiceDryRun(object):
 
 
         :return: The price_list_name of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._price_list_name
 
@@ -293,7 +292,7 @@ class InvoiceDryRun(object):
 
 
         :param price_list_name: The price_list_name of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._price_list_name = price_list_name
@@ -304,7 +303,7 @@ class InvoiceDryRun(object):
 
 
         :return: The subscription_id of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._subscription_id
 
@@ -314,7 +313,7 @@ class InvoiceDryRun(object):
 
 
         :param subscription_id: The subscription_id of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._subscription_id = subscription_id
@@ -325,7 +324,7 @@ class InvoiceDryRun(object):
 
 
         :return: The bundle_id of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_id
 
@@ -335,7 +334,7 @@ class InvoiceDryRun(object):
 
 
         :param bundle_id: The bundle_id of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_id = bundle_id
@@ -346,7 +345,7 @@ class InvoiceDryRun(object):
 
 
         :return: The effective_date of this InvoiceDryRun.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._effective_date
 
@@ -356,7 +355,7 @@ class InvoiceDryRun(object):
 
 
         :param effective_date: The effective_date of this InvoiceDryRun.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._effective_date = effective_date
@@ -367,7 +366,7 @@ class InvoiceDryRun(object):
 
 
         :return: The billing_policy of this InvoiceDryRun.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_policy
 
@@ -377,7 +376,7 @@ class InvoiceDryRun(object):
 
 
         :param billing_policy: The billing_policy of this InvoiceDryRun.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["START_OF_TERM", "END_OF_TERM", "IMMEDIATE", "ILLEGAL"]  # noqa: E501
         if billing_policy not in allowed_values:
@@ -394,7 +393,7 @@ class InvoiceDryRun(object):
 
 
         :return: The price_overrides of this InvoiceDryRun.  # noqa: E501
-        :rtype: list[PhasePriceOverride]
+        :rtype: List[PhasePriceOverride]
         """
         return self._price_overrides
 
@@ -404,7 +403,7 @@ class InvoiceDryRun(object):
 
 
         :param price_overrides: The price_overrides of this InvoiceDryRun.  # noqa: E501
-        :type: list[PhasePriceOverride]
+        :type: List[PhasePriceOverride]
         """
 
         self._price_overrides = price_overrides

@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.tier_price_override import TierPriceOverride  # noqa: F401,E501
 
 
 class UsagePriceOverride(object):
@@ -50,11 +49,11 @@ class UsagePriceOverride(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'usage_name': 'str',
-        'usage_type': 'str',
-        'billing_mode': 'str',
-        'tier_block_policy': 'str',
-        'tier_price_overrides': 'list[TierPriceOverride]'
+        'usage_name': 'Str',
+        'usage_type': 'Str',
+        'billing_mode': 'Str',
+        'tier_block_policy': 'Str',
+        'tier_price_overrides': 'List[TierPriceOverride]'
     }
 
     attribute_map = {
@@ -92,7 +91,7 @@ class UsagePriceOverride(object):
 
 
         :return: The usage_name of this UsagePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._usage_name
 
@@ -102,7 +101,7 @@ class UsagePriceOverride(object):
 
 
         :param usage_name: The usage_name of this UsagePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._usage_name = usage_name
@@ -113,7 +112,7 @@ class UsagePriceOverride(object):
 
 
         :return: The usage_type of this UsagePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._usage_type
 
@@ -123,7 +122,7 @@ class UsagePriceOverride(object):
 
 
         :param usage_type: The usage_type of this UsagePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["CAPACITY", "CONSUMABLE"]  # noqa: E501
         if usage_type not in allowed_values:
@@ -140,7 +139,7 @@ class UsagePriceOverride(object):
 
 
         :return: The billing_mode of this UsagePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_mode
 
@@ -150,7 +149,7 @@ class UsagePriceOverride(object):
 
 
         :param billing_mode: The billing_mode of this UsagePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["IN_ADVANCE", "IN_ARREAR"]  # noqa: E501
         if billing_mode not in allowed_values:
@@ -167,7 +166,7 @@ class UsagePriceOverride(object):
 
 
         :return: The tier_block_policy of this UsagePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._tier_block_policy
 
@@ -177,7 +176,7 @@ class UsagePriceOverride(object):
 
 
         :param tier_block_policy: The tier_block_policy of this UsagePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["ALL_TIERS", "TOP_TIER"]  # noqa: E501
         if tier_block_policy not in allowed_values:
@@ -194,7 +193,7 @@ class UsagePriceOverride(object):
 
 
         :return: The tier_price_overrides of this UsagePriceOverride.  # noqa: E501
-        :rtype: list[TierPriceOverride]
+        :rtype: List[TierPriceOverride]
         """
         return self._tier_price_overrides
 
@@ -204,7 +203,7 @@ class UsagePriceOverride(object):
 
 
         :param tier_price_overrides: The tier_price_overrides of this UsagePriceOverride.  # noqa: E501
-        :type: list[TierPriceOverride]
+        :type: List[TierPriceOverride]
         """
 
         self._tier_price_overrides = tier_price_overrides

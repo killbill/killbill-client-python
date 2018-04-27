@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class InvoiceEmail(object):
@@ -50,9 +49,9 @@ class InvoiceEmail(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'is_notified_for_invoices': 'bool',
-        'audit_logs': 'list[AuditLog]'
+        'account_id': 'Str',
+        'is_notified_for_invoices': 'Bool',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -82,7 +81,7 @@ class InvoiceEmail(object):
 
 
         :return: The account_id of this InvoiceEmail.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -92,7 +91,7 @@ class InvoiceEmail(object):
 
 
         :param account_id: The account_id of this InvoiceEmail.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -103,7 +102,7 @@ class InvoiceEmail(object):
 
 
         :return: The is_notified_for_invoices of this InvoiceEmail.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_notified_for_invoices
 
@@ -113,7 +112,7 @@ class InvoiceEmail(object):
 
 
         :param is_notified_for_invoices: The is_notified_for_invoices of this InvoiceEmail.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_notified_for_invoices = is_notified_for_invoices
@@ -124,7 +123,7 @@ class InvoiceEmail(object):
 
 
         :return: The audit_logs of this InvoiceEmail.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -134,7 +133,7 @@ class InvoiceEmail(object):
 
 
         :param audit_logs: The audit_logs of this InvoiceEmail.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

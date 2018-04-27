@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class TagDefinition(object):
@@ -50,12 +49,12 @@ class TagDefinition(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'is_control_tag': 'bool',
-        'name': 'str',
-        'description': 'str',
-        'applicable_object_types': 'list[str]',
-        'audit_logs': 'list[AuditLog]'
+        'id': 'Str',
+        'is_control_tag': 'Bool',
+        'name': 'Str',
+        'description': 'Str',
+        'applicable_object_types': 'List[Str]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -95,7 +94,7 @@ class TagDefinition(object):
 
 
         :return: The id of this TagDefinition.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._id
 
@@ -105,7 +104,7 @@ class TagDefinition(object):
 
 
         :param id: The id of this TagDefinition.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._id = id
@@ -116,7 +115,7 @@ class TagDefinition(object):
 
 
         :return: The is_control_tag of this TagDefinition.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_control_tag
 
@@ -126,7 +125,7 @@ class TagDefinition(object):
 
 
         :param is_control_tag: The is_control_tag of this TagDefinition.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_control_tag = is_control_tag
@@ -137,7 +136,7 @@ class TagDefinition(object):
 
 
         :return: The name of this TagDefinition.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -147,7 +146,7 @@ class TagDefinition(object):
 
 
         :param name: The name of this TagDefinition.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if name is None:
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
@@ -160,7 +159,7 @@ class TagDefinition(object):
 
 
         :return: The description of this TagDefinition.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._description
 
@@ -170,7 +169,7 @@ class TagDefinition(object):
 
 
         :param description: The description of this TagDefinition.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if description is None:
             raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
@@ -183,7 +182,7 @@ class TagDefinition(object):
 
 
         :return: The applicable_object_types of this TagDefinition.  # noqa: E501
-        :rtype: list[str]
+        :rtype: List[Str]
         """
         return self._applicable_object_types
 
@@ -193,7 +192,7 @@ class TagDefinition(object):
 
 
         :param applicable_object_types: The applicable_object_types of this TagDefinition.  # noqa: E501
-        :type: list[str]
+        :type: List[Str]
         """
         allowed_values = ["ACCOUNT", "ACCOUNT_EMAIL", "BLOCKING_STATES", "BUNDLE", "CUSTOM_FIELD", "INVOICE", "PAYMENT", "TRANSACTION", "INVOICE_ITEM", "INVOICE_PAYMENT", "SUBSCRIPTION", "SUBSCRIPTION_EVENT", "SERVICE_BROADCAST", "PAYMENT_ATTEMPT", "PAYMENT_METHOD", "REFUND", "TAG", "TAG_DEFINITION", "TENANT", "TENANT_KVS"]  # noqa: E501
         if not set(applicable_object_types).issubset(set(allowed_values)):
@@ -211,7 +210,7 @@ class TagDefinition(object):
 
 
         :return: The audit_logs of this TagDefinition.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -221,7 +220,7 @@ class TagDefinition(object):
 
 
         :param audit_logs: The audit_logs of this TagDefinition.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

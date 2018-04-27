@@ -33,8 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.plugin_property import PluginProperty  # noqa: F401,E501
 
 
 class PaymentAttempt(object):
@@ -51,19 +49,19 @@ class PaymentAttempt(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'payment_method_id': 'str',
-        'payment_external_key': 'str',
-        'transaction_id': 'str',
-        'transaction_external_key': 'str',
-        'transaction_type': 'str',
-        'effective_date': 'datetime',
-        'state_name': 'str',
-        'amount': 'float',
-        'currency': 'str',
-        'plugin_name': 'str',
-        'plugin_properties': 'list[PluginProperty]',
-        'audit_logs': 'list[AuditLog]'
+        'account_id': 'Str',
+        'payment_method_id': 'Str',
+        'payment_external_key': 'Str',
+        'transaction_id': 'Str',
+        'transaction_external_key': 'Str',
+        'transaction_type': 'Str',
+        'effective_date': 'Datetime',
+        'state_name': 'Str',
+        'amount': 'Float',
+        'currency': 'Str',
+        'plugin_name': 'Str',
+        'plugin_properties': 'List[PluginProperty]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -133,7 +131,7 @@ class PaymentAttempt(object):
 
 
         :return: The account_id of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -143,7 +141,7 @@ class PaymentAttempt(object):
 
 
         :param account_id: The account_id of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -154,7 +152,7 @@ class PaymentAttempt(object):
 
 
         :return: The payment_method_id of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_method_id
 
@@ -164,7 +162,7 @@ class PaymentAttempt(object):
 
 
         :param payment_method_id: The payment_method_id of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_method_id = payment_method_id
@@ -175,7 +173,7 @@ class PaymentAttempt(object):
 
 
         :return: The payment_external_key of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._payment_external_key
 
@@ -185,7 +183,7 @@ class PaymentAttempt(object):
 
 
         :param payment_external_key: The payment_external_key of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._payment_external_key = payment_external_key
@@ -196,7 +194,7 @@ class PaymentAttempt(object):
 
 
         :return: The transaction_id of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._transaction_id
 
@@ -206,7 +204,7 @@ class PaymentAttempt(object):
 
 
         :param transaction_id: The transaction_id of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._transaction_id = transaction_id
@@ -217,7 +215,7 @@ class PaymentAttempt(object):
 
 
         :return: The transaction_external_key of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._transaction_external_key
 
@@ -227,7 +225,7 @@ class PaymentAttempt(object):
 
 
         :param transaction_external_key: The transaction_external_key of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._transaction_external_key = transaction_external_key
@@ -238,7 +236,7 @@ class PaymentAttempt(object):
 
 
         :return: The transaction_type of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._transaction_type
 
@@ -248,7 +246,7 @@ class PaymentAttempt(object):
 
 
         :param transaction_type: The transaction_type of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AUTHORIZE", "CAPTURE", "CHARGEBACK", "CREDIT", "PURCHASE", "REFUND", "VOID"]  # noqa: E501
         if transaction_type not in allowed_values:
@@ -265,7 +263,7 @@ class PaymentAttempt(object):
 
 
         :return: The effective_date of this PaymentAttempt.  # noqa: E501
-        :rtype: datetime
+        :rtype: Datetime
         """
         return self._effective_date
 
@@ -275,7 +273,7 @@ class PaymentAttempt(object):
 
 
         :param effective_date: The effective_date of this PaymentAttempt.  # noqa: E501
-        :type: datetime
+        :type: Datetime
         """
 
         self._effective_date = effective_date
@@ -286,7 +284,7 @@ class PaymentAttempt(object):
 
 
         :return: The state_name of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._state_name
 
@@ -296,7 +294,7 @@ class PaymentAttempt(object):
 
 
         :param state_name: The state_name of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._state_name = state_name
@@ -308,7 +306,7 @@ class PaymentAttempt(object):
         Transaction amount, required except for void operations  # noqa: E501
 
         :return: The amount of this PaymentAttempt.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._amount
 
@@ -319,7 +317,7 @@ class PaymentAttempt(object):
         Transaction amount, required except for void operations  # noqa: E501
 
         :param amount: The amount of this PaymentAttempt.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._amount = amount
@@ -331,7 +329,7 @@ class PaymentAttempt(object):
         Amount currency (account currency unless specified)  # noqa: E501
 
         :return: The currency of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -342,7 +340,7 @@ class PaymentAttempt(object):
         Amount currency (account currency unless specified)  # noqa: E501
 
         :param currency: The currency of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -359,7 +357,7 @@ class PaymentAttempt(object):
 
 
         :return: The plugin_name of this PaymentAttempt.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plugin_name
 
@@ -369,7 +367,7 @@ class PaymentAttempt(object):
 
 
         :param plugin_name: The plugin_name of this PaymentAttempt.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plugin_name = plugin_name
@@ -380,7 +378,7 @@ class PaymentAttempt(object):
 
 
         :return: The plugin_properties of this PaymentAttempt.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._plugin_properties
 
@@ -390,7 +388,7 @@ class PaymentAttempt(object):
 
 
         :param plugin_properties: The plugin_properties of this PaymentAttempt.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._plugin_properties = plugin_properties
@@ -401,7 +399,7 @@ class PaymentAttempt(object):
 
 
         :return: The audit_logs of this PaymentAttempt.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -411,7 +409,7 @@ class PaymentAttempt(object):
 
 
         :param audit_logs: The audit_logs of this PaymentAttempt.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

@@ -50,7 +50,7 @@ class AccountApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_account_blocking_state(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_account_blocking_state(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Block an account  # noqa: E501
 
           # noqa: E501
@@ -60,15 +60,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param BlockingState body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class AccountApi(object):
             (data) = self.add_account_blocking_state_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def add_account_blocking_state_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_account_blocking_state_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Block an account  # noqa: E501
 
           # noqa: E501
@@ -90,15 +90,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param BlockingState body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param date requested_date:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -196,7 +196,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def add_email(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_email(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add account email  # noqa: E501
 
           # noqa: E501
@@ -206,14 +206,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param AccountEmail body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[AccountEmail]
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[AccountEmail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -224,7 +224,7 @@ class AccountApi(object):
             (data) = self.add_email_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def add_email_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def add_email_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add account email  # noqa: E501
 
           # noqa: E501
@@ -234,14 +234,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param AccountEmail body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[AccountEmail]
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[AccountEmail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -329,7 +329,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AccountEmail]',  # noqa: E501
+            response_type='List[AccountEmail]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -337,7 +337,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def close_account(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def close_account(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Close account  # noqa: E501
 
           # noqa: E501
@@ -347,16 +347,16 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool cancel_all_subscriptions:
-        :param bool write_off_unpaid_invoices:
-        :param bool item_adjust_unpaid_invoices:
-        :param bool remove_future_notifications:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool cancel_all_subscriptions:
+        :param Bool write_off_unpaid_invoices:
+        :param Bool item_adjust_unpaid_invoices:
+        :param Bool remove_future_notifications:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -368,7 +368,7 @@ class AccountApi(object):
             (data) = self.close_account_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def close_account_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def close_account_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Close account  # noqa: E501
 
           # noqa: E501
@@ -378,16 +378,16 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool cancel_all_subscriptions:
-        :param bool write_off_unpaid_invoices:
-        :param bool item_adjust_unpaid_invoices:
-        :param bool remove_future_notifications:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool cancel_all_subscriptions:
+        :param Bool write_off_unpaid_invoices:
+        :param Bool item_adjust_unpaid_invoices:
+        :param Bool remove_future_notifications:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -482,7 +482,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_account(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_account(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create account  # noqa: E501
 
           # noqa: E501
@@ -493,11 +493,11 @@ class AccountApi(object):
 
         :param async bool
         :param Account body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
@@ -509,7 +509,7 @@ class AccountApi(object):
             (data) = self.create_account_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_account_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_account_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create account  # noqa: E501
 
           # noqa: E501
@@ -520,11 +520,11 @@ class AccountApi(object):
 
         :param async bool
         :param Account body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
@@ -613,7 +613,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_account_custom_fields(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_account_custom_fields(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to account  # noqa: E501
 
           # noqa: E501
@@ -623,14 +623,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str account_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -641,7 +641,7 @@ class AccountApi(object):
             (data) = self.create_account_custom_fields_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_account_custom_fields_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_account_custom_fields_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add custom fields to account  # noqa: E501
 
           # noqa: E501
@@ -651,14 +651,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
-        :return: list[CustomField]
+        :param Str account_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -746,7 +746,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -754,7 +754,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_account_tags(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_account_tags(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to account  # noqa: E501
 
           # noqa: E501
@@ -764,14 +764,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -782,7 +782,7 @@ class AccountApi(object):
             (data) = self.create_account_tags_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_account_tags_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_account_tags_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add tags to account  # noqa: E501
 
           # noqa: E501
@@ -792,14 +792,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
-        :return: list[Tag]
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -880,7 +880,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -888,7 +888,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_payment_method(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_payment_method(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a payment method  # noqa: E501
 
           # noqa: E501
@@ -898,17 +898,17 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param PaymentMethod body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool is_default:
-        :param bool pay_all_unpaid_invoices:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool is_default:
+        :param Bool pay_all_unpaid_invoices:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: PaymentMethod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -920,7 +920,7 @@ class AccountApi(object):
             (data) = self.create_payment_method_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_payment_method_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_payment_method_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Add a payment method  # noqa: E501
 
           # noqa: E501
@@ -930,17 +930,17 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param PaymentMethod body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool is_default:
-        :param bool pay_all_unpaid_invoices:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool is_default:
+        :param Bool pay_all_unpaid_invoices:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: PaymentMethod
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1047,7 +1047,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_account_custom_fields(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_account_custom_fields(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from account  # noqa: E501
 
           # noqa: E501
@@ -1057,13 +1057,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1075,7 +1075,7 @@ class AccountApi(object):
             (data) = self.delete_account_custom_fields_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_account_custom_fields_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_account_custom_fields_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove custom fields from account  # noqa: E501
 
           # noqa: E501
@@ -1085,13 +1085,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] custom_field:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] custom_field:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1185,7 +1185,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def delete_account_tags(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_account_tags(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from account  # noqa: E501
 
           # noqa: E501
@@ -1195,13 +1195,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1213,7 +1213,7 @@ class AccountApi(object):
             (data) = self.delete_account_tags_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def delete_account_tags_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def delete_account_tags_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Remove tags from account  # noqa: E501
 
           # noqa: E501
@@ -1223,13 +1223,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] tag_def:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] tag_def:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1323,7 +1323,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an account by id  # noqa: E501
 
           # noqa: E501
@@ -1333,12 +1333,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1350,7 +1350,7 @@ class AccountApi(object):
             (data) = self.get_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an account by id  # noqa: E501
 
           # noqa: E501
@@ -1360,12 +1360,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1448,7 +1448,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account_bundles(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_bundles(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve bundles for account  # noqa: E501
 
           # noqa: E501
@@ -1458,13 +1458,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str external_key:
-        :param str bundles_filter:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str external_key:
+        :param Str bundles_filter:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1475,7 +1475,7 @@ class AccountApi(object):
             (data) = self.get_account_bundles_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_account_bundles_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_bundles_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve bundles for account  # noqa: E501
 
           # noqa: E501
@@ -1485,13 +1485,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str external_key:
-        :param str bundles_filter:
-        :param str audit:
-        :return: list[Bundle]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str external_key:
+        :param Str bundles_filter:
+        :param Str audit:
+        :return: List[Bundle]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1565,7 +1565,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Bundle]',  # noqa: E501
+            response_type='List[Bundle]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1573,7 +1573,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account_by_key(self, external_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_by_key(self, external_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an account by external key  # noqa: E501
 
           # noqa: E501
@@ -1583,12 +1583,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str external_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
+        :param Str external_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1600,7 +1600,7 @@ class AccountApi(object):
             (data) = self.get_account_by_key_with_http_info(external_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_account_by_key_with_http_info(self, external_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_by_key_with_http_info(self, external_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an account by external key  # noqa: E501
 
           # noqa: E501
@@ -1610,12 +1610,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str external_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
+        :param Str external_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
         :return: Account
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1696,7 +1696,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account_custom_fields(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_custom_fields(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account custom fields  # noqa: E501
 
           # noqa: E501
@@ -1706,11 +1706,11 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1721,7 +1721,7 @@ class AccountApi(object):
             (data) = self.get_account_custom_fields_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_account_custom_fields_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_custom_fields_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account custom fields  # noqa: E501
 
           # noqa: E501
@@ -1731,11 +1731,11 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str audit:
-        :return: list[CustomField]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1805,7 +1805,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1813,7 +1813,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account_tags(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_tags(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account tags  # noqa: E501
 
           # noqa: E501
@@ -1823,12 +1823,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1839,7 +1839,7 @@ class AccountApi(object):
             (data) = self.get_account_tags_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_account_tags_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_tags_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account tags  # noqa: E501
 
           # noqa: E501
@@ -1849,12 +1849,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1926,7 +1926,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -1934,7 +1934,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_account_timeline(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_timeline(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account timeline  # noqa: E501
 
           # noqa: E501
@@ -1944,11 +1944,11 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool parallel:
-        :param str audit:
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool parallel:
+        :param Str audit:
         :return: AccountTimeline
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1960,7 +1960,7 @@ class AccountApi(object):
             (data) = self.get_account_timeline_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_account_timeline_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_account_timeline_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account timeline  # noqa: E501
 
           # noqa: E501
@@ -1970,11 +1970,11 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool parallel:
-        :param str audit:
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool parallel:
+        :param Str audit:
         :return: AccountTimeline
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2055,7 +2055,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_accounts(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_accounts(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List accounts  # noqa: E501
 
           # noqa: E501
@@ -2065,14 +2065,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
-        :return: list[Account]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
+        :return: List[Account]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2083,7 +2083,7 @@ class AccountApi(object):
             (data) = self.get_accounts_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_accounts_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_accounts_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List accounts  # noqa: E501
 
           # noqa: E501
@@ -2093,14 +2093,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
-        :return: list[Account]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
+        :return: List[Account]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2170,7 +2170,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Account]',  # noqa: E501
+            response_type='List[Account]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2178,7 +2178,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_custom_fields(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_custom_fields(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account customFields  # noqa: E501
 
           # noqa: E501
@@ -2188,12 +2188,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str object_type:
-        :param str audit:
-        :return: list[CustomField]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str object_type:
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2204,7 +2204,7 @@ class AccountApi(object):
             (data) = self.get_all_custom_fields_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_all_custom_fields_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_custom_fields_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account customFields  # noqa: E501
 
           # noqa: E501
@@ -2214,12 +2214,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str object_type:
-        :param str audit:
-        :return: list[CustomField]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str object_type:
+        :param Str audit:
+        :return: List[CustomField]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2291,7 +2291,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[CustomField]',  # noqa: E501
+            response_type='List[CustomField]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2299,7 +2299,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_all_tags(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_tags(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account tags  # noqa: E501
 
           # noqa: E501
@@ -2309,13 +2309,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str object_type:
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str object_type:
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2326,7 +2326,7 @@ class AccountApi(object):
             (data) = self.get_all_tags_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_all_tags_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_all_tags_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account tags  # noqa: E501
 
           # noqa: E501
@@ -2336,13 +2336,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str object_type:
-        :param bool included_deleted:
-        :param str audit:
-        :return: list[Tag]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str object_type:
+        :param Bool included_deleted:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2416,7 +2416,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2424,7 +2424,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_blocking_states(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_blocking_states(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve blocking states for account  # noqa: E501
 
           # noqa: E501
@@ -2434,13 +2434,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] blocking_state_types:
-        :param list[str] blocking_state_svcs:
-        :param str audit:
-        :return: list[BlockingState]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] blocking_state_types:
+        :param List[Str] blocking_state_svcs:
+        :param Str audit:
+        :return: List[BlockingState]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2451,7 +2451,7 @@ class AccountApi(object):
             (data) = self.get_blocking_states_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_blocking_states_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_blocking_states_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve blocking states for account  # noqa: E501
 
           # noqa: E501
@@ -2461,13 +2461,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param list[str] blocking_state_types:
-        :param list[str] blocking_state_svcs:
-        :param str audit:
-        :return: list[BlockingState]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param List[Str] blocking_state_types:
+        :param List[Str] blocking_state_svcs:
+        :param Str audit:
+        :return: List[BlockingState]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2543,7 +2543,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[BlockingState]',  # noqa: E501
+            response_type='List[BlockingState]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2551,7 +2551,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_children_accounts(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_children_accounts(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List children accounts  # noqa: E501
 
           # noqa: E501
@@ -2561,13 +2561,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
-        :return: list[Account]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
+        :return: List[Account]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2578,7 +2578,7 @@ class AccountApi(object):
             (data) = self.get_children_accounts_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_children_accounts_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_children_accounts_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List children accounts  # noqa: E501
 
           # noqa: E501
@@ -2588,13 +2588,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
-        :return: list[Account]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
+        :return: List[Account]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2668,7 +2668,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Account]',  # noqa: E501
+            response_type='List[Account]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2676,7 +2676,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_email_notifications_for_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_email_notifications_for_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account email notification  # noqa: E501
 
           # noqa: E501
@@ -2686,9 +2686,9 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: InvoiceEmail
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2700,7 +2700,7 @@ class AccountApi(object):
             (data) = self.get_email_notifications_for_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_email_notifications_for_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_email_notifications_for_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account email notification  # noqa: E501
 
           # noqa: E501
@@ -2710,9 +2710,9 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: InvoiceEmail
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2789,7 +2789,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_emails(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_emails(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an account emails  # noqa: E501
 
           # noqa: E501
@@ -2799,10 +2799,10 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[AccountEmail]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[AccountEmail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2813,7 +2813,7 @@ class AccountApi(object):
             (data) = self.get_emails_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_emails_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_emails_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an account emails  # noqa: E501
 
           # noqa: E501
@@ -2823,10 +2823,10 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[AccountEmail]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[AccountEmail]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2894,7 +2894,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[AccountEmail]',  # noqa: E501
+            response_type='List[AccountEmail]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -2902,7 +2902,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoice_payments(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payments(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account invoice payments  # noqa: E501
 
           # noqa: E501
@@ -2912,14 +2912,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_plugin_info:
-        :param bool with_attempts:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[InvoicePayment]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool with_attempts:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[InvoicePayment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2930,7 +2930,7 @@ class AccountApi(object):
             (data) = self.get_invoice_payments_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoice_payments_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoice_payments_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account invoice payments  # noqa: E501
 
           # noqa: E501
@@ -2940,14 +2940,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_plugin_info:
-        :param bool with_attempts:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[InvoicePayment]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool with_attempts:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[InvoicePayment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3024,7 +3024,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[InvoicePayment]',  # noqa: E501
+            response_type='List[InvoicePayment]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3032,7 +3032,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_invoices_for_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoices_for_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account invoices  # noqa: E501
 
           # noqa: E501
@@ -3042,15 +3042,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_items:
-        :param bool with_migration_invoices:
-        :param bool unpaid_invoices_only:
-        :param bool include_voided_invoices:
-        :param str audit:
-        :return: list[Invoice]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_items:
+        :param Bool with_migration_invoices:
+        :param Bool unpaid_invoices_only:
+        :param Bool include_voided_invoices:
+        :param Str audit:
+        :return: List[Invoice]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3061,7 +3061,7 @@ class AccountApi(object):
             (data) = self.get_invoices_for_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_invoices_for_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_invoices_for_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account invoices  # noqa: E501
 
           # noqa: E501
@@ -3071,15 +3071,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_items:
-        :param bool with_migration_invoices:
-        :param bool unpaid_invoices_only:
-        :param bool include_voided_invoices:
-        :param str audit:
-        :return: list[Invoice]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_items:
+        :param Bool with_migration_invoices:
+        :param Bool unpaid_invoices_only:
+        :param Bool include_voided_invoices:
+        :param Str audit:
+        :return: List[Invoice]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3157,7 +3157,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Invoice]',  # noqa: E501
+            response_type='List[Invoice]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3165,7 +3165,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_overdue_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_overdue_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve overdue state for account  # noqa: E501
 
           # noqa: E501
@@ -3175,9 +3175,9 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: OverdueState
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3189,7 +3189,7 @@ class AccountApi(object):
             (data) = self.get_overdue_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_overdue_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_overdue_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve overdue state for account  # noqa: E501
 
           # noqa: E501
@@ -3199,9 +3199,9 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: OverdueState
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3278,7 +3278,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payment_methods_for_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_payment_methods_for_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account payment methods  # noqa: E501
 
           # noqa: E501
@@ -3288,14 +3288,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_plugin_info:
-        :param bool included_deleted:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[PaymentMethod]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool included_deleted:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[PaymentMethod]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3306,7 +3306,7 @@ class AccountApi(object):
             (data) = self.get_payment_methods_for_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payment_methods_for_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_payment_methods_for_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account payment methods  # noqa: E501
 
           # noqa: E501
@@ -3316,14 +3316,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_plugin_info:
-        :param bool included_deleted:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[PaymentMethod]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool included_deleted:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[PaymentMethod]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3400,7 +3400,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PaymentMethod]',  # noqa: E501
+            response_type='List[PaymentMethod]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3408,7 +3408,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_payments_for_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_payments_for_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account payments  # noqa: E501
 
           # noqa: E501
@@ -3418,14 +3418,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_attempts:
-        :param bool with_plugin_info:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[Payment]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_attempts:
+        :param Bool with_plugin_info:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[Payment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3436,7 +3436,7 @@ class AccountApi(object):
             (data) = self.get_payments_for_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_payments_for_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_payments_for_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve account payments  # noqa: E501
 
           # noqa: E501
@@ -3446,14 +3446,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool with_attempts:
-        :param bool with_plugin_info:
-        :param list[str] plugin_property:
-        :param str audit:
-        :return: list[Payment]
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_attempts:
+        :param Bool with_plugin_info:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: List[Payment]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3530,7 +3530,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Payment]',  # noqa: E501
+            response_type='List[Payment]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -3538,7 +3538,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def modify_account_custom_fields(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_account_custom_fields(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to account  # noqa: E501
 
           # noqa: E501
@@ -3548,13 +3548,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3566,7 +3566,7 @@ class AccountApi(object):
             (data) = self.modify_account_custom_fields_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def modify_account_custom_fields_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def modify_account_custom_fields_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Modify custom fields to account  # noqa: E501
 
           # noqa: E501
@@ -3576,13 +3576,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param list[CustomField] body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param List[CustomField] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3679,7 +3679,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def pay_all_invoices(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def pay_all_invoices(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger a payment for all unpaid invoices  # noqa: E501
 
           # noqa: E501
@@ -3689,15 +3689,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool external_payment:
-        :param float payment_amount:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool external_payment:
+        :param Float payment_amount:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3709,7 +3709,7 @@ class AccountApi(object):
             (data) = self.pay_all_invoices_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def pay_all_invoices_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def pay_all_invoices_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger a payment for all unpaid invoices  # noqa: E501
 
           # noqa: E501
@@ -3719,15 +3719,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool external_payment:
-        :param float payment_amount:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool external_payment:
+        :param Float payment_amount:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3825,7 +3825,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def process_payment(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def process_payment(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger a payment (authorization, purchase or credit)  # noqa: E501
 
           # noqa: E501
@@ -3835,16 +3835,16 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param PaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str payment_method_id:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str payment_method_id:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3856,7 +3856,7 @@ class AccountApi(object):
             (data) = self.process_payment_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def process_payment_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def process_payment_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger a payment (authorization, purchase or credit)  # noqa: E501
 
           # noqa: E501
@@ -3866,16 +3866,16 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param PaymentTransaction body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str payment_method_id:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str payment_method_id:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3980,7 +3980,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def process_payment_by_external_key(self, body, external_key, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def process_payment_by_external_key(self, body=None, external_key=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger a payment using the account external key (authorization, purchase or credit)  # noqa: E501
 
           # noqa: E501
@@ -3991,15 +3991,15 @@ class AccountApi(object):
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str external_key: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str payment_method_id:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str external_key: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str payment_method_id:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4011,7 +4011,7 @@ class AccountApi(object):
             (data) = self.process_payment_by_external_key_with_http_info(body, external_key, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def process_payment_by_external_key_with_http_info(self, body, external_key, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def process_payment_by_external_key_with_http_info(self, body=None, external_key=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger a payment using the account external key (authorization, purchase or credit)  # noqa: E501
 
           # noqa: E501
@@ -4022,15 +4022,15 @@ class AccountApi(object):
 
         :param async bool
         :param PaymentTransaction body: (required)
-        :param str external_key: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str payment_method_id:
-        :param list[str] control_plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str external_key: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str payment_method_id:
+        :param List[Str] control_plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: Payment
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4133,7 +4133,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def rebalance_existing_cba_on_account(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def rebalance_existing_cba_on_account(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Rebalance account CBA  # noqa: E501
 
           # noqa: E501
@@ -4143,12 +4143,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4160,7 +4160,7 @@ class AccountApi(object):
             (data) = self.rebalance_existing_cba_on_account_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def rebalance_existing_cba_on_account_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def rebalance_existing_cba_on_account_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Rebalance account CBA  # noqa: E501
 
           # noqa: E501
@@ -4170,12 +4170,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4266,7 +4266,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def refresh_payment_methods(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def refresh_payment_methods(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Refresh account payment methods  # noqa: E501
 
           # noqa: E501
@@ -4276,14 +4276,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4295,7 +4295,7 @@ class AccountApi(object):
             (data) = self.refresh_payment_methods_with_http_info(account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def refresh_payment_methods_with_http_info(self, account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def refresh_payment_methods_with_http_info(self, account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Refresh account payment methods  # noqa: E501
 
           # noqa: E501
@@ -4305,14 +4305,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str plugin_name:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str plugin_name:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4404,7 +4404,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def remove_email(self, account_id, email, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def remove_email(self, account_id=None, email=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete email from account  # noqa: E501
 
           # noqa: E501
@@ -4414,13 +4414,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str email: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str email: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4432,7 +4432,7 @@ class AccountApi(object):
             (data) = self.remove_email_with_http_info(account_id, email, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def remove_email_with_http_info(self, account_id, email, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def remove_email_with_http_info(self, account_id=None, email=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Delete email from account  # noqa: E501
 
           # noqa: E501
@@ -4442,13 +4442,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str email: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str email: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4541,7 +4541,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_accounts(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def search_accounts(self, search_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Search accounts  # noqa: E501
 
           # noqa: E501
@@ -4551,15 +4551,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str search_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
-        :return: list[Account]
+        :param Str search_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
+        :return: List[Account]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4570,7 +4570,7 @@ class AccountApi(object):
             (data) = self.search_accounts_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def search_accounts_with_http_info(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def search_accounts_with_http_info(self, search_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Search accounts  # noqa: E501
 
           # noqa: E501
@@ -4580,15 +4580,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str search_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param bool account_with_balance:
-        :param bool account_with_balance_and_cba:
-        :param str audit:
-        :return: list[Account]
+        :param Str search_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Bool account_with_balance:
+        :param Bool account_with_balance_and_cba:
+        :param Str audit:
+        :return: List[Account]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4666,7 +4666,7 @@ class AccountApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Account]',  # noqa: E501
+            response_type='List[Account]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -4674,7 +4674,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_default_payment_method(self, account_id, payment_method_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def set_default_payment_method(self, account_id=None, payment_method_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Set the default payment method  # noqa: E501
 
           # noqa: E501
@@ -4684,15 +4684,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str payment_method_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool pay_all_unpaid_invoices:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str payment_method_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool pay_all_unpaid_invoices:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4704,7 +4704,7 @@ class AccountApi(object):
             (data) = self.set_default_payment_method_with_http_info(account_id, payment_method_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def set_default_payment_method_with_http_info(self, account_id, payment_method_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def set_default_payment_method_with_http_info(self, account_id=None, payment_method_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Set the default payment method  # noqa: E501
 
           # noqa: E501
@@ -4714,15 +4714,15 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str payment_method_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool pay_all_unpaid_invoices:
-        :param list[str] plugin_property:
-        :param str reason:
-        :param str comment:
+        :param Str account_id: (required)
+        :param Str payment_method_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool pay_all_unpaid_invoices:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4826,7 +4826,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def set_email_notifications_for_account(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def set_email_notifications_for_account(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Set account email notification  # noqa: E501
 
           # noqa: E501
@@ -4836,13 +4836,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param InvoiceEmail body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4854,7 +4854,7 @@ class AccountApi(object):
             (data) = self.set_email_notifications_for_account_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def set_email_notifications_for_account_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def set_email_notifications_for_account_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Set account email notification  # noqa: E501
 
           # noqa: E501
@@ -4864,13 +4864,13 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param InvoiceEmail body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4967,7 +4967,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def transfer_child_credit_to_parent(self, child_account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def transfer_child_credit_to_parent(self, child_account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Move a given child credit to the parent level  # noqa: E501
 
           # noqa: E501
@@ -4977,12 +4977,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str child_account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str child_account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4994,7 +4994,7 @@ class AccountApi(object):
             (data) = self.transfer_child_credit_to_parent_with_http_info(child_account_id, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def transfer_child_credit_to_parent_with_http_info(self, child_account_id, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def transfer_child_credit_to_parent_with_http_info(self, child_account_id=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Move a given child credit to the parent level  # noqa: E501
 
           # noqa: E501
@@ -5004,12 +5004,12 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str child_account_id: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str child_account_id: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5100,7 +5100,7 @@ class AccountApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_account(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def update_account(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update account  # noqa: E501
 
           # noqa: E501
@@ -5110,14 +5110,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param Account body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool treat_null_as_reset:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool treat_null_as_reset:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5129,7 +5129,7 @@ class AccountApi(object):
             (data) = self.update_account_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def update_account_with_http_info(self, account_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def update_account_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update account  # noqa: E501
 
           # noqa: E501
@@ -5139,14 +5139,14 @@ class AccountApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
+        :param Str account_id: (required)
         :param Account body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool treat_null_as_reset:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool treat_null_as_reset:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

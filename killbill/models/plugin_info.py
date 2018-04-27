@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.plugin_service_info import PluginServiceInfo  # noqa: F401,E501
 
 
 class PluginInfo(object):
@@ -50,13 +49,13 @@ class PluginInfo(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bundle_symbolic_name': 'str',
-        'plugin_key': 'str',
-        'plugin_name': 'str',
-        'version': 'str',
-        'state': 'str',
-        'is_selected_for_start': 'bool',
-        'services': 'list[PluginServiceInfo]'
+        'bundle_symbolic_name': 'Str',
+        'plugin_key': 'Str',
+        'plugin_name': 'Str',
+        'version': 'Str',
+        'state': 'Str',
+        'is_selected_for_start': 'Bool',
+        'services': 'List[PluginServiceInfo]'
     }
 
     attribute_map = {
@@ -102,7 +101,7 @@ class PluginInfo(object):
 
 
         :return: The bundle_symbolic_name of this PluginInfo.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_symbolic_name
 
@@ -112,7 +111,7 @@ class PluginInfo(object):
 
 
         :param bundle_symbolic_name: The bundle_symbolic_name of this PluginInfo.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_symbolic_name = bundle_symbolic_name
@@ -123,7 +122,7 @@ class PluginInfo(object):
 
 
         :return: The plugin_key of this PluginInfo.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plugin_key
 
@@ -133,7 +132,7 @@ class PluginInfo(object):
 
 
         :param plugin_key: The plugin_key of this PluginInfo.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plugin_key = plugin_key
@@ -144,7 +143,7 @@ class PluginInfo(object):
 
 
         :return: The plugin_name of this PluginInfo.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plugin_name
 
@@ -154,7 +153,7 @@ class PluginInfo(object):
 
 
         :param plugin_name: The plugin_name of this PluginInfo.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plugin_name = plugin_name
@@ -165,7 +164,7 @@ class PluginInfo(object):
 
 
         :return: The version of this PluginInfo.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._version
 
@@ -175,7 +174,7 @@ class PluginInfo(object):
 
 
         :param version: The version of this PluginInfo.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._version = version
@@ -186,7 +185,7 @@ class PluginInfo(object):
 
 
         :return: The state of this PluginInfo.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._state
 
@@ -196,7 +195,7 @@ class PluginInfo(object):
 
 
         :param state: The state of this PluginInfo.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._state = state
@@ -207,7 +206,7 @@ class PluginInfo(object):
 
 
         :return: The is_selected_for_start of this PluginInfo.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_selected_for_start
 
@@ -217,7 +216,7 @@ class PluginInfo(object):
 
 
         :param is_selected_for_start: The is_selected_for_start of this PluginInfo.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_selected_for_start = is_selected_for_start
@@ -228,7 +227,7 @@ class PluginInfo(object):
 
 
         :return: The services of this PluginInfo.  # noqa: E501
-        :rtype: list[PluginServiceInfo]
+        :rtype: List[PluginServiceInfo]
         """
         return self._services
 
@@ -238,7 +237,7 @@ class PluginInfo(object):
 
 
         :param services: The services of this PluginInfo.  # noqa: E501
-        :type: list[PluginServiceInfo]
+        :type: List[PluginServiceInfo]
         """
 
         self._services = services

@@ -50,7 +50,7 @@ class TagApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_tags(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tags(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List tags  # noqa: E501
 
           # noqa: E501
@@ -60,12 +60,12 @@ class TagApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Tag]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -76,7 +76,7 @@ class TagApi(object):
             (data) = self.get_tags_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_tags_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_tags_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """List tags  # noqa: E501
 
           # noqa: E501
@@ -86,12 +86,12 @@ class TagApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Tag]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -157,7 +157,7 @@ class TagApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -165,7 +165,7 @@ class TagApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def search_tags(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def search_tags(self, search_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Search tags  # noqa: E501
 
           # noqa: E501
@@ -175,13 +175,13 @@ class TagApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str search_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Tag]
+        :param Str search_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -192,7 +192,7 @@ class TagApi(object):
             (data) = self.search_tags_with_http_info(search_key, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def search_tags_with_http_info(self, search_key, api_key, api_secret, **kwargs):  # noqa: E501
+    def search_tags_with_http_info(self, search_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Search tags  # noqa: E501
 
           # noqa: E501
@@ -202,13 +202,13 @@ class TagApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str search_key: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str audit:
-        :return: list[Tag]
+        :param Str search_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str audit:
+        :return: List[Tag]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -282,7 +282,7 @@ class TagApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[Tag]',  # noqa: E501
+            response_type='List[Tag]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

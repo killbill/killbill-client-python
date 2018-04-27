@@ -50,7 +50,7 @@ class SecurityApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def add_role_definition(self, body, created_by, **kwargs):  # noqa: E501
+    def add_role_definition(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Add a new role definition)  # noqa: E501
 
           # noqa: E501
@@ -61,9 +61,9 @@ class SecurityApi(object):
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -75,7 +75,7 @@ class SecurityApi(object):
             (data) = self.add_role_definition_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def add_role_definition_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
+    def add_role_definition_with_http_info(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Add a new role definition)  # noqa: E501
 
           # noqa: E501
@@ -86,9 +86,9 @@ class SecurityApi(object):
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -165,7 +165,7 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def add_user_roles(self, body, created_by, **kwargs):  # noqa: E501
+    def add_user_roles(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Add a new user with roles (to make api requests)  # noqa: E501
 
           # noqa: E501
@@ -176,9 +176,9 @@ class SecurityApi(object):
 
         :param async bool
         :param UserRoles body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -190,7 +190,7 @@ class SecurityApi(object):
             (data) = self.add_user_roles_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def add_user_roles_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
+    def add_user_roles_with_http_info(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Add a new user with roles (to make api requests)  # noqa: E501
 
           # noqa: E501
@@ -201,9 +201,9 @@ class SecurityApi(object):
 
         :param async bool
         :param UserRoles body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -290,7 +290,7 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: list[str]
+        :return: List[Str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -311,7 +311,7 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :return: list[str]
+        :return: List[Str]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -359,7 +359,7 @@ class SecurityApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[str]',  # noqa: E501
+            response_type='List[Str]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -454,7 +454,7 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_user_roles(self, username, **kwargs):  # noqa: E501
+    def get_user_roles(self, username=None, **kwargs):  # noqa: E501
         """Get roles associated to a user  # noqa: E501
 
           # noqa: E501
@@ -464,7 +464,7 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
+        :param Str username: (required)
         :return: UserRoles
                  If the method is called asynchronously,
                  returns the request thread.
@@ -476,7 +476,7 @@ class SecurityApi(object):
             (data) = self.get_user_roles_with_http_info(username, **kwargs)  # noqa: E501
             return data
 
-    def get_user_roles_with_http_info(self, username, **kwargs):  # noqa: E501
+    def get_user_roles_with_http_info(self, username=None, **kwargs):  # noqa: E501
         """Get roles associated to a user  # noqa: E501
 
           # noqa: E501
@@ -486,7 +486,7 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
+        :param Str username: (required)
         :return: UserRoles
                  If the method is called asynchronously,
                  returns the request thread.
@@ -551,7 +551,7 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def invalidate_user(self, username, created_by, **kwargs):  # noqa: E501
+    def invalidate_user(self, username=None, created_by=None, **kwargs):  # noqa: E501
         """Invalidate an existing user  # noqa: E501
 
           # noqa: E501
@@ -561,10 +561,10 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str username: (required)
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -576,7 +576,7 @@ class SecurityApi(object):
             (data) = self.invalidate_user_with_http_info(username, created_by, **kwargs)  # noqa: E501
             return data
 
-    def invalidate_user_with_http_info(self, username, created_by, **kwargs):  # noqa: E501
+    def invalidate_user_with_http_info(self, username=None, created_by=None, **kwargs):  # noqa: E501
         """Invalidate an existing user  # noqa: E501
 
           # noqa: E501
@@ -586,10 +586,10 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str username: (required)
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -668,7 +668,7 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_role_definition(self, body, created_by, **kwargs):  # noqa: E501
+    def update_role_definition(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Update a new role definition)  # noqa: E501
 
           # noqa: E501
@@ -679,9 +679,9 @@ class SecurityApi(object):
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -693,7 +693,7 @@ class SecurityApi(object):
             (data) = self.update_role_definition_with_http_info(body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def update_role_definition_with_http_info(self, body, created_by, **kwargs):  # noqa: E501
+    def update_role_definition_with_http_info(self, body=None, created_by=None, **kwargs):  # noqa: E501
         """Update a new role definition)  # noqa: E501
 
           # noqa: E501
@@ -704,9 +704,9 @@ class SecurityApi(object):
 
         :param async bool
         :param RoleDefinition body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -783,7 +783,7 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_user_password(self, username, body, created_by, **kwargs):  # noqa: E501
+    def update_user_password(self, username=None, body=None, created_by=None, **kwargs):  # noqa: E501
         """Update a user password  # noqa: E501
 
           # noqa: E501
@@ -793,11 +793,11 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
+        :param Str username: (required)
         :param UserRoles body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -809,7 +809,7 @@ class SecurityApi(object):
             (data) = self.update_user_password_with_http_info(username, body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def update_user_password_with_http_info(self, username, body, created_by, **kwargs):  # noqa: E501
+    def update_user_password_with_http_info(self, username=None, body=None, created_by=None, **kwargs):  # noqa: E501
         """Update a user password  # noqa: E501
 
           # noqa: E501
@@ -819,11 +819,11 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
+        :param Str username: (required)
         :param UserRoles body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -908,7 +908,7 @@ class SecurityApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_user_roles(self, username, body, created_by, **kwargs):  # noqa: E501
+    def update_user_roles(self, username=None, body=None, created_by=None, **kwargs):  # noqa: E501
         """Update roles associated to a user  # noqa: E501
 
           # noqa: E501
@@ -918,11 +918,11 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
+        :param Str username: (required)
         :param UserRoles body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -934,7 +934,7 @@ class SecurityApi(object):
             (data) = self.update_user_roles_with_http_info(username, body, created_by, **kwargs)  # noqa: E501
             return data
 
-    def update_user_roles_with_http_info(self, username, body, created_by, **kwargs):  # noqa: E501
+    def update_user_roles_with_http_info(self, username=None, body=None, created_by=None, **kwargs):  # noqa: E501
         """Update roles associated to a user  # noqa: E501
 
           # noqa: E501
@@ -944,11 +944,11 @@ class SecurityApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str username: (required)
+        :param Str username: (required)
         :param UserRoles body: (required)
-        :param str created_by: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

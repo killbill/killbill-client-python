@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.unit_usage_record import UnitUsageRecord  # noqa: F401,E501
 
 
 class SubscriptionUsageRecord(object):
@@ -50,9 +49,9 @@ class SubscriptionUsageRecord(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'subscription_id': 'str',
-        'tracking_id': 'str',
-        'unit_usage_records': 'list[UnitUsageRecord]'
+        'subscription_id': 'Str',
+        'tracking_id': 'Str',
+        'unit_usage_records': 'List[UnitUsageRecord]'
     }
 
     attribute_map = {
@@ -80,7 +79,7 @@ class SubscriptionUsageRecord(object):
 
 
         :return: The subscription_id of this SubscriptionUsageRecord.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._subscription_id
 
@@ -90,7 +89,7 @@ class SubscriptionUsageRecord(object):
 
 
         :param subscription_id: The subscription_id of this SubscriptionUsageRecord.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if subscription_id is None:
             raise ValueError("Invalid value for `subscription_id`, must not be `None`")  # noqa: E501
@@ -103,7 +102,7 @@ class SubscriptionUsageRecord(object):
 
 
         :return: The tracking_id of this SubscriptionUsageRecord.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._tracking_id
 
@@ -113,7 +112,7 @@ class SubscriptionUsageRecord(object):
 
 
         :param tracking_id: The tracking_id of this SubscriptionUsageRecord.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._tracking_id = tracking_id
@@ -124,7 +123,7 @@ class SubscriptionUsageRecord(object):
 
 
         :return: The unit_usage_records of this SubscriptionUsageRecord.  # noqa: E501
-        :rtype: list[UnitUsageRecord]
+        :rtype: List[UnitUsageRecord]
         """
         return self._unit_usage_records
 
@@ -134,7 +133,7 @@ class SubscriptionUsageRecord(object):
 
 
         :param unit_usage_records: The unit_usage_records of this SubscriptionUsageRecord.  # noqa: E501
-        :type: list[UnitUsageRecord]
+        :type: List[UnitUsageRecord]
         """
         if unit_usage_records is None:
             raise ValueError("Invalid value for `unit_usage_records`, must not be `None`")  # noqa: E501

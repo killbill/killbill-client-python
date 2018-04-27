@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.plan import Plan  # noqa: F401,E501
 
 
 class Product(object):
@@ -50,12 +49,12 @@ class Product(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'type': 'str',
-        'name': 'str',
-        'pretty_name': 'str',
-        'plans': 'list[Plan]',
-        'included': 'list[str]',
-        'available': 'list[str]'
+        'type': 'Str',
+        'name': 'Str',
+        'pretty_name': 'Str',
+        'plans': 'List[Plan]',
+        'included': 'List[Str]',
+        'available': 'List[Str]'
     }
 
     attribute_map = {
@@ -97,7 +96,7 @@ class Product(object):
 
 
         :return: The type of this Product.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._type
 
@@ -107,7 +106,7 @@ class Product(object):
 
 
         :param type: The type of this Product.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._type = type
@@ -118,7 +117,7 @@ class Product(object):
 
 
         :return: The name of this Product.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._name
 
@@ -128,7 +127,7 @@ class Product(object):
 
 
         :param name: The name of this Product.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._name = name
@@ -139,7 +138,7 @@ class Product(object):
 
 
         :return: The pretty_name of this Product.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._pretty_name
 
@@ -149,7 +148,7 @@ class Product(object):
 
 
         :param pretty_name: The pretty_name of this Product.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._pretty_name = pretty_name
@@ -160,7 +159,7 @@ class Product(object):
 
 
         :return: The plans of this Product.  # noqa: E501
-        :rtype: list[Plan]
+        :rtype: List[Plan]
         """
         return self._plans
 
@@ -170,7 +169,7 @@ class Product(object):
 
 
         :param plans: The plans of this Product.  # noqa: E501
-        :type: list[Plan]
+        :type: List[Plan]
         """
 
         self._plans = plans
@@ -181,7 +180,7 @@ class Product(object):
 
 
         :return: The included of this Product.  # noqa: E501
-        :rtype: list[str]
+        :rtype: List[Str]
         """
         return self._included
 
@@ -191,7 +190,7 @@ class Product(object):
 
 
         :param included: The included of this Product.  # noqa: E501
-        :type: list[str]
+        :type: List[Str]
         """
 
         self._included = included
@@ -202,7 +201,7 @@ class Product(object):
 
 
         :return: The available of this Product.  # noqa: E501
-        :rtype: list[str]
+        :rtype: List[Str]
         """
         return self._available
 
@@ -212,7 +211,7 @@ class Product(object):
 
 
         :param available: The available of this Product.  # noqa: E501
-        :type: list[str]
+        :type: List[Str]
         """
 
         self._available = available

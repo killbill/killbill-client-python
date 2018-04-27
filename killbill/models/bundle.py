@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.bundle_timeline import BundleTimeline  # noqa: F401,E501
-from killbill.models.subscription import Subscription  # noqa: F401,E501
 
 
 class Bundle(object):
@@ -52,12 +49,12 @@ class Bundle(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'bundle_id': 'str',
-        'external_key': 'str',
-        'subscriptions': 'list[Subscription]',
+        'account_id': 'Str',
+        'bundle_id': 'Str',
+        'external_key': 'Str',
+        'subscriptions': 'List[Subscription]',
         'timeline': 'BundleTimeline',
-        'audit_logs': 'list[AuditLog]'
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -98,7 +95,7 @@ class Bundle(object):
 
 
         :return: The account_id of this Bundle.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -108,7 +105,7 @@ class Bundle(object):
 
 
         :param account_id: The account_id of this Bundle.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if account_id is None:
             raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
@@ -121,7 +118,7 @@ class Bundle(object):
 
 
         :return: The bundle_id of this Bundle.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_id
 
@@ -131,7 +128,7 @@ class Bundle(object):
 
 
         :param bundle_id: The bundle_id of this Bundle.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_id = bundle_id
@@ -142,7 +139,7 @@ class Bundle(object):
 
 
         :return: The external_key of this Bundle.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_key
 
@@ -152,7 +149,7 @@ class Bundle(object):
 
 
         :param external_key: The external_key of this Bundle.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_key = external_key
@@ -163,7 +160,7 @@ class Bundle(object):
 
 
         :return: The subscriptions of this Bundle.  # noqa: E501
-        :rtype: list[Subscription]
+        :rtype: List[Subscription]
         """
         return self._subscriptions
 
@@ -173,7 +170,7 @@ class Bundle(object):
 
 
         :param subscriptions: The subscriptions of this Bundle.  # noqa: E501
-        :type: list[Subscription]
+        :type: List[Subscription]
         """
 
         self._subscriptions = subscriptions
@@ -205,7 +202,7 @@ class Bundle(object):
 
 
         :return: The audit_logs of this Bundle.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -215,7 +212,7 @@ class Bundle(object):
 
 
         :param audit_logs: The audit_logs of this Bundle.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

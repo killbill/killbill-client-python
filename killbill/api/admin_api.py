@@ -50,7 +50,7 @@ class AdminApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def invalidates_cache(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def invalidates_cache(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Invalidates the given Cache if specified, otherwise invalidates all caches  # noqa: E501
 
           # noqa: E501
@@ -60,9 +60,9 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str cache_name:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str cache_name:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -74,7 +74,7 @@ class AdminApi(object):
             (data) = self.invalidates_cache_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def invalidates_cache_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def invalidates_cache_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Invalidates the given Cache if specified, otherwise invalidates all caches  # noqa: E501
 
           # noqa: E501
@@ -84,9 +84,9 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str cache_name:
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str cache_name:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +157,7 @@ class AdminApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def invalidates_cache_by_account(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def invalidates_cache_by_account(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Invalidates Caches per account level  # noqa: E501
 
           # noqa: E501
@@ -167,9 +167,9 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -181,7 +181,7 @@ class AdminApi(object):
             (data) = self.invalidates_cache_by_account_with_http_info(account_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def invalidates_cache_by_account_with_http_info(self, account_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def invalidates_cache_by_account_with_http_info(self, account_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Invalidates Caches per account level  # noqa: E501
 
           # noqa: E501
@@ -191,9 +191,9 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str account_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str account_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -270,7 +270,7 @@ class AdminApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def invalidates_cache_by_tenant(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def invalidates_cache_by_tenant(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Invalidates Caches per tenant level  # noqa: E501
 
           # noqa: E501
@@ -280,8 +280,8 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -293,7 +293,7 @@ class AdminApi(object):
             (data) = self.invalidates_cache_by_tenant_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def invalidates_cache_by_tenant_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def invalidates_cache_by_tenant_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Invalidates Caches per tenant level  # noqa: E501
 
           # noqa: E501
@@ -303,8 +303,8 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -373,7 +373,7 @@ class AdminApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_in_rotation(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def put_in_rotation(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Put the host back into rotation  # noqa: E501
 
           # noqa: E501
@@ -383,8 +383,8 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -396,7 +396,7 @@ class AdminApi(object):
             (data) = self.put_in_rotation_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def put_in_rotation_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def put_in_rotation_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Put the host back into rotation  # noqa: E501
 
           # noqa: E501
@@ -406,8 +406,8 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -476,7 +476,7 @@ class AdminApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def put_out_of_rotation(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def put_out_of_rotation(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Put the host out of rotation  # noqa: E501
 
           # noqa: E501
@@ -486,8 +486,8 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -499,7 +499,7 @@ class AdminApi(object):
             (data) = self.put_out_of_rotation_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def put_out_of_rotation_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def put_out_of_rotation_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Put the host out of rotation  # noqa: E501
 
           # noqa: E501
@@ -509,8 +509,8 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -579,7 +579,7 @@ class AdminApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def trigger_invoice_generation_for_parked_accounts(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def trigger_invoice_generation_for_parked_accounts(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger an invoice generation for all parked accounts  # noqa: E501
 
           # noqa: E501
@@ -589,13 +589,13 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -607,7 +607,7 @@ class AdminApi(object):
             (data) = self.trigger_invoice_generation_for_parked_accounts_with_http_info(created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def trigger_invoice_generation_for_parked_accounts_with_http_info(self, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def trigger_invoice_generation_for_parked_accounts_with_http_info(self, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Trigger an invoice generation for all parked accounts  # noqa: E501
 
           # noqa: E501
@@ -617,13 +617,13 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param int offset:
-        :param int limit:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Int offset:
+        :param Int limit:
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -710,7 +710,7 @@ class AdminApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_payment_transaction_state(self, payment_id, payment_transaction_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def update_payment_transaction_state(self, payment_id=None, payment_transaction_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update existing paymentTransaction and associated payment state  # noqa: E501
 
           # noqa: E501
@@ -720,14 +720,14 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str payment_transaction_id: (required)
+        :param Str payment_id: (required)
+        :param Str payment_transaction_id: (required)
         :param AdminPayment body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -739,7 +739,7 @@ class AdminApi(object):
             (data) = self.update_payment_transaction_state_with_http_info(payment_id, payment_transaction_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def update_payment_transaction_state_with_http_info(self, payment_id, payment_transaction_id, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def update_payment_transaction_state_with_http_info(self, payment_id=None, payment_transaction_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Update existing paymentTransaction and associated payment state  # noqa: E501
 
           # noqa: E501
@@ -749,14 +749,14 @@ class AdminApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str payment_id: (required)
-        :param str payment_transaction_id: (required)
+        :param Str payment_id: (required)
+        :param Str payment_transaction_id: (required)
         :param AdminPayment body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Str reason:
+        :param Str comment:
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.

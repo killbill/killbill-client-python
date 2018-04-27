@@ -33,8 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.invoice_item import InvoiceItem  # noqa: F401,E501
 
 
 class InvoiceItem(object):
@@ -51,30 +49,30 @@ class InvoiceItem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'invoice_item_id': 'str',
-        'invoice_id': 'str',
-        'linked_invoice_item_id': 'str',
-        'account_id': 'str',
-        'child_account_id': 'str',
-        'bundle_id': 'str',
-        'subscription_id': 'str',
-        'plan_name': 'str',
-        'phase_name': 'str',
-        'usage_name': 'str',
-        'pretty_plan_name': 'str',
-        'pretty_phase_name': 'str',
-        'pretty_usage_name': 'str',
-        'item_type': 'str',
-        'description': 'str',
-        'start_date': 'date',
-        'end_date': 'date',
-        'amount': 'float',
-        'rate': 'float',
-        'currency': 'str',
-        'quantity': 'int',
-        'item_details': 'str',
-        'child_items': 'list[InvoiceItem]',
-        'audit_logs': 'list[AuditLog]'
+        'invoice_item_id': 'Str',
+        'invoice_id': 'Str',
+        'linked_invoice_item_id': 'Str',
+        'account_id': 'Str',
+        'child_account_id': 'Str',
+        'bundle_id': 'Str',
+        'subscription_id': 'Str',
+        'plan_name': 'Str',
+        'phase_name': 'Str',
+        'usage_name': 'Str',
+        'pretty_plan_name': 'Str',
+        'pretty_phase_name': 'Str',
+        'pretty_usage_name': 'Str',
+        'item_type': 'Str',
+        'description': 'Str',
+        'start_date': 'Date',
+        'end_date': 'Date',
+        'amount': 'Float',
+        'rate': 'Float',
+        'currency': 'Str',
+        'quantity': 'Int',
+        'item_details': 'Str',
+        'child_items': 'List[InvoiceItem]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -186,7 +184,7 @@ class InvoiceItem(object):
 
 
         :return: The invoice_item_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._invoice_item_id
 
@@ -196,7 +194,7 @@ class InvoiceItem(object):
 
 
         :param invoice_item_id: The invoice_item_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if invoice_item_id is None:
             raise ValueError("Invalid value for `invoice_item_id`, must not be `None`")  # noqa: E501
@@ -209,7 +207,7 @@ class InvoiceItem(object):
 
 
         :return: The invoice_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._invoice_id
 
@@ -219,7 +217,7 @@ class InvoiceItem(object):
 
 
         :param invoice_id: The invoice_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._invoice_id = invoice_id
@@ -230,7 +228,7 @@ class InvoiceItem(object):
 
 
         :return: The linked_invoice_item_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._linked_invoice_item_id
 
@@ -240,7 +238,7 @@ class InvoiceItem(object):
 
 
         :param linked_invoice_item_id: The linked_invoice_item_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._linked_invoice_item_id = linked_invoice_item_id
@@ -251,7 +249,7 @@ class InvoiceItem(object):
 
 
         :return: The account_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -261,7 +259,7 @@ class InvoiceItem(object):
 
 
         :param account_id: The account_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if account_id is None:
             raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
@@ -274,7 +272,7 @@ class InvoiceItem(object):
 
 
         :return: The child_account_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._child_account_id
 
@@ -284,7 +282,7 @@ class InvoiceItem(object):
 
 
         :param child_account_id: The child_account_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._child_account_id = child_account_id
@@ -295,7 +293,7 @@ class InvoiceItem(object):
 
 
         :return: The bundle_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_id
 
@@ -305,7 +303,7 @@ class InvoiceItem(object):
 
 
         :param bundle_id: The bundle_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_id = bundle_id
@@ -316,7 +314,7 @@ class InvoiceItem(object):
 
 
         :return: The subscription_id of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._subscription_id
 
@@ -326,7 +324,7 @@ class InvoiceItem(object):
 
 
         :param subscription_id: The subscription_id of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._subscription_id = subscription_id
@@ -337,7 +335,7 @@ class InvoiceItem(object):
 
 
         :return: The plan_name of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plan_name
 
@@ -347,7 +345,7 @@ class InvoiceItem(object):
 
 
         :param plan_name: The plan_name of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plan_name = plan_name
@@ -358,7 +356,7 @@ class InvoiceItem(object):
 
 
         :return: The phase_name of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phase_name
 
@@ -368,7 +366,7 @@ class InvoiceItem(object):
 
 
         :param phase_name: The phase_name of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._phase_name = phase_name
@@ -379,7 +377,7 @@ class InvoiceItem(object):
 
 
         :return: The usage_name of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._usage_name
 
@@ -389,7 +387,7 @@ class InvoiceItem(object):
 
 
         :param usage_name: The usage_name of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._usage_name = usage_name
@@ -400,7 +398,7 @@ class InvoiceItem(object):
 
 
         :return: The pretty_plan_name of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._pretty_plan_name
 
@@ -410,7 +408,7 @@ class InvoiceItem(object):
 
 
         :param pretty_plan_name: The pretty_plan_name of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._pretty_plan_name = pretty_plan_name
@@ -421,7 +419,7 @@ class InvoiceItem(object):
 
 
         :return: The pretty_phase_name of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._pretty_phase_name
 
@@ -431,7 +429,7 @@ class InvoiceItem(object):
 
 
         :param pretty_phase_name: The pretty_phase_name of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._pretty_phase_name = pretty_phase_name
@@ -442,7 +440,7 @@ class InvoiceItem(object):
 
 
         :return: The pretty_usage_name of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._pretty_usage_name
 
@@ -452,7 +450,7 @@ class InvoiceItem(object):
 
 
         :param pretty_usage_name: The pretty_usage_name of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._pretty_usage_name = pretty_usage_name
@@ -463,7 +461,7 @@ class InvoiceItem(object):
 
 
         :return: The item_type of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._item_type
 
@@ -473,7 +471,7 @@ class InvoiceItem(object):
 
 
         :param item_type: The item_type of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["EXTERNAL_CHARGE", "FIXED", "RECURRING", "REPAIR_ADJ", "CBA_ADJ", "CREDIT_ADJ", "ITEM_ADJ", "USAGE", "TAX", "PARENT_SUMMARY"]  # noqa: E501
         if item_type not in allowed_values:
@@ -490,7 +488,7 @@ class InvoiceItem(object):
 
 
         :return: The description of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._description
 
@@ -500,7 +498,7 @@ class InvoiceItem(object):
 
 
         :param description: The description of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._description = description
@@ -511,7 +509,7 @@ class InvoiceItem(object):
 
 
         :return: The start_date of this InvoiceItem.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._start_date
 
@@ -521,7 +519,7 @@ class InvoiceItem(object):
 
 
         :param start_date: The start_date of this InvoiceItem.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._start_date = start_date
@@ -532,7 +530,7 @@ class InvoiceItem(object):
 
 
         :return: The end_date of this InvoiceItem.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._end_date
 
@@ -542,7 +540,7 @@ class InvoiceItem(object):
 
 
         :param end_date: The end_date of this InvoiceItem.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._end_date = end_date
@@ -553,7 +551,7 @@ class InvoiceItem(object):
 
 
         :return: The amount of this InvoiceItem.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._amount
 
@@ -563,7 +561,7 @@ class InvoiceItem(object):
 
 
         :param amount: The amount of this InvoiceItem.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._amount = amount
@@ -574,7 +572,7 @@ class InvoiceItem(object):
 
 
         :return: The rate of this InvoiceItem.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._rate
 
@@ -584,7 +582,7 @@ class InvoiceItem(object):
 
 
         :param rate: The rate of this InvoiceItem.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._rate = rate
@@ -595,7 +593,7 @@ class InvoiceItem(object):
 
 
         :return: The currency of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -605,7 +603,7 @@ class InvoiceItem(object):
 
 
         :param currency: The currency of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -622,7 +620,7 @@ class InvoiceItem(object):
 
 
         :return: The quantity of this InvoiceItem.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._quantity
 
@@ -632,7 +630,7 @@ class InvoiceItem(object):
 
 
         :param quantity: The quantity of this InvoiceItem.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._quantity = quantity
@@ -643,7 +641,7 @@ class InvoiceItem(object):
 
 
         :return: The item_details of this InvoiceItem.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._item_details
 
@@ -653,7 +651,7 @@ class InvoiceItem(object):
 
 
         :param item_details: The item_details of this InvoiceItem.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._item_details = item_details
@@ -664,7 +662,7 @@ class InvoiceItem(object):
 
 
         :return: The child_items of this InvoiceItem.  # noqa: E501
-        :rtype: list[InvoiceItem]
+        :rtype: List[InvoiceItem]
         """
         return self._child_items
 
@@ -674,7 +672,7 @@ class InvoiceItem(object):
 
 
         :param child_items: The child_items of this InvoiceItem.  # noqa: E501
-        :type: list[InvoiceItem]
+        :type: List[InvoiceItem]
         """
 
         self._child_items = child_items
@@ -685,7 +683,7 @@ class InvoiceItem(object):
 
 
         :return: The audit_logs of this InvoiceItem.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -695,7 +693,7 @@ class InvoiceItem(object):
 
 
         :param audit_logs: The audit_logs of this InvoiceItem.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

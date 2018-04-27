@@ -50,7 +50,7 @@ class PluginInfoApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_plugins_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plugins_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the list of registered plugins  # noqa: E501
 
           # noqa: E501
@@ -60,9 +60,9 @@ class PluginInfoApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[PluginInfo]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[PluginInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -73,7 +73,7 @@ class PluginInfoApi(object):
             (data) = self.get_plugins_info_with_http_info(api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_plugins_info_with_http_info(self, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_plugins_info_with_http_info(self, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve the list of registered plugins  # noqa: E501
 
           # noqa: E501
@@ -83,9 +83,9 @@ class PluginInfoApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :return: list[PluginInfo]
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :return: List[PluginInfo]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -145,7 +145,7 @@ class PluginInfoApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='list[PluginInfo]',  # noqa: E501
+            response_type='List[PluginInfo]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

@@ -33,9 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.event_subscription import EventSubscription  # noqa: F401,E501
-from killbill.models.phase_price_override import PhasePriceOverride  # noqa: F401,E501
 
 
 class Subscription(object):
@@ -52,27 +49,27 @@ class Subscription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account_id': 'str',
-        'bundle_id': 'str',
-        'subscription_id': 'str',
-        'external_key': 'str',
-        'start_date': 'date',
-        'product_name': 'str',
-        'product_category': 'str',
-        'billing_period': 'str',
-        'phase_type': 'str',
-        'price_list': 'str',
-        'plan_name': 'str',
-        'state': 'str',
-        'source_type': 'str',
-        'cancelled_date': 'date',
-        'charged_through_date': 'date',
-        'billing_start_date': 'date',
-        'billing_end_date': 'date',
-        'bill_cycle_day_local': 'int',
-        'events': 'list[EventSubscription]',
-        'price_overrides': 'list[PhasePriceOverride]',
-        'audit_logs': 'list[AuditLog]'
+        'account_id': 'Str',
+        'bundle_id': 'Str',
+        'subscription_id': 'Str',
+        'external_key': 'Str',
+        'start_date': 'Date',
+        'product_name': 'Str',
+        'product_category': 'Str',
+        'billing_period': 'Str',
+        'phase_type': 'Str',
+        'price_list': 'Str',
+        'plan_name': 'Str',
+        'state': 'Str',
+        'source_type': 'Str',
+        'cancelled_date': 'Date',
+        'charged_through_date': 'Date',
+        'billing_start_date': 'Date',
+        'billing_end_date': 'Date',
+        'bill_cycle_day_local': 'Int',
+        'events': 'List[EventSubscription]',
+        'price_overrides': 'List[PhasePriceOverride]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -170,7 +167,7 @@ class Subscription(object):
 
 
         :return: The account_id of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -180,7 +177,7 @@ class Subscription(object):
 
 
         :param account_id: The account_id of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._account_id = account_id
@@ -191,7 +188,7 @@ class Subscription(object):
 
 
         :return: The bundle_id of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._bundle_id
 
@@ -201,7 +198,7 @@ class Subscription(object):
 
 
         :param bundle_id: The bundle_id of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._bundle_id = bundle_id
@@ -212,7 +209,7 @@ class Subscription(object):
 
 
         :return: The subscription_id of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._subscription_id
 
@@ -222,7 +219,7 @@ class Subscription(object):
 
 
         :param subscription_id: The subscription_id of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._subscription_id = subscription_id
@@ -233,7 +230,7 @@ class Subscription(object):
 
 
         :return: The external_key of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._external_key
 
@@ -243,7 +240,7 @@ class Subscription(object):
 
 
         :param external_key: The external_key of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._external_key = external_key
@@ -254,7 +251,7 @@ class Subscription(object):
 
 
         :return: The start_date of this Subscription.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._start_date
 
@@ -264,7 +261,7 @@ class Subscription(object):
 
 
         :param start_date: The start_date of this Subscription.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._start_date = start_date
@@ -275,7 +272,7 @@ class Subscription(object):
 
 
         :return: The product_name of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._product_name
 
@@ -285,7 +282,7 @@ class Subscription(object):
 
 
         :param product_name: The product_name of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if product_name is None:
             raise ValueError("Invalid value for `product_name`, must not be `None`")  # noqa: E501
@@ -298,7 +295,7 @@ class Subscription(object):
 
 
         :return: The product_category of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._product_category
 
@@ -308,7 +305,7 @@ class Subscription(object):
 
 
         :param product_category: The product_category of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["BASE", "ADD_ON", "STANDALONE"]  # noqa: E501
         if product_category not in allowed_values:
@@ -325,7 +322,7 @@ class Subscription(object):
 
 
         :return: The billing_period of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._billing_period
 
@@ -335,7 +332,7 @@ class Subscription(object):
 
 
         :param billing_period: The billing_period of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if billing_period is None:
             raise ValueError("Invalid value for `billing_period`, must not be `None`")  # noqa: E501
@@ -354,7 +351,7 @@ class Subscription(object):
 
 
         :return: The phase_type of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phase_type
 
@@ -364,7 +361,7 @@ class Subscription(object):
 
 
         :param phase_type: The phase_type of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["TRIAL", "DISCOUNT", "FIXEDTERM", "EVERGREEN"]  # noqa: E501
         if phase_type not in allowed_values:
@@ -381,7 +378,7 @@ class Subscription(object):
 
 
         :return: The price_list of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._price_list
 
@@ -391,7 +388,7 @@ class Subscription(object):
 
 
         :param price_list: The price_list of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if price_list is None:
             raise ValueError("Invalid value for `price_list`, must not be `None`")  # noqa: E501
@@ -404,7 +401,7 @@ class Subscription(object):
 
 
         :return: The plan_name of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plan_name
 
@@ -414,7 +411,7 @@ class Subscription(object):
 
 
         :param plan_name: The plan_name of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if plan_name is None:
             raise ValueError("Invalid value for `plan_name`, must not be `None`")  # noqa: E501
@@ -427,7 +424,7 @@ class Subscription(object):
 
 
         :return: The state of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._state
 
@@ -437,7 +434,7 @@ class Subscription(object):
 
 
         :param state: The state of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["PENDING", "ACTIVE", "BLOCKED", "CANCELLED"]  # noqa: E501
         if state not in allowed_values:
@@ -454,7 +451,7 @@ class Subscription(object):
 
 
         :return: The source_type of this Subscription.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._source_type
 
@@ -464,7 +461,7 @@ class Subscription(object):
 
 
         :param source_type: The source_type of this Subscription.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["NATIVE", "MIGRATED", "TRANSFERRED"]  # noqa: E501
         if source_type not in allowed_values:
@@ -481,7 +478,7 @@ class Subscription(object):
 
 
         :return: The cancelled_date of this Subscription.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._cancelled_date
 
@@ -491,7 +488,7 @@ class Subscription(object):
 
 
         :param cancelled_date: The cancelled_date of this Subscription.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._cancelled_date = cancelled_date
@@ -502,7 +499,7 @@ class Subscription(object):
 
 
         :return: The charged_through_date of this Subscription.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._charged_through_date
 
@@ -512,7 +509,7 @@ class Subscription(object):
 
 
         :param charged_through_date: The charged_through_date of this Subscription.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._charged_through_date = charged_through_date
@@ -523,7 +520,7 @@ class Subscription(object):
 
 
         :return: The billing_start_date of this Subscription.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._billing_start_date
 
@@ -533,7 +530,7 @@ class Subscription(object):
 
 
         :param billing_start_date: The billing_start_date of this Subscription.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._billing_start_date = billing_start_date
@@ -544,7 +541,7 @@ class Subscription(object):
 
 
         :return: The billing_end_date of this Subscription.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._billing_end_date
 
@@ -554,7 +551,7 @@ class Subscription(object):
 
 
         :param billing_end_date: The billing_end_date of this Subscription.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._billing_end_date = billing_end_date
@@ -565,7 +562,7 @@ class Subscription(object):
 
 
         :return: The bill_cycle_day_local of this Subscription.  # noqa: E501
-        :rtype: int
+        :rtype: Int
         """
         return self._bill_cycle_day_local
 
@@ -575,7 +572,7 @@ class Subscription(object):
 
 
         :param bill_cycle_day_local: The bill_cycle_day_local of this Subscription.  # noqa: E501
-        :type: int
+        :type: Int
         """
 
         self._bill_cycle_day_local = bill_cycle_day_local
@@ -586,7 +583,7 @@ class Subscription(object):
 
 
         :return: The events of this Subscription.  # noqa: E501
-        :rtype: list[EventSubscription]
+        :rtype: List[EventSubscription]
         """
         return self._events
 
@@ -596,7 +593,7 @@ class Subscription(object):
 
 
         :param events: The events of this Subscription.  # noqa: E501
-        :type: list[EventSubscription]
+        :type: List[EventSubscription]
         """
 
         self._events = events
@@ -607,7 +604,7 @@ class Subscription(object):
 
 
         :return: The price_overrides of this Subscription.  # noqa: E501
-        :rtype: list[PhasePriceOverride]
+        :rtype: List[PhasePriceOverride]
         """
         return self._price_overrides
 
@@ -617,7 +614,7 @@ class Subscription(object):
 
 
         :param price_overrides: The price_overrides of this Subscription.  # noqa: E501
-        :type: list[PhasePriceOverride]
+        :type: List[PhasePriceOverride]
         """
 
         self._price_overrides = price_overrides
@@ -628,7 +625,7 @@ class Subscription(object):
 
 
         :return: The audit_logs of this Subscription.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -638,7 +635,7 @@ class Subscription(object):
 
 
         :param audit_logs: The audit_logs of this Subscription.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

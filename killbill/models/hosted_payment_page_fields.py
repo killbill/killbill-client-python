@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.plugin_property import PluginProperty  # noqa: F401,E501
 
 
 class HostedPaymentPageFields(object):
@@ -50,7 +49,7 @@ class HostedPaymentPageFields(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'form_fields': 'list[PluginProperty]'
+        'form_fields': 'List[PluginProperty]'
     }
 
     attribute_map = {
@@ -72,7 +71,7 @@ class HostedPaymentPageFields(object):
 
 
         :return: The form_fields of this HostedPaymentPageFields.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._form_fields
 
@@ -82,7 +81,7 @@ class HostedPaymentPageFields(object):
 
 
         :param form_fields: The form_fields of this HostedPaymentPageFields.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._form_fields = form_fields

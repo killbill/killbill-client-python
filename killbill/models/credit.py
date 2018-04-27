@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
 
 
 class Credit(object):
@@ -50,15 +49,15 @@ class Credit(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'credit_amount': 'float',
-        'currency': 'str',
-        'invoice_id': 'str',
-        'invoice_number': 'str',
-        'effective_date': 'date',
-        'account_id': 'str',
-        'description': 'str',
-        'item_details': 'str',
-        'audit_logs': 'list[AuditLog]'
+        'credit_amount': 'Float',
+        'currency': 'Str',
+        'invoice_id': 'Str',
+        'invoice_number': 'Str',
+        'effective_date': 'Date',
+        'account_id': 'Str',
+        'description': 'Str',
+        'item_details': 'Str',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -110,7 +109,7 @@ class Credit(object):
 
 
         :return: The credit_amount of this Credit.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._credit_amount
 
@@ -120,7 +119,7 @@ class Credit(object):
 
 
         :param credit_amount: The credit_amount of this Credit.  # noqa: E501
-        :type: float
+        :type: Float
         """
         if credit_amount is None:
             raise ValueError("Invalid value for `credit_amount`, must not be `None`")  # noqa: E501
@@ -133,7 +132,7 @@ class Credit(object):
 
 
         :return: The currency of this Credit.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._currency
 
@@ -143,7 +142,7 @@ class Credit(object):
 
 
         :param currency: The currency of this Credit.  # noqa: E501
-        :type: str
+        :type: Str
         """
         allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
         if currency not in allowed_values:
@@ -160,7 +159,7 @@ class Credit(object):
 
 
         :return: The invoice_id of this Credit.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._invoice_id
 
@@ -170,7 +169,7 @@ class Credit(object):
 
 
         :param invoice_id: The invoice_id of this Credit.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._invoice_id = invoice_id
@@ -181,7 +180,7 @@ class Credit(object):
 
 
         :return: The invoice_number of this Credit.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._invoice_number
 
@@ -191,7 +190,7 @@ class Credit(object):
 
 
         :param invoice_number: The invoice_number of this Credit.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._invoice_number = invoice_number
@@ -202,7 +201,7 @@ class Credit(object):
 
 
         :return: The effective_date of this Credit.  # noqa: E501
-        :rtype: date
+        :rtype: Date
         """
         return self._effective_date
 
@@ -212,7 +211,7 @@ class Credit(object):
 
 
         :param effective_date: The effective_date of this Credit.  # noqa: E501
-        :type: date
+        :type: Date
         """
 
         self._effective_date = effective_date
@@ -223,7 +222,7 @@ class Credit(object):
 
 
         :return: The account_id of this Credit.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._account_id
 
@@ -233,7 +232,7 @@ class Credit(object):
 
 
         :param account_id: The account_id of this Credit.  # noqa: E501
-        :type: str
+        :type: Str
         """
         if account_id is None:
             raise ValueError("Invalid value for `account_id`, must not be `None`")  # noqa: E501
@@ -246,7 +245,7 @@ class Credit(object):
 
 
         :return: The description of this Credit.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._description
 
@@ -256,7 +255,7 @@ class Credit(object):
 
 
         :param description: The description of this Credit.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._description = description
@@ -267,7 +266,7 @@ class Credit(object):
 
 
         :return: The item_details of this Credit.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._item_details
 
@@ -277,7 +276,7 @@ class Credit(object):
 
 
         :param item_details: The item_details of this Credit.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._item_details = item_details
@@ -288,7 +287,7 @@ class Credit(object):
 
 
         :return: The audit_logs of this Credit.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -298,7 +297,7 @@ class Credit(object):
 
 
         :param audit_logs: The audit_logs of this Credit.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

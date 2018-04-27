@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.node_command_property import NodeCommandProperty  # noqa: F401,E501
 
 
 class NodeCommand(object):
@@ -50,9 +49,9 @@ class NodeCommand(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'is_system_command_type': 'bool',
-        'node_command_type': 'str',
-        'node_command_properties': 'list[NodeCommandProperty]'
+        'is_system_command_type': 'Bool',
+        'node_command_type': 'Str',
+        'node_command_properties': 'List[NodeCommandProperty]'
     }
 
     attribute_map = {
@@ -82,7 +81,7 @@ class NodeCommand(object):
 
 
         :return: The is_system_command_type of this NodeCommand.  # noqa: E501
-        :rtype: bool
+        :rtype: Bool
         """
         return self._is_system_command_type
 
@@ -92,7 +91,7 @@ class NodeCommand(object):
 
 
         :param is_system_command_type: The is_system_command_type of this NodeCommand.  # noqa: E501
-        :type: bool
+        :type: Bool
         """
 
         self._is_system_command_type = is_system_command_type
@@ -103,7 +102,7 @@ class NodeCommand(object):
 
 
         :return: The node_command_type of this NodeCommand.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._node_command_type
 
@@ -113,7 +112,7 @@ class NodeCommand(object):
 
 
         :param node_command_type: The node_command_type of this NodeCommand.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._node_command_type = node_command_type
@@ -124,7 +123,7 @@ class NodeCommand(object):
 
 
         :return: The node_command_properties of this NodeCommand.  # noqa: E501
-        :rtype: list[NodeCommandProperty]
+        :rtype: List[NodeCommandProperty]
         """
         return self._node_command_properties
 
@@ -134,7 +133,7 @@ class NodeCommand(object):
 
 
         :param node_command_properties: The node_command_properties of this NodeCommand.  # noqa: E501
-        :type: list[NodeCommandProperty]
+        :type: List[NodeCommandProperty]
         """
 
         self._node_command_properties = node_command_properties

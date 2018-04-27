@@ -33,11 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.account import Account  # noqa: F401,E501
-from killbill.models.audit_log import AuditLog  # noqa: F401,E501
-from killbill.models.payment_method import PaymentMethod  # noqa: F401,E501
-from killbill.models.payment_transaction import PaymentTransaction  # noqa: F401,E501
-from killbill.models.plugin_property import PluginProperty  # noqa: F401,E501
 
 
 class ComboPaymentTransaction(object):
@@ -57,9 +52,9 @@ class ComboPaymentTransaction(object):
         'account': 'Account',
         'payment_method': 'PaymentMethod',
         'transaction': 'PaymentTransaction',
-        'payment_method_plugin_properties': 'list[PluginProperty]',
-        'transaction_plugin_properties': 'list[PluginProperty]',
-        'audit_logs': 'list[AuditLog]'
+        'payment_method_plugin_properties': 'List[PluginProperty]',
+        'transaction_plugin_properties': 'List[PluginProperty]',
+        'audit_logs': 'List[AuditLog]'
     }
 
     attribute_map = {
@@ -164,7 +159,7 @@ class ComboPaymentTransaction(object):
 
 
         :return: The payment_method_plugin_properties of this ComboPaymentTransaction.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._payment_method_plugin_properties
 
@@ -174,7 +169,7 @@ class ComboPaymentTransaction(object):
 
 
         :param payment_method_plugin_properties: The payment_method_plugin_properties of this ComboPaymentTransaction.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._payment_method_plugin_properties = payment_method_plugin_properties
@@ -185,7 +180,7 @@ class ComboPaymentTransaction(object):
 
 
         :return: The transaction_plugin_properties of this ComboPaymentTransaction.  # noqa: E501
-        :rtype: list[PluginProperty]
+        :rtype: List[PluginProperty]
         """
         return self._transaction_plugin_properties
 
@@ -195,7 +190,7 @@ class ComboPaymentTransaction(object):
 
 
         :param transaction_plugin_properties: The transaction_plugin_properties of this ComboPaymentTransaction.  # noqa: E501
-        :type: list[PluginProperty]
+        :type: List[PluginProperty]
         """
 
         self._transaction_plugin_properties = transaction_plugin_properties
@@ -206,7 +201,7 @@ class ComboPaymentTransaction(object):
 
 
         :return: The audit_logs of this ComboPaymentTransaction.  # noqa: E501
-        :rtype: list[AuditLog]
+        :rtype: List[AuditLog]
         """
         return self._audit_logs
 
@@ -216,7 +211,7 @@ class ComboPaymentTransaction(object):
 
 
         :param audit_logs: The audit_logs of this ComboPaymentTransaction.  # noqa: E501
-        :type: list[AuditLog]
+        :type: List[AuditLog]
         """
 
         self._audit_logs = audit_logs

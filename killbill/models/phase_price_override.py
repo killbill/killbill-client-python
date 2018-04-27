@@ -33,7 +33,6 @@ import re  # noqa: F401
 
 import six
 
-from killbill.models.usage_price_override import UsagePriceOverride  # noqa: F401,E501
 
 
 class PhasePriceOverride(object):
@@ -50,12 +49,12 @@ class PhasePriceOverride(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'plan_name': 'str',
-        'phase_name': 'str',
-        'phase_type': 'str',
-        'fixed_price': 'float',
-        'recurring_price': 'float',
-        'usage_price_overrides': 'list[UsagePriceOverride]'
+        'plan_name': 'Str',
+        'phase_name': 'Str',
+        'phase_type': 'Str',
+        'fixed_price': 'Float',
+        'recurring_price': 'Float',
+        'usage_price_overrides': 'List[UsagePriceOverride]'
     }
 
     attribute_map = {
@@ -97,7 +96,7 @@ class PhasePriceOverride(object):
 
 
         :return: The plan_name of this PhasePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._plan_name
 
@@ -107,7 +106,7 @@ class PhasePriceOverride(object):
 
 
         :param plan_name: The plan_name of this PhasePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._plan_name = plan_name
@@ -118,7 +117,7 @@ class PhasePriceOverride(object):
 
 
         :return: The phase_name of this PhasePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phase_name
 
@@ -128,7 +127,7 @@ class PhasePriceOverride(object):
 
 
         :param phase_name: The phase_name of this PhasePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._phase_name = phase_name
@@ -139,7 +138,7 @@ class PhasePriceOverride(object):
 
 
         :return: The phase_type of this PhasePriceOverride.  # noqa: E501
-        :rtype: str
+        :rtype: Str
         """
         return self._phase_type
 
@@ -149,7 +148,7 @@ class PhasePriceOverride(object):
 
 
         :param phase_type: The phase_type of this PhasePriceOverride.  # noqa: E501
-        :type: str
+        :type: Str
         """
 
         self._phase_type = phase_type
@@ -160,7 +159,7 @@ class PhasePriceOverride(object):
 
 
         :return: The fixed_price of this PhasePriceOverride.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._fixed_price
 
@@ -170,7 +169,7 @@ class PhasePriceOverride(object):
 
 
         :param fixed_price: The fixed_price of this PhasePriceOverride.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._fixed_price = fixed_price
@@ -181,7 +180,7 @@ class PhasePriceOverride(object):
 
 
         :return: The recurring_price of this PhasePriceOverride.  # noqa: E501
-        :rtype: float
+        :rtype: Float
         """
         return self._recurring_price
 
@@ -191,7 +190,7 @@ class PhasePriceOverride(object):
 
 
         :param recurring_price: The recurring_price of this PhasePriceOverride.  # noqa: E501
-        :type: float
+        :type: Float
         """
 
         self._recurring_price = recurring_price
@@ -202,7 +201,7 @@ class PhasePriceOverride(object):
 
 
         :return: The usage_price_overrides of this PhasePriceOverride.  # noqa: E501
-        :rtype: list[UsagePriceOverride]
+        :rtype: List[UsagePriceOverride]
         """
         return self._usage_price_overrides
 
@@ -212,7 +211,7 @@ class PhasePriceOverride(object):
 
 
         :param usage_price_overrides: The usage_price_overrides of this PhasePriceOverride.  # noqa: E501
-        :type: list[UsagePriceOverride]
+        :type: List[UsagePriceOverride]
         """
 
         self._usage_price_overrides = usage_price_overrides

@@ -50,7 +50,7 @@ class CreditApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_credit(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_credit(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create a credit  # noqa: E501
 
           # noqa: E501
@@ -61,12 +61,12 @@ class CreditApi(object):
 
         :param async bool
         :param Credit body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool auto_commit:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool auto_commit:
+        :param Str reason:
+        :param Str comment:
         :return: Credit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -78,7 +78,7 @@ class CreditApi(object):
             (data) = self.create_credit_with_http_info(body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def create_credit_with_http_info(self, body, created_by, api_key, api_secret, **kwargs):  # noqa: E501
+    def create_credit_with_http_info(self, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Create a credit  # noqa: E501
 
           # noqa: E501
@@ -89,12 +89,12 @@ class CreditApi(object):
 
         :param async bool
         :param Credit body: (required)
-        :param str created_by: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
-        :param bool auto_commit:
-        :param str reason:
-        :param str comment:
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool auto_commit:
+        :param Str reason:
+        :param Str comment:
         :return: Credit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -185,7 +185,7 @@ class CreditApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_credit(self, credit_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_credit(self, credit_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a credit by id  # noqa: E501
 
           # noqa: E501
@@ -195,9 +195,9 @@ class CreditApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str credit_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str credit_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: Credit
                  If the method is called asynchronously,
                  returns the request thread.
@@ -209,7 +209,7 @@ class CreditApi(object):
             (data) = self.get_credit_with_http_info(credit_id, api_key, api_secret, **kwargs)  # noqa: E501
             return data
 
-    def get_credit_with_http_info(self, credit_id, api_key, api_secret, **kwargs):  # noqa: E501
+    def get_credit_with_http_info(self, credit_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a credit by id  # noqa: E501
 
           # noqa: E501
@@ -219,9 +219,9 @@ class CreditApi(object):
         >>> result = thread.get()
 
         :param async bool
-        :param str credit_id: (required)
-        :param str api_key: (required)
-        :param str api_secret: (required)
+        :param Str credit_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
         :return: Credit
                  If the method is called asynchronously,
                  returns the request thread.
