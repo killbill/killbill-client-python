@@ -33,11 +33,13 @@ from __future__ import absolute_import
 import unittest
 
 import killbill
-from killbill.models.account import Account  # noqa: E501
-from killbill.models.tenant import Tenant  # noqa: E501
-from killbill.models.payment_method import PaymentMethod  # noqa: E501
-from killbill.models.subscription import Subscription  # noqa: E501
-from killbill.models.invoice_dry_run import InvoiceDryRun  # noqa: E501
+from killbill.models.account import Account
+from killbill.models.tenant import Tenant
+from killbill.models.payment_method import PaymentMethod
+from killbill.models.subscription import Subscription
+from killbill.models.invoice_dry_run import InvoiceDryRun
+from random import choice
+from string import ascii_lowercase
 from killbill.rest import ApiException
 
 
@@ -54,58 +56,129 @@ class TestIntegration(unittest.TestCase):
     def test_integration(self):
 
         # Create tenant
-        # TODO WORKING WITH ISSUES*! [ValueError: Invalid value for `api_key`, must not be `None`]
+        random_api_key = ''.join(choice(ascii_lowercase) for i in range(4))
+        random_api_secret = ''.join(choice(ascii_lowercase) for i in range(5))
         tenant = killbill.api.TenantApi()
-        body = Tenant(api_key='bob_5', api_secret='lazar_5')
+        body = Tenant(api_key=random_api_key, api_secret=random_api_secret)
         tenant.create_tenant(body, 'test')
 
         # Get tenant
-        # TODO NOT WORKING! [ApiException: (401) Reason: Unauthorized] or [ValueError: Invalid value for `api_secret`, must not be `None`]
-        body = Tenant(api_key='bob')
-        tenant.get_tenant_by_api_key(body)
+        tenant = killbill.api.TenantApi()
+        tenant = tenant.get_tenant_by_api_key(api_key=random_api_key)
+        self.assertIsNotNone(tenant.tenant_id)
+        self.assertEqual(random_api_key, tenant.api_key)
+
 
         # Upload XML catalog/Fetch XML catalog
-        # TODO NOT WORKING! [ApiException: (404) Reason: Not Found]
         catalog = killbill.api.CatalogApi()
-        xml_catalog = open("/home/jfrodriguez/Documents/KillBill-Docs/SpyCarBasic.xml", "r+").read()
-        catalog.upload_catalog_xml(xml_catalog, 'test', 'bob', 'lazar')
+        xml_catalog = open("../resources/SpyCarBasic.xml", "r+").read()
+        catalog.upload_catalog_xml(xml_catalog, 'test', random_api_key, random_api_secret)
+
+        # Get catalog
+        catalog = killbill.api.CatalogApi()
+        catalog = catalog.get_catalog_xml(random_api_key, random_api_secret)
+        self.assertIsNotNone(catalog)
 
         # Create account
-        # WORKING!
         account = killbill.api.AccountApi()
-        body = Account(name='Johny', currency='USD', state='CA', country='USA')
-        account.create_account(body, 'test', 'bob', 'lazar')
+        random_external_key = ''.join(choice(ascii_lowercase) for i in range(6))
+        body = Account(name='John', external_key=random_external_key, currency='USD', state='CA', country='USA')
+        account.create_account(body, 'test', random_api_key, random_api_secret)
 
         # Get account
-        # TODO NOT WORKING! [AttributeError: 'module' object has no attribute 'Str']
-        account = account.get_account_by_key('test_external_key', 'bob', 'lazar')
-        account = account.get_account('4eba7df9-f023-4425-bb46-b1a2e6e84fea', 'bob', 'lazar')
+        account = killbill.api.AccountApi()
+        account = account.get_account_by_key(random_external_key, random_api_key, random_api_secret)
+        account_id = account.account_id
+        self.assertIsNotNone(account.account_id)
+        self.assertEqual(random_external_key, account.external_key)
+        self.assertEqual('John', account.name)
+        self.assertEqual('USD', account.currency)
+        self.assertEqual('CA', account.state)
+        self.assertEqual('USA', account.country)
 
         # Add a payment method
-        # WORKING!
         account = killbill.api.AccountApi()
-        account_id = 'b506e9bc-0afd-495c-a047-a1eada0599be'
         body = PaymentMethod(plugin_name='__EXTERNAL_PAYMENT__', plugin_info=None)
-        account.create_payment_method(account_id, body, 'test', 'bob', 'lazar')
+        account.create_payment_method(account_id, body, 'test', random_api_key, random_api_secret)
 
         # Get a payment method
-        # TODO NOT WORKING! [AttributeError: 'module' object has no attribute 'List[PaymentMethod]']
-        account.get_payment_methods_for_account(account_id, 'bob', 'lazar')
+        account = killbill.api.AccountApi()
+        payment_method = account.get_payment_methods_for_account(account_id, random_api_key, random_api_secret)
+        self.assertIsNotNone(payment_method[0].payment_method_id)
+        self.assertEqual(account_id, payment_method[0].account_id)
+        self.assertEqual('__EXTERNAL_PAYMENT__', payment_method[0].plugin_name)
 
         # Tag account as AUTO_INVOICING_OFF
-        # TODO NOT WORKING! [Bad Request: POST http://localhost:8080/1.0/kb/accounts/b506e9bc-0afd-495c-a047-a1eada0599be/tags?tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=-&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=-&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=-&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=-&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=0&tagDef=2]
-        account_id = 'b506e9bc-0afd-495c-a047-a1eada0599be'
-        account.create_account_tags(account_id, 'test', 'bob', 'lazar')
+        account = killbill.api.AccountApi()
+        tag = ["00000000-0000-0000-0000-000000000002"]
+        account.create_account_tags(account_id, tag, 'test', random_api_key, random_api_secret)
+
+        # Get account tags
+        tags = account.get_account_tags(account_id, random_api_key, random_api_secret)
+        self.assertIsNotNone(tags[0].tag_id)
+        self.assertEqual("00000000-0000-0000-0000-000000000002", tags[0].tag_definition_id)
+        self.assertEqual("AUTO_INVOICING_OFF", tags[0].tag_definition_name)
 
         # Create a subscription against plan
-        # TODO NOT WORKING! [ValueError: Invalid value for `product_name`, must not be `None`]
         subscription = killbill.api.SubscriptionApi()
-        body = Subscription(account_id='4eba7df9-f023-4425-bb46-b1a2e6e84fea',
-                            plan_name='sports-monthly',
-                            product_name='Basic',
-                            billing_period='MONTHLY',
-                            price_list='DEFAULT')
-        subscription.create_subscription(body, 'test', 'bob', 'lazar')
+        body = Subscription(account_id=account_id, plan_name='standard-monthly')
+        subscription.create_subscription(body, 'test', random_api_key, random_api_secret)
+
+        # Get account bundles
+        account = killbill.api.AccountApi()
+        bundles = account.get_account_bundles(account_id, random_api_key, random_api_secret)
+        subscription_id = bundles[0].subscriptions[0].subscription_id
+
+        # Get subscription
+        subscription = killbill.api.SubscriptionApi()
+        subscription = subscription.get_subscription(subscription_id, random_api_key, random_api_secret)
+        self.assertEqual('standard-monthly', subscription.plan_name)
+
+        # Get account invoices
+        account = killbill.api.AccountApi()
+        invoices = account.get_invoices_for_account(account_id, random_api_key, random_api_secret)
+        self.assertEqual([], invoices)
+
+        # Remove AUTO_INVOICING_OFF tag
+        account = killbill.api.AccountApi()
+        account.delete_account_tags(account_id, 'test', random_api_key, random_api_secret, tag_def=tag)
+
+        # Get account invoices
+        account = killbill.api.AccountApi()
+        invoices = account.get_invoices_for_account(account_id, random_api_key, random_api_secret)
+        self.assertIsNotNone(invoices[0].invoice_id)
+
+        # Create a dryRun invoice
+        invoice = killbill.api.InvoiceApi()
+        body = InvoiceDryRun(dry_run_type='TARGET_DATE')
+        invoice.generate_dry_run_invoice(body, account_id, 'test', random_api_key, random_api_secret)
+
+        # Modify Plan
+        subscription = killbill.api.SubscriptionApi()
+        body = Subscription(subscription_id=subscription_id, product_name='Super', billing_period='MONTHLY', price_list='DEFAULT')
+        subscription.change_subscription_plan(subscription_id, body, 'test', random_api_key, random_api_secret, billing_policy='IMMEDIATE')
+
+        # Get account invoice payments
+        account = killbill.api.AccountApi()
+        invoice_payments = account.get_invoice_payments(account_id, random_api_key, random_api_secret)
+
+        # Cancel subscription
+        subscription = killbill.api.SubscriptionApi()
+        subscription.cancel_subscription_plan(subscription_id, 'test', random_api_key, random_api_secret)
+
+        # Get subscription
+        subscription = killbill.api.SubscriptionApi()
+        subscription = subscription.get_subscription(subscription_id, random_api_key, random_api_secret)
+        self.assertEqual('CANCELLED', subscription.state)
+
+
+        # Pagination: List Accounts
+        account = killbill.api.AccountApi()
+        accounts = account.get_accounts(random_api_key, random_api_secret)
+
+        # Search Accounts
+        account = killbill.api.AccountApi()
+        account.search_accounts('John', random_api_key, random_api_secret)
 
         pass
 
