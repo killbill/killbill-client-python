@@ -87,6 +87,7 @@ from killbill.models.combo_payment_transaction import ComboPaymentTransaction
 from killbill.models.credit import Credit
 from killbill.models.custom_field import CustomField
 from killbill.models.duration import Duration
+from killbill.models.entity import Entity
 from killbill.models.event_subscription import EventSubscription
 from killbill.models.hosted_payment_page_fields import HostedPaymentPageFields
 from killbill.models.hosted_payment_page_form_descriptor import HostedPaymentPageFormDescriptor
