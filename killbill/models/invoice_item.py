@@ -483,12 +483,6 @@ class InvoiceItem(object):
         :type: Str
         """
 
-        allowed_values = ["EXTERNAL_CHARGE", "FIXED", "RECURRING", "REPAIR_ADJ", "CBA_ADJ", "CREDIT_ADJ", "ITEM_ADJ", "USAGE", "TAX", "PARENT_SUMMARY"]  # noqa: E501
-        if item_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `item_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(item_type, allowed_values)
-            )
 
         self._item_type = item_type
 
@@ -621,12 +615,6 @@ class InvoiceItem(object):
         :type: Str
         """
 
-        allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
-        if currency not in allowed_values:
-            raise ValueError(
-                "Invalid value for `currency` ({0}), must be one of {1}"  # noqa: E501
-                .format(currency, allowed_values)
-            )
 
         self._currency = currency
 

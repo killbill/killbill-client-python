@@ -251,12 +251,6 @@ class OverdueStateConfig(object):
         :type: Str
         """
 
-        allowed_values = ["END_OF_TERM", "IMMEDIATE", "NONE"]  # noqa: E501
-        if subscription_cancellation_policy not in allowed_values:
-            raise ValueError(
-                "Invalid value for `subscription_cancellation_policy` ({0}), must be one of {1}"  # noqa: E501
-                .format(subscription_cancellation_policy, allowed_values)
-            )
 
         self._subscription_cancellation_policy = subscription_cancellation_policy
 

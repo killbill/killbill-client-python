@@ -168,12 +168,6 @@ class SimplePlan(object):
         :type: Str
         """
 
-        allowed_values = ["BASE", "ADD_ON", "STANDALONE"]  # noqa: E501
-        if product_category not in allowed_values:
-            raise ValueError(
-                "Invalid value for `product_category` ({0}), must be one of {1}"  # noqa: E501
-                .format(product_category, allowed_values)
-            )
 
         self._product_category = product_category
 
@@ -196,12 +190,6 @@ class SimplePlan(object):
         :type: Str
         """
 
-        allowed_values = ["AED", "AFN", "ALL", "AMD", "ANG", "AOA", "ARS", "AUD", "AWG", "AZN", "BAM", "BBD", "BDT", "BGN", "BHD", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYR", "BZD", "CAD", "CDF", "CHF", "CLP", "CNY", "COP", "CRC", "CUC", "CUP", "CVE", "CZK", "DJF", "DKK", "DOP", "DZD", "EGP", "ERN", "ETB", "EUR", "FJD", "FKP", "GBP", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "ILS", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "JOD", "JPY", "KES", "KGS", "KHR", "KMF", "KPW", "KRW", "KWD", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LTL", "LVL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRO", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NOK", "NPR", "NZD", "OMR", "PAB", "PEN", "PGK", "PHP", "PKR", "PLN", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SAR", "SBD", "SCR", "SDG", "SEK", "SGD", "SHP", "SLL", "SOS", "SPL", "SRD", "STD", "SVC", "SYP", "SZL", "THB", "TJS", "TMT", "TND", "TOP", "TRY", "TTD", "TVD", "TWD", "TZS", "UAH", "UGX", "USD", "UYU", "UZS", "VEF", "VND", "VUV", "WST", "XAF", "XCD", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW", "ZWD", "BTC"]  # noqa: E501
-        if currency not in allowed_values:
-            raise ValueError(
-                "Invalid value for `currency` ({0}), must be one of {1}"  # noqa: E501
-                .format(currency, allowed_values)
-            )
 
         self._currency = currency
 
@@ -246,12 +234,6 @@ class SimplePlan(object):
         :type: Str
         """
 
-        allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
-        if billing_period not in allowed_values:
-            raise ValueError(
-                "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_period, allowed_values)
-            )
 
         self._billing_period = billing_period
 
@@ -296,12 +278,6 @@ class SimplePlan(object):
         :type: Str
         """
 
-        allowed_values = ["DAYS", "WEEKS", "MONTHS", "YEARS", "UNLIMITED"]  # noqa: E501
-        if trial_time_unit not in allowed_values:
-            raise ValueError(
-                "Invalid value for `trial_time_unit` ({0}), must be one of {1}"  # noqa: E501
-                .format(trial_time_unit, allowed_values)
-            )
 
         self._trial_time_unit = trial_time_unit
 

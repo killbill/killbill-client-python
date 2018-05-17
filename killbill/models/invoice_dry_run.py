@@ -139,12 +139,6 @@ class InvoiceDryRun(object):
         :type: Str
         """
 
-        allowed_values = ["TARGET_DATE", "UPCOMING_INVOICE", "SUBSCRIPTION_ACTION"]  # noqa: E501
-        if dry_run_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `dry_run_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(dry_run_type, allowed_values)
-            )
 
         self._dry_run_type = dry_run_type
 
@@ -167,12 +161,6 @@ class InvoiceDryRun(object):
         :type: Str
         """
 
-        allowed_values = ["START_ENTITLEMENT", "START_BILLING", "PAUSE_ENTITLEMENT", "PAUSE_BILLING", "RESUME_ENTITLEMENT", "RESUME_BILLING", "PHASE", "CHANGE", "STOP_ENTITLEMENT", "STOP_BILLING", "SERVICE_STATE_CHANGE"]  # noqa: E501
-        if dry_run_action not in allowed_values:
-            raise ValueError(
-                "Invalid value for `dry_run_action` ({0}), must be one of {1}"  # noqa: E501
-                .format(dry_run_action, allowed_values)
-            )
 
         self._dry_run_action = dry_run_action
 
@@ -195,12 +183,6 @@ class InvoiceDryRun(object):
         :type: Str
         """
 
-        allowed_values = ["TRIAL", "DISCOUNT", "FIXEDTERM", "EVERGREEN"]  # noqa: E501
-        if phase_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `phase_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(phase_type, allowed_values)
-            )
 
         self._phase_type = phase_type
 
@@ -245,12 +227,6 @@ class InvoiceDryRun(object):
         :type: Str
         """
 
-        allowed_values = ["BASE", "ADD_ON", "STANDALONE"]  # noqa: E501
-        if product_category not in allowed_values:
-            raise ValueError(
-                "Invalid value for `product_category` ({0}), must be one of {1}"  # noqa: E501
-                .format(product_category, allowed_values)
-            )
 
         self._product_category = product_category
 
@@ -273,12 +249,6 @@ class InvoiceDryRun(object):
         :type: Str
         """
 
-        allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
-        if billing_period not in allowed_values:
-            raise ValueError(
-                "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_period, allowed_values)
-            )
 
         self._billing_period = billing_period
 
@@ -389,12 +359,6 @@ class InvoiceDryRun(object):
         :type: Str
         """
 
-        allowed_values = ["START_OF_TERM", "END_OF_TERM", "IMMEDIATE", "ILLEGAL"]  # noqa: E501
-        if billing_policy not in allowed_values:
-            raise ValueError(
-                "Invalid value for `billing_policy` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_policy, allowed_values)
-            )
 
         self._billing_policy = billing_policy
 

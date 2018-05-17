@@ -312,12 +312,6 @@ class Subscription(object):
         :type: Str
         """
 
-        allowed_values = ["BASE", "ADD_ON", "STANDALONE"]  # noqa: E501
-        if product_category not in allowed_values:
-            raise ValueError(
-                "Invalid value for `product_category` ({0}), must be one of {1}"  # noqa: E501
-                .format(product_category, allowed_values)
-            )
 
         self._product_category = product_category
 
@@ -340,12 +334,6 @@ class Subscription(object):
         :type: Str
         """
 
-        allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
-        # if billing_period not in allowed_values:
-        #     raise ValueError(
-        #         "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-        #         .format(billing_period, allowed_values)
-        #     )
 
         self._billing_period = billing_period
 
@@ -368,12 +356,6 @@ class Subscription(object):
         :type: Str
         """
 
-        allowed_values = ["TRIAL", "DISCOUNT", "FIXEDTERM", "EVERGREEN"]  # noqa: E501
-        if phase_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `phase_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(phase_type, allowed_values)
-            )
 
         self._phase_type = phase_type
 
@@ -440,12 +422,6 @@ class Subscription(object):
         :type: Str
         """
 
-        allowed_values = ["PENDING", "ACTIVE", "BLOCKED", "CANCELLED"]  # noqa: E501
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state` ({0}), must be one of {1}"  # noqa: E501
-                .format(state, allowed_values)
-            )
 
         self._state = state
 
@@ -468,12 +444,6 @@ class Subscription(object):
         :type: Str
         """
 
-        allowed_values = ["NATIVE", "MIGRATED", "TRANSFERRED"]  # noqa: E501
-        if source_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `source_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(source_type, allowed_values)
-            )
 
         self._source_type = source_type
 

@@ -166,12 +166,6 @@ class EventSubscription(object):
         :type: Str
         """
 
-        allowed_values = ["DAILY", "WEEKLY", "BIWEEKLY", "THIRTY_DAYS", "SIXTY_DAYS", "NINETY_DAYS", "MONTHLY", "BIMESTRIAL", "QUARTERLY", "TRIANNUAL", "BIANNUAL", "ANNUAL", "BIENNIAL", "NO_BILLING_PERIOD"]  # noqa: E501
-        if billing_period not in allowed_values:
-            raise ValueError(
-                "Invalid value for `billing_period` ({0}), must be one of {1}"  # noqa: E501
-                .format(billing_period, allowed_values)
-            )
 
         self._billing_period = billing_period
 
@@ -282,12 +276,6 @@ class EventSubscription(object):
         :type: Str
         """
 
-        allowed_values = ["START_ENTITLEMENT", "START_BILLING", "PAUSE_ENTITLEMENT", "PAUSE_BILLING", "RESUME_ENTITLEMENT", "RESUME_BILLING", "PHASE", "CHANGE", "STOP_ENTITLEMENT", "STOP_BILLING", "SERVICE_STATE_CHANGE"]  # noqa: E501
-        if event_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `event_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(event_type, allowed_values)
-            )
 
         self._event_type = event_type
 

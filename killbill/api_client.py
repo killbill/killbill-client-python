@@ -53,6 +53,7 @@ class ApiClient(object):
         'int': int,
         'Int': int,
         'long': int if six.PY3 else long,  # noqa: F821
+        'Long': int if six.PY3 else long,
         'float': float,
         'Float': float,
         'str': str,
@@ -64,6 +65,7 @@ class ApiClient(object):
         'datetime': datetime.datetime,
         'Datetime': datetime.datetime,
         'object': object,
+        'Object': object,
     }
 
     def __init__(self, configuration=None, header_name=None, header_value=None,

@@ -131,12 +131,6 @@ class Tag(object):
         :type: Str
         """
 
-        allowed_values = ["ACCOUNT", "ACCOUNT_EMAIL", "BLOCKING_STATES", "BUNDLE", "CUSTOM_FIELD", "INVOICE", "PAYMENT", "TRANSACTION", "INVOICE_ITEM", "INVOICE_PAYMENT", "SUBSCRIPTION", "SUBSCRIPTION_EVENT", "SERVICE_BROADCAST", "PAYMENT_ATTEMPT", "PAYMENT_METHOD", "REFUND", "TAG", "TAG_DEFINITION", "TENANT", "TENANT_KVS"]  # noqa: E501
-        if object_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `object_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(object_type, allowed_values)
-            )
 
         self._object_type = object_type
 

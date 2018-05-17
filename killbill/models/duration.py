@@ -89,12 +89,6 @@ class Duration(object):
         :type: Str
         """
 
-        allowed_values = ["DAYS", "WEEKS", "MONTHS", "YEARS", "UNLIMITED"]  # noqa: E501
-        if unit not in allowed_values:
-            raise ValueError(
-                "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501
-                .format(unit, allowed_values)
-            )
 
         self._unit = unit
 
