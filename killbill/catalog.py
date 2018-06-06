@@ -39,6 +39,7 @@ class Catalog(killbill.Resource):
     @classmethod
     def catalog(cls, requested_date=None, **options):
         relative_url = cls.KILLBILL_API_CATALOG_PREFIX
+        options['accept'] = 'application/json'
         query_params = {
             'requestedDate': requested_date
         }
