@@ -24,7 +24,7 @@ class Account(killbill.Resource):
     def __init__(self, **d):
         super(Account, self).__init__(d)
 
-    def create(self, user, reason=None, comment=None, **options):
+    def create(self, user=killbill.user, reason=None, comment=None, **options):
         created_account = self.post(self.KILLBILL_API_ACCOUNTS_PREFIX,
                                     self.to_json(),
                                     {},
@@ -36,12 +36,20 @@ class Account(killbill.Resource):
                                     ))
         return self.refresh(created_account, **options)
 
-    def bundles(self, **options):
-        return self.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
-                        {},
-                        self.build_options(**options))
+    def update(self, **options):
+        updated_account = self.put("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                                   self.to_json(),
+                                   {},
+                                   self.build_options(**options))
+        return self.fromJson(updated_account['body'])
 
-    def close(self, cancel_all_subscriptions, write_off_unpaid_invoices, item_adjust_unpaid_invoices, user, reason=None, comment=None, **options):
+    def bundles(self, **options):
+        return killbill.Bundle.get("%s/%s/bundles" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                                   {},
+                                   killbill.Bundle.build_options(**options))
+
+    def close(self, cancel_all_subscriptions, write_off_unpaid_invoices, item_adjust_unpaid_invoices, user, reason=None,
+              comment=None, **options):
         return self.delete("%s/%s" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
                            "{}",
                            {
@@ -56,9 +64,31 @@ class Account(killbill.Resource):
                                **options
                            ))
 
+    def invoices(self, with_items=False, with_migration_invoices=False, unpaid_invoices_only=False, audit='NONE',
+                 **options):
+        return killbill.Invoice.get("%s/%s/invoices" % (self.KILLBILL_API_ACCOUNTS_PREFIX, self.accountId),
+                                    {
+                                        'withItems': with_items,
+                                        'withMigrationInvoices': with_migration_invoices,
+                                        'unpaidInvoicesOnly': unpaid_invoices_only,
+                                        'audit': audit
+                                    },
+                                    killbill.Invoice.build_options(**options))
+
     @classmethod
     def find_by_external_key(cls, external_key, **options):
         query_params = {
             'externalKey': external_key
         }
         return cls.get(cls.KILLBILL_API_ACCOUNTS_PREFIX, query_params, cls.build_options(**options))
+
+    @classmethod
+    def find_by_id(cls, account_id, account_with_balance=False, account_with_balance_and_cba=False, audit='NONE',
+                   **options):
+        relative_url = "%s/%s" % (cls.KILLBILL_API_ACCOUNTS_PREFIX, account_id)
+        query_params = {
+            'accountWithBalance': account_with_balance,
+            'accountWithBalanceAndCBA': account_with_balance_and_cba,
+            'audit': audit
+        }
+        return cls.get(relative_url, query_params, cls.build_options(**options))

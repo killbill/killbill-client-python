@@ -16,6 +16,7 @@
 # under the License.
 #
 
+user = 'KillBill Python Client'
 base_uri = 'http://localhost:8080'
 username = 'admin'
 password = 'password'
@@ -39,4 +40,10 @@ logging.basicConfig(level=logging.DEBUG)
 
 from killbill.resource import Resource
 from killbill.account import Account
+from killbill.bundle import Bundle
+from killbill.catalog import Catalog
+from killbill.custom_field import CustomField
+from killbill.invoice import Invoice
+from killbill.payment_method import PaymentMethod
+from killbill.plan_detail import PlanDetail
 from killbill.subscription import Subscription

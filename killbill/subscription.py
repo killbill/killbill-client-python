@@ -23,7 +23,8 @@ class Subscription(killbill.Resource):
     def __init__(self, **d):
         super(Subscription, self).__init__(d)
 
-    def create(self, user, reason=None, comment=None, requested_date=None, call_completion=False, **options):
+    def create(self, user=killbill.user, reason=None, comment=None, requested_date=None, call_completion=False,
+               **options):
         query_params = {}
 
         if call_completion:
@@ -43,3 +44,108 @@ class Subscription(killbill.Resource):
                                              **options
                                          ))
         return self.refresh(created_subscription, **options)
+
+    def change_plan(self, update, user=killbill.user, reason=None, comment=None, requested_date=None,
+                    billing_policy=None, call_completion=False, **options):
+        query_params = {}
+
+        if call_completion:
+            query_params['callCompletion'] = call_completion
+
+        if requested_date:
+            query_params['entitlementDate'] = requested_date
+            query_params['billingDate'] = requested_date
+
+        for key, value in update.items():
+            setattr(self, key, value)
+
+        updated_subscription = self.put("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                                        self.to_json(),
+                                        query_params,
+                                        self.build_options(
+                                            user=user,
+                                            reason=reason,
+                                            comment=comment,
+                                            **options
+                                        ))
+
+        return self.fromJson(updated_subscription['body'])
+
+    def cancel(self, requested_date=None, call_completion=False, call_timeout_sec=5, entitlement_policy=None,
+               billing_policy=None, use_requested_date_for_billing=False, plugin_property=None,
+               user=killbill.user, reason=None, comment=None, **options):
+
+        query_params = {}
+
+        if requested_date:
+            query_params['requestedDate'] = requested_date
+        if call_completion:
+            query_params['callCompletion'] = call_completion
+        if call_timeout_sec:
+            query_params['callTimeoutSec'] = call_timeout_sec
+        if entitlement_policy:
+            query_params['entitlementPolicy'] = entitlement_policy
+        if billing_policy:
+            query_params['billingPolicy'] = billing_policy
+        if use_requested_date_for_billing:
+            query_params['useRequestedDateForBilling'] = use_requested_date_for_billing
+        if plugin_property:
+            query_params['pluginProperty'] = plugin_property
+
+        return self.delete("%s/%s" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                           "{}",
+                           query_params,
+                           self.build_options(
+                               user=user,
+                               reason=reason,
+                               comment=comment,
+                               **options
+                           ))
+
+    def add_custom_fields(self, custom_fields, user=killbill.user, reason=None, comment=None, **options):
+        query_params = {}
+        custom_fields_response = killbill.CustomField.post(
+            "%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+            killbill.json.dumps(custom_fields),
+            query_params,
+            self.build_options(
+                user=user,
+                reason=reason,
+                comment=comment,
+                **options
+            ))
+        return killbill.CustomField().refresh(custom_fields_response, **options)
+
+    def remove_custom_fields(self, custom_field_list=None, user=killbill.user, reason=None, comment=None, **options):
+        query_params = {}
+        if custom_field_list and len(custom_field_list) > 0:
+            query_params['customFieldList'] = ','.join(custom_field_list)
+
+        killbill.CustomField.delete("%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                                    "{}",
+                                    query_params,
+                                    self.build_options(
+                                        user=user,
+                                        reason=reason,
+                                        comment=comment,
+                                        **options
+                                    ))
+
+    def custom_fields(self, user=killbill.user, reason=None, comment=None, **options):
+        query_params = {}
+        return killbill.CustomField.get("%s/%s/customFields" % (self.KILLBILL_API_ENTITLEMENT_PREFIX, self.subscriptionId),
+                                        query_params,
+                                        self.build_options(
+                                            user=user,
+                                            reason=reason,
+                                            comment=comment,
+                                            **options
+                                        ))
+
+    @classmethod
+    def find_by_id(cls, subscription_id, audit='NONE', **options):
+        relative_url = "%s/%s" % (cls.KILLBILL_API_ENTITLEMENT_PREFIX, subscription_id)
+        query_params = {
+            'audit': audit
+        }
+        return cls.get(relative_url, query_params, cls.build_options(**options))

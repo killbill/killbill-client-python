@@ -45,7 +45,7 @@ class Resource(object):
             setattr(self, key, value)
 
     def __repr__(self):
-        return '%s %s' % (self.__class__, self.to_json)
+        return '%s %s' % (self.__class__, self.to_json())
 
     @staticmethod
     def build_options(**options):
@@ -63,9 +63,13 @@ class Resource(object):
     def to_json(self):
         return killbill.json.dumps(self, default=lambda o: o.__dict__)
 
+    @classmethod
+    def get_refresh_query(cls):
+        return {}
+
     def refresh(self, raw_response, **options):
         url = raw_response['response'].headers['Location']
-        return self.get(url, {}, self.build_options(**options))
+        return self.get(url, self.get_refresh_query(), self.build_options(**options))
 
     @classmethod
     def fromJson(cls, jsonString):
@@ -92,6 +96,13 @@ class Resource(object):
     @classmethod
     def delete(cls, relative_uri, body, query_params, options):
         options['method'] = 'DELETE'
+        options['body'] = body
+        options['queryParams'] = query_params
+        return cls.send_request(relative_uri, options)
+
+    @classmethod
+    def put(cls, relative_uri, body, query_params, options):
+        options['method'] = 'PUT'
         options['body'] = body
         options['queryParams'] = query_params
         return cls.send_request(relative_uri, options)
