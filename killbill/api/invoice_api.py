@@ -66,6 +66,7 @@ class InvoiceApi(object):
         :param Str api_key: (required)
         :param Str api_secret: (required)
         :param Date requested_date:
+        :param List[Str] plugin_property:
         :param Str reason:
         :param Str comment:
         :return: Invoice
@@ -95,6 +96,7 @@ class InvoiceApi(object):
         :param Str api_key: (required)
         :param Str api_secret: (required)
         :param Date requested_date:
+        :param List[Str] plugin_property:
         :param Str reason:
         :param Str comment:
         :return: Invoice
@@ -102,7 +104,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['invoice_id', 'body', 'created_by', 'api_key', 'api_secret', 'requested_date', 'reason', 'comment']  # noqa: E501
+        all_params = ['invoice_id', 'body', 'created_by', 'api_key', 'api_secret', 'requested_date', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -149,6 +151,9 @@ class InvoiceApi(object):
         query_params = []
         if 'requested_date' in params:
             query_params.append(('requestedDate', params['requested_date']))  # noqa: E501
+        if 'plugin_property' in params:
+            query_params.append(('pluginProperty', params['plugin_property']))  # noqa: E501
+            collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'created_by' in params:
@@ -344,8 +349,8 @@ class InvoiceApi(object):
         :param Str api_key: (required)
         :param Str api_secret: (required)
         :param Date requested_date:
-        :param List[Str] plugin_property:
         :param Bool auto_commit:
+        :param List[Str] plugin_property:
         :param Str reason:
         :param Str comment:
         :return: List[InvoiceItem]
@@ -375,8 +380,8 @@ class InvoiceApi(object):
         :param Str api_key: (required)
         :param Str api_secret: (required)
         :param Date requested_date:
-        :param List[Str] plugin_property:
         :param Bool auto_commit:
+        :param List[Str] plugin_property:
         :param Str reason:
         :param Str comment:
         :return: List[InvoiceItem]
@@ -384,7 +389,7 @@ class InvoiceApi(object):
                  returns the request thread.
         """
 
-        all_params = ['account_id', 'body', 'created_by', 'api_key', 'api_secret', 'requested_date', 'plugin_property', 'auto_commit', 'reason', 'comment']  # noqa: E501
+        all_params = ['account_id', 'body', 'created_by', 'api_key', 'api_secret', 'requested_date', 'auto_commit', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -431,11 +436,11 @@ class InvoiceApi(object):
         query_params = []
         if 'requested_date' in params:
             query_params.append(('requestedDate', params['requested_date']))  # noqa: E501
+        if 'auto_commit' in params:
+            query_params.append(('autoCommit', params['auto_commit']))  # noqa: E501
         if 'plugin_property' in params:
             query_params.append(('pluginProperty', params['plugin_property']))  # noqa: E501
             collection_formats['pluginProperty'] = 'multi'  # noqa: E501
-        if 'auto_commit' in params:
-            query_params.append(('autoCommit', params['auto_commit']))  # noqa: E501
 
         header_params = {}
         if 'created_by' in params:
@@ -1187,6 +1192,160 @@ class InvoiceApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='Invoice',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def create_tax_items(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
+        """Create tax items  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.create_tax_items(account_id, body, created_by, api_key, api_secret, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Str account_id: (required)
+        :param List[InvoiceItem] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool auto_commit:
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
+        :return: List[InvoiceItem]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.create_tax_items_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
+        else:
+            (data) = self.create_tax_items_with_http_info(account_id, body, created_by, api_key, api_secret, **kwargs)  # noqa: E501
+            return data
+
+    def create_tax_items_with_http_info(self, account_id=None, body=None, created_by=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
+        """Create tax items  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.create_tax_items_with_http_info(account_id, body, created_by, api_key, api_secret, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Str account_id: (required)
+        :param List[InvoiceItem] body: (required)
+        :param Str created_by: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool auto_commit:
+        :param Date requested_date:
+        :param List[Str] plugin_property:
+        :param Str reason:
+        :param Str comment:
+        :return: List[InvoiceItem]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['account_id', 'body', 'created_by', 'api_key', 'api_secret', 'auto_commit', 'requested_date', 'plugin_property', 'reason', 'comment']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method create_tax_items" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'account_id' is set
+        if ('account_id' not in params or
+                params['account_id'] is None):
+            raise ValueError("Missing the required parameter `account_id` when calling `create_tax_items`")  # noqa: E501
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `create_tax_items`")  # noqa: E501
+        # verify the required parameter 'created_by' is set
+        if ('created_by' not in params or
+                params['created_by'] is None):
+            raise ValueError("Missing the required parameter `created_by` when calling `create_tax_items`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `create_tax_items`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `create_tax_items`")  # noqa: E501
+
+        if 'account_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['account_id']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `account_id` when calling `create_tax_items`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'account_id' in params:
+            path_params['accountId'] = params['account_id']  # noqa: E501
+
+        query_params = []
+        if 'auto_commit' in params:
+            query_params.append(('autoCommit', params['auto_commit']))  # noqa: E501
+        if 'requested_date' in params:
+            query_params.append(('requestedDate', params['requested_date']))  # noqa: E501
+        if 'plugin_property' in params:
+            query_params.append(('pluginProperty', params['plugin_property']))  # noqa: E501
+            collection_formats['pluginProperty'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        if 'created_by' in params:
+            header_params['X-Killbill-CreatedBy'] = params['created_by']  # noqa: E501
+        if 'reason' in params:
+            header_params['X-Killbill-Reason'] = params['reason']  # noqa: E501
+        if 'comment' in params:
+            header_params['X-Killbill-Comment'] = params['comment']  # noqa: E501
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/1.0/kb/invoices/taxes/{accountId}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='List[InvoiceItem]',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

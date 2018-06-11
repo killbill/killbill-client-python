@@ -65,6 +65,7 @@ class CreditApi(object):
         :param Str api_key: (required)
         :param Str api_secret: (required)
         :param Bool auto_commit:
+        :param List[Str] plugin_property:
         :param Str reason:
         :param Str comment:
         :return: Credit
@@ -93,6 +94,7 @@ class CreditApi(object):
         :param Str api_key: (required)
         :param Str api_secret: (required)
         :param Bool auto_commit:
+        :param List[Str] plugin_property:
         :param Str reason:
         :param Str comment:
         :return: Credit
@@ -100,7 +102,7 @@ class CreditApi(object):
                  returns the request thread.
         """
 
-        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'auto_commit', 'reason', 'comment']  # noqa: E501
+        all_params = ['body', 'created_by', 'api_key', 'api_secret', 'auto_commit', 'plugin_property', 'reason', 'comment']  # noqa: E501
         all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -139,6 +141,9 @@ class CreditApi(object):
         query_params = []
         if 'auto_commit' in params:
             query_params.append(('autoCommit', params['auto_commit']))  # noqa: E501
+        if 'plugin_property' in params:
+            query_params.append(('pluginProperty', params['plugin_property']))  # noqa: E501
+            collection_formats['pluginProperty'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'created_by' in params:
