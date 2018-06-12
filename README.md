@@ -72,5 +72,42 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AccountApi->add_account_blocking_state: %s\n" % e)
+```
 
+## Calling custom plugin endpoints
+
+```python
+configuration = killbill.Configuration()
+configuration.host = 'http://127.0.0.1:8080'
+kb_client = killbill.ApiClient(configuration)
+
+def request(url, method, params=None, body=None, profiling_data=None):
+    header_params = {}
+    header_params['X-Killbill-CreatedBy'] = 'admin'
+    header_params['X-Killbill-Reason'] = 'for testing'
+    header_params['X-Killbill-Comment'] = 'no comment'
+    header_params['X-Killbill-ApiKey'] = 'bob'
+    header_params['X-Killbill-ApiSecret'] = 'lazar'
+    header_params['X-Killbill-Profiling-Req'] = 'JAXRS'
+    header_params['Content-Type'] = 'application/json'
+    header_params['Authorization'] = 'Basic YWRtaW46cGFzc3dvcmQ='
+
+    body, status_code, headers = kb_client.call_api(url,
+                                                    method,
+                                                    query_params=params,
+                                                    header_params=header_params,
+                                                    body=body,
+                                                    response_type='object')
+
+    if profiling_data is not None and 'X-Killbill-Profiling-Resp' in headers:
+        profiling_header = json.loads(headers['X-Killbill-Profiling-Resp'])
+        jaxrs_profiling_header = profiling_header['rawData'][0]
+
+        key = "%s:%s" % (method, url)
+        if not key in profiling_data:
+            profiling_data[key] = []
+
+        profiling_data[key].append(jaxrs_profiling_header['durationUsec'])
+
+    return body
 ```
