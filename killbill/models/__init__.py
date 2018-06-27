@@ -38,7 +38,7 @@ from killbill.models.account_email import AccountEmail
 from killbill.models.account_timeline import AccountTimeline
 from killbill.models.admin_payment import AdminPayment
 from killbill.models.audit_log import AuditLog
-from killbill.models.block_price_override import BlockPriceOverride
+from killbill.models.block_price import BlockPrice
 from killbill.models.blocking_state import BlockingState
 from killbill.models.bulk_subscriptions_bundle import BulkSubscriptionsBundle
 from killbill.models.bundle import Bundle
@@ -55,7 +55,6 @@ from killbill.models.hosted_payment_page_fields import HostedPaymentPageFields
 from killbill.models.hosted_payment_page_form_descriptor import HostedPaymentPageFormDescriptor
 from killbill.models.invoice import Invoice
 from killbill.models.invoice_dry_run import InvoiceDryRun
-from killbill.models.invoice_email import InvoiceEmail
 from killbill.models.invoice_item import InvoiceItem
 from killbill.models.invoice_payment import InvoicePayment
 from killbill.models.invoice_payment_transaction import InvoicePaymentTransaction
@@ -72,7 +71,7 @@ from killbill.models.payment_method import PaymentMethod
 from killbill.models.payment_method_plugin_detail import PaymentMethodPluginDetail
 from killbill.models.payment_transaction import PaymentTransaction
 from killbill.models.phase import Phase
-from killbill.models.phase_price_override import PhasePriceOverride
+from killbill.models.phase_price import PhasePrice
 from killbill.models.plan import Plan
 from killbill.models.plan_detail import PlanDetail
 from killbill.models.plugin_info import PluginInfo
@@ -94,11 +93,11 @@ from killbill.models.tag_definition import TagDefinition
 from killbill.models.tenant import Tenant
 from killbill.models.tenant_key_value import TenantKeyValue
 from killbill.models.tier import Tier
-from killbill.models.tier_price_override import TierPriceOverride
+from killbill.models.tier_price import TierPrice
 from killbill.models.tiered_block import TieredBlock
 from killbill.models.unit import Unit
 from killbill.models.unit_usage_record import UnitUsageRecord
 from killbill.models.usage import Usage
-from killbill.models.usage_price_override import UsagePriceOverride
+from killbill.models.usage_price import UsagePrice
 from killbill.models.usage_record import UsageRecord
 from killbill.models.user_roles import UserRoles

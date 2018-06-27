@@ -72,7 +72,6 @@ class Account(object):
         'phone': 'Str',
         'notes': 'Str',
         'is_migrated': 'Bool',
-        'is_notified_for_invoices': 'Bool',
         'account_balance': 'Float',
         'account_cba': 'Float',
         'audit_logs': 'List[AuditLog]'
@@ -102,13 +101,12 @@ class Account(object):
         'phone': 'phone',
         'notes': 'notes',
         'is_migrated': 'isMigrated',
-        'is_notified_for_invoices': 'isNotifiedForInvoices',
         'account_balance': 'accountBalance',
         'account_cba': 'accountCBA',
         'audit_logs': 'auditLogs'
     }
 
-    def __init__(self, account_id=None, name=None, first_name_length=None, external_key=None, email=None, bill_cycle_day_local=None, currency=None, parent_account_id=None, is_payment_delegated_to_parent=False, payment_method_id=None, reference_time=None, time_zone=None, address1=None, address2=None, postal_code=None, company=None, city=None, state=None, country=None, locale=None, phone=None, notes=None, is_migrated=False, is_notified_for_invoices=False, account_balance=None, account_cba=None, audit_logs=None):  # noqa: E501
+    def __init__(self, account_id=None, name=None, first_name_length=None, external_key=None, email=None, bill_cycle_day_local=None, currency=None, parent_account_id=None, is_payment_delegated_to_parent=False, payment_method_id=None, reference_time=None, time_zone=None, address1=None, address2=None, postal_code=None, company=None, city=None, state=None, country=None, locale=None, phone=None, notes=None, is_migrated=False, account_balance=None, account_cba=None, audit_logs=None):  # noqa: E501
         """Account - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -134,7 +132,6 @@ class Account(object):
         self._phone = None
         self._notes = None
         self._is_migrated = None
-        self._is_notified_for_invoices = None
         self._account_balance = None
         self._account_cba = None
         self._audit_logs = None
@@ -186,8 +183,6 @@ class Account(object):
             self.notes = notes
         if is_migrated is not None:
             self.is_migrated = is_migrated
-        if is_notified_for_invoices is not None:
-            self.is_notified_for_invoices = is_notified_for_invoices
         if account_balance is not None:
             self.account_balance = account_balance
         if account_cba is not None:
@@ -700,28 +695,6 @@ class Account(object):
 
 
         self._is_migrated = is_migrated
-
-    @property
-    def is_notified_for_invoices(self):
-        """Gets the is_notified_for_invoices of this Account.  # noqa: E501
-
-
-        :return: The is_notified_for_invoices of this Account.  # noqa: E501
-        :rtype: Bool
-        """
-        return self._is_notified_for_invoices
-
-    @is_notified_for_invoices.setter
-    def is_notified_for_invoices(self, is_notified_for_invoices):
-        """Sets the is_notified_for_invoices of this Account.
-
-
-        :param is_notified_for_invoices: The is_notified_for_invoices of this Account.  # noqa: E501
-        :type: Bool
-        """
-
-
-        self._is_notified_for_invoices = is_notified_for_invoices
 
     @property
     def account_balance(self):

@@ -2274,6 +2274,131 @@ class InvoiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_invoice_by_item_id(self, item_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
+        """Retrieve an invoice by invoice item id  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_invoice_by_item_id(item_id, api_key, api_secret, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Str item_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_items:
+        :param Bool with_children_items:
+        :param Str audit:
+        :return: Invoice
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.get_invoice_by_item_id_with_http_info(item_id, api_key, api_secret, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_invoice_by_item_id_with_http_info(item_id, api_key, api_secret, **kwargs)  # noqa: E501
+            return data
+
+    def get_invoice_by_item_id_with_http_info(self, item_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
+        """Retrieve an invoice by invoice item id  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_invoice_by_item_id_with_http_info(item_id, api_key, api_secret, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Str item_id: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_items:
+        :param Bool with_children_items:
+        :param Str audit:
+        :return: Invoice
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['item_id', 'api_key', 'api_secret', 'with_items', 'with_children_items', 'audit']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_invoice_by_item_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'item_id' is set
+        if ('item_id' not in params or
+                params['item_id'] is None):
+            raise ValueError("Missing the required parameter `item_id` when calling `get_invoice_by_item_id`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_invoice_by_item_id`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_invoice_by_item_id`")  # noqa: E501
+
+        if 'item_id' in params and not re.search('\\w+-\\w+-\\w+-\\w+-\\w+', params['item_id']):  # noqa: E501
+            raise ValueError("Invalid value for parameter `item_id` when calling `get_invoice_by_item_id`, must conform to the pattern `/\\w+-\\w+-\\w+-\\w+-\\w+/`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'item_id' in params:
+            path_params['itemId'] = params['item_id']  # noqa: E501
+
+        query_params = []
+        if 'with_items' in params:
+            query_params.append(('withItems', params['with_items']))  # noqa: E501
+        if 'with_children_items' in params:
+            query_params.append(('withChildrenItems', params['with_children_items']))  # noqa: E501
+        if 'audit' in params:
+            query_params.append(('audit', params['audit']))  # noqa: E501
+
+        header_params = {}
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/1.0/kb/invoices/byItemId/{itemId}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Invoice',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_invoice_by_number(self, invoice_number=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve an invoice by number  # noqa: E501
 

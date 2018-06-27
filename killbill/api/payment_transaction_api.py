@@ -608,6 +608,134 @@ class PaymentTransactionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def get_payment_by_transaction_external_key(self, transaction_external_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
+        """Retrieve a payment by transaction external key  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_payment_by_transaction_external_key(transaction_external_key, api_key, api_secret, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Str transaction_external_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool with_attempts:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: Payment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.get_payment_by_transaction_external_key_with_http_info(transaction_external_key, api_key, api_secret, **kwargs)  # noqa: E501
+        else:
+            (data) = self.get_payment_by_transaction_external_key_with_http_info(transaction_external_key, api_key, api_secret, **kwargs)  # noqa: E501
+            return data
+
+    def get_payment_by_transaction_external_key_with_http_info(self, transaction_external_key=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
+        """Retrieve a payment by transaction external key  # noqa: E501
+
+          # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_payment_by_transaction_external_key_with_http_info(transaction_external_key, api_key, api_secret, async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Str transaction_external_key: (required)
+        :param Str api_key: (required)
+        :param Str api_secret: (required)
+        :param Bool with_plugin_info:
+        :param Bool with_attempts:
+        :param List[Str] plugin_property:
+        :param Str audit:
+        :return: Payment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['transaction_external_key', 'api_key', 'api_secret', 'with_plugin_info', 'with_attempts', 'plugin_property', 'audit']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_payment_by_transaction_external_key" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'transaction_external_key' is set
+        if ('transaction_external_key' not in params or
+                params['transaction_external_key'] is None):
+            raise ValueError("Missing the required parameter `transaction_external_key` when calling `get_payment_by_transaction_external_key`")  # noqa: E501
+        # verify the required parameter 'api_key' is set
+        if ('api_key' not in params or
+                params['api_key'] is None):
+            raise ValueError("Missing the required parameter `api_key` when calling `get_payment_by_transaction_external_key`")  # noqa: E501
+        # verify the required parameter 'api_secret' is set
+        if ('api_secret' not in params or
+                params['api_secret'] is None):
+            raise ValueError("Missing the required parameter `api_secret` when calling `get_payment_by_transaction_external_key`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'transaction_external_key' in params:
+            query_params.append(('transactionExternalKey', params['transaction_external_key']))  # noqa: E501
+        if 'with_plugin_info' in params:
+            query_params.append(('withPluginInfo', params['with_plugin_info']))  # noqa: E501
+        if 'with_attempts' in params:
+            query_params.append(('withAttempts', params['with_attempts']))  # noqa: E501
+        if 'plugin_property' in params:
+            query_params.append(('pluginProperty', params['plugin_property']))  # noqa: E501
+            collection_formats['pluginProperty'] = 'multi'  # noqa: E501
+        if 'audit' in params:
+            query_params.append(('audit', params['audit']))  # noqa: E501
+
+        header_params = {}
+        if 'api_key' in params:
+            header_params['X-Killbill-ApiKey'] = params['api_key']  # noqa: E501
+        if 'api_secret' in params:
+            header_params['X-Killbill-ApiSecret'] = params['api_secret']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['basicAuth']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/1.0/kb/paymentTransactions', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Payment',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def get_payment_by_transaction_id(self, transaction_id=None, api_key=None, api_secret=None, **kwargs):  # noqa: E501
         """Retrieve a payment by transaction id  # noqa: E501
 

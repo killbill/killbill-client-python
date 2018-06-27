@@ -68,7 +68,8 @@ class Subscription(object):
         'billing_end_date': 'Date',
         'bill_cycle_day_local': 'Int',
         'events': 'List[EventSubscription]',
-        'price_overrides': 'List[PhasePriceOverride]',
+        'price_overrides': 'List[PhasePrice]',
+        'prices': 'List[PhasePrice]',
         'audit_logs': 'List[AuditLog]'
     }
 
@@ -93,10 +94,11 @@ class Subscription(object):
         'bill_cycle_day_local': 'billCycleDayLocal',
         'events': 'events',
         'price_overrides': 'priceOverrides',
+        'prices': 'prices',
         'audit_logs': 'auditLogs'
     }
 
-    def __init__(self, account_id=None, bundle_id=None, subscription_id=None, external_key=None, start_date=None, product_name=None, product_category=None, billing_period=None, phase_type=None, price_list=None, plan_name=None, state=None, source_type=None, cancelled_date=None, charged_through_date=None, billing_start_date=None, billing_end_date=None, bill_cycle_day_local=None, events=None, price_overrides=None, audit_logs=None):  # noqa: E501
+    def __init__(self, account_id=None, bundle_id=None, subscription_id=None, external_key=None, start_date=None, product_name=None, product_category=None, billing_period=None, phase_type=None, price_list=None, plan_name=None, state=None, source_type=None, cancelled_date=None, charged_through_date=None, billing_start_date=None, billing_end_date=None, bill_cycle_day_local=None, events=None, price_overrides=None, prices=None, audit_logs=None):  # noqa: E501
         """Subscription - a model defined in Swagger"""  # noqa: E501
 
         self._account_id = None
@@ -119,6 +121,7 @@ class Subscription(object):
         self._bill_cycle_day_local = None
         self._events = None
         self._price_overrides = None
+        self._prices = None
         self._audit_logs = None
         self.discriminator = None
 
@@ -158,6 +161,8 @@ class Subscription(object):
             self.events = events
         if price_overrides is not None:
             self.price_overrides = price_overrides
+        if prices is not None:
+            self.prices = prices
         if audit_logs is not None:
             self.audit_logs = audit_logs
 
@@ -585,7 +590,7 @@ class Subscription(object):
 
 
         :return: The price_overrides of this Subscription.  # noqa: E501
-        :rtype: List[PhasePriceOverride]
+        :rtype: List[PhasePrice]
         """
         return self._price_overrides
 
@@ -595,11 +600,33 @@ class Subscription(object):
 
 
         :param price_overrides: The price_overrides of this Subscription.  # noqa: E501
-        :type: List[PhasePriceOverride]
+        :type: List[PhasePrice]
         """
 
 
         self._price_overrides = price_overrides
+
+    @property
+    def prices(self):
+        """Gets the prices of this Subscription.  # noqa: E501
+
+
+        :return: The prices of this Subscription.  # noqa: E501
+        :rtype: List[PhasePrice]
+        """
+        return self._prices
+
+    @prices.setter
+    def prices(self, prices):
+        """Sets the prices of this Subscription.
+
+
+        :param prices: The prices of this Subscription.  # noqa: E501
+        :type: List[PhasePrice]
+        """
+
+
+        self._prices = prices
 
     @property
     def audit_logs(self):

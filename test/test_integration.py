@@ -158,7 +158,7 @@ class TestIntegration(unittest.TestCase):
 
         # Modify Plan
         subscription = killbill.api.SubscriptionApi()
-        body = Subscription(subscription_id=subscription_id, product_name='Super', billing_period='MONTHLY',
+        body = Subscription(subscription_id=subscription_id, product_name='Sports', billing_period='MONTHLY',
                             price_list='DEFAULT')
         subscription.change_subscription_plan(subscription_id, body, 'test', random_api_key, random_api_secret,
                                               billing_policy='IMMEDIATE')
