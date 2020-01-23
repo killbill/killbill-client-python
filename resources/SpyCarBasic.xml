@@ -36,7 +36,7 @@
             <category>BASE</category>
         </product>
         <product name="Super">
-            <category>ADD_ON</category>
+            <category>BASE</category>
         </product>
     </products>
 
