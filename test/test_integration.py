@@ -132,7 +132,7 @@ class TestIntegration(unittest.TestCase):
         subscription = api_subscription.get_subscription(subscription_id)
         self.assertEqual('standard-monthly', subscription.plan_name)
 
-        time.sleep(.5)
+        time.sleep(3)
 
         # Get account invoices
         invoices = api_account.get_invoices_for_account(account_id)
@@ -141,7 +141,7 @@ class TestIntegration(unittest.TestCase):
         # Remove AUTO_INVOICING_OFF tag
         api_account.delete_account_tags(account_id, 'test', tag_def=tag)
 
-        time.sleep(.5)
+        time.sleep(3)
 
         # Get account invoices
         invoices = api_account.get_invoices_for_account(account_id)
