@@ -75,7 +75,7 @@ class TestIntegration(unittest.TestCase):
 
         # Upload XML catalog/Fetch XML catalog
         api_catalog = killbill.api.CatalogApi()
-        xml_catalog = open("../resources/SpyCarBasic.xml", "r+").read()
+        xml_catalog = open("./resources/SpyCarBasic.xml", "r+").read()
 
         api_catalog.upload_catalog_xml(xml_catalog, 'test')
 
