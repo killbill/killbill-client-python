@@ -19,7 +19,7 @@ jobs:
     strategy:
       matrix:
         include:
-          - python-version: '3.6.7'
+          - python-version: '3.8.0'
             docker-compose-file: 'docker-compose.ci.mysql.yml'
     steps:
       - name: Checkout code
