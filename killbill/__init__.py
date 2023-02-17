@@ -84,6 +84,8 @@ from killbill.models.bulk_subscriptions_bundle import BulkSubscriptionsBundle
 from killbill.models.bundle import Bundle
 from killbill.models.bundle_timeline import BundleTimeline
 from killbill.models.catalog import Catalog
+from killbill.models.catalog_validation import CatalogValidation
+from killbill.models.catalog_validation_error import CatalogValidationError
 from killbill.models.combo_hosted_payment_page import ComboHostedPaymentPage
 from killbill.models.combo_payment_transaction import ComboPaymentTransaction
 from killbill.models.custom_field import CustomField
@@ -100,6 +102,7 @@ from killbill.models.invoice_payment_transaction import InvoicePaymentTransactio
 from killbill.models.limit import Limit
 from killbill.models.node_command import NodeCommand
 from killbill.models.node_command_property import NodeCommandProperty
+from killbill.models.node_info import NodeInfo
 from killbill.models.overdue import Overdue
 from killbill.models.overdue_condition import OverdueCondition
 from killbill.models.overdue_state import OverdueState
