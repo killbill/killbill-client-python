@@ -1,4 +1,4 @@
 swaggerVersion=2.4.1
-kbVersion=0.24.0
-kbApiVersion=0.54.0
-kbPluginApiVersion=0.27.0
+kbVersion=0.25.6-SNAPSHOT
+kbApiVersion=0.55.3
+kbPluginApiVersion=0.28.3
