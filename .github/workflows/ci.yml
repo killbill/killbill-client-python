@@ -15,11 +15,11 @@ env:
 
 jobs:
   tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         include:
-          - python-version: '3.6'
+          - python-version: '3.7.17'
             docker-compose-file: 'docker-compose.ci.mysql.yml'
     steps:
       - name: Checkout code
